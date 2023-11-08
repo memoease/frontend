@@ -1,0 +1,37 @@
+$backgroundGreen: #387373;
+$text-transform: capitalize;
+$padding-top-btn: 1.5rem;
+$padding: 1rem;
+$paddingAll: 2rem;
+$border-radius: 2rem;
+$overflow: auto;
+$WhiteColor: #eee;
+$ColorBlack: #000000;
+ 
+ 
+ .cards {
+      padding: 1rem;
+      .DiscoverCardsContent {
+        color: $ColorBlack;
+        background: $WhiteColor;
+        border-radius: $border-radius;
+        padding: 2rem;
+        transition: all 0.5s ease;
+        &:hover {
+          box-shadow: 0px 0px 10px $ColorBlack;
+        }
+        button {
+          border-radius: 1rem;
+          padding:0.2rem  0.6rem;
+          border: none;
+          font-size: 0.7rem;
+          background: #cccc;
+          margin: 1rem 0;
+          color: #000000;
+        }
+        .discropt-created{
+          opacity: 0.7;
+          font-weight: 900;
+        }
+      }
+    }

@@ -1,0 +1,83 @@
+$backgroundGreen: #387373;
+$BlackWhiteColor: #eee;
+$WhitColor: #fff;
+$ColorBlack: #000000;
+$colorPrimary: #4caf50; // green
+$colorSecondary: #ff6f61; // red
+$colorGrau: #4d4d4dcc;
+$boxShadow: 0px 0px 10px #0000;
+
+.register_container {
+  background: $backgroundGreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 80vh;
+  border-radius: 3.3rem;
+  .title {
+    color: $WhitColor;
+    font-weight: normal;
+    text-shadow: 0px 0px 0.3px $WhitColor;
+  }
+  .register-form {
+    width: 300px;
+    height: 340px;
+    background: #e4f2e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    border-radius: 3rem;
+    text-align: center;
+    box-shadow: $boxShadow;
+    form {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      label {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 4px 0;
+        font-size: 1.1rem;
+        color: $colorGrau;
+      }
+      input {
+        width: 100%;
+        padding: 0.6rem 0;
+        border-radius: 2rem;
+        outline: none;
+        border: none;
+        background-color: #cccc;
+        padding-left: 1rem;
+      }
+    }
+    .Register_btn {
+      button {
+        cursor: pointer;
+        width: 100px;
+        padding: 0.8rem 0;
+        border-radius: 2rem;
+        border: none;
+        outline: none;
+        color: #000000;
+        transition: all 0.9s ease;
+        background: #cccc;
+        &:hover {
+          background-color: #9d9797;
+        }
+      }
+    }
+  }
+  .login_link {
+    cursor: pointer;
+    display: flex;
+    color: $WhitColor;
+    .toLoginLink {
+      color: $WhitColor;
+      padding-left: 0.4rem;
+    }
+  }
+}
