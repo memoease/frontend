@@ -13,6 +13,7 @@ import { Box } from "./createSet/createSet";
 import HomeLoggedIn from "./homeLoggedIn/HomeLoggedIn";
 import EditSet from "./Edit-set/EditSet";
 import FlipCardExample from "./FlipCards/FlipCards";
+import PrivateRoute from "../utilities/service/PrivateRoute";
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/create" element={<Box />} />
-            <Route path="/home" element={<HomeLoggedIn />} />
-            <Route path="/editSet" element={<EditSet />} />
-            <Route path="/flipcard" element={<FlipCardExample />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/create" element={<Box />} />
+              <Route path="/home" element={<HomeLoggedIn />} />
+              <Route path="/editSet" element={<EditSet />} />
+              <Route path="/flipcard" element={<FlipCardExample />} />
+            </Route>
           </Route>
           <Route path="*" element={<Error />} />
         </Routes>

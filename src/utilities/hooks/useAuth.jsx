@@ -4,15 +4,16 @@ import { registerUser, loginUser, logoutUser } from "../service/api.js";
 // Create React-Context for Authentification
 const AuthContext = createContext({
   user: null, // initial value
-  register: () => {},
-  login: () => {},
-  logout: () => {},
+  register: () => { },
+  login: () => { },
+  logout: () => { },
 });
 
 // Authentication provider component that provides the context
 export const AuthProvider = ({ children }) => {
   // State variable to save the user
   const [user, setUser] = useState(null);
+  const [authorized, setAuthorized] = useState(true);
 
   // Effect when mounting the component to restore user data from the sessionStorage
   useEffect(() => {
@@ -69,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 
   // Provider of the AuthContext value for the child components
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
+    <AuthContext.Provider value={{ user, login, register, logout, authorized }}>
       {children}
     </AuthContext.Provider>
   );
