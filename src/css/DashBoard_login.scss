@@ -12,25 +12,26 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
 .dashBorad_content {
   width: 90%;
   margin: 0 auto;
+
   .dashborad_add_Content {
     display: flex;
-    margin: 2rem 0;
-    border-radius: 2rem;
+    margin-top: 2rem;
+    border-radius: 3.3rem;
     background: $backgroundGreen;
-    height: 40vh;
+    padding: 4rem 0;
     .title_dash {
       width: 50%;
       padding: 1rem;
       color: $BlackWhiteColor;
-      font-size: $fontSizeTitle;
+      // font-size: $fontSizeTitle;
       .titleToAdd {
-        width: 80%;
-        padding-top: 2rem;
+        width: 90%;
         padding-left: 3rem;
         margin: auto;
-        font-size: 3.7rem;
-        font-family: "Times New Roman", Times, serif;
+        font-size: 4rem;
+        font-weight: 550;
         letter-spacing: 0.1px;
+        letter-spacing: 1px;
         text-shadow: $boxShadowBlack;
       }
     }
@@ -39,7 +40,7 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
       display: flex;
       align-items: center;
       justify-content: center;
-
+      flex-wrap: wrap;
       .dashPlus {
         background-color: #eee;
         font-size: 3rem;
@@ -49,14 +50,35 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
         box-shadow: 0px 0px 10px rgb(189, 189, 189);
         &:hover {
           box-shadow: 0px 0px 20px rgb(3, 3, 3);
-       
         }
         .plusLink {
           color: black;
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 200;
-         
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .dashBorad_content {
+    .dashborad_add_Content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .title_dash {
+        width: 100%;
+        .titleToAdd {
+          font-size: 2rem;
+        }
+      }
+      .dashboardAdd {
+        .dashPlus {
+          padding: 2rem;
+            border-radius: 1rem;
+        }
+       
       }
     }
   }
