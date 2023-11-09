@@ -3,7 +3,6 @@ $text-transform: capitalize;
 $padding-top-btn: 1.5rem;
 $padding: 1rem;
 $paddingAll: 2rem;
-$border-radius: 2rem;
 $overflow: auto;
 $WhiteColor: #eee;
 $ColorBlack: #000000;
@@ -16,7 +15,7 @@ $ColorBlack: #000000;
   .DiscoverCarousel-container {
     background: $backgroundGreen;
     padding: 2rem 1.5rem;
-    border-radius: $border-radius;
+    border-radius: 2rem;
     flex-wrap: wrap;
     overflow: $overflow;
 
