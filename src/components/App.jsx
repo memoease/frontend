@@ -7,7 +7,7 @@ import Contact from "./Contact/Contact";
 import HomePage from "./HomePage/HomePage";
 import Login from "./Login_/Login";
 import Register from "./Register/Register";
-import Home from "./Home/Home";
+// import Home from "./Home/Home";
 import Error from "./Error/Error";
 import { Box } from "./createSet/createSet";
 import HomeLoggedIn from "./homeLoggedIn/HomeLoggedIn";
@@ -33,7 +33,6 @@ function App() {
               <Route path="/create" element={<Box />} />
               <Route path="/home" element={<HomeLoggedIn />} />
               <Route path="/editSet" element={<EditSet />} />
-              <Route path="/dashBoard_login" element={<DashBoard_login />} />
               <Route path="/flipcard" element={<FlipCardExample />} />
               <Route path="/dashBoard_login" element={<DashBoard_login />} />
             </Route>
