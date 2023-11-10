@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import FlipCardExample from "../FlipCards/FlipCards";
+import FlipCards from "../FlipCards/FlipCards";
 
 export default class SimpleSlider extends Component {
   render() {
@@ -15,16 +15,16 @@ export default class SimpleSlider extends Component {
       <div>
         <Slider {...settings}>
           <div>
-            <FlipCardExample />
+            <FlipCards />
           </div>
           <div>
-            <FlipCardExample />
+            <FlipCards />
           </div>
           <div>
-            <FlipCardExample />
+            <FlipCards />
           </div>
           <div>
-            <FlipCardExample />
+            <FlipCards />
           </div>
         </Slider>
       </div>

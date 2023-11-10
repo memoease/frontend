@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardFlip from "react-card-flip";
 
-function FlipCardExample() {
+function FlipCards() {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
@@ -55,7 +55,7 @@ function FlipCardExample() {
   );
 }
 
-export default FlipCardExample;
+export default FlipCards;
 
 // import * as React from "react";
 // import Box from "@mui/joy/Box";

@@ -24,7 +24,6 @@ function App() {
         <Routes>
           <Route element={<Navigation />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
@@ -36,6 +35,7 @@ function App() {
               <Route path="/editSet" element={<EditSet />} />
               <Route path="/dashBoard_login" element={<DashBoard_login />} />
               <Route path="/flipcard" element={<FlipCardExample />} />
+              <Route path="/dashBoard_login" element={<DashBoard_login />} />
             </Route>
           </Route>
           <Route path="*" element={<Error />} />
