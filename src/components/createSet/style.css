@@ -16,7 +16,7 @@
     background-color:#387373;
     border-radius: 46px;
     box-shadow: 4px 6px 4px #00000040;
-    height: 832px;
+    height: 80vh;
     position: relative;
   }
   
@@ -101,7 +101,7 @@
     border-radius: 10px;
     left: 931px;
     position: absolute;
-    top: 616px;
+    top: 65vh;
     text-align: center;
     line-height: 53px; 
     font-size: 20px; 

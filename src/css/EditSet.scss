@@ -11,21 +11,31 @@ $boxShadow: 0px 0px 10px #0000;
 
 .EditSet_Container {
   width: 100%;
+  height: 80vh;
+ 
   h2 {
     color: $ColorBlack;
     font-size: 2rem;
     font-weight: 200;
+    
   }
 
   .FromEdit {
+    position: relative;
+    top: 150px;
     width: 100%;
     padding: 1rem;
+    
+    
     form {
+     
       display: flex;
+      margin: 10px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       .inputCards {
+         
         display: flex;
         padding: 0.5rem;
         background-color: #eee;
@@ -56,5 +66,10 @@ $boxShadow: 0px 0px 10px #0000;
         }
       }
     }
+  }
+  .slider{
+    height: 20vh;
+    width: 350px; position: relative;
+    top: 30px;
   }
 }
