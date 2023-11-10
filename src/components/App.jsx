@@ -24,22 +24,17 @@ function App() {
         <Routes>
           <Route element={<Navigation />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-
-            <Route path="/create" element={<Box />} />
-            <Route path="/home" element={<HomeLoggedIn />} />
-            <Route path="/editSet" element={<EditSet />} />
-            <Route path="/dashBoard_login" element={<DashBoard_login />} />
 
             <Route element={<PrivateRoute />}>
               <Route path="/create" element={<Box />} />
               <Route path="/home" element={<HomeLoggedIn />} />
               <Route path="/editSet" element={<EditSet />} />
               <Route path="/flipcard" element={<FlipCardExample />} />
+              <Route path="/dashBoard_login" element={<DashBoard_login />} />
             </Route>
           </Route>
           <Route path="*" element={<Error />} />
