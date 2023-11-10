@@ -1,15 +1,13 @@
-import { useAuth } from "../../utilities/hooks/useAuth.js";
+import { useAuth } from "../hooks/useAuth";
 
 export default function PrivateRoute() {
-    const { authorized } = useAuth();
+  const { authorized } = useAuth();
 
-    // if (isLoading) {
-    //     return (
-    //         <h2>loading...</h2>
-    //     )
-    // };
+  // if (isLoading) {
+  //     return (
+  //         <h2>loading...</h2>
+  //     )
+  // };
 
-    return (
-        authorized ? <Outlet /> : <Navigate to="/" />
-    );
-};
+  return authorized ? <Outlet /> : <Navigate to="/" />;
+}
