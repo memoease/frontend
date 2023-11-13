@@ -4,9 +4,10 @@ import { registerUser, loginUser, logoutUser } from "../service/api.js";
 // Create React-Context for Authentification
 const AuthContext = createContext({
   user: null, // initial value
-  register: () => { },
-  login: () => { },
-  logout: () => { },
+  authorized: true, //
+  register: () => {},
+  login: () => {},
+  logout: () => {},
 });
 
 // Authentication provider component that provides the context
