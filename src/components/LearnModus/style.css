@@ -1,24 +1,58 @@
-.learn {
-    background-color: #ffffff;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .learn {
+  margin: 0 auto;
+  border: 5px solid black;
+    background-color: #e1b2b2;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    height: 80vh;
+    
   }
   
   .learn .div {
+    border: 5px solid rgb(229, 66, 66);
     background-color: #ffffff;
-    height: 868px;
-    position: relative;
-    width: 1280px;
+    
+    width: 100%
+    
   }
   
   .learn .overlap-group {
-    height: 385px;
-    left: 285px;
-    position: absolute;
-    top: 233px;
-    width: 683px;
+    border: 5px solid black;
+    
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    
   }
   
   
@@ -79,4 +113,4 @@
     text-align: center;
     top: 6px;
     width: 217px;
-  }
+  } */

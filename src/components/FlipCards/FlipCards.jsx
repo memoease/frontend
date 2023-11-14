@@ -21,9 +21,10 @@ function FlipCards() {
             onClick={handleClick}
             style={{
               border: "1px solid ",
-              width: "100%",
+              margin: "0 auto",
+              width: "60%",
               borderRadius: "10px",
-              height: "370px",
+              height: "300px",
               backgroundColor: "lightblue",
               display: "flex",
               justifyContent: "center",
@@ -39,12 +40,13 @@ function FlipCards() {
             style={{
               borderRadius: "10px",
               border: "2px solid",
-              width: "100%",
-              height: "370px",
+              width: "60%",
+              height: "300px",
               backgroundColor: "#E4F2E7",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              margin: "0 auto",
             }}
           >
             Back
