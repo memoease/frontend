@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/EditSet.scss";
 import SimpleSlider from "./EditSetSlider";
+import AddCard from "./AddCard";
+import ShowAndEditCards from "./ShowAndEditCard";
+
+
 const EditSet = () => {
+  const [fakeDB, setFakeDB] = useState(
+    [
+      {
+        _id: 1,
+        question: "house",
+        answer: "haus"
+      },
+      {
+        _id: 2,
+        question: "mouse",
+        answer: "maus"
+      }
+    ]
+  )
+  const renderCards = () => {
+    const entries = fakeDB.map(card => {
+      return <ShowAndEditCards question={card.question} answer={card.answer} id={card._id} />
+    });
+    return entries;
+  }
+
   return (
     <div className="EditSet_Container">
-      <h2>Englich</h2>
+      <h2>English</h2>
       {/* Radown (Arbeit Bereich) */}
       <div className="">
         <div className="slider">
@@ -13,33 +38,8 @@ const EditSet = () => {
       </div>
       {/* Imad (Arbeit Bereich) */}
       <div className="FromEdit">
-        <form>
-          <div className="inputCards">
-            <input type="text" placeholder="words" />
-            <input type="text" placeholder="worte" />
-            <button className="EditBtn" type="submit">
-              Edit
-            </button>
-          </div>
-        </form>
-        <form>
-          <div className="inputCards">
-            <input type="text" placeholder="words" />
-            <input type="text" placeholder="worte" />
-            <button className="EditBtn" type="submit">
-              Edit
-            </button>
-          </div>
-        </form>
-        <form>
-          <div className="inputCards">
-            <input type="text" placeholder="words" />
-            <input type="text" placeholder="worte" />
-            <button className="EditBtn" type="submit">
-              Edit
-            </button>
-          </div>
-        </form>
+        {renderCards()}
+        <AddCard setFakeDB={setFakeDB} fakeDB={fakeDB} />
       </div>
     </div>
   );
