@@ -4,45 +4,46 @@ $WhitColor: #fff;
 $ColorBlack: #000000;
 $colorPrimary: #4caf50; // green
 $colorSecondary: #ff6f61; // red
-$fontSizeTitle: 2em;
 $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
 
-.Login_content {
+.setting_content {
   background: $backgroundGreen;
-  border-radius: 3.3rem;
-  height: 80vh;
-  width: 90%;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 auto;
+  height: 80vh;
+  width: 90%;
+  border-radius: 3.3rem;
   .title {
     color: $WhitColor;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhitColor;
   }
-  .loginForm {
+  .settingForm {
     width: 300px;
     height: 320px;
-    margin: 1rem auto;
+    background: #e4f2e7;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background: #e4f2e7;
+    margin: 1rem auto;
     border-radius: 3rem;
     text-align: center;
     box-shadow: $boxShadow;
+
     form {
       width: 240px;
       display: flex;
+      margin: 1rem;
       flex-direction: column;
       label {
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
+        gap: 4px 0;
         font-size: 1.1rem;
         color: $colorGrau;
       }
@@ -56,32 +57,23 @@ $boxShadow: 0px 0px 10px #0000;
         background-color: #cccc;
         padding-left: 1rem;
       }
-      .login_btn {
-        .btnToSetting {
+      .setting_btn {
+        button {
           cursor: pointer;
           width: 100px;
-          padding: 0.5rem 1rem;
+          padding: 0.8rem 0;
           border-radius: 2rem;
           border: none;
           outline: none;
           color: $ColorBlack;
           transition: all 0.9s ease;
           background: #cccc;
-          text-decoration: none;
+          margin: 1rem;
           &:hover {
             background-color: #9d9797;
           }
         }
       }
-    }
-  }
-  .register_link {
-    display: flex;
-    cursor: pointer;
-    color: $WhitColor;
-    .toRegisterLink {
-      color: $WhitColor;
-      padding-left: 0.4rem;
     }
   }
 }

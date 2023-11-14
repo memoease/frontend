@@ -24,7 +24,7 @@ $boxShadow: 0px 0px 10px #0000;
   }
   .register-form {
     width: 300px;
-    height: 340px;
+    height: 320px;
     background: #e4f2e7;
     display: flex;
     justify-content: center;
@@ -40,7 +40,7 @@ $boxShadow: 0px 0px 10px #0000;
       label {
         display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         gap: 4px 0;
         font-size: 1.1rem;
         color: $colorGrau;
@@ -66,6 +66,7 @@ $boxShadow: 0px 0px 10px #0000;
         color: #000000;
         transition: all 0.9s ease;
         background: #cccc;
+        margin-top: 1rem;
         &:hover {
           background-color: #9d9797;
         }

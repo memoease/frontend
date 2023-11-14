@@ -21,7 +21,10 @@ const Login = () => {
               </label>
             </div>
             <div className="login_btn">
-              <button type="submit">Login</button>
+              {/* <button type="submit">Login</button> */}
+              <NavLink className="btnToSetting" to="/setting">
+                Login
+              </NavLink>
             </div>
           </form>
         </div>

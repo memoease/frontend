@@ -17,6 +17,7 @@ import DashBoard_login from "./Dashborad_Loggend_in/DashBoard_login";
 import FlipCardExample from "./FlipCards/FlipCards";
 import PrivateRoute from "../utilities/service/PrivateRoute";
 import { LearnModus } from "./LearnModus/LearnModus";
+import Setting from "./Setting/Setting";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/setting" element={<Setting />} />
 
             <Route element={<PrivateRoute />}>
               <Route path="/create" element={<Box />} />
