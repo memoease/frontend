@@ -4,7 +4,8 @@ $WhitColor: #fff;
 $ColorBlack: #000000;
 $colorPrimary: #4caf50; // green
 $colorSecondary: #ff6f61; // red
-$colorGrau: #4d4d4dcc;
+$colorBlackGrau: #4d4d4dcc;
+$WhitGrauColor: #9d9797;
 $boxShadow: 0px 0px 10px #0000;
 
 .setting_content {
@@ -46,7 +47,7 @@ $boxShadow: 0px 0px 10px #0000;
         padding: 0.5rem 0;
         gap: 4px 0;
         font-size: 1.1rem;
-        color: $colorGrau;
+        color: $colorBlackGrau;
       }
       input {
         width: 100%;
@@ -59,30 +60,22 @@ $boxShadow: 0px 0px 10px #0000;
         padding-left: 1rem;
       }
       .setting_btn {
-        button {
+        margin-top: 0.6rem;
+        .DashBoardLink {
           cursor: pointer;
           width: 100px;
-          padding: 0.5rem 0;
-          border-radius: 2rem;
-          border: none;
-          outline: none;
-          color: $ColorBlack;
+          padding:0.4rem 2rem ;
+          border-radius: 1rem;
           transition: all 0.9s ease;
           background: #cccc;
-          // margin: 0.5rem;
+          color: $ColorBlack;
+          text-decoration: none;
           &:hover {
-            background-color: #9d9797;
+            background-color: $WhitGrauColor;
           }
         }
       }
     }
 
-  }
-  .logoutBtn{
-    cursor: pointer;
-  .linkLogout{
-    color: white !important;
-    text-decoration: none;
-  }
   }
 }

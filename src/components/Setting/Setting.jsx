@@ -10,7 +10,7 @@ const Setting = () => {
           <form action="" method="post">
             <div className="">
               <label htmlFor="username">
-                username
+                Chang name
                 <input type="text" name="username" id="username" required />
               </label>
             </div>
@@ -27,14 +27,11 @@ const Setting = () => {
               </label>
             </div>
             <div className="setting_btn">
-              <button type="submit">save</button>
+              <NavLink className="DashBoardLink" to="/DashBoard_login">
+                Save
+              </NavLink>
             </div>
           </form>
-        </div>
-        <div className="logoutBtn">
-          <NavLink className="linkLogout" to="/logout">
-            Log out
-          </NavLink>
         </div>
       </div>
     </div>
