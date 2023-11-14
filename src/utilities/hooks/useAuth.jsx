@@ -1,20 +1,16 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { loginUser, logoutUser } from "../service/api.js";
+import { logoutUser } from "../service/api.js";
+
 
 // Create React-Context for Authentification
-const AuthContext = createContext({
-  user: null,
-  loading: false,
-  authorized: false,
-  login: (email, password) => {},
-  logout: () => {},
-});
+const AuthContext = createContext({});
 
 // Authentication provider component that provides the context
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [authorized, setAuthorized] = useState(false);
+
 
   const cookies = Object.fromEntries(
     document.cookie
@@ -27,23 +23,12 @@ export const AuthProvider = ({ children }) => {
     // Initialize the user from the userCookie
     const userFromCookie = cookies.user ? JSON.parse(cookies.user) : null;
     setUser(userFromCookie);
-    setAuthorized(false);
-  }, []);
-
-  // Function to log in the user
-  const loginHandler = async (email, password) => {
-    setAuthorized(true);
-    setLoading(true);
-    try {
-      const userData = await loginUser({ email, password });
-      setUser(userData);
-    } catch (error) {
-      console.error("Login error:", error);
-    } finally {
-      setLoading(false);
+    if (!userFromCookie) {
       setAuthorized(false);
-    }
-  };
+    } else {
+      setAuthorized(true);
+    };
+  }, []);
 
   // Function to log out the user
   const logoutHandler = async () => {
@@ -67,8 +52,10 @@ export const AuthProvider = ({ children }) => {
         user,
         loading,
         authorized,
-        login: loginHandler,
-        logout: logoutHandler,
+        setAuthorized,
+        setLoading,
+        setUser,
+        logoutHandler,
       }}
     >
       {children}

@@ -18,32 +18,38 @@ import FlipCardExample from "./FlipCards/FlipCards";
 import PrivateRoute from "../utilities/service/PrivateRoute";
 import { LearnModus } from "./LearnModus/LearnModus";
 import Setting from "./Setting/Setting";
+import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
+
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Navigation />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/setting" element={<Setting />} />
+      <AuthProvider>
 
-            <Route element={<PrivateRoute />}>
-              <Route path="/create" element={<Box />} />
-              <Route path="/home" element={<HomeLoggedIn />} />
-              <Route path="/editset" element={<EditSet />} />
-              <Route path="/flipcard" element={<FlipCardExample />} />
-              <Route path="/dashBoard_login" element={<DashBoard_login />} />
-              <Route path="/learnmodus" element={<LearnModus />} />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Navigation />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/setting" element={<Setting />} />
+
+              <Route element={<PrivateRoute />}>
+                <Route path="/create" element={<Box />} />
+                <Route path="/home" element={<HomeLoggedIn />} />
+                <Route path="/editset" element={<EditSet />} />
+                <Route path="/flipcard" element={<FlipCardExample />} />
+                <Route path="/dashboard" element={<DashBoard_login />} />
+                <Route path="/learnmodus" element={<LearnModus />} />
+              </Route>
             </Route>
-          </Route>
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+
     </>
   );
 }

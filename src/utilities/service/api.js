@@ -5,6 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 5000,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
@@ -33,6 +34,7 @@ export const registerUser = async (userData) => {
 // Login
 export const loginUser = async (credentials) => {
   const response = await axiosInstance.post("user/login", credentials);
+  console.log(response.data);
   return response.data;
 };
 
