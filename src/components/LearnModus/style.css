@@ -1,0 +1,82 @@
+.learn {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .learn .div {
+    background-color: #ffffff;
+    height: 868px;
+    position: relative;
+    width: 1280px;
+  }
+  
+  .learn .overlap-group {
+    height: 385px;
+    left: 285px;
+    position: absolute;
+    top: 233px;
+    width: 683px;
+  }
+  
+  
+  .learn .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 48px;
+    font-weight: 400;
+    height: 58px;
+    left: 54px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 81px;
+    width: 251px;
+  }
+  
+  .learn .group {
+    height: 64px;
+    left: 445px;
+    position: absolute;
+    top: 649px;
+    width: 363px;
+  }
+  
+  .learn .ellipse {
+    background-color: #42fb699e;
+    border-radius: 31px/30.5px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 61px;
+    left: 299px;
+    position: absolute;
+    top: 0;
+    width: 62px;
+  }
+  
+  .learn .ellipse-2 {
+    background-color: #ff000087;
+    border-radius: 31px/30.5px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 61px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 62px;
+  }
+  
+  .learn .text-wrapper-2 {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 36px;
+    font-weight: 400;
+    height: 55px;
+    left: 72px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 6px;
+    width: 217px;
+  }
