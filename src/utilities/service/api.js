@@ -17,10 +17,22 @@ export const registerUser = async (userData) => {
   return response.data;
 };
 
+// Confirm Email
+export const confirmEmail = async (token) => {
+  const response = await axiosInstance.get(`user/confirm?token=${token}`);
+  return response.data;
+};
+
 // Login
 export const loginUser = async (credentials) => {
   const response = await axiosInstance.post("user/login", credentials);
   console.log(response.data);
+  return response.data;
+};
+
+// Validate Token
+export const validateToken = async () => {
+  const response = await axiosInstance.get("user/validateToken");
   return response.data;
 };
 
@@ -74,7 +86,61 @@ export const postNewFlashcardSet = async (setData) => {
 
 // Get Flashcard-Set by User
 export const getFlashcardSetsByUser = async () => {
-  const response = await axiosInstance.get("sets/user/sets");
+  const response = await axiosInstance.get("sets");
+  return response.data;
+};
+
+// Add a new Card to a set
+export const postNewCardToSet = async (setId) => {
+  const response = await axiosInstance.post(`sets/card/${setId}`);
+  return response.data;
+};
+
+//Delete a card
+export const deleteOneCardById = async (cardId) => {
+  const response = await axiosInstance.delete(`sets/card/${cardId}`);
+  return response;
+};
+
+//Get Set by Set ID
+export const getSetBySetId = async (setId) => {
+  const response = await axiosInstance.get(`sets/${setId}`);
+  return response.data;
+};
+
+// Delete Set by ID
+export const deleteSetBySetId = async (setId) => {
+  const response = await axiosInstance.delete(`sets/${setId}`);
+  return response;
+};
+
+// Update Set Infos by SetID
+export const updateSetInfoById = async (setId) => {
+  const response = await axiosInstance.put(`sets/${setId}`);
+  return response.data;
+};
+
+// Get random public sets
+export const getRandomPubSets = async () => {
+  const response = await axiosInstance.get(`sets/public/random`);
+  return response.data;
+};
+
+// start Learnsession
+export const startLearnSession = async (setId) => {
+  const response = await axiosInstance.get(`session/${setId}`);
+  return response.data;
+};
+
+// update cards to learned
+export const updateSessionCardToLearned = async (cardId) => {
+  const response = await axiosInstance.put(`session/${cardId}`);
+  return response.data;
+};
+
+// refresh learn session (all cards back to "tolearn")
+export const refreshLearnSession = async (sessionId) => {
+  const response = await axiosInstance.put(`session/refresh/${sessionId}`);
   return response.data;
 };
 
