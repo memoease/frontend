@@ -11,20 +11,6 @@ const axiosInstance = axios.create({
   },
 });
 
-// Call JWT-Token from Http-only Cookie
-export const getAuthTokenFromCookie = () => {
-  const cookieName = "authToken";
-
-  const cookies = document.cookie.split(";");
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith(`${cookieName}=`)) {
-      return cookie.substring(cookieName.length + 1);
-    }
-  }
-  return null;
-};
-
 // Register
 export const registerUser = async (userData) => {
   const response = await axiosInstance.post("user/register", userData);
