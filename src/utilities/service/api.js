@@ -17,10 +17,22 @@ export const registerUser = async (userData) => {
   return response.data;
 };
 
+// Confirm Email
+export const confirmEmail = async (token) => {
+  const response = await axiosInstance.get(`user/confirm?token=${token}`);
+  return response.data;
+};
+
 // Login
 export const loginUser = async (credentials) => {
   const response = await axiosInstance.post("user/login", credentials);
   console.log(response.data);
+  return response.data;
+};
+
+// Validate Token
+export const validateToken = async () => {
+  const response = await axiosInstance.get("user/validateToken");
   return response.data;
 };
 
@@ -131,6 +143,5 @@ export const refreshLearnSession = async (sessionId) => {
   const response = await axiosInstance.put(`session/refresh/${sessionId}`);
   return response.data;
 };
-
 
 export default axiosInstance;
