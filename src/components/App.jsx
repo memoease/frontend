@@ -32,15 +32,15 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/setting" element={<Setting />} />
 
               <Route element={<PrivateRoute />}>
                 <Route path="/create" element={<Box />} />
                 <Route path="/home" element={<HomeLoggedIn />} />
                 <Route path="/editset" element={<EditSet />} />
                 <Route path="/flipcard" element={<FlipCardExample />} />
-                <Route path="/dashboard" element={<DashBoard_login />} />
+                <Route path="/DashBoard_login" element={<DashBoard_login />} />
                 <Route path="/learnmodus" element={<LearnModus />} />
+                <Route path="/setting" element={<Setting />} />
               </Route>
             </Route>
             <Route path="*" element={<Error />} />

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../css/setting.scss";
-import { NavLink } from "react-router-dom";
+
 const Setting = () => {
   return (
     <div>
@@ -10,26 +10,40 @@ const Setting = () => {
           <form action="" method="post">
             <div className="">
               <label htmlFor="username">
-                Chang name
+                Change name
                 <input type="text" name="username" id="username" required />
               </label>
             </div>
             <div className="">
-              <label htmlFor="password">
-                old password
-                <input type="password" name="password" id="password" required />
+              <label htmlFor="oldPassword">
+                Old password
+                <input
+                  type="password"
+                  name="oldPassword"
+                  id="oldPassword"
+                  required
+                />
               </label>
             </div>
             <div className="">
-              <label htmlFor="password">
+              <label htmlFor="newPassword">
                 New password
-                <input type="password" name="password" id="password" required />
+                <input
+                  type="password"
+                  name="newPassword"
+                  id="newPassword"
+                  required
+                />
               </label>
             </div>
             <div className="setting_btn">
-              <NavLink className="DashBoardLink" to="/DashBoard_login">
+              <button
+                type="submit"
+                className="DashBoardLink"
+                to="/DashBoard_login"
+              >
                 Save
-              </NavLink>
+              </button>
             </div>
           </form>
         </div>
