@@ -34,20 +34,7 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // Function to log out the user
-  const logoutHandler = async () => {
-    setAuthorized(true);
-    setLoading(true);
-    try {
-      await logoutUser();
-      setUser(null);
-    } catch (error) {
-      console.error("Logout error:", error);
-    } finally {
-      setLoading(false);
-      setAuthorized(false);
-    }
-  };
+
 
   // Provider of the AuthContext value for the child components
   return (
@@ -59,7 +46,6 @@ export const AuthProvider = ({ children }) => {
         setAuthorized,
         setLoading,
         setUser,
-        logoutHandler,
       }}
     >
       {children}
