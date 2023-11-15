@@ -18,17 +18,19 @@ function FlipCards() {
       >
         <div>
           <div
+            className="cardFilp"
             onClick={handleClick}
             style={{
-              border: "1px solid ",
               margin: "0 auto",
-              width: "60%",
+              width: "100%",
               borderRadius: "10px",
+              padding: "10",
               height: "300px",
-              backgroundColor: "lightblue",
+              backgroundColor: "#eeee",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
             }}
           >
             Frontd
@@ -36,17 +38,18 @@ function FlipCards() {
         </div>
         <div>
           <div
+            className="cardFilp"
             onClick={handleClick}
             style={{
               borderRadius: "10px",
-              border: "2px solid",
-              width: "60%",
+              width: "100%",
               height: "300px",
-              backgroundColor: "#E4F2E7",
+              backgroundColor: "#cccc",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               margin: "0 auto",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
             }}
           >
             Back

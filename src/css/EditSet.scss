@@ -10,32 +10,126 @@ $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
 
 .EditSet_Container {
-  width: 100%;
-  height: 80vh;
- 
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  // height: 80vh;
+
   h2 {
     color: $ColorBlack;
     font-size: 2rem;
     font-weight: 200;
-    
+  }
+  .EditSet_Content {
+    margin: 0 auto;
+    width: 100%;
+    height: 80vh;
+    padding: 2em;
+
+    .div {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+
+      .edidtOverlap-group {
+        cursor: pointer;
+        width: 50%;
+.slidNumber{
+  padding: 0 2rem;
+}
+        .editGroup {
+          margin: 2rem 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .flipped-number {
+            cursor: pointer;
+            padding: 0 3rem;
+          }
+          .ellipseLeft {
+            width: 35px;
+            height: 35px;
+            line-height: 40px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 10px rgb(6, 6, 6);
+            transition: all 0.6s ease;
+            &:hover {
+              background-color: #ff0000;
+            }
+          }
+          .ellipseRight {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            line-height: 40px;
+            box-shadow: 0px 2px 10px rgb(4, 4, 4);
+            transition: all 0.6s ease;
+            &:hover {
+              background-color: rgb(0, 255, 68);
+            }
+          }
+        }
+      }
+      .setPractice {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cardEdit {
+          width: 60%;
+          height: 300px;
+          background-color: #387373;
+          display: flex;
+          margin-bottom: 7rem;
+          margin-left: 8rem;
+          border-radius: 3.3rem;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          box-shadow: 0px 0px 5px #000000;
+          .title {
+            width: 200px;
+            letter-spacing: 2px;
+            color: #ffff;
+            margin-bottom: 1rem;
+            font-size: 2.3rem;
+            text-shadow: 0px 0px 10px #0000;
+          }
+          button {
+            width: 100px;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.5s ease;
+
+            &:hover {
+              // transform: scale(1.1) ;
+              background: #cacaca;
+            }
+          }
+        }
+      }
+    }
   }
 
   .FromEdit {
     position: relative;
-    top: 150px;
+    // top: 150px;
     width: 100%;
-    padding: 1rem;
-    
-    
+    // padding: 1rem;
+
     form {
-     
       display: flex;
       margin: 10px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       .inputCards {
-         
         display: flex;
         padding: 0.5rem;
         background-color: #eee;
@@ -67,9 +161,10 @@ $boxShadow: 0px 0px 10px #0000;
       }
     }
   }
-  .slider{
+  .slider {
     height: 20vh;
-    width: 350px; position: relative;
+    width: 350px;
+    position: relative;
     top: 30px;
   }
 }

@@ -17,15 +17,6 @@ export default class SimpleSlider extends Component {
           <div>
             <FlipCards />
           </div>
-          <div>
-            <FlipCards />
-          </div>
-          <div>
-            <FlipCards />
-          </div>
-          <div>
-            <FlipCards />
-          </div>
         </Slider>
       </div>
     );
