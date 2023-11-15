@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import "../../css/Navigation.scss";
 import { useAuth } from "../../utilities/hooks/useAuth.jsx";
+import { logoutUser } from "../../utilities/service/api.js";
 
 const Navigation = () => {
   const { authorized, setUser, setAuthorized, setLoading } = useAuth();
@@ -16,7 +17,7 @@ const Navigation = () => {
       setAuthorized(false);
     } catch (error) {
       console.error("Logout error:", error);
-    }
+    };
   };
 
   return (

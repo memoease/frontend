@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { logoutUser } from "../service/api.js";
 
 
 // Create React-Context for Authentification
@@ -8,7 +7,7 @@ const AuthContext = createContext({});
 // Authentication provider component that provides the context
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
 
 
@@ -22,7 +21,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     setLoading(true)
     // Initialize the user from the userCookie
-    const userFromCookie = cookies.user ? JSON.parse(cookies.user) : null;
+    const userFromCookie = cookies.userInfo ? JSON.parse(cookies.userInfo) : null;
     setUser(userFromCookie);
     console.log("userCookie:", userFromCookie);
     if (!userFromCookie) {
