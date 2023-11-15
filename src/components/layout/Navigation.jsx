@@ -2,18 +2,10 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "../../css/Navigation.scss";
 import { useAuth } from "../../utilities/hooks/useAuth.jsx";
-import { useAuth } from "../../utilities/hooks/useAuth.jsx";
 import { logoutUser } from "../../utilities/service/api.js";
 
 const Navigation = () => {
-  const { authorized } = useAuth();
-  // const [loggedIn, setLoggedIn] = useState(authorized);
-
-  // useEffect(() => {
-  //   setLoggedIn(authorized);
-  // }, [authorized]);
   const { authorized, setUser, setAuthorized, setLoading } = useAuth();
-
   // Function to log out the user
   const logoutHandler = async () => {
     setLoading(true);
@@ -23,7 +15,7 @@ const Navigation = () => {
       setAuthorized(false);
     } catch (error) {
       console.error("Logout error:", error);
-    };
+    }
   };
 
   return (
@@ -62,7 +54,6 @@ const Navigation = () => {
           </div>
         ) : (
           <div className="btn-Head">
-            <NavLink to="/login" className="btnLoginin">
             <NavLink to="/" className="btnLoginin" onClick={logoutHandler}>
               Logout
             </NavLink>
