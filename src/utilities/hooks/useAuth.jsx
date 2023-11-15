@@ -20,13 +20,17 @@ export const AuthProvider = ({ children }) => {
 
   // Effect to load the user from the userCookie
   useEffect(() => {
+    setLoading(true)
     // Initialize the user from the userCookie
     const userFromCookie = cookies.user ? JSON.parse(cookies.user) : null;
     setUser(userFromCookie);
+    console.log("userCookie:", userFromCookie);
     if (!userFromCookie) {
       setAuthorized(false);
+      setLoading(false)
     } else {
       setAuthorized(true);
+      setLoading(false)
     };
   }, []);
 
