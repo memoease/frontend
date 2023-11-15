@@ -5,8 +5,7 @@ import "../../css/Navigation.scss";
 import { useAuth } from "../../utilities/hooks/useAuth.jsx";
 
 const Navigation = () => {
-  const { authorized } = useAuth();
-  console.log(authorized);
+  const { authorized, setUser, setAuthorized, setLoading } = useAuth();
 
   // Function to log out the user
   const logoutHandler = async () => {
@@ -15,7 +14,6 @@ const Navigation = () => {
       await logoutUser();
       setUser(null);
       setAuthorized(false);
-      setLoading(false);
     } catch (error) {
       console.error("Logout error:", error);
     }
