@@ -20,7 +20,6 @@ import { LearnModus } from "./LearnModus/LearnModus";
 import Setting from "./Setting/Setting";
 import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 
-
 function App() {
   return (
     <>
@@ -33,6 +32,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/setting" element={<Setting />} />
 
               <Route element={<PrivateRoute />}>
                 <Route path="/create" element={<Box />} />
@@ -41,7 +41,6 @@ function App() {
                 <Route path="/flipcard" element={<FlipCardExample />} />
                 <Route path="/dashboard" element={<DashBoard_login />} />
                 <Route path="/learnmodus" element={<LearnModus />} />
-                <Route path="/setting" element={<Setting />} />
               </Route>
             </Route>
             <Route path="*" element={<Error />} />
