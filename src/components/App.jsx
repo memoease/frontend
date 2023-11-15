@@ -25,20 +25,6 @@ function App() {
   return (
     <>
       <AuthProvider>
-
-<<<<<<< HEAD
-            {/* <Route element={<PrivateRoute />}>
-              <Route path="/create" element={<Box />} />
-              <Route path="/home" element={<HomeLoggedIn />} />
-              <Route path="/editSet" element={<EditSet />} />
-              <Route path="/flipcard" element={<FlipCardExample />} />
-              <Route path="/dashBoard_login" element={<DashBoard_login />} />
-            </Route> */}
-          </Route>
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-=======
         <BrowserRouter>
           <Routes>
             <Route element={<Navigation />}>
@@ -47,7 +33,6 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/setting" element={<Setting />} />
 
               <Route element={<PrivateRoute />}>
                 <Route path="/create" element={<Box />} />
@@ -56,14 +41,13 @@ function App() {
                 <Route path="/flipcard" element={<FlipCardExample />} />
                 <Route path="/dashboard" element={<DashBoard_login />} />
                 <Route path="/learnmodus" element={<LearnModus />} />
+                <Route path="/setting" element={<Setting />} />
               </Route>
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-
->>>>>>> bcb3f2d60f9ff4c7af0465d97225792663c36277
     </>
   );
 }
