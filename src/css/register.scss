@@ -17,14 +17,16 @@ $boxShadow: 0px 0px 10px #0000;
   height: 80vh;
   width: 90%;
   border-radius: 3.3rem;
+
   .title {
     color: $WhitColor;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhitColor;
   }
+
   .register-form {
-    width: 300px;
-    height: 320px;
+    width: 320px;
+    height: 410px;
     background: #e4f2e7;
     display: flex;
     justify-content: center;
@@ -33,53 +35,68 @@ $boxShadow: 0px 0px 10px #0000;
     border-radius: 3rem;
     text-align: center;
     box-shadow: $boxShadow;
+
     form {
       width: 240px;
       display: flex;
       flex-direction: column;
+
       label {
         display: flex;
         flex-direction: column;
+        align-items: center; /* Neues */
         padding: 0.5rem 0;
         gap: 4px 0;
         font-size: 1.1rem;
         color: $colorGrau;
+
+        input {
+          width: 100%;
+          padding: 0.6rem 0;
+          border-radius: 2rem;
+          outline: none;
+          border: none;
+          background-color: #cccc;
+          padding-left: 1rem;
+        }
+
+        .pwdvisibility {
+          cursor: pointer;
+          font-size: 0.8rem;
+          color: $colorGrau;
+          margin-left: auto; /* Neues */
+        }
       }
-      input {
-        width: 100%;
-        padding: 0.6rem 0;
-        border-radius: 2rem;
-        outline: none;
-        border: none;
-        background-color: #cccc;
-        padding-left: 1rem;
-      }
-    }
-    .Register_btn {
-      button {
-        cursor: pointer;
-        width: 100px;
-        padding: 0.5rem 0;
-        border-radius: 2rem;
-        border: none;
-        outline: none;
-        color: #000000;
-        transition: all 0.9s ease;
-        background: #cccc;
-        margin-top: 1rem;
-        &:hover {
-          background-color: #9d9797;
+
+      .Register_btn {
+        button {
+          cursor: pointer;
+          width: 100px;
+          padding: 0.5rem 0;
+          border-radius: 2rem;
+          border: none;
+          outline: none;
+          color: #000000;
+          transition: all 0.9s ease;
+          background: #cccc;
+          margin-top: 1rem;
+
+          &:hover {
+            background-color: #9d9797;
+          }
         }
       }
     }
-  }
-  .login_link {
-    cursor: pointer;
-    display: flex;
-    color: $WhitColor;
-    .toLoginLink {
+
+    .login_link {
+      cursor: pointer;
+      display: flex;
       color: $WhitColor;
-      padding-left: 0.4rem;
+
+      .toLoginLink {
+        color: $WhitColor;
+        padding-left: 0.4rem;
+      }
     }
   }
 }
