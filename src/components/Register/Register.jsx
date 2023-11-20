@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
 import "../../css/register.scss";
 import { registerUser } from "../../utilities/service/api.js";
 
@@ -14,7 +12,6 @@ const Register = () => {
 
   const [error, setError] = useState("");
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  const [isRegistered, setIsRegistered] = useState(false);
 
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -39,7 +36,6 @@ const Register = () => {
 
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
-      setConfirmationMessage("");
       return;
     }
 
@@ -50,18 +46,21 @@ const Register = () => {
         password,
       });
 
-      if (response.error) {
-        setError(response.error); // Keine JSON.stringify mehr
-        setConfirmationMessage("");
-      } else {
-        setConfirmationMessage("Please check your email for confirmation.");
-        setIsRegistered(true);
-        setError(""); // Fehlermeldung zurücksetzen
-      }
+      console.log("Full Response:", response);
+
+      setConfirmationMessage(
+        `Welcome ${name}! Please check your email ${email} for confirmation`
+      );
     } catch (error) {
-      console.error("Registration error:", error);
-      setError("An error occurred during registration.");
-      setConfirmationMessage("");
+      console.error("Registration error:", error.response.data);
+
+      const { error: errorMessage } = error.response.data;
+
+      if (errorMessage) {
+        setError(`${errorMessage}. Please try again.`);
+      } else {
+        setError("An unknown error occurred. Please try again.");
+      }
     }
   };
 
@@ -70,94 +69,88 @@ const Register = () => {
       <div className="register_container">
         <h1 className="title">Register</h1>
         <div className="register-form">
-          {!isRegistered ? (
-            <form onSubmit={handleRegister}>
-              <div className="">
-                <label htmlFor="name">
-                  Username
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your username"
-                    required
-                  />
-                </label>
-              </div>
-              <div className="">
-                <label htmlFor="email">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Valid email address"
-                    required
-                  />
-                </label>
-              </div>
-              <div className="password-input-container">
-                <label htmlFor="password" className="password-label">
-                  Password
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    name="password"
-                    id="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Password at least 8 characters"
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="pwdvisibility"
-                    onClick={togglePasswordVisibility}
-                  >
-                    {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-                  </button>
-                </label>
-              </div>
+          <form onSubmit={handleRegister}>
+            <div className="">
+              <label htmlFor="name">
+                Username
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your username"
+                  required
+                />
+              </label>
+            </div>
+            <div className="">
+              <label htmlFor="email">
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Valid email address"
+                  required
+                />
+              </label>
+            </div>
+            <div className="password-input-container">
+              <label htmlFor="password" className="password-label">
+                Password
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Password at least 8 characters"
+                  required
+                />
+                <button
+                  type="button"
+                  className="pwdvisibility"
+                  onClick={togglePasswordVisibility}
+                >
+                  👁️
+                </button>
+              </label>
+            </div>
 
-              <div className="password-input-container">
-                <label htmlFor="confirmPassword" className="password-label">
-                  Confirm Password
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    name="confirmPassword"
-                    id="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm password"
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="pwdvisibility"
-                    onClick={togglePasswordVisibility}
-                  >
-                    icon
-                  </button>
-                </label>
-              </div>
-              <div className="Register_btn">
-                <button type="submit">Register</button>
-              </div>
-            </form>
-          ) : null}
+            <div className="password-input-container">
+              <label htmlFor="confirmPassword" className="password-label">
+                Confirm Password
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  placeholder="Confirm password"
+                  required
+                />
+                <button
+                  type="button"
+                  className="pwdvisibility"
+                  onClick={togglePasswordVisibility}
+                >
+                  👁️
+                </button>
+              </label>
+            </div>
+            <div className="Register_btn">
+              <button type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+        <div className="messages-container">
           {error && <p className="error-message">{error}</p>}
           {confirmationMessage && (
             <p className="confirmation-message">{confirmationMessage}</p>
           )}
-        </div>
-        <div className="login_link">
-          <p>or</p>
-          <NavLink className="toLoginLink" to="/login">
-            Login
-          </NavLink>
         </div>
       </div>
     </div>

@@ -44,7 +44,7 @@ $boxShadow: 0px 0px 10px #0000;
       label {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Neues */
+        align-items: center;
         padding: 0.5rem 0;
         gap: 4px 0;
         font-size: 1.1rem;
@@ -58,25 +58,32 @@ $boxShadow: 0px 0px 10px #0000;
           border: none;
           background-color: #cccc;
           padding-left: 1rem;
+
+          //&:focus {
+          /* Beispiel: Änderungen beim Fokussieren des Eingabefeldes */
+          //border: 2px solid $colorPrimary;
+          //background-color: $WhitColor;
+          //color: $ColorBlack;
+          //}
         }
 
         .pwdvisibility {
           cursor: pointer;
           font-size: 0.8rem;
           color: $colorGrau;
-          margin-left: auto; /* Neues */
+          margin-left: auto;
         }
       }
 
       .Register_btn {
         button {
           cursor: pointer;
-          width: 100px;
+          width: 100%;
           padding: 0.5rem 0;
           border-radius: 2rem;
           border: none;
           outline: none;
-          color: #000000;
+          color: $ColorBlack;
           transition: all 0.9s ease;
           background: #cccc;
           margin-top: 1rem;
@@ -88,14 +95,18 @@ $boxShadow: 0px 0px 10px #0000;
       }
     }
 
-    .login_link {
-      cursor: pointer;
-      display: flex;
-      color: $WhitColor;
+    .messages-container {
+      /* Neue Container-Klasse für Fehler- und Bestätigungsmeldungen */
+      margin-top: 1rem;
+      color: $WhitColor; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
+      font-size: 1rem;
 
-      .toLoginLink {
+      .error-message {
         color: $WhitColor;
-        padding-left: 0.4rem;
+      }
+
+      .confirmation-message {
+        color: $WhitColor;
       }
     }
   }
