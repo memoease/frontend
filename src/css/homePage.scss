@@ -1,24 +1,29 @@
-
-$BackgroundCreen:#387373;
-$ColorWhite:#ffff;
-$ColorBlack:#000000;
+$BackgroundCreen: #387373;
+$ColorWhite: #ffff;
+$ColorBlack: #000000;
+// ----------------------------> Von Susann
+$ColorYlo: #FDB25B;
+$ColorWhitHell: #D9D9D9;
+$ColorBlack: #000000;
+// ----------------------------
 .HomePage_container {
-    width: 90%;
+  width: 90%;
   margin: 1rem auto;
   cursor: pointer;
+  flex-wrap: wrap;
+  // flex-direction: row;
   .repper-content {
     background: $BackgroundCreen;
     display: flex;
-    // box-shadow: 0px 0px 10px #000;
     justify-content: space-between;
     border-radius: 3.3rem;
     padding: 4rem;
     margin: 1rem 0;
-    flex-flow: row;
+
     .content {
       width: 50%;
       color: $ColorWhite;
-      h1 {
+      .title_head {
         font-size: 3.3rem;
         margin-bottom: 1rem;
         letter-spacing: 3px;
@@ -35,26 +40,33 @@ $ColorBlack:#000000;
       display: flex;
       align-items: center;
       justify-content: center;
+
       .startCrad {
         width: 100%;
         .blockStart {
           width: 300px;
+          height: 200px;
           margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           margin-bottom: 1rem;
-          padding: 3rem;
+          // padding: 3rem;
           border-radius: 2rem;
           background-color: $ColorWhite;
           transition: all 0.3s ease;
           &:hover {
             box-shadow: 5px 5px 10px $ColorBlack;
           }
-          .startLinkCard {
+          .startLinkCardTitel {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 2rem;
             text-decoration: none;
-            line-height: 3rem;
-            color: $ColorBlack;
-            font-weight: normal;
-            font-family: "Times New Roman", Times, serif;
+            color: #000000;
+            font-weight: 450;
           }
         }
         .singinLinkCard {
@@ -64,5 +76,45 @@ $ColorBlack:#000000;
       }
     }
   }
+}
 
+@media only screen and (max-width: 750px) {
+  .HomePage_container {
+    .repper-content {
+      display: flex;
+      flex-direction: column;
+
+      .content {
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+
+        .title_head {
+          font-size: 2rem;
+        }
+      }
+      .getStartlink-content {
+        width: 100%;
+        margin: 0 auto;
+
+        .startCrad {
+          width: 100%;
+          margin: auto; /* Zentrierung horizontal */
+          padding: 1rem; /* Platz für Inhalt */
+          border-radius: 2rem;
+          transition: all 0.3s ease;
+          .blockStart {
+            max-width: 100%; /* Maximale Breite auf 100% des startCrad */
+            margin: 1rem auto; /* Zentrierung horizontal */
+            text-align: center; /* Optional: Zentrierung des Textes */
+            .startLinkCardTitel {
+             font-size: 1.6rem;
+            
+            }
+
+          }
+        }
+      }
+    }
+  }
 }

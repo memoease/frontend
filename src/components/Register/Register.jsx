@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import "../../css/register.scss";
 import { registerUser } from "../../utilities/service/api.js";
 
@@ -116,7 +117,7 @@ const Register = () => {
                     className="pwdvisibility"
                     onClick={togglePasswordVisibility}
                   >
-                    👁️
+                    {passwordVisible ? <FaEye /> : <FaEyeSlash />}
                   </button>
                 </label>
               </div>
@@ -138,7 +139,7 @@ const Register = () => {
                     className="pwdvisibility"
                     onClick={togglePasswordVisibility}
                   >
-                    👁️
+                    icon
                   </button>
                 </label>
               </div>

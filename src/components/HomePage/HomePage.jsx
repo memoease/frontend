@@ -10,7 +10,7 @@ const HomePage = () => {
       {/*   repper-content -------------- */}
       <div className="repper-content">
         <div className="content">
-          <h1>Create And Discover flashcard sets</h1>
+          <h1 className="title_head">Create And Discover flashcard sets</h1>
           <p className="create-and-extend">
             create and extend your own flashcard sets in your dashboard, decide
             if they are private or public and start learning
@@ -20,7 +20,7 @@ const HomePage = () => {
         <div className="getStartlink-content">
           <div className="startCrad">
             <div className="blockStart">
-              <NavLink to="/" className="startLinkCard">
+              <NavLink to="/" className="startLinkCardTitel">
                 Get Started
               </NavLink>
             </div>
