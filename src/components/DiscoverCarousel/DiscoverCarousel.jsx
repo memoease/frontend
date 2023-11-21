@@ -10,7 +10,7 @@ const DiscoverCarousel = () => {
   return (
     <div className="discover-content">
       <div className="DiscoverCarousel-container">
-        <h2>Discover</h2>
+        <h1>Discover</h1>
         <CarouselItem data={data} />
       </div>
     </div>

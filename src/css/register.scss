@@ -121,15 +121,18 @@ $ColoeHellgrün: #e4f2e7;
         }
       }
     }
-    .login_link {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $WhitColor;
-      .toLoginLink {
+    .messages-container {
+      /* Neue Container-Klasse für Fehler- und Bestätigungsmeldungen */
+      margin-top: 1rem;
+      color: $WhitColor; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
+      font-size: 1rem;
+
+      .error-message {
         color: $WhitColor;
-        padding-left: 0.4rem;
+      }
+
+      .confirmation-message {
+        color: $WhitColor;
       }
     }
   }

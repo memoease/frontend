@@ -1,17 +1,32 @@
-$backgroundGreen: #387373;
+$backgroundGreen: #3c941b ;
 $text-transform: capitalize;
 $padding-top-btn: 1.5rem;
 $padding: 1rem;
 $paddingAll: 2rem;
-$border-radius: 2rem;
+$border-radius: 1rem;
 $overflow: auto;
 $WhiteColor: #eee;
 $ColorBlack: #000000;
+$ColorYellow: #fdb25b;
+
  
  
  .cards {
       padding: 1rem;
+     
       .DiscoverCardsContent {
+        .title {
+          background-color:$ColorYellow ; 
+          color: $WhiteColor;
+          border-radius:0.5rem ;
+          text-align: center;
+          height: 4.5vh;
+          &:hover {
+            box-shadow: 0px 0px 10px $ColorBlack;
+            background-color: #ed7e00;
+          }
+          
+        }
         color: $ColorBlack;
         background: $WhiteColor;
         border-radius: $border-radius;
@@ -32,6 +47,8 @@ $ColorBlack: #000000;
         .discropt-created{
           opacity: 0.7;
           font-weight: 900;
+          
         }
+        
       }
     }

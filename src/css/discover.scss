@@ -1,21 +1,21 @@
-$backgroundGreen: #387373;
+$backgroundGreen: #C4D6E7 ;
 $text-transform: capitalize;
 $padding-top-btn: 1.5rem;
 $padding: 1rem;
 $paddingAll: 2rem;
 $overflow: auto;
-$WhiteColor: #eee;
+$BlueColor: #106899 ;
 $ColorBlack: #000000;
 //
 .discover-content {
-  h2 {
+  h1 {
     text-align: center;
-    color: $WhiteColor;
+    color: $BlueColor;
   }
   .DiscoverCarousel-container {
     background: $backgroundGreen;
     padding: 2rem 1.5rem;
-    border-radius: 3.3rem;
+    border-radius: 0rem;
     flex-wrap: wrap;
     overflow: $overflow;
 
