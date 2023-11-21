@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../css/register.scss";
 import { registerUser } from "../../utilities/service/api.js";
-
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +12,6 @@ const Register = () => {
 
   const [error, setError] = useState("");
   const [confirmationMessage, setConfirmationMessage] = useState("");
-
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
@@ -32,12 +30,10 @@ const Register = () => {
 
   const handleRegister = async (evt) => {
     evt.preventDefault();
-
+    setConfirmationMessage("");
     const { name, email, password, confirmPassword } = formData;
-
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
-      setConfirmationMessage("");
       return;
     }
     try {
