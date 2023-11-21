@@ -1,101 +1,157 @@
 $backgroundGreen: #387373;
 $BlackWhiteColor: #eee;
-$WhitColor: #fff;
+$WhitColor: white;
 $ColorBlack: #000000;
 $colorPrimary: #4caf50; // green
 $colorSecondary: #ff6f61; // red
 $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
-
+$ColoeHellgrün: #e4f2e7;
 .register_container {
   background: $backgroundGreen;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin: 0 auto;
   height: 80vh;
   width: 90%;
   border-radius: 3.3rem;
-
-  .title {
-    color: $WhitColor;
-    font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhitColor;
-  }
-
-  .register-form {
-    width: 320px;
-    height: 410px;
-    background: #e4f2e7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-    border-radius: 3rem;
+  flex-wrap: wrap;
+  .formatRegeister {
     text-align: center;
-    box-shadow: $boxShadow;
-
-    form {
-      width: 240px;
+    .title {
+      color: $WhitColor;
+      font-weight: normal;
+      text-shadow: 0px 0px 0.3px $WhitColor;
+    }
+    .register-form {
+      width: 320px;
+      height: 410px;
+      background: $ColoeHellgrün;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem auto;
+      border-radius: 3rem;
+      text-align: center;
+      box-shadow: $boxShadow;
 
-      label {
+      form {
+        width: 240px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Neues */
-        padding: 0.5rem 0;
-        gap: 4px 0;
-        font-size: 1.1rem;
-        color: $colorGrau;
 
-        input {
-          width: 100%;
-          padding: 0.6rem 0;
-          border-radius: 2rem;
-          outline: none;
-          border: none;
-          background-color: #cccc;
-          padding-left: 1rem;
-        }
-
-        .pwdvisibility {
-          cursor: pointer;
-          font-size: 0.8rem;
-          color: $colorGrau;
-          margin-left: auto; /* Neues */
-        }
-      }
-
-      .Register_btn {
-        button {
-          cursor: pointer;
-          width: 100px;
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Neues */
           padding: 0.5rem 0;
-          border-radius: 2rem;
-          border: none;
-          outline: none;
-          color: #000000;
-          transition: all 0.9s ease;
-          background: #cccc;
-          margin-top: 1rem;
+          gap: 4px 0;
+          font-size: 1.1rem;
+          color: $colorGrau;
+          .inputPassword {
+            display: flex;
+            align-items: center;
+            width: 240px; /* Breite des Containers anpassen */
+            position: relative; /* Ändern, um das Icon positionieren zu können */
 
-          &:hover {
-            background-color: #9d9797;
+            input {
+              width: 100%;
+              padding-right: 30px; /* Platz für das Icon reservieren */
+            }
+            .pwdvisibilityPass {
+              position: absolute;
+              right: 10px; /* Position des Icons einstellen */
+              cursor: pointer;
+              font-size: 0.8rem;
+              color: $colorGrau;
+              background-color: transparent;
+              border: none;
+              outline: none;
+            }
+          }
+          .inputConfrimPassword {
+            position: relative;
+            display: flex;
+            width: 240px;
+            align-items: center;
+            input {
+              width: 100%;
+              padding-right: 30px;
+            }
+            .pwdvisibility_confrimPassword {
+              position: absolute;
+              right: 10px;
+              cursor: pointer;
+              font-size: 0.8rem;
+              color: $colorGrau;
+              background-color: transparent;
+              border: none;
+              outline: none;
+            }
+          }
+          input {
+            width: 100%;
+            padding: 0.6rem 0;
+            border-radius: 2rem;
+            outline: none;
+            border: none;
+            background-color: #cccc;
+            padding-left: 1rem;
+          }
+        }
+
+        .Register_btn {
+          button {
+            cursor: pointer;
+            width: 100px;
+            padding: 0.5rem 0;
+            border-radius: 2rem;
+            border: none;
+            outline: none;
+            color: #000000;
+            transition: all 0.9s ease;
+            background: #cccc;
+            margin-top: 1rem;
+
+            &:hover {
+              background-color: #9d9797;
+            }
           }
         }
       }
     }
-
     .login_link {
       cursor: pointer;
       display: flex;
+      align-items: center;
+      justify-content: center;
       color: $WhitColor;
-
       .toLoginLink {
         color: $WhitColor;
         padding-left: 0.4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .register_container {
+    margin-top: 3rem;
+    height: 100%;
+    width: 90%;
+    .formatRegeister {
+      height: auto;
+      margin-top: 3rem;
+      .register-form {
+        width: 100%;
+        form {
+          margin: 1rem;
+          input {
+            padding: 1rem;
+            width: 200px;
+          }
+        }
       }
     }
   }

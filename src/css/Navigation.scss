@@ -9,7 +9,7 @@
   margin: 1rem 0;
   .logo {
     text-decoration: none;
-    width: 20%;
+    width: 25%;
     .title {
       font-size: 1.4rem;
       color: #000;
@@ -24,9 +24,7 @@
     flex-direction: column;
     width: 2.25rem;
     height: 2rem;
-    //  top: 1rem;
     right: 0.8rem;
-
     span {
       width: 100%;
       height: 0.4rem;
@@ -45,7 +43,7 @@
     }
     &.open {
       li {
-        display: block; /* oder display: flex; oder display: inline-block; */
+        display: flex ; /* oder display: block; oder display: inline-block; */
       }
     }
   }
@@ -101,16 +99,18 @@
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
-
+    flex-direction: column;
     .logo {
       display: flex;
+      width: 100%;
+      text-align: center;
+      margin: 0.3rem 0;
       .title {
-
         font-size: 1.2rem;
         font-weight: bold;
       }
     }
-    flex-direction: column;
+
     .menu {
       display: flex;
     }

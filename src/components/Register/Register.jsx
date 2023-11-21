@@ -68,96 +68,102 @@ const Register = () => {
   return (
     <div>
       <div className="register_container">
-        <h1 className="title">Register</h1>
-        <div className="register-form">
-          {!isRegistered ? (
-            <form onSubmit={handleRegister}>
-              <div className="">
-                <label htmlFor="name">
-                  Username
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your username"
-                    required
-                  />
-                </label>
-              </div>
-              <div className="">
-                <label htmlFor="email">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Valid email address"
-                    required
-                  />
-                </label>
-              </div>
-              <div className="password-input-container">
-                <label htmlFor="password" className="password-label">
-                  Password
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    name="password"
-                    id="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Password at least 8 characters"
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="pwdvisibility"
-                    onClick={togglePasswordVisibility}
-                  >
-                    {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-                  </button>
-                </label>
-              </div>
+        <div className="formatRegeister">
+          <h1 className="title">Register</h1>
+          <div className="register-form">
+            {!isRegistered ? (
+              <form onSubmit={handleRegister}>
+                <div className="">
+                  <label htmlFor="name">
+                    Username
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your username"
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="">
+                  <label htmlFor="email">
+                    Email
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Valid email address"
+                      required
+                    />
+                  </label>
+                </div>
+                <div className="password-input-container">
+                  <label htmlFor="password" className="password-label">
+                    Password
+                    <div className="inputPassword">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        name="password"
+                        id="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        placeholder="Password at least 8 characters"
+                        required
+                      />
+                      <button
+                        type="button"
+                        className="pwdvisibilityPass"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                      </button>
+                    </div>
+                  </label>
+                </div>
 
-              <div className="password-input-container">
-                <label htmlFor="confirmPassword" className="password-label">
-                  Confirm Password
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    name="confirmPassword"
-                    id="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm password"
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="pwdvisibility"
-                    onClick={togglePasswordVisibility}
-                  >
-                    icon
-                  </button>
-                </label>
-              </div>
-              <div className="Register_btn">
-                <button type="submit">Register</button>
-              </div>
-            </form>
-          ) : null}
-          {error && <p className="error-message">{error}</p>}
-          {confirmationMessage && (
-            <p className="confirmation-message">{confirmationMessage}</p>
-          )}
-        </div>
-        <div className="login_link">
-          <p>or</p>
-          <NavLink className="toLoginLink" to="/login">
-            Login
-          </NavLink>
+                <div className="password-input-container">
+                  <label htmlFor="confirmPassword" className="password-label">
+                    Confirm Password
+                    <div className="inputConfrimPassword">
+                      <input
+                        type={passwordVisible ? "text" : "password"}
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                        placeholder="Confirm password"
+                        required
+                      />
+                      <button
+                        type="button"
+                        className="pwdvisibility_confrimPassword"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                      </button>
+                    </div>
+                  </label>
+                </div>
+                <div className="Register_btn">
+                  <button type="submit">Register</button>
+                </div>
+              </form>
+            ) : null}
+            {error && <p className="error-message">{error}</p>}
+            {confirmationMessage && (
+              <p className="confirmation-message">{confirmationMessage}</p>
+            )}
+          </div>
+          <div className="login_link">
+            or
+            <NavLink className="toLoginLink" to="/login">
+              Login
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>
