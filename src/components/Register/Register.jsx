@@ -2,21 +2,22 @@ import React, { useState, useEffect } from "react";
 import "../../css/register.scss";
 import { registerUser } from "../../utilities/service/api.js";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+
 const Register = () => {
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
-  });
-
+  };
+  const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState("");
   const [confirmationMessage, setConfirmationMessage] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
     setError("");
-    setConfirmationMessage("");
+    //setConfirmationMessage("");
   }, [formData]);
 
   const handleChange = (evt) => {
@@ -44,7 +45,7 @@ const Register = () => {
       });
 
       console.log("Full Response:", response);
-
+      setFormData(initialState);
       setConfirmationMessage(
         `Welcome ${name}! Please check your email ${email} for confirmation`
       );
