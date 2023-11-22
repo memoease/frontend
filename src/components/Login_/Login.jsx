@@ -63,26 +63,28 @@ const Login = () => {
           <form onSubmit={loginHandler}>
             <div className="">
               <label htmlFor="email">
-                Email:
+                Email
                 <input
                   type="text"
                   name="email"
                   id="email"
                   value={loginData.email}
                   onChange={changeHandler}
+                  placeholder="Please provide your email"
                   required
                 />
               </label>
             </div>
             <div className="">
               <label htmlFor="password">
-                Password:
+                Password
                 <input
                   type="password"
                   name="password"
                   id="password"
                   value={loginData.password}
                   onChange={changeHandler}
+                  placeholder="and your password"
                   required
                 />
               </label>
