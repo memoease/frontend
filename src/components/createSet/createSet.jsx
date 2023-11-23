@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 
-export const CreateSet = () => {
+export const Box = () => {
   const { user } = useAuth();
   const [formData, setFormData] = useState({
     title: "",
