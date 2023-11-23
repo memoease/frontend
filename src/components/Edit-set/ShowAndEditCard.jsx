@@ -17,7 +17,6 @@ export default function ShowAndEditCards({ question = "", answer = "", cardId, s
                 [evt.target.name]: evt.target.value
             }
         ));
-        console.log(newCard);
     };
 
     const handleClick = (evt) => {
