@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 
+import EditPicture from "../../assets/Edit.png";
+
 export const Box = () => {
   const { user } = useAuth();
   const [formData, setFormData] = useState({
@@ -58,34 +60,40 @@ export const Box = () => {
 
   return (
     <div className="box create-set">
-      <h2>Create a new Flashcard Set</h2>
-      <form onSubmit={handleSave}>
-        <div className="group">
-          <div>
-            <label htmlFor="title">Enter title:</label>
-            <input
-              id="title"
-              type="text"
-              placeholder="Title (required)"
-              value={formData.title}
-              onChange={handleChange("title")}
-              required
-            />
+      <div className="content-wrapper">
+        <h2>Create a new Flashcard Set</h2>
+
+        <form onSubmit={handleSave}>
+          <div className="group">
+            <div>
+              <label htmlFor="title">Enter Title</label>
+              <input
+                id="title"
+                type="text"
+                placeholder="Title (required)"
+                value={formData.title}
+                onChange={handleChange("title")}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="description">Enter Description</label>
+              <textarea
+                id="description"
+                placeholder="Description (optional)"
+                value={formData.description}
+                onChange={handleChange("description")}
+              ></textarea>
+            </div>
           </div>
-          <div>
-            <label htmlFor="description">Enter description:</label>
-            <textarea
-              id="description"
-              placeholder="Description (optional)"
-              value={formData.description}
-              onChange={handleChange("description")}
-            ></textarea>
-          </div>
-        </div>
-        <button type="submit" className="save">
-          Save
-        </button>
-      </form>
+          <button type="submit" className="save">
+            Continue
+          </button>
+        </form>
+      </div>
+      <div className="image-container">
+        <img src={EditPicture} alt="Student with Pen" />
+      </div>
     </div>
   );
 };

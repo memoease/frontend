@@ -1,118 +1,104 @@
-.create-set {
-    background-color: #ffffff;
-    display: flex;
+.box.create-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e6eaec;
+  padding: 20px;
+  color: #106899;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.content-wrapper {
+  width: 80%;
+  padding: 20px;
+  color: #106899;
+}
+
+form {
+  width: 100%;
+  font-size: 25px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(196, 214, 231, 0.3);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.save {
+  margin: 1.5rem;
+  text-align: center;
+  background: #fdb25b;
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 0.8px #000;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    background: #ed7e00;
+  }
+}
+
+.image-container {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 50%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .box.create-set {
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-  
-  .create-set .overlap-wrapper {
-    background-color: #ffffff;
-    height: 868px;
-    width: 1280px;
-  }
-  
-  .create-set .overlap {
-    background-color:#387373;
-    border-radius: 46px;
-    box-shadow: 4px 6px 4px #00000040;
-    height: 80vh;
-    position: relative;
-  }
-  
-  .create-set .group {
-    height: 242px;
-    left: 96px;
-    position: absolute;
-    top: 167px;
-    width: 1073px;
-  }
-  
-  .create-set .overlap-group {
-    background-color: #eeeeee;
-    border-radius: 46px;
-    box-shadow: 4px 6px 4px #00000040;
-    height: 60px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 1069px;
-    font-size: 20px;
-    font-weight: 300;
-    left: 3px;
-    letter-spacing: 0;
-    line-height: normal;
-    text-align: center;
-  }
-  
-  .create-set .text-wrapper {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 200;
-    height: 56px;
-    left: 33px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 0;
-    width: 251px;
-  }
-  
-  .create-set .div-wrapper {
-    background-color: #eeeeee;
-    border-radius: 46px;
-    box-shadow: 4px 6px 4px #00000040;
-    height: 115px;
-    left: 0;
-    position: absolute;
-    top: 127px;
-    width: 1069px;
-    font-size: 20px;
-    font-weight: 300;
-    left: 3px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-  }
-  
-  .create-set .div {
-    color: #000000;
-    font-family: "Inter", Helvetica;
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 200;
-    height: 56px;
-    left: 33px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 2px;
-    width: 307px;
-  }
-  
 
-.create-set .save {
-    
-    background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
-    
-    border-radius: 10px;
-    left: 931px;
-    position: absolute;
-    top: 65vh;
-    text-align: center;
-    line-height: 53px; 
-    font-size: 20px; 
-    height: 53px;
-    width: 150px;
-    
+  .content-wrapper {
+    width: 48%; /* 50% minus Platz für den Abstand */
+    margin-right: 2%; /* Abstand zwischen Formular und Bild */
+  }
+
+  .image-container {
+    width: 48%;
+  }
 }
-
-
-.create-set .save:hover {
-    background: linear-gradient(to bottom, #dcdcdc, #c0c0c0);
-    
-}
-
