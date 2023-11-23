@@ -68,13 +68,14 @@ const Login = () => {
           <form onSubmit={loginHandler}>
             <div className="">
               <label htmlFor="email">
-                Email:
+                Email
                 <input
                   type="text"
                   name="email"
                   id="email"
                   value={loginData.email}
                   onChange={changeHandler}
+                  placeholder="Please provide your email"
                   required
                 />
               </label>
