@@ -90,7 +90,7 @@ const Login = () => {
                     id="password"
                     value={loginData.password}
                     onChange={changeHandler}
-                    placeholder="Password at least 8 characters"
+                    placeholder="and your password"
                     required
                   />
                   <button
