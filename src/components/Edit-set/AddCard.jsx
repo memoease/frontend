@@ -3,7 +3,7 @@ import { Form } from "react-router-dom";
 import { postNewCardToSet } from "../../utilities/service/api";
 
 
-export default function AddCard({ setId }) {
+export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
 
     const [entry, setEntry] = useState({
         question: "",
@@ -24,7 +24,8 @@ export default function AddCard({ setId }) {
 
     const saveEntry = async (evt) => {
         evt.preventDefault();
-        await postNewCardToSet(setId);
+        await postNewCardToSet(setId, entry);
+        setNewCardAdded(!newCardAdded);
         setEntry({
             question: "",
             answer: ""

@@ -10,7 +10,7 @@ import { getSetBySetId } from "../../utilities/service/api";
 const EditSet = () => {
   const { setId } = useParams();
   const [flashcards, setFlashcards] = useState([]);
-
+  const [newCardAdded, setNewCardAdded] = useState(true);
   useEffect(() => {
     async function fetchSetData(setId) {
       try {
@@ -23,6 +23,19 @@ const EditSet = () => {
     };
     fetchSetData(setId);
   }, []);
+
+  useEffect(() => {
+    async function fetchSetData(setId) {
+      try {
+        const cardSet = await getSetBySetId(setId);
+        setFlashcards(cardSet.flashcards)
+        console.log(flashcards);
+      } catch (error) {
+        console.error(error);
+      };
+    };
+    fetchSetData(setId);
+  }, [newCardAdded]);
 
 
   const renderCards = () => {
@@ -64,7 +77,7 @@ const EditSet = () => {
         </div>
         <div className="FromEdit">
           {renderCards()}
-          <AddCard setId={setId} />
+          <AddCard setId={setId} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
         </div>
       </div>
     </div>
