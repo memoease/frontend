@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../utilities/hooks/useAuth";
-import { postNewFlashcardSet } from "../../utilities/api";
+import { postNewFlashcardSet } from "../../utilities/service/api";
 import { useNavigate } from "react-router-dom";
 
 import "./style.css";
