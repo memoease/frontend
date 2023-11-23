@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { Form } from "react-router-dom";
+import { postNewCardToSet } from "../../utilities/service/api";
 
 
-export default function AddCard({ setFakeDB, fakeDB }) {
+export default function AddCard({ setId }) {
 
     const [entry, setEntry] = useState({
         question: "",
@@ -16,19 +17,14 @@ export default function AddCard({ setFakeDB, fakeDB }) {
         setEntry(prev => (
             {
                 ...prev,
-                _id: fakeDB.length + 1,
                 [evt.target.name]: evt.target.value
             }
         ));
-        console.log(entry);
     };
 
-    const saveEntry = (evt) => {
+    const saveEntry = async (evt) => {
         evt.preventDefault();
-        setFakeDB(prev => ([
-            ...prev,
-            entry
-        ]));
+        await postNewCardToSet(setId);
         setEntry({
             question: "",
             answer: ""

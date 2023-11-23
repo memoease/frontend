@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/EditSet.scss";
 import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useParams } from "react-router-dom";
+import { getSetBySetId } from "../../utilities/service/api";
+
 const EditSet = () => {
-  const [fakeDB, setFakeDB] = useState([
-    {
-      _id: 1,
-      question: "house",
-      answer: "haus",
-    },
-    {
-      _id: 2,
-      question: "mouse",
-      answer: "maus",
-    },
-  ]);
+  const { setId } = useParams();
+  const [flashcards, setFlashcards] = useState([]);
+
+  useEffect(() => {
+    async function fetchSetData(setId) {
+      try {
+        const cardSet = await getSetBySetId(setId);
+        setFlashcards(cardSet.flashcards)
+        console.log(flashcards);
+      } catch (error) {
+        console.error(error);
+      };
+    };
+    fetchSetData(setId);
+  }, []);
+
+
   const renderCards = () => {
-    const entries = fakeDB.map((card) => {
+    const entries = flashcards.map((card) => {
       return (
         <ShowAndEditCards
           question={card.question}
@@ -56,7 +64,7 @@ const EditSet = () => {
         </div>
         <div className="FromEdit">
           {renderCards()}
-          <AddCard setFakeDB={setFakeDB} fakeDB={fakeDB} />
+          <AddCard setId={setId} />
         </div>
       </div>
     </div>

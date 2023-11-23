@@ -18,15 +18,15 @@ export default function ShowAndEditCards({ question = "", answer = "", id }) {
 
     return (
         <form key={id}>
-            <div className="inputCards" key={id}>
+            <div className="inputCards" >
                 <input type="text" name="question" value={newCard.question} disabled={disabled} required />
                 <input type="text" name="answer" value={newCard.answer} disabled={disabled} required />
                 {disabled ?
-                    <button className="EditBtn" onClick={handleClick}>
+                    <button className="EditBtn" onClick={handleClick} >
                         Edit
                     </button>
                     :
-                    <button className="EditBtn" onClick={handleClick}>
+                    <button className="EditBtn" onClick={handleClick} >
                         Save
                     </button>
                 }
