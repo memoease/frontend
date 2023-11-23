@@ -22,7 +22,7 @@ const CarouselItem = ({ data }) => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1020,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -30,7 +30,7 @@ const CarouselItem = ({ data }) => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

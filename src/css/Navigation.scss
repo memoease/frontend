@@ -1,142 +1,147 @@
 .toNavigation-list {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 1.5rem;
-  text-transform: capitalize;
-  padding: 0.5rem;
-  margin: 1rem 0;
-  .logo {
-    text-decoration: none;
-    width: 25%;
-    .title {
-      font-size: 1.4rem;
-      color: #000;
-      font-weight: 200;
-    }
-  }
-
-  .menu {
-    position: absolute;
-    display: none;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 2.25rem;
-    height: 2rem;
-    right: 0.8rem;
-    span {
-      width: 100%;
-      height: 0.4rem;
-      border-radius: 0.2rem;
-      background-color: #000000;
-    }
-  }
-  ul {
+  width: 90%;
+  margin: auto;
+  background-color:  #f5f5f5;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 80%;
-    li {
-      list-style-type: none;
-      margin: 1rem;
-    }
-    &.open {
-      li {
-        display: flex ; /* oder display: block; oder display: inline-block; */
-      }
-    }
-  }
-
-  .navList {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    color: #000;
-    &::after {
-      content: "";
-      width: 100%;
-      height: 1.5px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: #000;
-      transform: scaleX(0); /* Linie ist anfangs unsichtbar */
-      //   transform-origin: left;
-      transition: transform 0.3s;
-    }
-    &:hover::after {
-      transform: scaleX(1); /* Linie wird sichtbar bei Hover */
-    }
-  }
-
-  .btn-Head {
-    .btnLoginin,
-    .btnRegister {
-      margin: 0 1rem;
-      text-align: center;
-      background: #387373;
-      color: white;
-      border-radius: 1rem;
-      font-size: 0.8rem;
-      outline: none;
-      border: none;
-      box-shadow: 0px 0px 0.8px #000;
-      padding: 0.3rem 1rem;
-      text-decoration: none;
-      transition: all 0.5s ease-in;
-      &:hover {
-        background: #014f4f;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .toNavigation-list {
-    background-color: #eee;
-    border-radius: 0;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    flex-direction: column;
+    justify-content: space-between;
+    text-transform: capitalize;
     .logo {
-      display: flex;
-      width: 100%;
-      text-align: center;
-      margin: 0.3rem 0;
+      padding-left:  1rem;
+      text-decoration: none;
+      width: 20%;
       .title {
-        font-size: 1.2rem;
-        font-weight: bold;
+        font-size: 1.4rem;
+        color: #000;
+        font-weight: 200;
       }
     }
-
+  
     .menu {
-      display: flex;
+      position: absolute;
+      display: none;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 2.25rem;
+      height: 2rem;
+      //  top: 1rem;
+      right: 0.8rem;
+  
+      span {
+        width: 100%;
+        height: 0.4rem;
+        border-radius: 0.2rem;
+        background-color: #000000;
+      }
     }
     ul {
       display: flex;
-      flex-direction: column;
-      text-align: center;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
       li {
-        display: none;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0.3rem 0;
-        flex-direction: column;
-        font-size: 0.8rem;
+        list-style-type: none;
+        margin: 1rem;
+      }
+      &.open {
+        li {
+          display: block; 
+        }
       }
     }
-
+  
+    .navList {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: #000;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1.5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        transform: scaleX(0); /* Linie ist anfangs unsichtbar */
+        //   transform-origin: left;
+        transition: transform 0.3s;
+      }
+      &:hover::after {
+        transform: scaleX(1); /* Linie wird sichtbar bei Hover */
+      }
+    }
+  
     .btn-Head {
-      gap: 1rem 0;
-      width: 100%;
-      margin: 1rem 0;
       .btnLoginin,
-      .btnRegister{
+      .btnRegister {
+        margin: 1.5rem;
+        text-align: center;
+        background: #106899;
+        color: white;
+        border-radius: 1rem;
         font-size: 0.8rem;
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 0.8px #000;
+        padding: 0.3rem 1rem;
+        text-decoration: none;
+        transition: all 0.5s ease-in;
+        &:hover {
+          background: #068bd3;
+        }
+        
+      }
+      .btnRegister{
+        margin-right: 0rem;
       }
     }
   }
-}
+  
+  @media only screen and (max-width: 600px) {
+    .toNavigation-list {
+      background-color: #eee;
+      border-radius: 0;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1rem;
+  
+      .logo {
+        display: flex;
+        .title {
+  
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+      flex-direction: column;
+      .menu {
+        display: flex;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        li {
+          display: none;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0.3rem 0;
+          flex-direction: column;
+          font-size: 0.8rem;
+        }
+      }
+  
+      .btn-Head {
+        gap: 1rem 0;
+        width: 100%;
+        margin: 1rem 0;
+        .btnLoginin,
+        .btnRegister{
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  

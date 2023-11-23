@@ -1,120 +1,81 @@
-$BackgroundCreen: #387373;
+$BackgroundLightBlue: #f5f5f5;
 $ColorWhite: #ffff;
 $ColorBlack: #000000;
-// ----------------------------> Von Susann
-$ColorYlo: #FDB25B;
-$ColorWhitHell: #D9D9D9;
-$ColorBlack: #000000;
-// ----------------------------
+$ColorYellow: #fdb25b;
+
 .HomePage_container {
   width: 90%;
-  margin: 1rem auto;
-  cursor: pointer;
-  flex-wrap: wrap;
-  // flex-direction: row;
+  margin: 0rem auto 0rem auto;
+
+  .image-container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+
+    .responsive-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   .repper-content {
-    background: $BackgroundCreen;
+    background: $BackgroundLightBlue;
     display: flex;
     justify-content: space-between;
-    border-radius: 3.3rem;
+    height: 60vh;
     padding: 4rem;
-    margin: 1rem 0;
+    margin: 0rem 0;
 
     .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       width: 50%;
       color: $ColorWhite;
+
+      .blockStart {
+        margin-top: 2.5rem;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+        background-color: $ColorYellow;
+
+        &:hover {
+          transition: all 0.5s ease;
+          box-shadow: 2px 2px 2px $ColorBlack;
+          background-color: #ed7e00;
+        }
+
+        .startLinkCardTitel {
+          font-size: 1rem;
+          text-decoration: none;
+          color: $ColorWhite;
+          font-weight: 450;
+        }
+      }
+
       .title_head {
-        font-size: 3.3rem;
+        font-weight: bolder;
+        color: #106899;
+        font-size: 4rem;
         margin-bottom: 1rem;
         letter-spacing: 3px;
         line-height: 1.1;
-      }
-      p {
-        line-height: 1.3;
-        font-weight: 200;
-      }
-    }
-    .getStartlink-content {
-      width: 50%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .startCrad {
-        width: 100%;
-        .blockStart {
-          width: 300px;
-          height: 200px;
-          margin: auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 1rem;
-          // padding: 3rem;
-          border-radius: 2rem;
-          background-color: $ColorWhite;
-          transition: all 0.3s ease;
-          &:hover {
-            box-shadow: 5px 5px 10px $ColorBlack;
-          }
-          .startLinkCardTitel {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            text-decoration: none;
-            color: #000000;
-            font-weight: 450;
-          }
-        }
-        .singinLinkCard {
-          color: $ColorWhite;
-          font-weight: 200px;
-        }
       }
     }
   }
 }
 
-@media only screen and (max-width: 750px) {
-  .HomePage_container {
-    .repper-content {
-      display: flex;
-      flex-direction: column;
-
-      .content {
-        width: 100%;
-        text-align: center;
-        margin: 1rem 0;
-
-        .title_head {
-          font-size: 2rem;
-        }
-      }
-      .getStartlink-content {
-        width: 100%;
-        margin: 0 auto;
-
-        .startCrad {
-          width: 100%;
-          margin: auto; /* Zentrierung horizontal */
-          padding: 1rem; /* Platz für Inhalt */
-          border-radius: 2rem;
-          transition: all 0.3s ease;
-          .blockStart {
-            max-width: 100%; /* Maximale Breite auf 100% des startCrad */
-            margin: 1rem auto; /* Zentrierung horizontal */
-            text-align: center; /* Optional: Zentrierung des Textes */
-            .startLinkCardTitel {
-             font-size: 1.6rem;
-            
-            }
-
-          }
-        }
-      }
+.HomePage_container {
+  .image-container {
+    @media (max-width: 800px) {
+      display: none;
     }
   }
 }

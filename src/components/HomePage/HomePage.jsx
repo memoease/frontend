@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/homePage.scss";
 import { NavLink } from "react-router-dom";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
+import homPageFoto from "../../assets/MemoBild.png";
 
 const HomePage = () => {
   return (
@@ -10,28 +11,27 @@ const HomePage = () => {
       {/*   repper-content -------------- */}
       <div className="repper-content">
         <div className="content">
-          <h1 className="title_head">Create And Discover flashcard sets</h1>
-          <p className="create-and-extend">
-            create and extend your own flashcard sets in your dashboard, decide
-            if they are private or public and start learning
-          </p>
-        </div>
-        {/* get start link -------------- */}
-        <div className="getStartlink-content">
-          <div className="startCrad">
-            <div className="blockStart">
-              <NavLink to="/" className="startLinkCardTitel">
-                Get Started
-              </NavLink>
-            </div>
-            <NavLink to="/" className="singinLinkCard">
-              Or Sing In
+          <h1 className="title_head">Create and discover flashcard sets</h1>
+          <div className="blockStart">
+            <NavLink to="/" className="startLinkCardTitel">
+              Get Started
             </NavLink>
           </div>
         </div>
+        {/* get start link -------------- */}
+        <div className="image-container">
+          <img
+            className="responsive-image"
+            src={homPageFoto}
+            alt="error message"
+          />
+        </div>
       </div>
+
       {/*  discover content ------------- */}
-      <DiscoverCarousel />
+      <div className="carousel">
+        <DiscoverCarousel />
+      </div>
     </div>
   );
 };

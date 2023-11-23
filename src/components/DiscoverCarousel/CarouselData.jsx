@@ -2,7 +2,7 @@ import React from "react";
 
 const CarouselData = ({ item, id }) => {
   return (
-    <div>
+    <div className="container">
       <div className="cards" key={id}>
         <div className="DiscoverCardsContent">
           <h1 className="title">{item.name}</h1>

@@ -8,111 +8,83 @@ $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
 $ColoeHellgrün: #e4f2e7;
 .register_container {
-  background: $backgroundGreen;
+  background: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   height: 80vh;
   width: 90%;
-  border-radius: 3.3rem;
-  flex-wrap: wrap;
-  .customRegisterContainer {
-    text-align: center;
-    .title {
-      color: $WhitColor;
-      font-weight: normal;
-      text-shadow: 0px 0px 0.3px $WhitColor;
-    }
-    .register-form {
-      width: 320px;
-      height: 410px;
-      background: $ColoeHellgrün;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 1rem auto;
-      border-radius: 3rem;
-      text-align: center;
-      box-shadow: $boxShadow;
+  
 
-      form {
-        width: 240px;
+  .title {
+    color:  #106899;
+    font-weight: normal;
+    text-shadow: 0px 0px 0.3px $WhitColor;
+  }
+
+  .register-form {
+    width: 320px;
+    height: 410px;
+    background: #C4D6E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    border-radius: 3rem;
+    text-align: center;
+    box-shadow: $boxShadow;
+
+    form {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+
+      label {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
+        gap: 4px 0;
+        font-size: 1.1rem;
+        color:  #106899;
 
-        label {
-          display: flex;
-          flex-direction: column;
-          align-items: center; /* Neues */
-          padding: 0.5rem 0;
-          gap: 4px 0;
-          font-size: 1.1rem;
-          color: $colorGrau;
-          .inputPassword {
-            display: flex;
-            align-items: center;
-            width: 240px; /* Breite des Containers anpassen */
-            position: relative; /* Ändern, um das Icon positionieren zu können */
+        input {
+          width: 100%;
+          padding: 0.6rem 0;
+          border-radius: 2rem;
+          outline: none;
+          border: none;
+          background-color: white;
+          padding-left: 1rem;
 
-            input {
-              width: 100%;
-              padding-right: 2.5rem; /* Platz für das Icon reservieren */
-            }
-            .pwdvisibilityPass {
-              position: absolute;
-              right: 10px; /* Position des Icons einstellen */
-              cursor: pointer;
-              font-size: 0.8rem;
-              color: $colorGrau;
-              background-color: transparent;
-              border: none;
-              outline: none;
-            }
-          }
-          .inputConfrimPassword {
-            position: relative;
-            display: flex;
-            width: 240px;
-            align-items: center;
-            input {
-              width: 100%;
-              padding-right: 30px;
-            }
-            .pwdvisibility_confrimPassword {
-              position: absolute;
-              right: 10px;
-              cursor: pointer;
-              font-size: 0.8rem;
-              color: $colorGrau;
-              background-color: transparent;
-              border: none;
-              outline: none;
-            }
-          }
-          input {
-            width: 100%;
-            padding: 0.6rem 0;
-            border-radius: 2rem;
-            outline: none;
-            border: none;
-            background-color: #cccc;
-            padding-left: 1rem;
-          }
+          //&:focus {
+          /* Beispiel: Änderungen beim Fokussieren des Eingabefeldes */
+          //border: 2px solid $colorPrimary;
+          //background-color: $WhitColor;
+          //color: $ColorBlack;
+          //}
         }
 
-        .Register_btn {
-          button {
-            cursor: pointer;
-            width: 100px;
-            padding: 0.5rem 0;
-            border-radius: 2rem;
-            border: none;
-            outline: none;
-            color: #000000;
-            transition: all 0.9s ease;
-            background: #cccc;
-            margin-top: 1rem;
+        .pwdvisibility {
+          cursor: pointer;
+          font-size: 0.8rem;
+          color: $colorGrau;
+          margin-left: auto;
+        }
+
+      .Register_btn {
+        button {
+          cursor: pointer;
+          width: 100%;
+          padding: 0.5rem 0;
+          border-radius: 2rem;
+          border: none;
+          outline: none;
+          color: $ColorBlack;
+          transition: all 3s ease;
+          background: white;
+          margin-top: 1rem;
 
             &:hover {
               background-color: #9d9797;

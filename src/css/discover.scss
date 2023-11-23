@@ -8,16 +8,19 @@ $BlueColor: #106899 ;
 $ColorBlack: #000000;
 //
 .discover-content {
+  
   h1 {
     text-align: center;
     color: $BlueColor;
   }
   .DiscoverCarousel-container {
+    
     background: $backgroundGreen;
     padding: 2rem 1.5rem;
     border-radius: 0rem;
-    flex-wrap: wrap;
-    overflow: $overflow;
+    
+    
+    
 
     h2 {
       text-transform: $text-transform;
