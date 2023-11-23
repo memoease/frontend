@@ -44,7 +44,9 @@ const EditSet = () => {
         <ShowAndEditCards
           question={card.question}
           answer={card.answer}
-          id={card._id}
+          cardId={card._id}
+          setNewCardAdded={setNewCardAdded}
+          newCardAdded={newCardAdded}
         />
       );
     });

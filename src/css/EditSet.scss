@@ -19,6 +19,7 @@ $boxShadow: 0px 0px 10px #0000;
     font-size: 2rem;
     font-weight: 200;
   }
+
   .EditSet_Content {
     margin: 0 auto;
     width: 100%;
@@ -33,19 +34,23 @@ $boxShadow: 0px 0px 10px #0000;
       .edidtOverlap-group {
         cursor: pointer;
         width: 50%;
-.slidNumber{
-  padding: 0 2rem;
-}
+
+        .slidNumber {
+          padding: 0 2rem;
+        }
+
         .editGroup {
           margin: 2rem 0;
           text-align: center;
           display: flex;
           justify-content: center;
           align-items: center;
+
           .flipped-number {
             cursor: pointer;
             padding: 0 3rem;
           }
+
           .ellipseLeft {
             width: 35px;
             height: 35px;
@@ -53,10 +58,12 @@ $boxShadow: 0px 0px 10px #0000;
             border-radius: 50%;
             box-shadow: 0px 2px 10px rgb(6, 6, 6);
             transition: all 0.6s ease;
+
             &:hover {
               background-color: #ff0000;
             }
           }
+
           .ellipseRight {
             width: 35px;
             height: 35px;
@@ -64,17 +71,20 @@ $boxShadow: 0px 0px 10px #0000;
             line-height: 40px;
             box-shadow: 0px 2px 10px rgb(4, 4, 4);
             transition: all 0.6s ease;
+
             &:hover {
               background-color: rgb(0, 255, 68);
             }
           }
         }
       }
+
       .setPractice {
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+
         .cardEdit {
           width: 60%;
           height: 300px;
@@ -87,6 +97,7 @@ $boxShadow: 0px 0px 10px #0000;
           align-items: center;
           flex-direction: column;
           box-shadow: 0px 0px 5px #000000;
+
           .title {
             width: 200px;
             letter-spacing: 2px;
@@ -95,6 +106,7 @@ $boxShadow: 0px 0px 10px #0000;
             font-size: 2.3rem;
             text-shadow: 0px 0px 10px #0000;
           }
+
           button {
             width: 100px;
             display: block;
@@ -128,11 +140,13 @@ $boxShadow: 0px 0px 10px #0000;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+
       .inputCards {
         display: flex;
         padding: 0.5rem;
         background-color: #eee;
         border-radius: 4rem;
+
         input {
           width: 550px;
           padding: 1rem;
@@ -140,18 +154,26 @@ $boxShadow: 0px 0px 10px #0000;
           outline: none;
           background-color: #eee;
           padding-left: 0.4rem;
+
           &::placeholder {
             font-size: 1rem;
             color: rgb(71, 71, 71);
             font-weight: 300;
           }
         }
+
+        .btn-container {
+          display: flex;
+          flex-direction: column;
+        }
+
         .EditBtn {
           background-color: $backgroundGreen;
           padding: 0 0.5rem;
           width: 150px;
           height: 1.2rem;
           margin-right: 1rem;
+          margin-bottom: 0.5rem;
           border: none;
           outline: none;
           color: #ffff;
@@ -160,6 +182,7 @@ $boxShadow: 0px 0px 10px #0000;
       }
     }
   }
+
   .slider {
     height: 20vh;
     width: 350px;

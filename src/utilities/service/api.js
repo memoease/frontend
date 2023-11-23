@@ -102,6 +102,12 @@ export const deleteOneCardById = async (cardId) => {
   return response;
 };
 
+//Update a Card by ID
+export const updateCardById = async (cardId, data) => {
+  const response = await axiosInstance.put(`sets/card/${cardId}`, data);
+  return response;
+};
+
 //Get Set by Set ID
 export const getSetBySetId = async (setId) => {
   const response = await axiosInstance.get(`sets/${setId}`);
