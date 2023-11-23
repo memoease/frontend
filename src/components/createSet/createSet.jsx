@@ -43,41 +43,49 @@ export const Box = () => {
       // Redirect the user to the "edit set" page
       navigate(`/editset/${newSet._id}`);
     } catch (error) {
-      // Handle errors if the API call fails
       console.error("Error creating the flashcard set:", error);
+
+      // Check if the error has a response and data property
+      if (error.response && error.response.data) {
+        const { error: errorMessage } = error.response.data;
+
+        if (errorMessage) {
+          console.error(`API error message: ${errorMessage}`);
+        }
+      }
     }
   };
 
   return (
-    <form onSubmit={handleSave}>
-      <div className="create-set">
-        <div className="overlap-wrapper">
-          <div className="overlap">
-            <div className="group">
-              <div>
-                <input
-                  className="overlap-group"
-                  type="text"
-                  placeholder="enter title"
-                  value={formData.title}
-                  onChange={handleChange("title")}
-                />
-              </div>
-              <div>
-                <textarea
-                  className="div-wrapper"
-                  placeholder="enter description"
-                  value={formData.description}
-                  onChange={handleChange("description")}
-                ></textarea>
-              </div>
-            </div>
-            <button type="submit" className="save">
-              Save
-            </button>
+    <div className="box create-set">
+      <h2>Create a new Flashcard Set</h2>
+      <form onSubmit={handleSave}>
+        <div className="group">
+          <div>
+            <label htmlFor="title">Enter title:</label>
+            <input
+              id="title"
+              type="text"
+              placeholder="Title (required)"
+              value={formData.title}
+              onChange={handleChange("title")}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="description">Enter description:</label>
+            <textarea
+              id="description"
+              placeholder="Description (optional)"
+              value={formData.description}
+              onChange={handleChange("description")}
+            ></textarea>
           </div>
         </div>
-      </div>
-    </form>
+        <button type="submit" className="save">
+          Save
+        </button>
+      </form>
+    </div>
   );
 };
