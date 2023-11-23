@@ -73,7 +73,7 @@ return (
             <NavLink to="/" className="btnLoginin" onClick={logoutHandler}>
               Logout
             </NavLink>
-            <NavLink to="/dashboard" className="btnRegister">
+            <NavLink to="/DashBoard_login" className="btnRegister">
               Dashboard
             </NavLink>
           </li>

@@ -64,7 +64,7 @@ const Register = () => {
   return (
     <div>
       <div className="register_container">
-        <div className="formatRegeister">
+        <div className="customRegisterContainer">
           <h1 className="title">Register</h1>
           <div className="register-form">
             <form onSubmit={handleRegister}>

@@ -17,7 +17,7 @@ $ColoeHellgrün: #e4f2e7;
   width: 90%;
   border-radius: 3.3rem;
   flex-wrap: wrap;
-  .formatRegeister {
+  .customRegisterContainer {
     text-align: center;
     .title {
       color: $WhitColor;
@@ -57,7 +57,7 @@ $ColoeHellgrün: #e4f2e7;
 
             input {
               width: 100%;
-              padding-right: 30px; /* Platz für das Icon reservieren */
+              padding-right: 2.5rem; /* Platz für das Icon reservieren */
             }
             .pwdvisibilityPass {
               position: absolute;
@@ -143,7 +143,7 @@ $ColoeHellgrün: #e4f2e7;
     margin-top: 3rem;
     height: 100%;
     width: 90%;
-    .formatRegeister {
+    .customRegisterContainer {
       height: auto;
       margin-top: 3rem;
       .register-form {

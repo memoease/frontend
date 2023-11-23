@@ -8,7 +8,7 @@ $fontSizeTitle: 2em;
 $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
 
-.Login_content {
+.signupFormContainer {
   background: $backgroundGreen;
   border-radius: 3.3rem;
   height: 80vh;
@@ -45,6 +45,25 @@ $boxShadow: 0px 0px 10px #0000;
         padding: 1rem 0;
         font-size: 1.1rem;
         color: $colorGrau;
+        .inputPassword{
+          display: flex;
+          align-items: center;
+          width: 240px;
+          position: relative;
+          input{
+            width: 100%;
+            padding-left: 30px;
+          }
+          .pwdvisibilityPass{
+            cursor: pointer;
+            color: $colorGrau;
+            position: absolute;
+            right: 0.5rem;
+            background: transparent;
+            border: none;
+            outline: none;
+          }
+        }
       }
       input {
         width: 100%;
@@ -76,13 +95,14 @@ $boxShadow: 0px 0px 10px #0000;
       }
     }
   }
-  .register_link {
-    display: flex;
-    cursor: pointer;
-    color: $WhitColor;
-    .toRegisterLink {
-      color: $WhitColor;
-      padding-left: 0.4rem;
-    }
+.message-container{
+  color:$WhitColor ;
+}
+ 
+}
+
+@media only screen and (max-width: 600px){
+  .signupFormContainer{
+    margin-top: 3rem;
   }
 }

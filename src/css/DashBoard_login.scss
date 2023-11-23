@@ -18,7 +18,8 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
     margin-top: 2rem;
     border-radius: 3.3rem;
     background: $backgroundGreen;
-    padding: 4rem 0;
+    padding: 1rem 0;
+    font-family: serif;
     .title_dash {
       width: 50%;
       padding: 1rem;
@@ -44,8 +45,12 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
       .dashPlus {
         background-color: #eee;
         font-size: 3rem;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 2rem;
-        padding: 5rem;
         transition: all 0.5s ease;
         box-shadow: 0px 0px 10px rgb(189, 189, 189);
         &:hover {
@@ -63,6 +68,7 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
 
 @media (max-width: 700px) {
   .dashBorad_content {
+    margin-top: 1.5rem;
     .dashborad_add_Content {
       display: flex;
       align-items: center;
@@ -74,6 +80,7 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
         }
       }
       .dashboardAdd {
+        margin: 2rem 0;
         .dashPlus {
           padding: 2rem;
             border-radius: 1rem;
