@@ -100,7 +100,7 @@ const Register = () => {
               <div className="password-input-container">
                 <label htmlFor="password" className="password-label">
                   Password
-                  <div className="inputPassword">
+                  <div className="inputPassword_Confrim">
                     <input
                       type={passwordVisible ? "text" : "password"}
                       name="password"
@@ -124,7 +124,7 @@ const Register = () => {
               <div className="password-input-container">
                 <label htmlFor="confirmPassword" className="password-label">
                   Confirm Password
-                  <div className="inputConfrimPassword">
+                  <div className="inputPassword_Confrim">
                     <input
                       type={passwordVisible ? "text" : "password"}
                       name="confirmPassword"
@@ -136,7 +136,7 @@ const Register = () => {
                     />
                     <button
                       type="button"
-                      className="pwdvisibility_confrimPassword"
+                      className="pwdvisibilityPass"
                       onClick={togglePasswordVisibility}
                     >
                       {passwordVisible ? <FaEye /> : <FaEyeSlash />}
@@ -144,7 +144,7 @@ const Register = () => {
                   </div>
                 </label>
               </div>
-              <div className="Register_btn">
+              <div className="RegisterBtn">
                 <button type="submit">Register</button>
               </div>
             </form>
