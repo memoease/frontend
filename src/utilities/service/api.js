@@ -91,8 +91,8 @@ export const getFlashcardSetsByUser = async () => {
 };
 
 // Add a new Card to a set
-export const postNewCardToSet = async (setId) => {
-  const response = await axiosInstance.post(`sets/card/${setId}`);
+export const postNewCardToSet = async (setId, cardData) => {
+  const response = await axiosInstance.post(`sets/card/${setId}`, cardData);
   return response.data;
 };
 
