@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-import * as api from "../api";
+import * as api from "../service/api";
 
 // Create React-Context for Cards
 const CardsContext = createContext({});
