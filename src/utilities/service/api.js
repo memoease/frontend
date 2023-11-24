@@ -134,7 +134,7 @@ export const getRandomPubSets = async () => {
 
 // start Learnsession
 export const startLearnSession = async (setId) => {
-  const response = await axiosInstance.get(`session/${setId}`);
+  const response = await axiosInstance.post(`session/${setId}`);
   return response.data;
 };
 

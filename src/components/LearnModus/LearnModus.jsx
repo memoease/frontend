@@ -17,10 +17,11 @@ export const LearnModus = () => {
     const startSession = async () => {
       try {
         // Start Learn Session
+
         const session = await startLearnSession(setId);
         setSessionData(session);
       } catch (error) {
-        console.error("Error in LearnModus useEffect:", error);
+        console.error("Error in LearnModus useEffect:", error.response.data);
       }
     };
 
