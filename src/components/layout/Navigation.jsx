@@ -23,7 +23,7 @@ const Navigation = () => {
   };
   return (
     <div className="navigation">
-      <div className="toNavigation-list">
+      <div className="navigationHead">
         <NavLink className="logo" to="/">
           <h2 className="title">MemoEase</h2>
         </NavLink>

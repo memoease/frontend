@@ -1,15 +1,15 @@
-.toNavigation-list {
+.navigationHead{
   width: 90%;
   margin: auto;
-  background-color:  #f5f5f5;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     text-transform: capitalize;
+    margin-bottom: 3rem;
     .logo {
       padding-left:  1rem;
       text-decoration: none;
       width: 20%;
+      margin-top: 1rem;
       .title {
         font-size: 1.4rem;
         color: #000;
@@ -62,7 +62,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: #000;
+        background: #fdb25b;
         transform: scaleX(0); /* Linie ist anfangs unsichtbar */
         //   transform-origin: left;
         transition: transform 0.3s;
@@ -73,11 +73,12 @@
     }
   
     .btn-Head {
+  
       .btnLoginin,
       .btnRegister {
         margin: 1.5rem;
         text-align: center;
-        background: #106899;
+       background: #ff8800;
         color: white;
         border-radius: 1rem;
         font-size: 0.8rem;
@@ -88,7 +89,7 @@
         text-decoration: none;
         transition: all 0.5s ease-in;
         &:hover {
-          background: #068bd3;
+          background: #f48a11;
         }
         
       }
@@ -98,37 +99,40 @@
     }
   }
   
-  @media only screen and (max-width: 600px) {
-    .toNavigation-list {
+  @media only screen and (max-width: 700px) {
+    .navigationHead {
       background-color: #eee;
       border-radius: 0;
       width: 100%;
-      margin: 0 auto;
-      padding: 1rem;
-  
+      margin:0 auto;
+      padding-top: 1rem;
+      text-align: center;
+       flex-direction: column;
       .logo {
         display: flex;
         .title {
-  
           font-size: 1.2rem;
           font-weight: bold;
         }
       }
-      flex-direction: column;
+ 
       .menu {
         display: flex;
       }
       ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+    display: flex;
+    flex-direction: column;
+width: 100%;
+margin: 0 auto;
+
+
         li {
           display: none;
           width: 100%;
-          justify-content: space-between;
-          align-items: center;
-          margin: 0.3rem 0;
-          flex-direction: column;
+          // justify-content: space-between;
+          // align-items: center;
+           margin: 0.3rem 0;
+          // flex-direction: column;
           font-size: 0.8rem;
         }
       }
