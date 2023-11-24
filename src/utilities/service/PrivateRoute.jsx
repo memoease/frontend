@@ -9,4 +9,4 @@ export default function PrivateRoute() {
   }
 
   return authorized ? <Outlet /> : <Navigate to="/" />;
-}
+};

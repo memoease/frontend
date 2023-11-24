@@ -11,6 +11,8 @@ const EditSet = () => {
   const { setId } = useParams();
   const [flashcards, setFlashcards] = useState([]);
   const [newCardAdded, setNewCardAdded] = useState(true);
+
+
   useEffect(() => {
     async function fetchSetData(setId) {
       try {
@@ -36,7 +38,6 @@ const EditSet = () => {
     };
     fetchSetData(setId);
   }, [newCardAdded]);
-
 
   const renderCards = () => {
     const entries = flashcards.map((card) => {
