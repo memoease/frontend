@@ -18,7 +18,6 @@ const EditSet = () => {
       try {
         const cardSet = await getSetBySetId(setId);
         setFlashcards(cardSet.flashcards)
-        console.log(flashcards);
       } catch (error) {
         console.error(error);
       };
@@ -31,7 +30,6 @@ const EditSet = () => {
       try {
         const cardSet = await getSetBySetId(setId);
         setFlashcards(cardSet.flashcards)
-        console.log(flashcards);
       } catch (error) {
         console.error(error);
       };
