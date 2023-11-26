@@ -9,7 +9,7 @@ $WhitGrauColor: #9d9797;
 $boxShadow: 0px 0px 10px #0000;
 
 .setting_content {
-  background: $backgroundGreen;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,14 +19,14 @@ $boxShadow: 0px 0px 10px #0000;
   width: 90%;
   border-radius: 3.3rem;
   .title {
-    color: $WhitColor;
+    color: #106899;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhitColor;
   }
   .settingForm {
-    width: 300px;
-    height: 320px;
-    background: #e4f2e7;
+    width: 320px;
+    height: 400px;
+    background:  #C4D6E7 ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ $boxShadow: 0px 0px 10px #0000;
     box-shadow: $boxShadow;
 
     form {
-      width: 240px;
+      
       display: flex;
       margin: 1rem;
       flex-direction: column;
