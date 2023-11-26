@@ -20,6 +20,21 @@ $ColorBlack: #000000;
     h2 {
       text-transform: $text-transform;
     }
-   
+    > div {
+    .slick-slider.slick-initialized {
+      .slick-arrow.slick-next::before{
+        color: #106899;
+        font-size: 35px;
+      }
+      .slick-arrow.slick-prev::before{
+        color: #106899;
+        font-size: 35px;
+      }
+      .slick-prev, .slick-next{
+        width: 50px;
+      }
+    
+    }
+  }
   }
 }
