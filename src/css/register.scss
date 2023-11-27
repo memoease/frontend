@@ -1,14 +1,5 @@
-$backgroundGreen: #387373;
-$BlackWhiteColor: #eee;
-$WhitColor: white;
-$ColorBlack: #000000;
-$colorPrimary: #4caf50; // green
-$colorSecondary: #ff6f61; // red
-$colorGrau: #4d4d4dcc;
-$boxShadow: 0px 0px 10px #0000;
-$ColoeHellgrün: #e4f2e7;
-$ColorLightGrey: #e6eaec;
-$DarkCerulean: #106899;
+
+@import 'Colors'; // Importiere die Variablen
 //   Styling des register --------------------
 .register_container {
   display: flex;

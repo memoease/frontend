@@ -1,14 +1,5 @@
-$backgroundGreen: #387373;
-$BlackWhiteColor: #eee;
-$WhitColor: #fff;
-$ColorBlack: #000000;
-$colorPrimary: #4caf50;
-$colorSecondary: #ff6f61; // red
-$fontSizeTitle: 2em;
-$colorGrau: #4d4d4dcc;
-$boxShadow: 0px 0px 10px #0000;
-$ColorLightGrey: #e6eaec;
-$DarkCerulean: #106899;
+
+@import 'Colors'; // Importiere die Variablen
 //  Styling Login
 .signupFormContainer {
   height: 80vh;
@@ -37,6 +28,7 @@ $DarkCerulean: #106899;
     border-radius: 3rem;
     text-align: center;
     box-shadow: $boxShadow;
+
     form {
       width: 240px;
       display: flex;
@@ -51,9 +43,7 @@ $DarkCerulean: #106899;
         .inputPassword {
           display: flex;
           position: relative;
-          input {
-            width: 240px;
-          }
+
           .pwdvisibilityPass {
             background: transparent;
             position: absolute;
@@ -93,19 +83,20 @@ $DarkCerulean: #106899;
       }
     }
   }
-  .register_link {
-    .toRegisterLink {
-      color: #106899;
-      padding-left: 0.4rem;
-    }
-    .message-container {
-      color: $WhitColor;
+  .message-container {
+  
+    .message {
+  letter-spacing: 1px;
+  text-shadow: 10px 10px 20px rgb(0, 0, 0);
     }
   }
-
-  @media only screen and (max-width: 600px) {
-    .signupFormContainer {
-      margin-top: 3rem;
+}
+@media only screen and (max-width: 700px) {
+  .signupFormContainer {
+    margin-top: 3rem;
+    .loginForm {
+      display: flex;
+      width: 300px;
     }
   }
 }

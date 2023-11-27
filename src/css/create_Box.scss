@@ -1,6 +1,4 @@
-
-$ColorLightGrey:#e6eaec;
-$DarkCerulean:#106899;
+@import 'Colors'; // Importiere die Variablen
 .box {
   display: flex;
   margin: 0 auto;

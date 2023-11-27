@@ -7,10 +7,11 @@ import "../../css/create_Box.scss";
 import EditPicture from "../../assets/Edit.png";
 
 export const Box = () => {
- 
   const [isActive, setIsActive] = useState(false);
+  // Trigger isActive to true once the component is mounted
   useEffect(() => {
-    setIsActive(true); // Setze isActive auf true, sobald die Komponente montiert ist
+    // Setze isActive auf true, sobald die Komponente montiert ist
+    setIsActive(true);
   }, []);
   //
   const { user } = useAuth();

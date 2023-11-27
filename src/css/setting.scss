@@ -1,13 +1,5 @@
-$backgroundGreen: #387373;
-$BlackWhiteColor: #eee;
-$WhitColor: #fff;
-$ColorBlack: #000000;
-$colorPrimary: #4caf50; // green
-$colorSecondary: #ff6f61; // red
-$colorBlackGrau: #4d4d4dcc;
-$WhitGrauColor: #9d9797;
-$boxShadow: 0px 0px 10px #0000;
 
+@import 'Colors'; // Importiere die Variablen
 .setting_content {
   
   display: flex;

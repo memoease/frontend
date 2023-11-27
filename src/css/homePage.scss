@@ -1,6 +1,5 @@
 
-$ColorLightGrey:#e6eaec;
-$DarkCerulean:#106899;
+@import 'Colors'; // Importiere die Variablen
 .HomePageContainer {
   width: 90%;
   margin: 0 auto;

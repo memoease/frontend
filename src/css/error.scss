@@ -1,19 +1,12 @@
-$backgroundGreen: #387373;
-$text-transform: capitalize;
-$padding-top-btn: 1.5rem;
-$padding: 1rem;
-$paddingAll: 2rem;
-$border-radius: 2rem;
-$overflow: auto;
-$ColorGaru: #cccc;
-$ColorWhilt: #ffff;
-$ColorBlack: #000000;
-$BoxShadowColorBlack: 0px 0px 10px #000000;
 
+
+
+
+@import 'Colors'; // Importiere die Variablen
+//
 .errorContent {
-  background-color: $backgroundGreen;
-  box-shadow: $BoxShadowColorBlack;
-  color: $ColorWhilt;
+  background-color: $ColorLightGrey;
+  color: $highlightColor;
   height: 90vh;
   margin: 2rem 0;
   border-radius: 3.3rem;
