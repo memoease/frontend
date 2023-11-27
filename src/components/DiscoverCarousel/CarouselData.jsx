@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 const CarouselData = ({ item }) => {
   const navigate = useNavigate();
+
   const viewSet = (evt) => {
     const setId = evt.currentTarget.id;
     navigate(`/editset/${setId}`);
-  }
+  };
 
   return (
     <div className="container" key={item._id}>

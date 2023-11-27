@@ -7,8 +7,6 @@ import { useCards } from "../../utilities/hooks/useCards.jsx";
 const HomeLoggedIn = () => {
   const { publicCards, privateCards } = useCards();
 
-  console.log("pirvateCards:", privateCards);
-
   return (
     <div className="HomeLoggend_Contect">
       <h1 className="carousel_title">YOUR SETS</h1>

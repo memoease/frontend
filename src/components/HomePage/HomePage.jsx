@@ -6,7 +6,6 @@ import { useCards } from "../../utilities/hooks/useCards";
 
 const HomePage = () => {
   const { publicCards } = useCards();
-  console.log(publicCards);
   return (
     //    HomePage_container:
     <div className="HomePageContainer">
