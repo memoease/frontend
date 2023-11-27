@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { postNewFlashcardSet } from "../../utilities/service/api";
 import { useNavigate } from "react-router-dom";
-
-import "./style.css";
+import "../../css/create_Box.scss";
 
 import EditPicture from "../../assets/Edit.png";
 
 export const Box = () => {
+ 
+  const [isActive, setIsActive] = useState(false);
+  useEffect(() => {
+    setIsActive(true); // Setze isActive auf true, sobald die Komponente montiert ist
+  }, []);
+  //
   const { user } = useAuth();
   const [formData, setFormData] = useState({
     title: "",
@@ -59,9 +64,9 @@ export const Box = () => {
   };
 
   return (
-    <div className="box create-set">
+    <div className="box ">
       <div className="content-wrapper">
-        <h2>Create a new Flashcard Set</h2>
+        <h2 className="titleHead">Create a new Flashcard Set</h2>
 
         <form onSubmit={handleSave}>
           <div className="group">
@@ -92,7 +97,11 @@ export const Box = () => {
         </form>
       </div>
       <div className="image-container">
-        <img src={EditPicture} alt="Student with Pen" />
+        <img
+          className={isActive ? "active" : ""}
+          src={EditPicture}
+          alt="Student with Pen"
+        />
       </div>
     </div>
   );
