@@ -11,18 +11,22 @@ import {
 
 export const LearnModus = () => {
   const [sessionData, setSessionData] = useState(null);
-  const [currentCardIndex, setCurrentCardIndex] = useState(0); // Index of the current card being considered
+  const [currentCard, setCurrentCard] = useState(null); // Current card being considered
   const { setId } = useParams(); // Extracting setId from route params
 
   useEffect(() => {
     const startSession = async () => {
       try {
         // Start Learn Session
-
         const session = await startLearnSession(setId);
         setSessionData(session);
+        console.log(session.toLearn);
+        // Set the initial current card
+        if (session.toLearn && session.toLearn.length > 0) {
+          setCurrentCard(session.toLearn[0]);
+        }
       } catch (error) {
-        console.error("Error in LearnModus useEffect:", error.response.data);
+        console.error("Error in LearnSession useEffect:", error.response.data);
       }
     };
 
@@ -31,29 +35,48 @@ export const LearnModus = () => {
 
   const handleMoveToLearned = async () => {
     // Move the current card to "isLearned"
-    if (sessionData && sessionData.toLearn && sessionData.toLearn.length > 0) {
-      const cardIdToUpdate = sessionData.toLearn[currentCardIndex]._id;
-      await updateCardToLearned(cardIdToUpdate);
+    if (sessionData && currentCard) {
+      const cardIdToUpdate = currentCard._id;
+      const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
+      await updateCardToLearned(cardIdToUpdate, sessionId);
       advanceToNextCard();
     }
   };
 
-  const handleKeepInSession = async () => {
+  const handleKeepInSession = () => {
     // Advance to the next card without updating the current card
     advanceToNextCard();
   };
 
+  const handleRefreshSession = async () => {
+    // Refresh the Learn Session
+    if (sessionData && sessionData._id) {
+      const updatedSession = await refreshLearnSession(sessionData._id);
+      setSessionData(updatedSession);
+
+      // Set the initial current card after refresh
+      if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
+        setCurrentCard(updatedSession.toLearn[0]);
+      }
+    }
+  };
+
   const advanceToNextCard = () => {
-    // Increment the currentCardIndex and handle boundary conditions
-    setCurrentCardIndex(
-      (prevIndex) => (prevIndex + 1) % sessionData.toLearn.length
-    );
+    // Find the index of the current card
+    const currentIndex = sessionData.toLearn.indexOf(currentCard);
+
+    // Increment the index and handle boundary conditions
+    const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
+    setCurrentCard(sessionData.toLearn[nextIndex]);
   };
 
   const updateCardToLearned = async (cardId) => {
     try {
       // Update Card to Learned
-      const updatedSession = await updateSessionCardToLearned(cardId);
+      const updatedSession = await updateSessionCardToLearned(
+        cardId,
+        sessionData._id
+      );
       setSessionData(updatedSession);
     } catch (error) {
       console.error("Error updating card to learned:", error);
@@ -64,18 +87,24 @@ export const LearnModus = () => {
     <div className="learn">
       <div className="div">
         <div className="overlap-group">
-          <FlipCards flashcards={sessionData ? sessionData.toLearn : []} />
+          <FlipCards flashcards={sessionData ? [currentCard] : []} />
           <div className="group">
             <button className="ellipse" onClick={handleMoveToLearned}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${currentCardIndex + 1} / ${sessionData.toLearn.length}`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
+                    sessionData.toLearn.length
+                  }`
                 : ""}
             </div>
             <button
               className="ellipse-2"
               onClick={handleKeepInSession}
             ></button>
+            <h3>Start all over again!</h3>
+            <button className="refresh-button" onClick={handleRefreshSession}>
+              Refresh Learnsession
+            </button>
           </div>
         </div>
       </div>
