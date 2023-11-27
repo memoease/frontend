@@ -44,7 +44,7 @@ function App() {
                   <Route path="/flipcard" element={<FlipCardExample />} />
                   <Route path="/dashboard" element={<DashBoard_login />} />
                   <Route path="/session/:setId" element={<LearnModus />} />
-                  <Route path="/setting" element={<Setting />} />
+                  <Route path="/setting/:userId" element={<Setting />} />
                 </Route>
               </Route>
               <Route path="*" element={<Error />} />

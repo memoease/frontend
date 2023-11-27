@@ -6,7 +6,7 @@ import { logoutUser } from "../../utilities/service/api.js";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { authorized, setUser, setAuthorized, setLoading } = useAuth();
+  const { authorized, setUser, setAuthorized, setLoading, user } = useAuth();
   // Function to log out the user
   const logoutHandler = async () => {
     setLoading(true);
@@ -47,7 +47,7 @@ const Navigation = () => {
             </li>
           ) : (
             <li>
-              <NavLink className="navList" to="/setting">
+              <NavLink className="navList" to={`/setting/${user.id}`}>
                 Setting
               </NavLink>
             </li>
