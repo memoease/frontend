@@ -10,7 +10,7 @@ const CarouselData = ({ item }) => {
   };
 
   return (
-    <div className="container" key={item._id}>
+    <div className="container">
       <div className="cards" >
         <div className="DiscoverCardsContent" id={item._id} onClick={viewSet}>
           <h1 className="title">{item.title}</h1>

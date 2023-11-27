@@ -42,8 +42,8 @@ const CarouselItem = ({ data }) => {
   return (
     <div>
       <Slider {...settings}>
-        {data.map((item) => (
-          <CarouselData item={item} />
+        {data?.map((item) => (
+          <CarouselData item={item} key={item._id} />
         ))}
       </Slider>
     </div>

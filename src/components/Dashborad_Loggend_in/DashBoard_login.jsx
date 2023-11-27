@@ -3,12 +3,15 @@ import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
 import "../../css/DashBoard_login.scss";
 import { ImPlus } from "react-icons/im";
 import { NavLink } from "react-router-dom";
+import { useCards } from "../../utilities/hooks/useCards";
 const DashBoard_login = () => {
+  const { privateCards } = useCards();
+
   return (
     <div>
       <div className="dashBorad_content">
         <div className="dashCarousel">
-          <DiscoverCarousel />
+          <DiscoverCarousel data={privateCards} />
         </div>
         <div className="dashborad_add_Content">
           <div className="title_dash">
