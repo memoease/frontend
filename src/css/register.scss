@@ -7,6 +7,9 @@ $colorSecondary: #ff6f61; // red
 $colorGrau: #4d4d4dcc;
 $boxShadow: 0px 0px 10px #0000;
 $ColoeHellgrün: #e4f2e7;
+$ColorLightGrey: #e6eaec;
+$DarkCerulean: #106899;
+//   Styling des register --------------------
 .register_container {
   display: flex;
   justify-content: center;
@@ -14,6 +17,8 @@ $ColoeHellgrün: #e4f2e7;
   margin: 0 auto;
   height: 80vh;
   width: 90%;
+  border-radius: 1rem;
+  background-color: $ColorLightGrey;
   .title {
     text-align: center;
     color: #106899;
@@ -23,7 +28,7 @@ $ColoeHellgrün: #e4f2e7;
 
   .register-form {
     width: 320px;
-    height: 420px;
+    height: 440px;
     background: #c4d6e7;
     display: flex;
     justify-content: center;
@@ -53,25 +58,18 @@ $ColoeHellgrün: #e4f2e7;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0.1rem 0;
-        gap: 4px 0;
+        padding: 0.8rem 0;
+        gap: 10px 0;
         font-size: 1.1rem;
         color: #106899;
         input {
-          width:240px;
+          width: 240px;
           padding: 0.6rem 0;
           border-radius: 2rem;
           outline: none;
           border: none;
           background-color: white;
           padding-left: 1rem;
-
-          //&:focus {
-          /* Beispiel: Änderungen beim Fokussieren des Eingabefeldes */
-          //border: 2px solid $colorPrimary;
-          //background-color: $WhitColor;
-          //color: $ColorBlack;
-          //}
         }
       }
       .RegisterBtn {
@@ -85,7 +83,7 @@ $ColoeHellgrün: #e4f2e7;
           color: $ColorBlack;
           transition: all 3s ease;
           background: white;
-          margin-top: 0.5rem;
+          margin-top: 1rem;
 
           &:hover {
             background-color: #9d9797;
