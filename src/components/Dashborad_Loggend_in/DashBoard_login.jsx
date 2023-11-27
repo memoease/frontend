@@ -17,7 +17,7 @@ const DashBoard_login = () => {
             </p>
           </div>
           <div className="dashboardAdd">
-            <NavLink to="" className="dashPlus">
+            <NavLink to="/create" className="dashPlus">
               <ImPlus className="plusLink" />
             </NavLink>
           </div>
