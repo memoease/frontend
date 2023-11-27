@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 import * as api from "../service/api";
+import { useAuth } from "../hooks/useAuth";
 
 // Create React-Context for Cards
 const CardsContext = createContext({});
@@ -16,14 +17,15 @@ export function CardProvider({ children }) {
   const [privateCards, setPrivateCards] = useState([]);
   const [message, setMessage] = useState("");
 
+  const { authorized, loading } = useAuth()
+
   // Effect to load the public-cards from the API
   useEffect(() => {
     const getPublicSets = async () => {
       try {
         const response = await api.getRandomPubSets();
-        const { data } = response;
 
-        setPublicCards(data);
+        setPublicCards(response);
         setMessage("");
       } catch (error) {
         console.error("Error fetching public cards:", error.response?.data);
@@ -41,9 +43,8 @@ export function CardProvider({ children }) {
     const getPrivateSets = async () => {
       try {
         const response = await api.getFlashcardSetsByUser();
-        const { data } = response;
 
-        setPrivateCards(data);
+        setPrivateCards(response);
         setMessage("");
       } catch (error) {
         console.error("Error fetching private cards:", error.response?.data);
@@ -53,8 +54,8 @@ export function CardProvider({ children }) {
       }
     };
 
-    getPrivateSets();
-  }, []);
+    if (authorized) getPrivateSets();
+  }, [loading]);
 
   // Provider of the CardsContext value for the child components
   return (

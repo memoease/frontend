@@ -2,8 +2,10 @@ import React from "react";
 import "../../css/homePage.scss";
 import { NavLink } from "react-router-dom";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
+import { useCards } from "../../utilities/hooks/useCards";
 
 const HomePage = () => {
+  const { publicCards } = useCards();
   return (
     //    HomePage_container:
     <div className="HomePageContainer">
@@ -21,7 +23,7 @@ const HomePage = () => {
         </div>
       </div>
       {/*  discover content ------------- */}
-      <DiscoverCarousel />
+      <DiscoverCarousel data={publicCards} />
     </div>
   );
 };

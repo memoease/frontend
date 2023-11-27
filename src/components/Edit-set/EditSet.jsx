@@ -6,10 +6,12 @@ import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
+import { useAuth } from "../../utilities/hooks/useAuth";
 
 const EditSet = () => {
   const { setId } = useParams();
-  const [flashcards, setFlashcards] = useState([]);
+  const { loading } = useAuth();
+  const [flashcards, setFlashcards] = useState({});
   const [newCardAdded, setNewCardAdded] = useState(true);
 
 
@@ -17,9 +19,11 @@ const EditSet = () => {
     async function fetchSetData(setId) {
       try {
         const cardSet = await getSetBySetId(setId);
-        setFlashcards(cardSet.flashcards)
+        console.log(cardSet)
+        setFlashcards(cardSet)
       } catch (error) {
         console.error(error);
+        console.log("error")
       };
     };
     fetchSetData(setId);
@@ -29,7 +33,7 @@ const EditSet = () => {
     async function fetchSetData(setId) {
       try {
         const cardSet = await getSetBySetId(setId);
-        setFlashcards(cardSet.flashcards)
+        setFlashcards(cardSet)
       } catch (error) {
         console.error(error);
       };
@@ -38,7 +42,9 @@ const EditSet = () => {
   }, [newCardAdded]);
 
   const renderCards = () => {
-    const entries = flashcards.map((card) => {
+    const cards = flashcards.flashcards;
+    console.log("cards:", flashcards)
+    const entries = cards?.map((card) => {
       return (
         <ShowAndEditCards
           question={card.question}
@@ -54,7 +60,7 @@ const EditSet = () => {
 
   return (
     <div className="EditSet_Container">
-      <h2>English</h2>
+      <h2>{flashcards.title}</h2>
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
