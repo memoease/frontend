@@ -12,7 +12,13 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
 .dashBorad_content {
   width: 90%;
   margin: 0 auto;
-
+.dashCarousel{
+  
+  .DiscoverCarousel-container{
+    border-radius: 20px;
+    border-style: outset ;
+  }
+}
   .dashborad_add_Content {
     display: flex;
     margin-top: 2rem;
@@ -20,6 +26,7 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
     background: #C4D6E7;
     padding: 1rem 0;
     font-family: serif;
+    
     .title_dash {
       width: 50%;
       padding: 1rem;
@@ -37,6 +44,7 @@ $boxShadowBlack: 2px 2px 20px #a9070700;
       }
     }
     .dashboardAdd {
+     
       width: 50%;
       display: flex;
       align-items: center;
