@@ -1,14 +1,4 @@
-$backgroundGreen: #3c941b;
-$text-transform: capitalize;
-$padding-top-btn: 1.5rem;
-$padding: 1rem;
-$paddingAll: 2rem;
-$border-radius: 1rem;
-$overflow: auto;
-$WhiteColor: #eee;
-$ColorBlack: #000000;
-$ColorOrangen: #ff8800;
-;
+@import 'Colors'; // Importiere die Variablen
 
 .cards {
   padding: 0.3rem;

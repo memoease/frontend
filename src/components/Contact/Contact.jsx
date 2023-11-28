@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../css/contact.scss";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +17,10 @@ const Contact = () => {
     e.preventDefault();
     // Hier könntest du die Daten an einen Server senden oder andere Aktionen ausführen
     console.log("Form submitted:", formData);
+  };
+
+  const sendEmail = () => {
+    window.location.href = "mailto:memoease.team@gmail.com";
   };
 
   return (
@@ -54,6 +59,7 @@ const Contact = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
+      <button onClick={sendEmail}>Send Email</button>
     </div>
   );
 };
