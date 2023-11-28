@@ -24,8 +24,10 @@ const EditSet = () => {
           setFlashcards(cardSet);
           setActiveCard(cardSet.flashcards[index]);
           setFetchDone(true);
+        } else {
+          setFlashcards(cardSet);
+          setFetchDone(true);
         }
-        setFetchDone(true);
       } catch (error) {
         console.error(error);
         console.log("error")
@@ -95,7 +97,7 @@ const EditSet = () => {
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
-            <FlipCards activeCard={activeCard} index={index} />
+            <FlipCards activeCard={activeCard ? activeCard : ""} index={index} />
             <div className="editGroup">
               <button className="ellipseLeft" onClick={clickLeft}>
                 <FiChevronLeft />
