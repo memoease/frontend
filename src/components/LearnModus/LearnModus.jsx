@@ -83,31 +83,40 @@ export const LearnModus = () => {
       console.error("Error updating card to learned:", error);
     }
   };
-  return (
-    <div className="learn">
-      <div className="div">
-        <div className="overlap-group">
-          <FlipCards activeCard={sessionData ? currentCard : []} />
-          <div className="group">
-            <button className="ellipse" onClick={handleKeepInSession}></button>
-            <div className="flipped-number">
-              {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
-                }`
-                : ""}
+
+  if (sessionData.length > 0) {
+    return (
+      <div className="learn">
+        <div className="div">
+          <div className="overlap-group">
+            <FlipCards activeCard={sessionData ? currentCard : []} />
+            <div className="group">
+              <button className="ellipse" onClick={handleKeepInSession}></button>
+              <div className="flipped-number">
+                {sessionData
+                  ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                  }`
+                  : ""}
+              </div>
+              <button
+                className="ellipse-2"
+                onClick={handleMoveToLearned}
+              ></button>
+
             </div>
-            <button
-              className="ellipse-2"
-              onClick={handleMoveToLearned}
-            ></button>
 
           </div>
-          <h3>Start all over again!</h3>
-          <button className="refresh-button" onClick={handleRefreshSession}>
-            Refresh Learnsession
-          </button>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="overlap-group">
+        <h3>Start all over again!</h3>
+        <button className="refresh-button" onClick={handleRefreshSession}>
+          Refresh Learnsession
+        </button>
+      </div>
+    )
+  }
 };
