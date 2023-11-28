@@ -6,8 +6,8 @@
 .dashCarousel{
   
   .DiscoverCarousel-container{
-    border-radius: 20px;
-    border-style: outset ;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
   .dashborad_add_Content {
@@ -17,6 +17,7 @@
     background: #C4D6E7;
     padding: 1rem 0;
     font-family: serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
     .title_dash {
       width: 50%;
