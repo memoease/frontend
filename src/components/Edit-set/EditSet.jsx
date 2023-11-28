@@ -25,6 +25,7 @@ const EditSet = () => {
           setActiveCard(cardSet.flashcards[index]);
           setFetchDone(true);
         }
+        setFetchDone(true);
       } catch (error) {
         console.error(error);
         console.log("error")
