@@ -13,7 +13,7 @@
       margin-top: 1rem;
       .title {
         font-size: 1.4rem;
-        color: #000;
+        color: $BlueColor;
         font-weight: 200;
       }
     }
@@ -55,7 +55,7 @@
       position: relative;
       display: inline-block;
       text-decoration: none;
-      color: #000;
+      color: $BlueColor;
       &::after {
         content: "";
         width: 100%;
@@ -79,18 +79,18 @@
       .btnRegister {
         margin: 1.5rem;
         text-align: center;
-       background: #ff8800;
+       background: $BlueColor;
         color: white;
         border-radius: 1rem;
         font-size: 0.8rem;
         outline: none;
         border: none;
         box-shadow: 0px 0px 0.8px #000;
-        padding: 0.3rem 1rem;
+        padding: 0.3rem 1.3rem;
         text-decoration: none;
         transition: all 0.5s ease-in;
         &:hover {
-          background: #f48a11;
+          background: $primaryColor;
         }
         
       }
