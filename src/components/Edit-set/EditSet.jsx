@@ -94,13 +94,13 @@ const EditSet = () => {
           <div className="edidtOverlap-group">
             <FlipCards activeCard={activeCard} index={index} />
             <div className="editGroup">
-              <div className="ellipseLeft">
-                <FiChevronLeft onClick={clickLeft} />
-              </div>
+              <button className="ellipseLeft" onClick={clickLeft}>
+                <FiChevronLeft />
+              </button>
               <div className="slidNumber">{index + 1}/{flashcards.flashcards.length}</div>
-              <div className="ellipseRight">
-                <FiChevronRight onClick={clickRight} />
-              </div>
+              <button className="ellipseRight" onClick={clickRight}>
+                <FiChevronRight />
+              </button>
             </div>
           </div>
           <div className="setPractice">
