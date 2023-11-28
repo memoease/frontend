@@ -1,45 +1,70 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors";
 .setting_content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
   height: 80vh;
   width: 90%;
-  border-radius: 3.3rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $ColorLightGrey;
+  border-radius: 1rem;
+  padding: 2rem;
+
   .title {
     color: #106899;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhitColor;
+    text-shadow: 0px 0px 0.3px $WhiteColor;
+    margin-bottom: 1rem;
+    text-align: left;
   }
+
+  .formWrap {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
   .settingForm {
     width: 320px;
-    height: 400px;
-    background:  #C4D6E7 ;
+    height: 440px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem auto;
+    flex-direction: column;
+    background: #c4d6e7;
     border-radius: 3rem;
     text-align: center;
     box-shadow: $boxShadow;
+    flex: 1;
 
     form {
-      
+      width: 240px;
       display: flex;
-      margin: 1rem;
       flex-direction: column;
-      padding: 1rem 0;
+
       label {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem 0;
-        gap: 4px 0;
+        padding: 1rem 0;
         font-size: 1.1rem;
-        color: $colorBlackGrau;
+        color: #106899;
+        width: 240px;
+        .inputPassword {
+          display: flex;
+          position: relative;
+
+          .pwdvisibilityPass {
+            background: transparent;
+            position: absolute;
+            right: 1rem;
+            top: 0.9rem;
+            border: none;
+            outline: none;
+          }
+        }
       }
+
       input {
         width: 100%;
         padding: 0.6rem;
@@ -47,27 +72,88 @@
         border: none;
         border-radius: 2rem;
         margin: 0.3rem 0;
-        background-color: #cccc;
         padding-left: 1rem;
       }
+
       .setting_btn {
-        margin-top: 0.6rem;
-        .DashBoardLink {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .submitBtn,
+        .deleteBtn {
           cursor: pointer;
           width: 100px;
-          padding:0.4rem 2rem ;
-          border-radius: 1rem;
-          transition: all 0.9s ease;
-          background: #cccc;
+          padding: 0.5rem 1rem;
+          border-radius: 2rem;
+          transition: all 0.3s ease;
+          background: white;
           color: $ColorBlack;
           text-decoration: none;
           border: none;
+          outline: none;
+
           &:hover {
-            background-color: $WhitGrauColor;
+            background-color: #9d9797;
           }
         }
       }
     }
+  }
 
+  .message-container {
+    .message {
+      letter-spacing: 1px;
+      text-shadow: 10px 10px 20px rgb(0, 0, 0);
+    }
+    margin-top: 1rem;
+  }
+
+  .delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+    & > div {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: $boxShadow;
+      text-align: center;
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        transition: all 0.3s ease;
+        background: #ff4d4d;
+        color: white;
+        border: none;
+        outline: none;
+
+        &:hover {
+          background-color: #cc0000;
+        }
+
+        &:not(:last-child) {
+          margin-right: 3rem;
+        }
+      }
+    }
   }
 }

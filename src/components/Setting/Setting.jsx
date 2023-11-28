@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { updateUserData, deleteUserData } from "../../utilities/service/api";
-
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import "../../css/setting.scss";
 
 const Setting = () => {
@@ -11,7 +11,13 @@ const Setting = () => {
   const [name, setName] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [message, setMessage] = useState("");
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -35,9 +41,10 @@ const Setting = () => {
 
       await updateUserData(userId, userData);
 
-      console.log("Benutzername erfolgreich aktualisiert");
+      setMessage(`Username updated successfully to: ${name}`);
     } catch (error) {
-      console.error("Fehler bei der Aktualisierung des Benutzernamens", error);
+      setMessage("Error updating username");
+      console.error("Error updating username", error.response.data);
     }
   };
 
@@ -52,18 +59,18 @@ const Setting = () => {
 
       await updateUserData(userId, userData);
 
-      console.log("Benutzerpasswort erfolgreich aktualisiert");
+      setMessage("Password updated successfully");
     } catch (error) {
-      console.error(
-        "Fehler bei der Aktualisierung des Benutzerpassworts",
-        error
-      );
+      setMessage("Error updating password");
+      console.error("Error updating password", error.response.data);
     }
   };
 
   const handleDeleteClick = () => {
     setShowDeleteModal(true);
   };
+
+  const navigate = useNavigate();
 
   const handleDeleteConfirm = async () => {
     try {
@@ -72,10 +79,10 @@ const Setting = () => {
       logout();
       console.log("User deleted successfully");
 
-      // Optional: Weiterleitung zu einer anderen Seite nach dem Löschen
-      // Beispiel: history.push("/login");
+      navigate("/register");
     } catch (error) {
-      console.error("Error deleting user", error);
+      setMessage("Error deleting user");
+      console.error("Error deleting user", error.response.data);
     }
 
     setShowDeleteModal(false);
@@ -88,9 +95,9 @@ const Setting = () => {
   return (
     <div>
       <div className="setting_content">
-        <h1 className="title">Setting</h1>
-        <div className="settingForm">
-          <div className="changeName">
+        <h1 className="title">You can adjust your settings here...</h1>
+        <div className="formWrap">
+          <div className="settingForm">
             {/* Form change Username */}
             <form onSubmit={handleNameSubmit}>
               <div className="">
@@ -102,61 +109,77 @@ const Setting = () => {
                     id="username"
                     value={name}
                     onChange={handleNameChange}
+                    placeholder="Enter your new username"
                     required
                   />
                 </label>
               </div>
               <div className="setting_btn">
-                <button
-                  type="submit"
-                  className="DashBoardLink"
-                  to="/DashBoard_login"
-                >
-                  Save Name
+                <button type="submit" className="submitBtn">
+                  Save new Name
                 </button>
               </div>
             </form>
           </div>
-          <div className="changePwd">
+          <div className="settingForm">
             {/* Form Password change */}
             <form onSubmit={handlePasswordSubmit}>
               <div className="">
                 <label htmlFor="oldPassword">
                   Old password
-                  <input
-                    type="password"
-                    name="oldPassword"
-                    id="oldPassword"
-                    value={oldPassword}
-                    onChange={handleOldPasswordChange}
-                    required
-                  />
+                  <div className="inputPassword">
+                    <input
+                      type={passwordVisible ? "text" : "password"}
+                      name="oldPassword"
+                      id="oldPassword"
+                      value={oldPassword}
+                      onChange={handleOldPasswordChange}
+                      placeholder="at least 8 characters"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="pwdvisibilityPass"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                    </button>
+                  </div>
                 </label>
               </div>
               <div className="">
                 <label htmlFor="newPassword">
                   New password
-                  <input
-                    type="password"
-                    name="newPassword"
-                    id="newPassword"
-                    value={newPassword}
-                    onChange={handleNewPasswordChange}
-                    required
-                  />
+                  <div className="inputPassword">
+                    <input
+                      type={passwordVisible ? "text" : "password"}
+                      name="newPassword"
+                      id="newPassword"
+                      value={newPassword}
+                      onChange={handleNewPasswordChange}
+                      placeholder="at least 8 characters"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="pwdvisibilityPass"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                    </button>
+                  </div>
                 </label>
               </div>
               <div className="setting_btn">
-                <button
-                  type="submit"
-                  className="DashBoardLink"
-                  to="/DashBoard_login"
-                >
-                  Save Password
+                <button type="submit" className="submitBtn">
+                  Save new Password
                 </button>
               </div>
             </form>
           </div>
+        </div>
+        <div className="message-container">
+          {message && <p className="message">{message}</p>}
         </div>
         {/* Button for Account Delete */}
         <div className="setting_btn">
@@ -170,7 +193,7 @@ const Setting = () => {
         </div>
       </div>
 
-      {/* Modal confirm withdraw */}
+      {/* Modal confirm deletion */}
       {showDeleteModal && (
         <div className="delete-modal">
           <p>Do you really want to delete your account?</p>
