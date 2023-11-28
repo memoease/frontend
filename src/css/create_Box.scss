@@ -5,8 +5,7 @@
   background-color: $ColorLightGrey;
   border-radius: 1rem;
   padding: 2rem 0;
-  color: $DarkCerulean;
-  flex-wrap: wrap;
+    color:$BlueColor;  flex-wrap: wrap;
   .content-wrapper {
     width: 50%;
     display: flex;
@@ -18,6 +17,7 @@
       font-size: 2.2rem;
       letter-spacing: 2px;
       text-align: center;
+       color:$BlueColor;
     }
     form {
       display: flex;
