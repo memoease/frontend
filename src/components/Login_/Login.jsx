@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <div>
       <div className="signupFormContainer">
-        <h1 className="title">Login</h1>
+        <h1 className="title">Sign in </h1>
         <div className="loginForm">
           <form onSubmit={loginHandler}>
             <div className="">
