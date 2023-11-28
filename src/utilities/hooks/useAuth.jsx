@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-
+import { logoutUser } from "../../utilities/service/api.js";
 
 // Create React-Context for Authentification
 const AuthContext = createContext({});
@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
 
-
   const cookies = Object.fromEntries(
     document.cookie
       .split("; ")
@@ -19,20 +18,32 @@ export const AuthProvider = ({ children }) => {
 
   // Effect to load the user from the userCookie
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     // Initialize the user from the userCookie
-    const userFromCookie = cookies.userInfo ? JSON.parse(cookies.userInfo) : null;
+    const userFromCookie = cookies.userInfo
+      ? JSON.parse(cookies.userInfo)
+      : null;
     setUser(userFromCookie);
     if (!userFromCookie) {
       setAuthorized(false);
-      setLoading(false)
+      setLoading(false);
     } else {
       setAuthorized(true);
-      setLoading(false)
-    };
+      setLoading(false);
+    }
   }, []);
 
-
+  // Function to log out the user
+  const logout = async () => {
+    setLoading(true);
+    try {
+      await logoutUser();
+      setUser(null);
+      setAuthorized(false);
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
 
   // Provider of the AuthContext value for the child components
   return (
@@ -44,6 +55,7 @@ export const AuthProvider = ({ children }) => {
         setAuthorized,
         setLoading,
         setUser,
+        logout,
       }}
     >
       {children}

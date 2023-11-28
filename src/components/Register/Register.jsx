@@ -50,9 +50,9 @@ const Register = () => {
         `Welcome ${name}! Please check your email ${email} for confirmation`
       );
     } catch (error) {
-      console.error("Registration error:", error.response.data);
+      console.error("Registration error:", error.response?.data);
 
-      const { error: errorMessage } = error.response.data;
+      const { error: errorMessage } = error.response?.data;
 
       if (errorMessage) {
         setError(`${errorMessage}. Please try again.`);

@@ -11,7 +11,7 @@ const CarouselData = ({ item }) => {
 
   return (
     <div className="container">
-      <div className="cards" >
+      <div className="cards">
         <div className="DiscoverCardsContent" id={item._id} onClick={viewSet}>
           <h1 className="title">{item.title}</h1>
           <button>{item.flashcards.length} Cards</button>

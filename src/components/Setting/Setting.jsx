@@ -44,7 +44,7 @@ const Setting = () => {
       setMessage(`Username updated successfully to: ${name}`);
     } catch (error) {
       setMessage("Error updating username");
-      console.error("Error updating username", error.response.data);
+      console.error("Error updating username", error);
     }
   };
 
@@ -62,7 +62,7 @@ const Setting = () => {
       setMessage("Password updated successfully");
     } catch (error) {
       setMessage("Error updating password");
-      console.error("Error updating password", error.response.data);
+      console.error("Error updating password", error);
     }
   };
 
@@ -79,10 +79,10 @@ const Setting = () => {
       logout();
       console.log("User deleted successfully");
 
-      navigate("/register");
+      navigate("/");
     } catch (error) {
       setMessage("Error deleting user");
-      console.error("Error deleting user", error.response.data);
+      console.error("Error deleting user", error);
     }
 
     setShowDeleteModal(false);

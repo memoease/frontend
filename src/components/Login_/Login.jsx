@@ -52,7 +52,7 @@ const Login = () => {
       navigate("/home");
     } catch (error) {
       console.error("Login error:", error);
-      const { error: errorMessage } = error.response.data;
+      const { error: errorMessage } = error.response?.data;
 
       if (errorMessage) {
         setMessage(`${errorMessage}. `);
