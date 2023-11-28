@@ -23,7 +23,6 @@ export const AuthProvider = ({ children }) => {
     // Initialize the user from the userCookie
     const userFromCookie = cookies.userInfo ? JSON.parse(cookies.userInfo) : null;
     setUser(userFromCookie);
-    console.log("userCookie:", userFromCookie);
     if (!userFromCookie) {
       setAuthorized(false);
       setLoading(false)

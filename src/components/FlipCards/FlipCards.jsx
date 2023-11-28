@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardFlip from "react-card-flip";
 
-function FlipCards() {
+function FlipCards({ activeCard, index }) {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    setIsFlipped(false);
+  }, [index])
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
+
 
   return (
     <div>
       <CardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"
-        flipSpeedBackToFront={2}
-        flipSpeedFrontToBack={2}
+        flipSpeedBackToFront={1}
+        flipSpeedFrontToBack={1}
       >
         <div>
           <div
@@ -33,7 +38,7 @@ function FlipCards() {
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
             }}
           >
-            Frontd
+            {activeCard.question}
           </div>
         </div>
         <div>
@@ -52,7 +57,8 @@ function FlipCards() {
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
             }}
           >
-            Back
+            {activeCard.answer}
+
           </div>
         </div>
       </CardFlip>
