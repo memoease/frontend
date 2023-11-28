@@ -20,7 +20,7 @@ export const LearnModus = () => {
         // Start Learn Session
         const session = await startLearnSession(setId);
         setSessionData(session);
-        console.log(session.toLearn);
+
         // Set the initial current card
         if (session.toLearn && session.toLearn.length > 0) {
           setCurrentCard(session.toLearn[0]);
@@ -38,8 +38,8 @@ export const LearnModus = () => {
     if (sessionData && currentCard) {
       const cardIdToUpdate = currentCard._id;
       const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
-      await updateCardToLearned(cardIdToUpdate, sessionId);
-      advanceToNextCard();
+      const updatedSession = await updateCardToLearned(cardIdToUpdate);
+      setCurrentCard(updatedSession.toLearn[0]);
     }
   };
 
@@ -78,34 +78,34 @@ export const LearnModus = () => {
         sessionData._id
       );
       setSessionData(updatedSession);
+      return updatedSession;
     } catch (error) {
       console.error("Error updating card to learned:", error);
     }
   };
-
   return (
     <div className="learn">
       <div className="div">
         <div className="overlap-group">
-          <FlipCards flashcards={sessionData ? [currentCard] : []} />
+          <FlipCards activeCard={sessionData ? currentCard : []} />
           <div className="group">
-            <button className="ellipse" onClick={handleMoveToLearned}></button>
+            <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
-                    sessionData.toLearn.length
-                  }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                }`
                 : ""}
             </div>
             <button
               className="ellipse-2"
-              onClick={handleKeepInSession}
+              onClick={handleMoveToLearned}
             ></button>
-            <h3>Start all over again!</h3>
-            <button className="refresh-button" onClick={handleRefreshSession}>
-              Refresh Learnsession
-            </button>
+
           </div>
+          <h3>Start all over again!</h3>
+          <button className="refresh-button" onClick={handleRefreshSession}>
+            Refresh Learnsession
+          </button>
         </div>
       </div>
     </div>

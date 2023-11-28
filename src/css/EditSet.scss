@@ -47,12 +47,16 @@
             height: 35px;
             line-height: 40px;
             border-radius: 50%;
-            box-shadow: 0px 2px 10px rgb(6, 6, 6);
             transition: all 0.6s ease;
             border-style: none;
 
             &:hover {
-              background-color: #ff0000;
+              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+
+            }
+
+            &:active {
+              box-shadow: none;
             }
           }
 
@@ -61,13 +65,17 @@
             height: 35px;
             border-radius: 50%;
             line-height: 40px;
-            box-shadow: 0px 2px 10px rgb(4, 4, 4);
             transition: all 0.6s ease;
             border-style: none;
 
 
             &:hover {
-              background-color: rgb(0, 255, 68);
+              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+
+            }
+
+            &:active {
+              box-shadow: none;
             }
           }
         }

@@ -4,18 +4,17 @@ import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
 
 const EditSet = () => {
+  const navigate = useNavigate();
   const { setId } = useParams();
   const [flashcards, setFlashcards] = useState({});
   const [newCardAdded, setNewCardAdded] = useState(true);
   const [fetchDone, setFetchDone] = useState(false);
   const [index, setIndex] = useState(0);
   const [activeCard, setActiveCard] = useState({});
-
-  console.log(index);
 
   useEffect(() => {
     async function fetchSetData(setId) {
@@ -68,7 +67,6 @@ const EditSet = () => {
       const newIndex = index + 1;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
-      console.log(index);
     }
   };
 
@@ -77,9 +75,13 @@ const EditSet = () => {
       const newIndex = index - 1;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
-      console.log(index);
     };
   };
+
+  const toSession = () => {
+    navigate(`/session/${setId}`);
+  };
+
 
   if (!fetchDone) {
     return <h2>loading...</h2>;
@@ -106,7 +108,7 @@ const EditSet = () => {
           <div className="setPractice">
             <div className="cardEdit">
               <h2 className="title">PRACTICE THIS SET</h2>
-              <button>start</button>
+              <button onClick={toSession}>start</button>
             </div>
           </div>
         </div>
