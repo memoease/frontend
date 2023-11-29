@@ -1,17 +1,56 @@
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 
-
-.ImprintContent{
-    width: 90%;
-    margin:0 auto;
-    .imprint-wrapper{
-        .title{
-            font-size: 2.2rem;
-            padding: 1rem 0;
-            letter-spacing: 1px;
-            font-family: serif;
-            color:$BlueColor;
-            text-decoration: underline;
+.ImprintContent {
+  width: 85%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  .imprint-wrapper {
+    line-height: 40px;
+    padding-top: 1rem;
+    .title {
+      font-size: 2.2rem;
+      padding: 1rem 0;
+      letter-spacing: 1px;
+      font-family: "Times New Roman", Times, serif;
+      color: $BlueColor;
+      text-decoration: underline;
+    }
+    .line {
+      width: 100%;
+      height: 0.1rem;
+      background-color: #000;
+    }
+    ul {
+      font-size: 1rem;
+      display: flex;
+      padding-top: 2.5rem;
+   
+    
+      li {
+        width: 80%;
+        margin :0 auto;
+       
+        opacity: 0.9;
+        transition: all 0.8s ease;
+        font-size: 0.9rem;
+        a{
+            padding-left: 0.4rem;
         }
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px){
+    .ImprintContent {
+  .imprint-wrapper{
+    ul{
+        display: flex;
+        flex-direction: column;
+    }
+  }
     }
 }
