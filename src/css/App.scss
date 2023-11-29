@@ -1,0 +1,38 @@
+@import 'CarouselItem';
+@import 'Colors';
+@import 'contact';
+@import 'create_Box';
+@import 'DashBoard_login';
+@import 'discover';
+@import 'EditSet';
+@import 'error';
+@import 'Home';
+@import 'HomeLoggedIn';
+@import 'homePage';
+@import 'imprint';
+@import 'LearnModus';
+@import 'login';
+@import 'Navigation';
+@import 'register';
+@import 'setting';
+@import '';
+@import '';
+@import '';
+@import '';
+@import '';
+
+
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #C4D6E7;
+
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: visible;
+  /*  hidden setzen ...... */
+}
