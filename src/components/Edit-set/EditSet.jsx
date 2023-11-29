@@ -40,7 +40,14 @@ const EditSet = () => {
     async function fetchSetData(setId) {
       try {
         const cardSet = await getSetBySetId(setId);
-        setFlashcards(cardSet)
+        if (cardSet && cardSet.flashcards && cardSet.flashcards.length > 0) {
+          setFlashcards(cardSet);
+          setActiveCard(cardSet.flashcards[index]);
+          setFetchDone(true);
+        } else {
+          setFlashcards(cardSet);
+          setFetchDone(true);
+        }
       } catch (error) {
         console.error(error);
       };
@@ -66,16 +73,16 @@ const EditSet = () => {
   };
 
   const clickRight = () => {
-    if (index < flashcards.flashcards.length - 1) {
-      const newIndex = index + 1;
+    if (index <= flashcards.flashcards.length - 1) {
+      const newIndex = (index + 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
     }
   };
 
   const clickLeft = () => {
-    if (index > 0) {
-      const newIndex = index - 1;
+    if (index >= 0) {
+      const newIndex = (index - 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
     };

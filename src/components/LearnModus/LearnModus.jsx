@@ -12,7 +12,10 @@ import {
 export const LearnModus = () => {
   const [sessionData, setSessionData] = useState(null);
   const [currentCard, setCurrentCard] = useState(null); // Current card being considered
+  const [index, setIndex] = useState(true);
   const { setId } = useParams(); // Extracting setId from route params
+
+  const allCardsLearned = sessionData?.toLearn.length === 0 && !currentCard;
 
   useEffect(() => {
     const startSession = async () => {
@@ -40,6 +43,7 @@ export const LearnModus = () => {
       const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
       const updatedSession = await updateCardToLearned(cardIdToUpdate);
       setCurrentCard(updatedSession.toLearn[0]);
+      setIndex(!index);
     }
   };
 
@@ -68,6 +72,7 @@ export const LearnModus = () => {
     // Increment the index and handle boundary conditions
     const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
     setCurrentCard(sessionData.toLearn[nextIndex]);
+    setIndex(!index);
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -85,11 +90,23 @@ export const LearnModus = () => {
   };
 
 
+  if (allCardsLearned) {
+    return (
+      <div className="learn">
+        <h3>Start all over again!</h3>
+        <button className="refresh-button" onClick={handleRefreshSession}>
+          Refresh Learnsession
+        </button>
+      </div>
+    )
+  }
+
+
   return (
     <div className="learn">
       <div className="div">
         <div className="overlap-group">
-          <FlipCards activeCard={sessionData ? currentCard : []} />
+          <FlipCards activeCard={sessionData ? currentCard : []} index={index} />
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
@@ -104,7 +121,9 @@ export const LearnModus = () => {
             ></button>
 
           </div>
-
+          <button className="refresh-button" onClick={handleRefreshSession}>
+            Refresh Learnsession
+          </button>
         </div>
       </div>
     </div>
