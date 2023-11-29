@@ -20,6 +20,7 @@ import { LearnModus } from "./LearnModus/LearnModus";
 import Setting from "./Setting/Setting";
 import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 import { CardProvider } from "../utilities/hooks/useCards.jsx";
+import Imprint from "./Imprint/Imprint";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/imprint" element={<Imprint />} />
 
                 <Route element={<PrivateRoute />}>
                   <Route path="/create" element={<Box />} />

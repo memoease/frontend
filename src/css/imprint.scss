@@ -1,0 +1,17 @@
+@import 'Colors'; // Importiere die Variablen
+
+
+.ImprintContent{
+    width: 90%;
+    margin:0 auto;
+    .imprint-wrapper{
+        .title{
+            font-size: 2.2rem;
+            padding: 1rem 0;
+            letter-spacing: 1px;
+            font-family: serif;
+            color:$BlueColor;
+            text-decoration: underline;
+        }
+    }
+}
