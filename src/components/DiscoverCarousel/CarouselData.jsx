@@ -16,7 +16,10 @@ const CarouselData = ({ item }) => {
           <h1 className="title">{item.title}</h1>
           <button>{item.flashcards.length} Cards</button>
           <p className="discropt-created">{item.description}</p>
-          <p>created by {item.createdBy?.name}</p>
+          <p>
+            created by{" "}
+            {item.createdBy.name ? item.createdBy.name : "Deleted User"}
+          </p>
         </div>
       </div>
     </div>
