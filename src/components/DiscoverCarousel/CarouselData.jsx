@@ -17,8 +17,7 @@ const CarouselData = ({ item }) => {
           <button>{item.flashcards.length} Cards</button>
           <p className="discropt-created">{item.description}</p>
           <p>
-            created by{" "}
-            {item.createdBy.name ? item.createdBy.name : "Deleted User"}
+            created by {item.createdBy ? item.createdBy.name : "Deleted User"}
           </p>
         </div>
       </div>
