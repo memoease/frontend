@@ -1,159 +1,112 @@
 @import "Colors";
 .setting_content {
-  height: 80vh;
   width: 90%;
+  height: 80vh;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: $ColorLightGrey;
+  background: $ColorLightGrey;
   border-radius: 1rem;
-  padding: 2rem;
 
   .title {
     color: #106899;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhiteColor;
     margin-bottom: 1rem;
-    text-align: left;
+    padding: 1rem 1.2rem;
   }
-
   .formWrap {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .settingForm {
-    width: 320px;
-    height: 440px;
+    width: 80%;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background: #c4d6e7;
-    border-radius: 3rem;
-    text-align: center;
-    box-shadow: $boxShadow;
-    flex: 1;
-
-    form {
-      width: 240px;
+    margin: 0 auto;
+    .settingForm {
+      width: 50%;
+      height: 400px;
+      margin: 0 1rem;
+      background-color: $ColorLightBlue;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      form .formUsername {
+        label {
+          display: flex;
+          flex-direction: column;
+          margin: 1rem 0;
+        }
+        input {
+          width: 220px;
+          padding: 0.5rem 0.8rem;
+          border: none;
+          outline: none;
+          border-radius: 1rem;
+          margin-top: 1rem;
+        }
+        .setting_btn {
+          button {
+            border: transparent;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.5s ease;
+            color: $WhitColor;
+            background-color: $BlueColor;
+            margin-top: 1rem;
+            &:hover {
+              background-color: $primaryColor;
+            }
+          }
+        }
+      }
+      .formPassword {
+        label {
+          display: flex;
+          flex-direction: column;
+          margin: 1rem 0;
+        }
 
-      label {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 0;
-        font-size: 1.1rem;
-        color: #106899;
-        width: 240px;
         .inputPassword {
           display: flex;
           position: relative;
-
-          .pwdvisibilityPass {
-            background: transparent;
-            position: absolute;
-            right: 1rem;
-            top: 0.9rem;
+          margin: 1rem 0;
+          input {
+            width: 200px;
+            border-radius: 1rem;
             border: none;
             outline: none;
+            padding: 0.3rem 0.5rem;
+          }
+          .pwdvisibilityPass {
+            position: absolute;
+            background: transparent;
+            border: none;
+            outline: none;
+            right: 0.5rem;
+            top: 0.3rem;
           }
         }
-      }
-
-      input {
-        width: 100%;
-        padding: 0.6rem;
-        outline: none;
-        border: none;
-        border-radius: 2rem;
-        margin: 0.3rem 0;
-        padding-left: 1rem;
-      }
-
-      .setting_btn {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-
-        .submitBtn,
-        .deleteBtn {
-          cursor: pointer;
-          width: 100px;
-          padding: 0.5rem 1rem;
-          border-radius: 2rem;
-          transition: all 0.3s ease;
-          background: white;
-          color: $ColorBlack;
-          text-decoration: none;
-          border: none;
-          outline: none;
-
+        .submitBtn {
+          border: transparent;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          transition: all 0.5s ease;
+          color: $WhitColor;
+          background-color: $BlueColor;
+          margin-top: 1rem;
           &:hover {
-            background-color: #9d9797;
+            background-color: $primaryColor;
           }
         }
       }
     }
   }
-
-  .message-container {
-    .message {
-      letter-spacing: 1px;
-      text-shadow: 10px 10px 20px rgb(0, 0, 0);
+  .messageContainer {
+    .message-container {
+          text-align: center;
+    font-size: 1.4rem;
+    text-shadow: 0px 0px 0.9px #000000;
     }
-    margin-top: 1rem;
+
   }
 
-  .delete-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-
-    & > div {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: $boxShadow;
-      text-align: center;
-
-      p {
-        margin-bottom: 1rem;
-      }
-
-      button {
-        cursor: pointer;
-        width: 100%;
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-        transition: all 0.3s ease;
-        background: #ff4d4d;
-        color: white;
-        border: none;
-        outline: none;
-
-        &:hover {
-          background-color: #cc0000;
-        }
-
-        &:not(:last-child) {
-          margin-right: 3rem;
-        }
-      }
-    }
-  }
 }

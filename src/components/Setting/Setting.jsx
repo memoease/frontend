@@ -4,6 +4,7 @@ import { useAuth } from "../../utilities/hooks/useAuth";
 import { updateUserData, deleteUserData } from "../../utilities/service/api";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import "../../css/setting.scss";
+import ModalSetting from "../ModalSetting/ModalSetting";
 
 const Setting = () => {
   const { userId } = useParams();
@@ -12,9 +13,10 @@ const Setting = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
+
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
@@ -66,13 +68,16 @@ const Setting = () => {
     }
   };
 
-  const handleDeleteClick = () => {
+  const navigate = useNavigate();
+  // Modal Block function
+  const handleDeleteConfirm = () => {
     setShowDeleteModal(true);
   };
+  const handleDeleteCancels = () => {
+    setShowDeleteModal(false);
+  };
 
-  const navigate = useNavigate();
-
-  const handleDeleteConfirm = async () => {
+  const handleDeleteConfirms = async () => {
     try {
       await deleteUserData(userId);
 
@@ -87,120 +92,101 @@ const Setting = () => {
 
     setShowDeleteModal(false);
   };
-
-  const handleDeleteCancel = () => {
-    setShowDeleteModal(false);
-  };
-
   return (
-    <div>
-      <div className="setting_content">
-        <h1 className="title">You can adjust your settings here...</h1>
-        <div className="formWrap">
-          <div className="settingForm">
-            {/* Form change Username */}
-            <form onSubmit={handleNameSubmit}>
-              <div className="">
-                <label htmlFor="username">
-                  Change name
-                  <input
-                    type="text"
-                    name="username"
-                    id="username"
-                    value={name}
-                    onChange={handleNameChange}
-                    placeholder="Enter your new username"
-                    required
-                  />
-                </label>
-              </div>
+    <div className="setting_content">
+      <h1 className="title">You can adjust your settings here...</h1>
+      <div className="formWrap">
+        <div className="settingForm">
+          {/* Form change Username */}
+          <form onSubmit={handleNameSubmit}>
+            <div className="formUsername">
+              <label htmlFor="username">
+                Change name
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  value={name}
+                  onChange={handleNameChange}
+                  placeholder="Enter your new username"
+                  required
+                />
+              </label>
               <div className="setting_btn">
                 <button type="submit" className="submitBtn">
                   Save new Name
                 </button>
               </div>
-            </form>
-          </div>
-          <div className="settingForm">
-            {/* Form Password change */}
-            <form onSubmit={handlePasswordSubmit}>
-              <div className="">
-                <label htmlFor="oldPassword">
-                  Old password
-                  <div className="inputPassword">
-                    <input
-                      type={passwordVisible ? "text" : "password"}
-                      name="oldPassword"
-                      id="oldPassword"
-                      value={oldPassword}
-                      onChange={handleOldPasswordChange}
-                      placeholder="at least 8 characters"
-                      required
-                    />
-                    <button
-                      type="button"
-                      className="pwdvisibilityPass"
-                      onClick={togglePasswordVisibility}
-                    >
-                      {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-                    </button>
-                  </div>
-                </label>
-              </div>
-              <div className="">
-                <label htmlFor="newPassword">
-                  New password
-                  <div className="inputPassword">
-                    <input
-                      type={passwordVisible ? "text" : "password"}
-                      name="newPassword"
-                      id="newPassword"
-                      value={newPassword}
-                      onChange={handleNewPasswordChange}
-                      placeholder="at least 8 characters"
-                      required
-                    />
-                    <button
-                      type="button"
-                      className="pwdvisibilityPass"
-                      onClick={togglePasswordVisibility}
-                    >
-                      {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-                    </button>
-                  </div>
-                </label>
-              </div>
-              <div className="setting_btn">
+            </div>
+          </form>
+        </div>
+        <div className="settingForm">
+          {/* Form Password change */}
+          <form onSubmit={handlePasswordSubmit}>
+            <div className="formPassword">
+              <label htmlFor="oldPassword">
+                Old password
+                <div className="inputPassword">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    name="oldPassword"
+                    id="oldPassword"
+                    value={oldPassword}
+                    onChange={handleOldPasswordChange}
+                    placeholder="at least 8 characters"
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="pwdvisibilityPass"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                  </button>
+                </div>
+              </label>
+
+              <label htmlFor="newPassword">
+                New password
+                <div className="inputPassword">
+                  <input
+                    type={passwordVisible ? "text" : "password"}
+                    name="newPassword"
+                    id="newPassword"
+                    value={newPassword}
+                    onChange={handleNewPasswordChange}
+                    placeholder="at least 8 characters"
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="pwdvisibilityPass"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                  </button>
+                </div>
                 <button type="submit" className="submitBtn">
                   Save new Password
                 </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div className="message-container">
-          {message && <p className="message">{message}</p>}
-        </div>
-        {/* Button for Account Delete */}
-        <div className="setting_btn">
-          <button
-            type="button"
-            onClick={handleDeleteClick}
-            className="deleteBtn"
-          >
-            Delete Account
-          </button>
+              </label>
+            </div>
+          </form>
         </div>
       </div>
+      <div className="message-container">
+        {message && <p className="message">{message}</p>}
+      </div>
+      {/* Button for Account Delete  /   Cancel */}
+      <div classname="modalBtn">
+        <button onClick={handleDeleteConfirm}>Show Delete Modal</button>
 
-      {/* Modal confirm deletion */}
-      {showDeleteModal && (
-        <div className="delete-modal">
-          <p>Do you really want to delete your account?</p>
-          <button onClick={handleDeleteConfirm}>Yes, I'm sure</button>
-          <button onClick={handleDeleteCancel}>No way!</button>
-        </div>
-      )}
+        <ModalSetting
+          showDeleteModal={showDeleteModal}
+          handleDeleteConfirms={handleDeleteConfirms}
+          handleDeleteCancels={handleDeleteCancels}
+        />
+      </div>
     </div>
   );
 };

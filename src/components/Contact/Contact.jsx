@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../../css/contact.scss";
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
           </p>
 
           <a href="mailto:memoease.team@gmail.com" onClick={handleLinkClick}>
-            E-Mail: write to us
+            To Imprint
           </a>
         </div>
       </div>

@@ -1,0 +1,47 @@
+@import "Colors"; // Importiere die Variablen
+.modalBtn{
+  background-color: red;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .delete-modal {
+    background: #fff;
+    width: 500px;
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+
+      cursor: pointer;
+      button {
+        padding: 0.5rem;
+        margin: 0 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        color: #ffff;
+        background: $BlueColor;
+        transition: all 0.8s ease;
+        &:hover {
+          background:  $primaryColor;
+        }
+      }
+    }
+  }
+}
