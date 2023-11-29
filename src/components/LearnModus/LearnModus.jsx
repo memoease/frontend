@@ -11,7 +11,8 @@ import {
 export const LearnModus = () => {
   const [sessionData, setSessionData] = useState(null);
   const [currentCard, setCurrentCard] = useState(null); // Current card being considered
-  const [index, setIndex] = useState(true);
+  const [index, setIndex] = useState(0);
+  const [flipped, setFlipped] = useState(true);
   const { setId } = useParams(); // Extracting setId from route params
 
   const allCardsLearned = sessionData?.toLearn.length === 0 && !currentCard;
@@ -25,7 +26,7 @@ export const LearnModus = () => {
 
         // Set the initial current card
         if (session.toLearn && session.toLearn.length > 0) {
-          setCurrentCard(session.toLearn[0]);
+          setCurrentCard(session.toLearn[index]);
         }
       } catch (error) {
         console.error("Error in LearnSession useEffect:", error.response.data);
@@ -41,8 +42,8 @@ export const LearnModus = () => {
       const cardIdToUpdate = currentCard._id;
       const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
       const updatedSession = await updateCardToLearned(cardIdToUpdate);
-      setCurrentCard(updatedSession.toLearn[0]);
-      setIndex(!index);
+      setCurrentCard(updatedSession.toLearn[index]);
+      setFlipped(!flipped);
     }
   };
 
@@ -70,8 +71,9 @@ export const LearnModus = () => {
 
     // Increment the index and handle boundary conditions
     const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
+    setIndex(nextIndex);
     setCurrentCard(sessionData.toLearn[nextIndex]);
-    setIndex(!index);
+    setFlipped(!flipped);
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -105,15 +107,14 @@ export const LearnModus = () => {
         <div className="overlap-group">
           <FlipCards
             activeCard={sessionData ? currentCard : []}
-            index={index}
+            index={flipped}
           />
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
-                    sessionData.toLearn.length
-                  }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                }`
                 : ""}
             </div>
             <button

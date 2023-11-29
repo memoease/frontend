@@ -29,7 +29,7 @@ const EditSet = () => {
         }
       } catch (error) {
         console.error(error);
-        console.log("error");
+        console.log("error fetching set data", error.message);
       }
     }
     fetchSetData(setId);
@@ -49,6 +49,8 @@ const EditSet = () => {
         }
       } catch (error) {
         console.error(error);
+        console.log("error fetching set data", error.message);
+
       }
     }
     fetchSetData(setId);
