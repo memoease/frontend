@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../css/register.scss";
 import { registerUser } from "../../utilities/service/api.js";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 

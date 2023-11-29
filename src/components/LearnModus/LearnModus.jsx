@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "../../css/LearnModus.scss";
 import FlipCards from "../FlipCards/FlipCards";
 
 import {
@@ -89,7 +88,6 @@ export const LearnModus = () => {
     }
   };
 
-
   if (allCardsLearned) {
     return (
       <div className="learn">
@@ -98,28 +96,30 @@ export const LearnModus = () => {
           Refresh Learnsession
         </button>
       </div>
-    )
+    );
   }
-
 
   return (
     <div className="learn">
       <div className="div">
         <div className="overlap-group">
-          <FlipCards activeCard={sessionData ? currentCard : []} index={index} />
+          <FlipCards
+            activeCard={sessionData ? currentCard : []}
+            index={index}
+          />
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
-                }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
+                    sessionData.toLearn.length
+                  }`
                 : ""}
             </div>
             <button
               className="ellipse-2"
               onClick={handleMoveToLearned}
             ></button>
-
           </div>
           <button className="refresh-button" onClick={handleRefreshSession}>
             Refresh Learnsession

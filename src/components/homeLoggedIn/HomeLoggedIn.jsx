@@ -1,7 +1,6 @@
 import React from "react";
 
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
-import "../../css/HomeLoggedIn.scss";
 import { useCards } from "../../utilities/hooks/useCards.jsx";
 
 const HomeLoggedIn = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/imprint.scss";
+
 const Imprint = () => {
   return (
     <div className="ImprintContent">

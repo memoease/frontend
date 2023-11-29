@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { updateUserData, deleteUserData } from "../../utilities/service/api";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import "../../css/setting.scss";
 
 const Setting = () => {
   const { userId } = useParams();

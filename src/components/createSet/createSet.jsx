@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { postNewFlashcardSet } from "../../utilities/service/api";
 import { useNavigate } from "react-router-dom";
-import "../../css/create_Box.scss";
 
 import EditPicture from "../../assets/Edit.png";
 

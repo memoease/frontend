@@ -1,5 +1,4 @@
 import React from "react";
-import "../../css/error.scss";
 import ErrorMessage from "../../assets/Fehler-Problem.webp";
 import { NavLink } from "react-router-dom";
 const Error = () => {

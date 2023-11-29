@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../css/EditSet.scss";
 import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
 import FlipCards from "../FlipCards/FlipCards";
@@ -30,9 +29,9 @@ const EditSet = () => {
         }
       } catch (error) {
         console.error(error);
-        console.log("error")
-      };
-    };
+        console.log("error");
+      }
+    }
     fetchSetData(setId);
   }, []);
 
@@ -50,8 +49,8 @@ const EditSet = () => {
         }
       } catch (error) {
         console.error(error);
-      };
-    };
+      }
+    }
     fetchSetData(setId);
   }, [newCardAdded]);
 
@@ -85,18 +84,16 @@ const EditSet = () => {
       const newIndex = (index - 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
-    };
+    }
   };
 
   const toSession = () => {
     navigate(`/session/${setId}`);
   };
 
-
   if (!fetchDone) {
     return <h2>loading...</h2>;
   }
-
 
   return (
     <div className="EditSet_Container">
@@ -104,12 +101,17 @@ const EditSet = () => {
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
-            <FlipCards activeCard={activeCard ? activeCard : ""} index={index} />
+            <FlipCards
+              activeCard={activeCard ? activeCard : ""}
+              index={index}
+            />
             <div className="editGroup">
               <button className="ellipseLeft" onClick={clickLeft}>
                 <FiChevronLeft />
               </button>
-              <div className="slidNumber">{index + 1}/{flashcards.flashcards.length}</div>
+              <div className="slidNumber">
+                {index + 1}/{flashcards.flashcards.length}
+              </div>
               <button className="ellipseRight" onClick={clickRight}>
                 <FiChevronRight />
               </button>
@@ -124,7 +126,11 @@ const EditSet = () => {
         </div>
         <div className="FromEdit">
           {renderCards()}
-          <AddCard setId={setId} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
+          <AddCard
+            setId={setId}
+            setNewCardAdded={setNewCardAdded}
+            newCardAdded={newCardAdded}
+          />
         </div>
       </div>
     </div>
