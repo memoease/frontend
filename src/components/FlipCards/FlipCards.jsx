@@ -18,8 +18,8 @@ function FlipCards({ activeCard, index }) {
       <CardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"
-        flipSpeedBackToFront={1}
-        flipSpeedFrontToBack={1}
+        flipSpeedBackToFront={0.5}
+        flipSpeedFrontToBack={0.5}
       >
         <div>
           <div

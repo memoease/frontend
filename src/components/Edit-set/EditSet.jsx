@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../css/EditSet.scss";
 import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
 import FlipCards from "../FlipCards/FlipCards";
@@ -30,9 +29,9 @@ const EditSet = () => {
         }
       } catch (error) {
         console.error(error);
-        console.log("error")
-      };
-    };
+        console.log("error");
+      }
+    }
     fetchSetData(setId);
   }, []);
 
@@ -40,11 +39,18 @@ const EditSet = () => {
     async function fetchSetData(setId) {
       try {
         const cardSet = await getSetBySetId(setId);
-        setFlashcards(cardSet)
+        if (cardSet && cardSet.flashcards && cardSet.flashcards.length > 0) {
+          setFlashcards(cardSet);
+          setActiveCard(cardSet.flashcards[index]);
+          setFetchDone(true);
+        } else {
+          setFlashcards(cardSet);
+          setFetchDone(true);
+        }
       } catch (error) {
         console.error(error);
-      };
-    };
+      }
+    }
     fetchSetData(setId);
   }, [newCardAdded]);
 
@@ -66,30 +72,28 @@ const EditSet = () => {
   };
 
   const clickRight = () => {
-    if (index < flashcards.flashcards.length - 1) {
-      const newIndex = index + 1;
+    if (index <= flashcards.flashcards.length - 1) {
+      const newIndex = (index + 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
     }
   };
 
   const clickLeft = () => {
-    if (index > 0) {
-      const newIndex = index - 1;
+    if (index >= 0) {
+      const newIndex = (index - 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
-    };
+    }
   };
 
   const toSession = () => {
     navigate(`/session/${setId}`);
   };
 
-
   if (!fetchDone) {
     return <h2>loading...</h2>;
   }
-
 
   return (
     <div className="EditSet_Container">
@@ -97,12 +101,17 @@ const EditSet = () => {
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
-            <FlipCards activeCard={activeCard ? activeCard : ""} index={index} />
+            <FlipCards
+              activeCard={activeCard ? activeCard : ""}
+              index={index}
+            />
             <div className="editGroup">
               <button className="ellipseLeft" onClick={clickLeft}>
                 <FiChevronLeft />
               </button>
-              <div className="slidNumber">{index + 1}/{flashcards.flashcards.length}</div>
+              <div className="slidNumber">
+                {index + 1}/{flashcards.flashcards.length}
+              </div>
               <button className="ellipseRight" onClick={clickRight}>
                 <FiChevronRight />
               </button>
@@ -117,7 +126,11 @@ const EditSet = () => {
         </div>
         <div className="FromEdit">
           {renderCards()}
-          <AddCard setId={setId} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
+          <AddCard
+            setId={setId}
+            setNewCardAdded={setNewCardAdded}
+            newCardAdded={newCardAdded}
+          />
         </div>
       </div>
     </div>

@@ -1,12 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
 // react component for creating beautiful carousel
-import "../../css/CarouselItem.scss";
 import CarouselData from "./CarouselData";
 const CarouselItem = ({ data }) => {
   const settings = {
     dots: true,
-    infinite: data.length > 3,
+    infinite: data?.length > 3,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,

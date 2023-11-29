@@ -1,6 +1,5 @@
 import React from "react";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
-import "../../css/DashBoard_login.scss";
 import { ImPlus } from "react-icons/im";
 import { NavLink } from "react-router-dom";
 import { useCards } from "../../utilities/hooks/useCards";

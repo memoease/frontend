@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "../../css/contact.scss";
+import "../../css/App.scss";
 const Contact = () => {
   const [showContent, setShowContent] = useState(false);
 

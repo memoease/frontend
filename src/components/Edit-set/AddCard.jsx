@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { Form } from "react-router-dom";
+import { useCards } from "../../utilities/hooks/useCards";
 import { postNewCardToSet } from "../../utilities/service/api";
 
 
 export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
-
+    const { updateSetsByUser } = useCards();
     const [entry, setEntry] = useState({
         question: "",
         answer: ""
@@ -26,6 +27,7 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
         evt.preventDefault();
         await postNewCardToSet(setId, entry);
         setNewCardAdded(!newCardAdded);
+        await updateSetsByUser()
         setEntry({
             question: "",
             answer: ""

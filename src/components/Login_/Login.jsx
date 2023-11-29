@@ -4,7 +4,6 @@ import { useAuth } from "../../utilities/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../utilities/service/api.js";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import "../../css/login.scss";
 
 const Login = () => {
   const location = useLocation();

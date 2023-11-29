@@ -57,9 +57,25 @@ export function CardProvider({ children }) {
     if (authorized) getPrivateSets();
   }, [loading]);
 
+
+  const updateSetsByUser = async () => {
+    try {
+      const response = await api.getFlashcardSetsByUser();
+
+      setPrivateCards(response);
+      setMessage("");
+    } catch (error) {
+      console.error("Error fetching private cards:", error.response?.data);
+
+      const { error: errorMessage } = error.response?.data || {};
+      setMessage(`${errorMessage}. `);
+    }
+  };
+
+
   // Provider of the CardsContext value for the child components
   return (
-    <CardsContext.Provider value={{ publicCards, privateCards, message }}>
+    <CardsContext.Provider value={{ publicCards, privateCards, message, updateSetsByUser }}>
       {children}
     </CardsContext.Provider>
   );

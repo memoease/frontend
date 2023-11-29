@@ -3,8 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { updateUserData, deleteUserData } from "../../utilities/service/api";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
+<<<<<<< HEAD
 import "../../css/setting.scss";
 import ModalSetting from "../ModalSetting/ModalSetting";
+=======
+>>>>>>> 77d708fec7b28d85b6ebb3706f9a156924880dc0
 
 const Setting = () => {
   const { userId } = useParams();

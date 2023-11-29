@@ -1,5 +1,4 @@
 import React from "react";
-import "../../css/homePage.scss";
 import { NavLink } from "react-router-dom";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
 import { useCards } from "../../utilities/hooks/useCards";
