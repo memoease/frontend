@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getSetBySetId } from "../../utilities/service/api";
+import { getPublicSetById } from "../../utilities/service/api";
 import ModalSetting from "../ModalSetting/ModalSetting";
 import FlipCards from "../FlipCards/FlipCards";
 
@@ -17,8 +17,10 @@ const PublicLearnSession = () => {
   useEffect(() => {
     const startSession = async () => {
       try {
-        const session = await getSetBySetId(setId);
+        const session = await getPublicSetById(setId);
+
         const allFlashcards = session.flashcards;
+
         setToLearn(allFlashcards);
         setIsLearned([]);
         setCurrentCard(allFlashcards[index]);
@@ -40,34 +42,36 @@ const PublicLearnSession = () => {
       setIsLearned(updatedIsLearned);
       advanceToNextCard();
     }
+  };
 
-    const advanceToNextCard = () => {
-      const nextIndex = (index + 1) % toLearn.length;
-      setIndex(nextIndex);
-      setCurrentCard(toLearn[nextIndex]);
-      setFlipped(true);
+  const advanceToNextCard = () => {
+    const nextIndex = (index + 1) % toLearn.length;
+    setIndex(nextIndex);
+    setCurrentCard(toLearn[nextIndex]);
+    setFlipped(true);
 
-      if (nextIndex === 4) {
-        setShowModal(true);
-      }
-    };
+    if (nextIndex === 4) {
+      setShowModal(true);
+    }
+  };
 
-    const handleKeepInSession = () => {
-      advanceToNextCard();
-    };
+  const handleKeepInSession = () => {
+    advanceToNextCard();
+  };
 
-    const handleRegister = () => {
-      sessionStorage.setItem("setId", setId);
-      navigate("/register");
-    };
+  const handleRegister = () => {
+    sessionStorage.setItem("setId", setId);
+    navigate("/register");
+  };
 
-    const handleLogin = () => {
-      sessionStorage.setItem("setId", setId);
-      navigate("/login");
-    };
+  const handleLogin = () => {
+    sessionStorage.setItem("setId", setId);
+    navigate("/login");
+  };
 
-    return (
-      <div className="public-learn-session">
+  return (
+    <div className="public-learn-session">
+      {currentCard && toLearn && (
         <div className="div">
           <div className="overlap-group">
             <FlipCards activeCard={currentCard} index={flipped} />
@@ -88,16 +92,17 @@ const PublicLearnSession = () => {
             </div>
           </div>
         </div>
-        <ModalSetting
-          showModal={showModal}
-          handleDeleteConfirms={handleRegister}
-          handleDeleteCancels={handleLogin}
-          modalText="If you would like to continue learning, you can simply register or log in"
-          confirmButtonText="Register"
-          cancelButtonText="Login"
-        />
-      </div>
-    );
-  };
+      )}
+      <ModalSetting
+        showModal={showModal}
+        handleDeleteConfirms={handleRegister}
+        handleDeleteCancels={handleLogin}
+        modalText="If you would like to continue learning, you can simply register or log in"
+        confirmButtonText="Register"
+        cancelButtonText="Login"
+      />
+    </div>
+  );
 };
+
 export default PublicLearnSession;

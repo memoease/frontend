@@ -150,4 +150,9 @@ export const refreshLearnSession = async (sessionId) => {
   return response.data;
 };
 
+export const getPublicSetById = async (setId) => {
+  const response = await axiosInstance.get(`sets/public/${setId}`);
+  return response.data;
+};
+
 export default axiosInstance;
