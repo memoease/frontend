@@ -8,7 +8,6 @@
   .imprint-wrapper {
     line-height: 40px;
     padding-top: 1rem;
-
     .title {
       cursor: pointer;
       font-size: 2.2rem;
@@ -23,7 +22,6 @@
       background-color: #000;
     }
     ul {
-      background-color: $ColorLightBlue;
       font-size: 1rem;
       margin-top: 2rem;
       height: 60vh;
@@ -31,6 +29,8 @@
       padding-top: 2.5rem;
       border-radius: 1rem;
 
+
+    background-color: $ColorLightBlue;
       li {
         cursor: pointer;
         width: 80%;
@@ -51,10 +51,12 @@
 
 @media only screen and (max-width: 700px) {
   .ImprintContent {
+    height: 100%;
     .imprint-wrapper {
       ul {
         display: flex;
         flex-direction: column;
+        height: auto;
       }
     }
   }
