@@ -5,7 +5,7 @@ import SetTitle from "./SetTitle";
 import CardInfo from "./CardInfo";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
 
 const EditSet = () => {
@@ -119,7 +119,7 @@ const EditSet = () => {
             </div>
           </div>
           <div className="setPractice">
-            <CardInfo setId={setId} description={flashcards.description} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
+            <CardInfo setId={setId} flashcards={flashcards} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
           </div>
         </div>
         <div className="FromEdit">
