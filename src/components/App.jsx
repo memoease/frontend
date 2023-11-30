@@ -21,6 +21,7 @@ import Setting from "./Setting/Setting";
 import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 import { CardProvider } from "../utilities/hooks/useCards.jsx";
 import Imprint from "./Imprint/Imprint";
+import PublicLearnSession from "./PublicLearnSession/PublicLearnSession";
 
 function App() {
   return (
@@ -36,6 +37,10 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/imprint" element={<Imprint />} />
+                <Route
+                  path="/publicsession/:setId"
+                  element={<PublicLearnSession />}
+                />
 
                 <Route element={<PrivateRoute />}>
                   <Route path="/create" element={<Box />} />
