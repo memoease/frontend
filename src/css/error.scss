@@ -25,11 +25,10 @@
       text-decoration: none;
       color: $WhitColor;
       transition: all 0.6s ease;
-      background-color: $BlueColor;
-      &:hover {
-        background-color: $primaryColor;
-        box-shadow: $boxShadowButton;
-      }
+       background: $highlightColor;
+            &:hover {
+              background: $ColorOrangen;
+            }
     }
   }
 }
