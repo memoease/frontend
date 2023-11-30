@@ -179,7 +179,7 @@ const Setting = () => {
         {message && <p className="message">{message}</p>}
       </div>
       {/* Button for Account Delete  /   Cancel */}
-      <div className="modalBtn">
+      <div className="modalBtnSetting">
         <button onClick={handleDeleteConfirm}>Delete Account</button>
 
         <ModalSetting

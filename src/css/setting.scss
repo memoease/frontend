@@ -102,7 +102,6 @@
           &:hover {
             background-color: $primaryColor;
             box-shadow: $boxShadowButton;
-     
           }
         }
       }
@@ -113,5 +112,22 @@
     text-align: center;
     font-size: 1.4rem;
     text-shadow: 0px 0px 0.9px #000000;
+  }
+  .modalBtnSetting {
+    display: flex;
+    justify-content: center;
+    button {
+      color: $WhitColor;
+      background-color: $BlueColor;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      padding:0.4rem  0.6rem;
+      transition: all 0.8s ease;
+      &:hover {
+        background-color: $primaryColor;
+        box-shadow: $boxShadowButton;
+      }
+    }
   }
 }
