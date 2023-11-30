@@ -43,13 +43,19 @@ const PublicLearnSession = () => {
       setIndex(nextIndex);
       setCurrentCard(toLearn[nextIndex]);
       setFlipped(true);
+
+      if (nextIndex === 4) {
+        setShowModal(true);
+      }
     };
 
     const handleRegister = () => {
+      sessionStorage.setItem("setId", setId);
       navigate("/register");
     };
 
     const handleLogin = () => {
+      sessionStorage.setItem("setId", setId);
       navigate("/login");
     };
 
@@ -77,8 +83,8 @@ const PublicLearnSession = () => {
         </div>
         <ModalSetting
           showModal={showModal}
-          handleRegister={handleRegister}
-          handleLogin={handleLogin}
+          handleDeleteConfirms={handleRegister}
+          handleDeleteCancels={handleLogin}
           modalText="If you would like to continue learning, you can simply register or log in"
           confirmButtonText="Register"
           cancelButtonText="Login"
