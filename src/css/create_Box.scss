@@ -1,23 +1,24 @@
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 .box {
-  display: flex;
+  width: 90%;
   margin: 0 auto;
-  background-color: $ColorLightGrey;
+  display: flex;
   border-radius: 1rem;
   padding: 2rem 0;
-    color:$BlueColor;  flex-wrap: wrap;
+  color: $BlueColor;
+  flex-wrap: wrap;
   .content-wrapper {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     padding: 1rem 0;
     .titleHead {
       margin: 1rem 0;
       font-weight: bolder;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       letter-spacing: 2px;
       text-align: center;
-       color:$BlueColor;
+      color: $BlueColor;
     }
     form {
       display: flex;
@@ -26,6 +27,7 @@
       padding: 1rem;
       border-radius: 1rem;
       background-color: rgba(196, 214, 231, 0.3);
+      box-shadow: $boxShadow;
       .group {
         display: flex;
         justify-content: center;
@@ -52,35 +54,34 @@
         padding: 0.3rem;
         border-radius: 0.4rem;
         border: none;
-        background: #ff8800;
+        background-color: $BlueColor;
         color: #ffff;
         max-width: 100%;
         transition: all 0.8s ease;
         &:hover {
-          background: #ef8104;
-          box-shadow: 0px 0px 2px #000;
+          background-color: $primaryColor;
+          box-shadow: $boxShadowButton;
         }
       }
     }
   }
 
   .image-container {
-    width: 50%;
+    width: 40%;
     padding: 1rem 0;
     img {
       width: 200px;
       position: relative;
-      left: 400px; 
-      opacity: 0; 
+      left: 400px;
+      opacity: 0;
       transition:
         left 1s ease-in-out,
         opacity 0.5s ease-in-out;
-  
     }
-          .active{
-            left: 10rem !important;
-            opacity: 1 !important;
-        }
+    .active {
+      left: 10rem !important;
+      opacity: 1 !important;
+    }
   }
 }
 @media (max-width: 768px) {
@@ -96,14 +97,14 @@
     .image-container {
       width: 100%;
       img {
-     width: 200px;
-      position: relative;
-      left: 100px; 
+        width: 200px;
+        position: relative;
+        left: 100px;
       }
-           .active{
-            left: 0rem !important;
-            opacity: 1 !important;
-        }
+      .active {
+        left: 0rem !important;
+        opacity: 1 !important;
+      }
     }
   }
 }
