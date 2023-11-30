@@ -98,7 +98,7 @@ const EditSet = () => {
 
   return (
     <div className="EditSet_Container">
-      <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded}></SetTitle>
+      <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded}></SetTitle>
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
@@ -119,7 +119,7 @@ const EditSet = () => {
             </div>
           </div>
           <div className="setPractice">
-            <CardInfo setId={setId} description={flashcards.description} setNewCardAdded={setNewCardAdded} />
+            <CardInfo setId={setId} description={flashcards.description} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
           </div>
         </div>
         <div className="FromEdit">

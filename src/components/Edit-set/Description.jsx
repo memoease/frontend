@@ -4,7 +4,7 @@ import { SlCheck } from "react-icons/sl";
 
 import { updateSetInfoById } from "../../utilities/service/api";
 
-const Description = ({ description, setId, setNewCardAdded }) => {
+const Description = ({ description, setId, setNewCardAdded, newCardAdded }) => {
     const [edit, setEdit] = useState(false);
     const [newDescript, setNewDescript] = useState({
         description: description
@@ -26,8 +26,7 @@ const Description = ({ description, setId, setNewCardAdded }) => {
         evt.preventDefault();
         try {
             const response = await updateSetInfoById(setId, newDescript);
-            setNewCardAdded(!setNewCardAdded);
-            console.log(response);
+            setNewCardAdded(!newCardAdded);
             setEdit(false);
         } catch (error) {
             console.error(error);

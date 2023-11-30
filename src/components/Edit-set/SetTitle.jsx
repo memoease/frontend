@@ -4,7 +4,7 @@ import { SlCheck } from "react-icons/sl";
 import { useParams } from "react-router-dom";
 import { updateSetInfoById } from "../../utilities/service/api";
 
-const SetTitle = ({ title, setNewCardAdded }) => {
+const SetTitle = ({ title, setNewCardAdded, newCardAdded }) => {
     const [edit, setEdit] = useState(false);
     const [newTitle, setNewTitle] = useState({ title: title });
 
@@ -26,7 +26,7 @@ const SetTitle = ({ title, setNewCardAdded }) => {
         evt.preventDefault();
         try {
             const response = await updateSetInfoById(setId, newTitle);
-            setNewCardAdded(!setNewCardAdded);
+            setNewCardAdded(!newCardAdded);
             setEdit(false);
         } catch (error) {
             console.error(error);
