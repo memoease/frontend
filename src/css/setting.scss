@@ -3,6 +3,7 @@
   width: 90%;
   height: 80vh;
   margin: 0 auto;
+ 
   border-radius: 1rem;
   .title {
     color: $BlueColor;
@@ -122,10 +123,24 @@
       outline: none;
       padding: 0.4rem 0.6rem;
       transition: all 0.8s ease;
-      background: $highlightColor;
+      background: #cccc;
       &:hover {
         background: $ColorOrangen;
       }
     }
+  }
+}
+@media only screen and (max-width: 600px){
+  .setting_content{
+    margin: 2rem 0;
+      .formWrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+         .settingForm{
+          width: 80%;
+          margin: 1rem ;  
+         }
+      }
   }
 }

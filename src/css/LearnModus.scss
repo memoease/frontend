@@ -11,21 +11,21 @@
   flex-direction: column;
   .titel_learn {
     font-size: 3rem;
+    color: $BlueColor;
     text-shadow: 0px 0px 10px #0000;
   }
   .refresh-button {
     border: none;
     outline: none;
     margin-top: 2rem;
-    padding: 0.3rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 1rem;
-    background-color: $BlueColor;
     color: $WhitColor;
-    transition: all 0.8s ease;
-    &:hover {
-      background-color: $primaryColor;
-      box-shadow: $boxShadowButton;
-    }
+    transition: all 0.7s ease;
+     background: $highlightColor;
+          &:hover {
+            background: $ColorOrangen;
+          }
   }
   .div {
     width: 100%;
