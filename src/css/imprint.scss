@@ -28,9 +28,7 @@
       display: flex;
       padding-top: 2.5rem;
       border-radius: 1rem;
-
-
-    background-color: $ColorLightBlue;
+      background-color: $ColorLightBlue;
       li {
         cursor: pointer;
         width: 80%;
@@ -53,10 +51,23 @@
   .ImprintContent {
     height: 100%;
     .imprint-wrapper {
+      line-height: 25px;
+        .title{
+          font-size: 1.5rem;
+        }
       ul {
         display: flex;
         flex-direction: column;
         height: auto;
+    
+        padding: 1rem 0;
+        li {
+          font-size: 0.8rem;
+ 
+          a{
+            font-size: 0.6rem;
+          }
+        }
       }
     }
   }
