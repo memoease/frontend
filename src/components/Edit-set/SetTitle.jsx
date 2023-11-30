@@ -16,7 +16,6 @@ const SetTitle = ({ title, setNewCardAdded }) => {
                 [evt.target.name]: evt.target.value
             }
         ));
-        console.log(newTitle.title);
     };
 
     const clickToEdit = () => {
@@ -28,13 +27,12 @@ const SetTitle = ({ title, setNewCardAdded }) => {
         try {
             const response = await updateSetInfoById(setId, newTitle);
             setNewCardAdded(!setNewCardAdded);
-            console.log(response);
             setEdit(false);
         } catch (error) {
             console.error(error);
 
         }
-    }
+    };
 
 
 
