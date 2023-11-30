@@ -67,6 +67,9 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
             </section>
             <button onClick={handleDeleteConfirm} >Delete</button>
             <ModalSetting
+                modalText="Are you sure to delete this set?"
+                confirmButtonText="Yes!"
+                cancelButtonText="No!"
                 showDeleteModal={showDeleteModal}
                 handleDeleteConfirms={handleDeleteConfirms}
                 handleDeleteCancels={handleDeleteCancels}
