@@ -17,7 +17,7 @@ export function CardProvider({ children }) {
   const [privateCards, setPrivateCards] = useState([]);
   const [message, setMessage] = useState("");
 
-  const { authorized, loading } = useAuth()
+  const { authorized, loading } = useAuth();
 
   // Effect to load the public-cards from the API
   useEffect(() => {
@@ -57,7 +57,6 @@ export function CardProvider({ children }) {
     if (authorized) getPrivateSets();
   }, [loading]);
 
-
   const updateSetsByUser = async () => {
     try {
       const response = await api.getFlashcardSetsByUser();
@@ -72,10 +71,11 @@ export function CardProvider({ children }) {
     }
   };
 
-
   // Provider of the CardsContext value for the child components
   return (
-    <CardsContext.Provider value={{ publicCards, privateCards, message, updateSetsByUser }}>
+    <CardsContext.Provider
+      value={{ publicCards, privateCards, message, updateSetsByUser }}
+    >
       {children}
     </CardsContext.Provider>
   );

@@ -7,7 +7,6 @@ import { FaEyeSlash, FaEye } from "react-icons/fa";
 import "../../css/setting.scss";
 import ModalSetting from "../ModalSetting/ModalSetting";
 
-
 const Setting = () => {
   const { userId } = useParams();
   const { user, logout } = useAuth();
@@ -180,8 +179,8 @@ const Setting = () => {
         {message && <p className="message">{message}</p>}
       </div>
       {/* Button for Account Delete  /   Cancel */}
-      <div classname="modalBtn">
-        <button onClick={handleDeleteConfirm}>Show Delete Modal</button>
+      <div className="modalBtn">
+        <button onClick={handleDeleteConfirm}>Delete Account</button>
 
         <ModalSetting
           showDeleteModal={showDeleteModal}
