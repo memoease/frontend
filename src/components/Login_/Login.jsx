@@ -42,14 +42,34 @@ const Login = () => {
   const loginHandler = async (evt) => {
     evt.preventDefault();
     try {
+      // Start loading state
       setLoading(true);
+
+      // Call the loginUser function to authenticate user
       const userData = await loginUser(loginData);
       console.log(userData);
+
+      // Set user data in the application state
       setUser(userData);
+
+      // Mark the user as authorized
       setAuthorized(true);
+
+      // End loading state
       setLoading(false);
-      navigate("/home");
+
+      // Check if the Set-ID is present in the Session Storage
+      const setIdFromStorage = localStorage.getItem("setId");
+
+      if (setIdFromStorage) {
+        // If Set-ID is present, navigate to edit the corresponding set
+        navigate(`/editset/${setIdFromStorage}`);
+      } else {
+        // Otherwise, navigate to the default route (e.g., "/home")
+        navigate("/home");
+      }
     } catch (error) {
+      // Handle login error
       console.error("Login error:", error);
       const { error: errorMessage } = error.response?.data;
 

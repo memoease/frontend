@@ -50,7 +50,7 @@ const PublicLearnSession = () => {
     setCurrentCard(toLearn[nextIndex]);
     setFlipped(true);
 
-    if (nextIndex === 4) {
+    if (nextIndex === 5) {
       setShowModal(true);
     }
   };
@@ -60,17 +60,17 @@ const PublicLearnSession = () => {
   };
 
   const handleRegister = () => {
-    sessionStorage.setItem("setId", setId);
+    localStorage.setItem("setId", setId);
     navigate("/register");
   };
 
   const handleLogin = () => {
-    sessionStorage.setItem("setId", setId);
+    localStorage.setItem("setId", setId);
     navigate("/login");
   };
 
   return (
-    <div className="public-learn-session">
+    <div className="learn">
       {currentCard && toLearn && (
         <div className="div">
           <div className="overlap-group">
@@ -93,11 +93,12 @@ const PublicLearnSession = () => {
           </div>
         </div>
       )}
+
       <ModalSetting
-        showModal={showModal}
+        showDeleteModal={showModal}
         handleDeleteConfirms={handleRegister}
         handleDeleteCancels={handleLogin}
-        modalText="If you would like to continue learning, you can simply register or log in"
+        modalText="Would you like to continue learning?"
         confirmButtonText="Register"
         cancelButtonText="Login"
       />
