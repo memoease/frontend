@@ -82,7 +82,7 @@ const EditSet = () => {
   };
 
   const clickLeft = () => {
-    if (index >= 0) {
+    if (index > 0) {
       const newIndex = (index - 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
