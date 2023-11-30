@@ -3,7 +3,6 @@
   width: 90%;
   height: 80vh;
   margin: 0 auto;
- 
   border-radius: 1rem;
   .title {
     color: $BlueColor;
@@ -38,7 +37,7 @@
         }
         input {
           width: 220px;
-          padding: 0.5rem 0.8rem;
+          padding: 0.4rem 0.5rem;
           border: none;
           outline: none;
           border-radius: 1rem;
@@ -97,6 +96,7 @@
           color: $WhitColor;
           margin-top: 1rem;
           cursor: pointer;
+          font-size: 1rem;
           background: $highlightColor;
           &:hover {
             background: $ColorOrangen;
@@ -115,8 +115,6 @@
     display: flex;
     margin-top: 1rem;
     button {
-
-
       color: $WhitColor;
       border-radius: 1rem;
       border: none;
@@ -130,17 +128,48 @@
     }
   }
 }
-@media only screen and (max-width: 600px){
-  .setting_content{
-    margin: 2rem 0;
-      .formWrap {
-        width: 100%;
-        display: flex;
-        flex-direction: column; 
-         .settingForm{
-          width: 80%;
-          margin: 1rem ;  
-         }
+@media only screen and (max-width: 700px) {
+  .setting_content {
+    margin: 2rem;
+     .title{
+      font-size: 1rem;
+     }
+    .formWrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .settingForm {
+        width: 80%;
+        margin: 1rem;
+        padding: 0.3rem;
+        form .formUsername {
+          input {
+            width: 160px;
+          }
+        }
+        .setting_btn {
+          width: 120px;
+          font-size: 0.6rem;
+        }
+        .formPassword {
+          .inputPassword {
+            input {
+              width: 160px;
+            }
+          }
+          .submitBtn {
+            width: 120px;
+            font-size: 0.6rem;
+          }
+        }
       }
+    }
+    .message-container {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+    }
+    .modalBtnSetting {
+      margin-bottom: 1rem;
+    }
   }
 }
