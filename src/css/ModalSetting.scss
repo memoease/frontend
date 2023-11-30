@@ -1,5 +1,5 @@
 @import "Colors"; // Importiere die Variablen
-.modalBtn{
+.modalBtn {
   background-color: red;
 }
 .modal-overlay {
@@ -39,9 +39,19 @@
         background: $BlueColor;
         transition: all 0.8s ease;
         &:hover {
-          background:  $primaryColor;
+          background: $primaryColor;
         }
       }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .modal-overlay {
+    .delete-modal {
+      width: 300px;
+      height: 120px;
+      padding: 0.5rem;
+      margin: 1rem;
     }
   }
 }

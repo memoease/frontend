@@ -90,12 +90,18 @@
     display: flex;
     flex-direction: column;
     .content-wrapper {
-      width: 80%;
+      width: 100%;
       margin: 1rem auto;
           .titleHead {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
           }
+          form{
+            width: 100%;
+            margin: 0 auto;
+          }
+        
+    
     }
     .image-container {
       width: 100%;
