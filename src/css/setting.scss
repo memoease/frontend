@@ -51,13 +51,11 @@
             border-radius: 0.5rem;
             transition: all 0.5s ease;
             color: $WhitColor;
-            background-color: $BlueColor;
             margin-top: 1rem;
             cursor: pointer;
-
+            background: $highlightColor;
             &:hover {
-              background-color: $primaryColor;
-              box-shadow: $boxShadowButton;
+              background: $ColorOrangen;
             }
           }
         }
@@ -96,12 +94,11 @@
           border-radius: 0.5rem;
           transition: all 0.5s ease;
           color: $WhitColor;
-          background-color: $BlueColor;
           margin-top: 1rem;
           cursor: pointer;
+          background: $highlightColor;
           &:hover {
-            background-color: $primaryColor;
-            box-shadow: $boxShadowButton;
+            background: $ColorOrangen;
           }
         }
       }
@@ -115,19 +112,19 @@
   }
   .modalBtnSetting {
     display: flex;
-    justify-content: center;
     margin-top: 1rem;
     button {
+
+
       color: $WhitColor;
-      background-color: $BlueColor;
       border-radius: 1rem;
       border: none;
       outline: none;
-      padding:0.4rem  0.6rem;
+      padding: 0.4rem 0.6rem;
       transition: all 0.8s ease;
+      background: $highlightColor;
       &:hover {
-        background-color: $primaryColor;
-        box-shadow: $boxShadowButton;
+        background: $ColorOrangen;
       }
     }
   }

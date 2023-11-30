@@ -48,9 +48,13 @@
       margin-bottom: 1.2rem;
       line-height: 23px;
     }
-    a {
+    a{
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    .linkToImprint {
       cursor: pointer;
-      color: #0b94ef;
       text-decoration: none;
       transition: color 0.3s ease;
 
@@ -58,5 +62,6 @@
         color: $BlueColor;
       }
     }
+  
   }
 }

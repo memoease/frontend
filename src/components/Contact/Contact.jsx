@@ -28,9 +28,16 @@ const Contact = () => {
             your insights and ideas.
           </p>
 
-          <NavLink to="/imprint">
-            <a href="#" onClick={handleLinkClick}></a>
-            To Imprint
+          <a className="email" href="mailto:memoease.team@gmail.com">
+            E-Mail: memoease.team@gmail.com
+          </a>
+
+          <NavLink
+            to="/imprint"
+            className="linkToImprint"
+            onClick={handleLinkClick}
+          >
+            Imprint
           </NavLink>
         </div>
       </div>

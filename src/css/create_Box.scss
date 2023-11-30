@@ -54,14 +54,13 @@
         padding: 0.3rem;
         border-radius: 0.4rem;
         border: none;
-        background-color: $BlueColor;
         color: #ffff;
         max-width: 100%;
         transition: all 0.8s ease;
-        &:hover {
-          background-color: $primaryColor;
-          box-shadow: $boxShadowButton;
-        }
+       background: $highlightColor;
+          &:hover {
+            background: $ColorOrangen;
+          }
       }
     }
   }
