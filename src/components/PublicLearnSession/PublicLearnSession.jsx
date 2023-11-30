@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
 import ModalSetting from "../ModalSetting/ModalSetting";
+import FlipCards from "../FlipCards/FlipCards";
 
 const PublicLearnSession = () => {
   const { setId } = useParams();
@@ -17,13 +18,15 @@ const PublicLearnSession = () => {
     const startSession = async () => {
       try {
         const session = await getSetBySetId(setId);
-        setToLearn(session.toLearn);
-        setIsLearned(session.isLearned);
-        setCurrentCard(session.toLearn[index]);
+        const allFlashcards = session.flashcards;
+        setToLearn(allFlashcards);
+        setIsLearned([]);
+        setCurrentCard(allFlashcards[index]);
       } catch (error) {
         console.error("Error in LearnSession useEffect:", error.response.data);
       }
     };
+
     startSession();
   }, [setId]);
 
@@ -47,6 +50,10 @@ const PublicLearnSession = () => {
       if (nextIndex === 4) {
         setShowModal(true);
       }
+    };
+
+    const handleKeepInSession = () => {
+      advanceToNextCard();
     };
 
     const handleRegister = () => {
