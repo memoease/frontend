@@ -1,16 +1,16 @@
 @import "Colors"; // Importiere die Variablen
 
 .contact_repper {
-  width: 90%;
+  max-width: 80%;
   height: 80vh;
   margin: 0 auto;
   border-radius: 1rem;
- background-color: $ColorLightBlue;
+  background-color: $ColorLightBlue;
   .wrpper-contact {
+    max-width: 600px;
     text-align: center;
-    width: 500px;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem;
     .text-center {
       padding: 2rem 0;
       font-size: 2rem;
@@ -44,22 +44,51 @@
       transform: translateY(0);
     }
     .titelWisch {
+      font-size: 1rem;
       letter-spacing: 0.2px;
       margin-bottom: 1.2rem;
-      line-height: 23px;     
+      line-height: 23px;
     }
-    a {
+    .email {
       margin-left: 1rem;
       text-decoration: none;
+      padding-right: 1rem;
     }
 
     .linkToImprint {
       cursor: pointer;
       text-decoration: none;
       transition: color 0.3s ease;
-
       &:hover {
         color: $BlueColor;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .contact_repper {
+    margin-top: 2rem;
+    height: auto;
+    .wrpper-contact {
+      padding: 0.3rem;
+        .text-center {
+          font-size: 1.2rem;
+        }
+    }
+    .content {
+
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      .titelWisch {
+        font-size: 0.7em;
+        font-weight: normal;
+      }
+      .email {
+        font-size: 0.6em;
+        margin-bottom: 1rem;
+        
       }
     }
   }
