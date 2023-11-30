@@ -109,12 +109,14 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
+
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
-                }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
+                    sessionData.toLearn.length
+                  }`
                 : ""}
             </div>
             <button

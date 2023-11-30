@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SlPencil } from "react-icons/sl";
 import { SlCheck } from "react-icons/sl";
+import { useCards } from "../../utilities/hooks/useCards";
 
 import { updateSetInfoById } from "../../utilities/service/api";
 
@@ -9,6 +10,7 @@ const Description = ({ description, setId, setNewCardAdded, newCardAdded }) => {
     const [newDescript, setNewDescript] = useState({
         description: description
     });
+    const { updateSetsByUser } = useCards();
 
     const changeHandler = (evt) => {
         setNewDescript(prev => (
@@ -27,6 +29,7 @@ const Description = ({ description, setId, setNewCardAdded, newCardAdded }) => {
         try {
             const response = await updateSetInfoById(setId, newDescript);
             setNewCardAdded(!newCardAdded);
+            updateSetsByUser();
             setEdit(false);
         } catch (error) {
             console.error(error);

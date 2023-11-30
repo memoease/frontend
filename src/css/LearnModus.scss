@@ -15,6 +15,7 @@
     text-shadow: 0px 0px 10px #0000;
   }
   .refresh-button {
+    cursor: pointer;
     border: none;
     outline: none;
     margin-top: 2rem;
@@ -32,7 +33,16 @@
     margin: 0 auto;
 
     .overlap-group {
-      cursor: pointer;
+      .react-card-flip{
+      max-width: 25%;
+      min-width: 220px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+      }
+      
       .group {
         margin: 2rem 0;
         text-align: center;

@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { updateSetInfoById } from "../../utilities/service/api";
+import { deleteSetBySetId, updateSetInfoById } from "../../utilities/service/api";
 import Description from "./Description";
+import ModalSetting from "../ModalSetting/ModalSetting";
+import { useCards } from "../../utilities/hooks/useCards";
 
 
 const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
     const navigate = useNavigate();
     const [setAccess, setSetAccess] = useState(flashcards.isPublic);
-
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const { updateSetsByUser } = useCards();
     const toSession = () => {
         navigate(`/session/${setId}`);
     };
@@ -25,6 +28,29 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
         };
     };
 
+    const handleDeleteConfirm = () => {
+        setShowDeleteModal(true);
+    };
+
+    const handleDeleteCancels = () => {
+        setShowDeleteModal(false);
+    };
+
+    const handleDeleteConfirms = async () => {
+        try {
+            await deleteSetBySetId(setId);
+
+            console.log("Set deleted successfully");
+            setNewCardAdded(!newCardAdded);
+            updateSetsByUser();
+            navigate("/dashboard");
+        } catch (error) {
+            console.error("Error deleting set", error);
+        }
+
+        setShowDeleteModal(false);
+    };
+
     return (
         <div className="cardEdit">
             <Description description={flashcards.description} setId={setId} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
@@ -39,6 +65,15 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
 
                 }
             </section>
+            <button onClick={handleDeleteConfirm} >Delete</button>
+            <ModalSetting
+                modalText="Are you sure to delete this set?"
+                confirmButtonText="Yes!"
+                cancelButtonText="No!"
+                showDeleteModal={showDeleteModal}
+                handleDeleteConfirms={handleDeleteConfirms}
+                handleDeleteCancels={handleDeleteCancels}
+            />
             <>
                 {
                     (!flashcards.session || flashcards.session.toLearn.length === 0) ?

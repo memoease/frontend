@@ -1,22 +1,25 @@
 import React from "react";
 import "../../css/ModalSetting.scss";
+
 const ModalSetting = ({
   showDeleteModal,
   handleDeleteConfirms,
   handleDeleteCancels,
+  modalText,
+  confirmButtonText,
+  cancelButtonText,
 }) => {
   if (!showDeleteModal) {
-    // Zeige kein Modal, wenn showDeleteModal false ist
     return null;
   }
 
   return (
     <div className="modal-overlay">
       <div className="delete-modal">
-        <p>Do you really want to delete your account?</p>
+        <p>{modalText}</p>
         <div className="btn">
-          <button onClick={handleDeleteConfirms}>Yes, I'm sure</button>
-          <button onClick={handleDeleteCancels}>No way!</button>
+          <button onClick={handleDeleteConfirms}>{confirmButtonText}</button>
+          <button onClick={handleDeleteCancels}>{cancelButtonText}</button>
         </div>
       </div>
     </div>

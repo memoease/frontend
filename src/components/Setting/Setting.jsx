@@ -186,6 +186,9 @@ const Setting = () => {
           showDeleteModal={showDeleteModal}
           handleDeleteConfirms={handleDeleteConfirms}
           handleDeleteCancels={handleDeleteCancels}
+          modalText="Do you really want to delete your account?"
+          confirmButtonText="Yes, I'm sure"
+          cancelButtonText="No way!"
         />
       </div>
     </div>

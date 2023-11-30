@@ -2,12 +2,13 @@ import { useState } from "react";
 import { SlPencil } from "react-icons/sl";
 import { SlCheck } from "react-icons/sl";
 import { useParams } from "react-router-dom";
+import { useCards } from "../../utilities/hooks/useCards";
 import { updateSetInfoById } from "../../utilities/service/api";
 
 const SetTitle = ({ title, setNewCardAdded, newCardAdded }) => {
     const [edit, setEdit] = useState(false);
     const [newTitle, setNewTitle] = useState({ title: title });
-
+    const { updateSetsByUser } = useCards();
     const { setId } = useParams();
 
     const changeHandler = (evt) => {
@@ -27,6 +28,7 @@ const SetTitle = ({ title, setNewCardAdded, newCardAdded }) => {
         try {
             const response = await updateSetInfoById(setId, newTitle);
             setNewCardAdded(!newCardAdded);
+            updateSetsByUser();
             setEdit(false);
         } catch (error) {
             console.error(error);
