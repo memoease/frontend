@@ -1,7 +1,9 @@
 @import "Colors"; // Importiere die Variablen
 
 .ImprintContent {
-  width: 85%;
+  width: 90%;
+  height: 80vh;
+
   margin: 0 auto;
   flex-wrap: wrap;
   .imprint-wrapper {
@@ -11,7 +13,6 @@
       font-size: 2.2rem;
       padding: 1rem 0;
       letter-spacing: 1px;
-      font-family: "Times New Roman", Times, serif;
       color: $BlueColor;
       text-decoration: underline;
     }
@@ -21,9 +22,13 @@
       background-color: #000;
     }
     ul {
+   background-color: $ColorLightBlue;
       font-size: 1rem;
+      margin-top: 2rem;
+      height: 60vh;
       display: flex;
       padding-top: 2.5rem;
+      border-radius: 1rem;
    
     
       li {
