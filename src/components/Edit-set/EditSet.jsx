@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
+import SetTitle from "./SetTitle";
+import CardInfo from "./CardInfo";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate, useParams } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
 
 const EditSet = () => {
-  const navigate = useNavigate();
   const { setId } = useParams();
   const [flashcards, setFlashcards] = useState({});
   const [newCardAdded, setNewCardAdded] = useState(true);
@@ -89,9 +90,7 @@ const EditSet = () => {
     }
   };
 
-  const toSession = () => {
-    navigate(`/session/${setId}`);
-  };
+
 
   if (!fetchDone) {
     return <h2>loading...</h2>;
@@ -99,7 +98,7 @@ const EditSet = () => {
 
   return (
     <div className="EditSet_Container">
-      <h2>{flashcards.title}</h2>
+      <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded}></SetTitle>
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
@@ -120,10 +119,7 @@ const EditSet = () => {
             </div>
           </div>
           <div className="setPractice">
-            <div className="cardEdit">
-              <h2 className="title">PRACTICE THIS SET</h2>
-              <button onClick={toSession}>start</button>
-            </div>
+            <CardInfo setId={setId} description={flashcards.description} setNewCardAdded={setNewCardAdded} />
           </div>
         </div>
         <div className="FromEdit">

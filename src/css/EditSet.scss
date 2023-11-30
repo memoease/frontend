@@ -5,6 +5,24 @@
   height: 100%;
   margin: 0 auto;
 
+  .set-title {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+    button {
+      border: none;
+      background-color: #106899;
+      // border-radius: 50%;
+
+      svg {
+        fill: white;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+
   h2 {
     color: $ColorBlack;
     font-size: 2rem;

@@ -121,8 +121,8 @@ export const deleteSetBySetId = async (setId) => {
 };
 
 // Update Set Infos by SetID
-export const updateSetInfoById = async (setId) => {
-  const response = await axiosInstance.put(`sets/${setId}`);
+export const updateSetInfoById = async (setId, data) => {
+  const response = await axiosInstance.put(`sets/${setId}`, data);
   return response.data;
 };
 
