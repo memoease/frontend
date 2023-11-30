@@ -135,12 +135,13 @@
 
     .menu {
       display: flex;
+     
     }
     ul {
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin: 0 auto;
+      margin: 0.4rem auto;
 
       li {
         display: none;

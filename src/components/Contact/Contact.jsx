@@ -20,7 +20,7 @@ const Contact = () => {
           Click my
         </button>
         <div className={`content ${showContent ? "show" : ""}`}>
-          <p>
+          <p className="titelWisch">
             Just like you, our hunger for knowledge knows no bounds. We eagerly
             welcome your thoughts, whether they're comments, opinions, or
             expressions of appreciation. Your input fuels our passion for
