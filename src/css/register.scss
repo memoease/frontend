@@ -1,5 +1,4 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 //   Styling des register --------------------
 .register_container {
   display: flex;
@@ -18,7 +17,7 @@
 
   .register-form {
     width: $boxWidth;
-    height:$boxHeight;
+    height: $boxHeight;
     background: #c4d6e7;
     display: flex;
     justify-content: center;
@@ -72,12 +71,12 @@
           border: none;
           outline: none;
           color: $ColorBlack;
-          transition: all 3s ease;
+          transition: all 0.7s ease;
           background: white;
           margin-top: 1rem;
-
+          background: $highlightColor;
           &:hover {
-            background-color: #9d9797;
+            background: $ColorOrangen;
           }
         }
       }

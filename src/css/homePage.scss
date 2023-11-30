@@ -19,13 +19,13 @@
       }
       .startLinkCardTitel {
         text-decoration: none;
-        background: $ColorOrangen;
+        background:  $highlightColor;
         border-radius: 20px;
         padding: 0.4rem;
         color: $WhitColor;
         transition: all 0.8s ease;
         &:hover {
-          background: $highlightColor;
+          background: $ColorOrangen;
         }
       }
     }
