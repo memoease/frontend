@@ -1,17 +1,38 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 
 .learn {
   margin: 0 auto;
   width: 90%;
   height: 80vh;
   padding: 2em;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .titel_learn {
+    font-size: 3rem;
+    text-shadow: 0px 0px 10px #0000;
+  }
+  .refresh-button {
+    border: none;
+    outline: none;
+    margin-top: 2rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    background-color: $BlueColor;
+    color: $WhitColor;
+    transition: all 0.8s ease;
+    &:hover {
+      background-color: $primaryColor;
+      box-shadow: $boxShadowButton;
+    }
+  }
   .div {
     width: 100%;
     margin: 0 auto;
+
     .overlap-group {
-        cursor: pointer;
+      cursor: pointer;
       .group {
         margin: 2rem 0;
         text-align: center;

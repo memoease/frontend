@@ -93,7 +93,7 @@ export const LearnModus = () => {
   if (allCardsLearned) {
     return (
       <div className="learn">
-        <h3>Start all over again!</h3>
+        <h3 className="titel_learn">Start all over again!</h3>
         <button className="refresh-button" onClick={handleRefreshSession}>
           Refresh Learnsession
         </button>

@@ -15,15 +15,15 @@ const HomePage = () => {
         <div className="Discriptcontent">
           <h1 className="title_head">Create And Discover flashcard sets</h1>
 
-          {authorized ?
+          {authorized ? (
             <NavLink to="/dashboard" className="startLinkCardTitel">
               Get Started
             </NavLink>
-            :
+          ) : (
             <NavLink to="/register" className="startLinkCardTitel">
               Get Started
             </NavLink>
-          }
+          )}
         </div>
         {/* get start link -------------- */}
         <div className="getStartlink-content">
