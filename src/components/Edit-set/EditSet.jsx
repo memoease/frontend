@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddCard from "./AddCard";
 import ShowAndEditCards from "./ShowAndEditCard";
+import SetTitle from "./SetTitle";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useNavigate, useParams } from "react-router-dom";
@@ -99,7 +100,7 @@ const EditSet = () => {
 
   return (
     <div className="EditSet_Container">
-      <h2>{flashcards.title}</h2>
+      <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded}></SetTitle>
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
