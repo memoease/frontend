@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "../../css/App.scss";
+import { NavLink } from "react-router-dom";
 const Contact = () => {
   const [showContent, setShowContent] = useState(false);
 
@@ -27,9 +28,10 @@ const Contact = () => {
             your insights and ideas.
           </p>
 
-          <a href="mailto:memoease.team@gmail.com" onClick={handleLinkClick}>
+          <NavLink to="/imprint">
+            <a href="#" onClick={handleLinkClick}></a>
             To Imprint
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>

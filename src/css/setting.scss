@@ -3,11 +3,9 @@
   width: 90%;
   height: 80vh;
   margin: 0 auto;
-  background: $ColorLightGrey;
   border-radius: 1rem;
-
   .title {
-    color: #106899;
+    color: $BlueColor;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhiteColor;
     margin-bottom: 1rem;
@@ -29,8 +27,10 @@
       justify-content: center;
       align-items: center;
       border-radius: 1rem;
+      box-shadow: $boxShadow;
       form .formUsername {
         label {
+          color: $BlueColor;
           display: flex;
           flex-direction: column;
           margin: 1rem 0;
@@ -42,6 +42,7 @@
           outline: none;
           border-radius: 1rem;
           margin-top: 1rem;
+          cursor: pointer;
         }
         .setting_btn {
           button {
@@ -52,19 +53,22 @@
             color: $WhitColor;
             background-color: $BlueColor;
             margin-top: 1rem;
+            cursor: pointer;
+
             &:hover {
               background-color: $primaryColor;
+              box-shadow: $boxShadowButton;
             }
           }
         }
       }
       .formPassword {
         label {
+          color: $BlueColor;
           display: flex;
           flex-direction: column;
           margin: 1rem 0;
         }
-
         .inputPassword {
           display: flex;
           position: relative;
@@ -75,6 +79,7 @@
             border: none;
             outline: none;
             padding: 0.3rem 0.5rem;
+            cursor: pointer;
           }
           .pwdvisibilityPass {
             position: absolute;
@@ -93,20 +98,20 @@
           color: $WhitColor;
           background-color: $BlueColor;
           margin-top: 1rem;
+          cursor: pointer;
           &:hover {
             background-color: $primaryColor;
+            box-shadow: $boxShadowButton;
+     
           }
         }
       }
     }
   }
-  .messageContainer {
-    .message-container {
-          text-align: center;
+
+  .message-container {
+    text-align: center;
     font-size: 1.4rem;
     text-shadow: 0px 0px 0.9px #000000;
-    }
-
   }
-
 }
