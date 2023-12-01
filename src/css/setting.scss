@@ -1,0 +1,177 @@
+@import "Colors";
+.setting_content {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  border-radius: 1rem;
+  .title {
+    color: $BlueColor;
+    font-weight: normal;
+    text-shadow: 0px 0px 0.3px $WhiteColor;
+    margin-bottom: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .formWrap {
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    .settingForm {
+      width: 50%;
+      height: 400px;
+      margin: 0 1rem;
+      background-color: $ColorLightBlue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      box-shadow: $boxShadow;
+      form .formUsername {
+        label {
+          color: $BlueColor;
+          display: flex;
+          flex-direction: column;
+          margin: 1rem 0;
+        }
+        input {
+          width: 220px;
+          padding: 0.4rem 0.5rem;
+          border: none;
+          outline: none;
+          border-radius: 1rem;
+          margin-top: 1rem;
+          cursor: pointer;
+        }
+        .setting_btn {
+          button {
+            border: transparent;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.5s ease;
+            color: $WhitColor;
+            margin-top: 1rem;
+            cursor: pointer;
+            background: $highlightColor;
+            &:hover {
+              background: $ColorOrangen;
+            }
+          }
+        }
+      }
+      .formPassword {
+        label {
+          color: $BlueColor;
+          display: flex;
+          flex-direction: column;
+          margin: 1rem 0;
+        }
+        .inputPassword {
+          display: flex;
+          position: relative;
+          margin: 1rem 0;
+          input {
+            width: 200px;
+            border-radius: 1rem;
+            border: none;
+            outline: none;
+            padding: 0.3rem 0.5rem;
+            cursor: pointer;
+          }
+          .pwdvisibilityPass {
+            position: absolute;
+            background: transparent;
+            border: none;
+            outline: none;
+            right: 0.5rem;
+            top: 0.3rem;
+          }
+        }
+        .submitBtn {
+          border: transparent;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          transition: all 0.5s ease;
+          color: $WhitColor;
+          margin-top: 1rem;
+          cursor: pointer;
+          font-size: 1rem;
+          background: $highlightColor;
+          &:hover {
+            background: $ColorOrangen;
+          }
+        }
+      }
+    }
+  }
+
+  .message-container {
+    text-align: center;
+    font-size: 1.4rem;
+    text-shadow: 0px 0px 0.9px #000000;
+  }
+  .modalBtnSetting {
+    display: flex;
+    margin-top: 1rem;
+    button {
+      color: $WhitColor;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      padding: 0.4rem 0.6rem;
+      transition: all 0.8s ease;
+      background: #cccc;
+      &:hover {
+        background: $ColorOrangen;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .setting_content {
+    margin: 2rem;
+    width: 100%;
+    margin: 0 auto;
+     .title{
+      font-size: 1rem;
+     }
+    .formWrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .settingForm {
+        width: 80%;
+        margin: 1rem;
+        padding: 0.3rem;
+        form .formUsername {
+          input {
+            width: 160px;
+          }
+        }
+        .setting_btn {
+          width: 120px;
+          font-size: 0.6rem;
+        }
+        .formPassword {
+          .inputPassword {
+            input {
+              width: 160px;
+            }
+          }
+          .submitBtn {
+            width: 120px;
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+    .message-container {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+    }
+    .modalBtnSetting {
+      margin-bottom: 1rem;
+    }
+  }
+}

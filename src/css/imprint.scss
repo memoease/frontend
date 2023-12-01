@@ -1,0 +1,74 @@
+@import "Colors"; // Importiere die Variablen
+
+.ImprintContent {
+  width: 90%;
+  height: 80vh;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  .imprint-wrapper {
+    line-height: 40px;
+    padding-top: 1rem;
+    .title {
+      cursor: pointer;
+      font-size: 2.2rem;
+      padding: 1rem 0;
+      letter-spacing: 1px;
+      color: $BlueColor;
+      text-decoration: underline;
+    }
+    .line {
+      width: 100%;
+      height: 0.1rem;
+      background-color: #000;
+    }
+    ul {
+      font-size: 1rem;
+      margin-top: 2rem;
+      height: 60vh;
+      display: flex;
+      padding-top: 2.5rem;
+      border-radius: 1rem;
+      background-color: $ColorLightBlue;
+      li {
+        cursor: pointer;
+        width: 80%;
+        margin: 0 auto;
+        opacity: 0.9;
+        transition: all 0.8s ease;
+        font-size: 0.9rem;
+        a {
+          padding-left: 0.4rem;
+        }
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .ImprintContent {
+    height: 100%;
+    .imprint-wrapper {
+      line-height: 25px;
+        .title{
+          font-size: 1.5rem;
+        }
+      ul {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    
+        padding: 1rem 0;
+        li {
+          font-size: 0.8rem;
+ 
+          a{
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}

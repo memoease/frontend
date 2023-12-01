@@ -1,22 +1,9 @@
-$backgroundGreen: #387373;
-$text-transform: capitalize;
-$padding-top-btn: 1.5rem;
-$padding: 1rem;
-$paddingAll: 2rem;
-$border-radius: 2rem;
-$overflow: auto;
-$ColorGaru: #cccc;
-$ColorWhilt: #ffff;
-$ColorBlack: #000000;
-$BoxShadowColorBlack: 0px 0px 10px #000000;
-
+@import "Colors"; // Importiere die Variablen
+//
 .errorContent {
-  background-color: $backgroundGreen;
-  box-shadow: $BoxShadowColorBlack;
-  color: $ColorWhilt;
   height: 90vh;
   margin: 2rem 0;
-  border-radius: 3.3rem;
+
   .errorOccurred {
     padding: 2rem 0;
     display: flex;
@@ -29,22 +16,19 @@ $BoxShadowColorBlack: 0px 0px 10px #000000;
       font-size: 1.1rem;
       margin-bottom: 2rem;
       font-weight: 200;
-      color: $ColorBlack;
-      font-family: "Times New Roman", Times, serif;
+  color: $BlueColor;
     }
     .Link_HomePage {
       padding: 0.4rem;
       margin-left: 1rem;
       border-radius: 2rem;
       text-decoration: none;
-      color: $ColorBlack;
+      color: $WhitColor;
       transition: all 0.6s ease;
-      opacity: 0.6;
-      border: 1px solid $ColorBlack;
-      &:hover {
-        opacity: 9;
-        box-shadow: $BoxShadowColorBlack;
-      }
+       background: $highlightColor;
+            &:hover {
+              background: $ColorOrangen;
+            }
     }
   }
 }

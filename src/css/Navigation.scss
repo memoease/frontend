@@ -1,76 +1,167 @@
-.toNavigation-contact {
-  cursor: pointer;
+@import "Colors"; // Importiere die Variablen
+.navigationHead {
+  width: 90%;
+  margin: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-radius: 1.5rem;
   text-transform: capitalize;
-  padding: 0.8rem;
-  margin: 1rem 0;
-
-    flex-shrink: 0;
-  .navHeadText {
+  margin-bottom: 3rem;
+  .logo {
+    padding-left: 1rem;
     text-decoration: none;
-    h2 {
+    width: 20%;
+    margin-top: 0.6rem;
+    .title {
       font-size: 1.4rem;
-      color: #000;
+      color: $BlueColor;
       font-weight: 200;
     }
   }
+
+  .menu {
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 2.25rem;
+    height: 2rem;
+    //  top: 1rem;
+    right: 0.8rem;
+
+    span {
+      width: 100%;
+      height: 0.4rem;
+      border-radius: 0.2rem;
+      background-color: $ColorBlack;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    li {
+      list-style-type: none;
+      margin: 1rem;
+    }
+    &.open {
+      li {
+        display: block;
+      }
+    }
+  }
+
   .navList {
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: #000;
+    color: $BlueColor;
     &::after {
       content: "";
       width: 100%;
       height: 1.5px;
       position: absolute;
-      bottom: 0;
+      bottom: -2px;
       left: 0;
-      background: #000;
+      background: $ColorBlack;
       transform: scaleX(0); /* Linie ist anfangs unsichtbar */
       //   transform-origin: left;
       transition: transform 0.3s;
     }
-
     &:hover::after {
       transform: scaleX(1); /* Linie wird sichtbar bei Hover */
     }
   }
 
   .btn-Head {
-    .btnLoginin, .btnRegister {
-      margin: 0 1rem;
-      background: #387373;
-      color: white;
+    .btnLoginin {
+      cursor: pointer;
+      margin: 0 1.5rem;
+      text-align: center;
+      background: $BlueColor;
+      color: $WhitColor;
       border-radius: 1rem;
       font-size: 0.8rem;
       outline: none;
       border: none;
-      box-shadow: 0px 0px 0.8px #000;
-      padding: 0.3rem 1rem;
-    text-decoration: none;
+      padding: 0.3rem 1.4rem;
+      text-decoration: none;
       transition: all 0.5s ease-in;
       &:hover {
-        background: #014f4f;
+        background-color: $primaryColor;
+        box-shadow: $boxShadowButton;
       }
+    }
+
+    .btnRegister {
+      margin: 0 1.5rem;
+      text-align: center;
+      background: $BlueColor;
+      color: $WhitColor;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      outline: none;
+      border: none;
+      box-shadow: 0px 0px 0.8px $ColorBlack;
+      padding: 0.3rem 1rem;
+      text-decoration: none;
+      transition: all 0.5s ease-in;
+      &:hover {
+        background: $primaryColor;
+      }
+    }
+    .btnRegister {
+      margin-right: 0rem;
     }
   }
 }
 
-  @media only screen and (max-width: 600px) {
-  
-
-  .toNavigation-contact{
-    
+@media only screen and (max-width: 700px) {
+  .navigationHead {
+    background-color: $BlackWhiteColor;
+    border-radius: 0;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    text-align: center;
     flex-direction: column;
-     .btn-Head {
-    button{
-        margin: 1rem auto;
-        flex-direction: column;
+    .logo {
+      display: flex;
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
     }
-     }
+
+    .menu {
+      display: flex;
+     
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0.4rem auto;
+
+      li {
+        display: none;
+        width: 100%;
+        // justify-content: space-between;
+        // align-items: center;
+        margin: 0.3rem 0;
+        // flex-direction: column;
+        font-size: 0.8rem;
+      }
+    }
+
+    .btn-Head {
+      gap: 1rem 0;
+      width: 100%;
+      margin: 1rem 0;
+      .btnLoginin,
+      .btnRegister {
+        font-size: 0.8rem;
+      }
+    }
   }
-  }
+}

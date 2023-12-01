@@ -1,0 +1,81 @@
+@import "Colors"; // Importiere die Variablen
+
+.learn {
+  margin: 0 auto;
+  width: 90%;
+  height: 80vh;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .titel_learn {
+    font-size: 3rem;
+    color: $BlueColor;
+    text-shadow: 0px 0px 10px #0000;
+  }
+  .refresh-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-top: 2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    color: $WhitColor;
+    transition: all 0.7s ease;
+     background: $highlightColor;
+          &:hover {
+            background: $ColorOrangen;
+          }
+  }
+  .div {
+    width: 100%;
+    margin: 0 auto;
+
+    .overlap-group {
+      .react-card-flip{
+      max-width: 50%;
+      min-width: 220px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;
+      }
+      
+      .group {
+        margin: 2rem 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .flipped-number {
+          cursor: pointer;
+          padding: 0 3rem;
+        }
+        .ellipse {
+          width: 35px;
+          height: 35px;
+          background-color: rgb(196, 27, 27);
+          border-radius: 50%;
+          box-shadow: 0px 2px 10px rgb(6, 6, 6);
+          transition: all 0.6s ease;
+          &:hover {
+            background-color: #ff0000;
+          }
+        }
+        .ellipse-2 {
+          width: 35px;
+          height: 35px;
+          background-color: #1bce32;
+          border-radius: 50%;
+          box-shadow: 0px 2px 10px rgb(4, 4, 4);
+          transition: all 0.6s ease;
+          &:hover {
+            background-color: rgb(0, 255, 68);
+          }
+        }
+      }
+    }
+  }
+}

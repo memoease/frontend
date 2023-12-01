@@ -1,40 +1,36 @@
-$backgroundGreen: #387373;
-$BlackWhiteColor: #eee;
-$WhitColor: #fff;
-$ColorBlack: #000000;
-$colorPrimary: #4caf50; // green
-$colorSecondary: #ff6f61; // red
-$fontSizeTitle: 2em;
-$colorGrau: #4d4d4dcc;
-$boxShadow: 0px 0px 10px #0000;
 
-.Login_content {
-  background: $backgroundGreen;
-  border-radius: 3.3rem;
+@import 'Colors'; // Importiere die Variablen
+//  Styling Login
+.signupFormContainer {
   height: 80vh;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  border-radius: 1rem;
   .title {
-    color: $WhitColor;
+    color: $BlueColor;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhitColor;
   }
   .loginForm {
-    width: 300px;
-    height: 300px;
-    margin: 2rem auto;
+    width: 500px;
+    height: 420px;
+    margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #e4f2e7;
+    background: #c4d6e7;
     border-radius: 3rem;
     text-align: center;
     box-shadow: $boxShadow;
+
     form {
-      width: 240px;
+      width: 290px;
       display: flex;
       flex-direction: column;
       label {
@@ -42,7 +38,21 @@ $boxShadow: 0px 0px 10px #0000;
         flex-direction: column;
         padding: 1rem 0;
         font-size: 1.1rem;
-        color: $colorGrau;
+        color: $BlueColor;
+        width: 290px;
+        .inputPassword {
+          display: flex;
+          position: relative;
+
+          .pwdvisibilityPass {
+            background: transparent;
+            position: absolute;
+            right: 1rem;
+            top: 0.9rem;
+            border: none;
+            outline: none;
+          }
+        }
       }
       input {
         width: 100%;
@@ -51,34 +61,42 @@ $boxShadow: 0px 0px 10px #0000;
         border: none;
         border-radius: 2rem;
         margin: 0.3rem 0;
-        background-color: #cccc;
         padding-left: 1rem;
       }
       .login_btn {
-        button {
+        margin-top: 1rem;
+        .btnToSetting {
           cursor: pointer;
           width: 100px;
-          padding: 0.8rem 0;
+          padding: 0.5rem 1rem;
           border-radius: 2rem;
           border: none;
           outline: none;
           color: $ColorBlack;
-          transition: all 0.9s ease;
-          background: #cccc;
+          transition: all 0.7s ease;
+          background:  $highlightColor;
+          text-decoration: none;
           &:hover {
-            background-color: #9d9797;
-          }
+          background: $ColorOrangen;
+        }
         }
       }
     }
   }
-  .register_link {
-    display: flex;
-    cursor: pointer;
-    color: $WhitColor;
-    .toRegisterLink {
-      color: $WhitColor;
-      padding-left: 0.4rem;
+  .message-container {
+  
+    .message {
+  letter-spacing: 1px;
+  text-shadow: 10px 10px 20px rgb(0, 0, 0);
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .signupFormContainer {
+    margin-top: 3rem;
+    .loginForm {
+      display: flex;
+      width: 300px;
     }
   }
 }

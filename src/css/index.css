@@ -1,17 +1,12 @@
-:root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; 
-       line-height: 1.5;
-      font-weight: 400;
-      color-scheme: light dark;
-        font-synthesis: none;
-          text-rendering: optimizeLegibility;
-      */
-}
-
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
+body {
+    background-color: #e6eaec;
+}

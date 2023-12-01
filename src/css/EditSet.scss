@@ -1,35 +1,172 @@
-$backgroundGreen: #387373;
-$BlackWhiteColor: #eee;
-$WhitColor: #fff;
-$ColorBlack: #000000;
-$colorPrimary: #4caf50; // green
-$colorSecondary: #ff6f61; // red
-$fontSizeTitle: 2em;
-$ColorLightWhite: #eeeeee;
-$colorGrau: #4d4d4dcc;
-$boxShadow: 0px 0px 10px #0000;
+@import 'Colors'; // Importiere die Variablen
 
 .EditSet_Container {
-  width: 100%;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+
+  .set-title {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+
+    button {
+      border: none;
+      background-color: #106899;
+      // border-radius: 50%;
+
+      svg {
+        fill: white;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+
   h2 {
     color: $ColorBlack;
     font-size: 2rem;
     font-weight: 200;
   }
 
-  .FromEdit {
+  .EditSet_Content {
+    margin: 0 auto;
     width: 100%;
-    padding: 1rem;
+    height: 80vh;
+    padding: 2em;
+
+    .div {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+
+      .edidtOverlap-group {
+        cursor: pointer;
+        width: 50%;
+
+        .slidNumber {
+          padding: 0 2rem;
+        }
+
+        .editGroup {
+          margin: 2rem 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .flipped-number {
+            cursor: pointer;
+            padding: 0 3rem;
+          }
+
+          .ellipseLeft {
+            width: 35px;
+            height: 35px;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            border-style: none;
+
+            &:hover {
+              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+
+            }
+
+            &:active {
+              box-shadow: none;
+            }
+          }
+
+          .ellipseRight {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            line-height: 40px;
+            transition: all 0.6s ease;
+            border-style: none;
+
+
+            &:hover {
+              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+
+            }
+
+            &:active {
+              box-shadow: none;
+            }
+          }
+        }
+      }
+
+      .setPractice {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .cardEdit {
+          width: 60%;
+          height: 300px;
+          background-color: $ColorLightBlue;
+          display: flex;
+          margin-bottom: 7rem;
+          margin-left: 8rem;
+          border-radius: 3.3rem;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          box-shadow: 0px 0px 5px #000000;
+
+          .title {
+            width: 200px;
+            letter-spacing: 2px;
+            color: #ffff;
+            margin-bottom: 1rem;
+            font-size: 2.3rem;
+            text-shadow: 0px 0px 10px #0000;
+          }
+
+          button {
+            width: 100px;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.5s ease;
+
+            &:hover {
+              // transform: scale(1.1) ;
+              background: #cacaca;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .FromEdit {
+    position: relative;
+    // top: 150px;
+    width: 100%;
+    // padding: 1rem;
+
     form {
       display: flex;
+      margin: 10px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+
       .inputCards {
         display: flex;
         padding: 0.5rem;
         background-color: #eee;
         border-radius: 4rem;
+
         input {
           width: 550px;
           padding: 1rem;
@@ -37,18 +174,26 @@ $boxShadow: 0px 0px 10px #0000;
           outline: none;
           background-color: #eee;
           padding-left: 0.4rem;
+
           &::placeholder {
             font-size: 1rem;
             color: rgb(71, 71, 71);
             font-weight: 300;
           }
         }
+
+        .btn-container {
+          display: flex;
+          flex-direction: column;
+        }
+
         .EditBtn {
           background-color: $backgroundGreen;
           padding: 0 0.5rem;
           width: 150px;
           height: 1.2rem;
           margin-right: 1rem;
+          margin-bottom: 0.5rem;
           border: none;
           outline: none;
           color: #ffff;
@@ -56,5 +201,12 @@ $boxShadow: 0px 0px 10px #0000;
         }
       }
     }
+  }
+
+  .slider {
+    height: 20vh;
+    width: 350px;
+    position: relative;
+    top: 30px;
   }
 }

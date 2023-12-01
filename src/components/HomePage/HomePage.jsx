@@ -1,37 +1,37 @@
 import React from "react";
-import "../../css/homePage.scss";
 import { NavLink } from "react-router-dom";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
+import { useCards } from "../../utilities/hooks/useCards";
+import { useAuth } from "../../utilities/hooks/useAuth";
 
 const HomePage = () => {
+  const { publicCards } = useCards();
+  const { authorized } = useAuth();
   return (
     //    HomePage_container:
-    <div className="HomePage_container">
+    <div className="HomePageContainer">
       {/*   repper-content -------------- */}
-      <div className="repper-content">
-        <div className="content">
-          <h1>Create And Discover flashcard sets</h1>
-          <p className="create-and-extend">
-            create and extend your own flashcard sets in your dashboard, decide
-            if they are private or public and start learning
-          </p>
+      <div className="homePage_repper">
+        <div className="Discriptcontent">
+          <h1 className="title_head">Create And Discover flashcard sets</h1>
+
+          {authorized ? (
+            <NavLink to="/dashboard" className="startLinkCardTitel">
+              Get Started
+            </NavLink>
+          ) : (
+            <NavLink to="/register" className="startLinkCardTitel">
+              Get Started
+            </NavLink>
+          )}
         </div>
         {/* get start link -------------- */}
         <div className="getStartlink-content">
-          <div className="startCrad">
-            <div className="blockStart">
-              <NavLink to="/" className="startLinkCard">
-                Get Started
-              </NavLink>
-            </div>
-            <NavLink to="/" className="singinLinkCard">
-              Or Sing In
-            </NavLink>
-          </div>
+          <div className="contentImage"></div>
         </div>
       </div>
       {/*  discover content ------------- */}
-      <DiscoverCarousel />
+      <DiscoverCarousel data={publicCards} />
     </div>
   );
 };

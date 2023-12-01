@@ -1,28 +1,35 @@
-$backgroundGreen: #387373;
-$text-transform: capitalize;
-$padding-top-btn: 1.5rem;
-$padding: 1rem;
-$paddingAll: 2rem;
-$border-radius: 2rem;
-$overflow: auto;
-$WhiteColor: #eee;
-$ColorBlack: #000000;
+
+
+@import 'Colors'; // Importiere die Variablen
 //
 .discover-content {
-  h2 {
+  h1 {
     text-align: center;
-    color: $WhiteColor;
+    color: $BlueColor;
   }
   .DiscoverCarousel-container {
-    background: $backgroundGreen;
+    background: $ColorLightBlue;
     padding: 2rem 1.5rem;
-    border-radius: $border-radius;
-    flex-wrap: wrap;
-    overflow: $overflow;
+    border-radius: 0rem;
 
     h2 {
       text-transform: $text-transform;
     }
-   
+    > div {
+    .slick-slider.slick-initialized {
+      .slick-arrow.slick-next::before{
+        color: #106899;
+        font-size: 35px;
+      }
+      .slick-arrow.slick-prev::before{
+        color: #106899;
+        font-size: 35px;
+      }
+      .slick-prev, .slick-next{
+        width: 50px;
+      }
+    
+    }
+  }
   }
 }
