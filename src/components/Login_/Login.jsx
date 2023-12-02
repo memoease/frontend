@@ -64,6 +64,9 @@ const Login = () => {
       if (setIdFromStorage) {
         // If Set-ID is present, navigate to edit the corresponding set
         navigate(`/editset/${setIdFromStorage}`);
+
+        // Clear the Set-ID from Local Storage
+        localStorage.removeItem("setId");
       } else {
         // Otherwise, navigate to the default route (e.g., "/home")
         navigate("/home");
