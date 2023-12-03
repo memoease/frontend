@@ -48,7 +48,7 @@ const PublicLearnSession = () => {
     const nextIndex = (index + 1) % toLearn.length;
     setIndex(nextIndex);
     setCurrentCard(toLearn[nextIndex]);
-    setFlipped(true);
+    setFlipped(!flipped);
 
     if (nextIndex === 5) {
       setShowModal(true);

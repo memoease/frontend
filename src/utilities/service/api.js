@@ -60,6 +60,12 @@ export const createGroup = async (groupData) => {
   return response.data;
 };
 
+// Push User to Group
+export const pushUserToGroup = async (groupData) => {
+  const response = await axiosInstance.put(`group/member`, groupData);
+  return response.data;
+};
+
 // Get Groups by User
 export const getGroupsByUser = async () => {
   const response = await axiosInstance.get("group/user/groups");

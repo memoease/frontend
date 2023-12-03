@@ -22,6 +22,7 @@ import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 import { CardProvider } from "../utilities/hooks/useCards.jsx";
 import Imprint from "./Imprint/Imprint";
 import PublicLearnSession from "./PublicLearnSession/PublicLearnSession";
+import GroupCreation from "./CreateGroup/CreateGroup";
 
 function App() {
   return (
@@ -43,8 +44,13 @@ function App() {
                 />
 
                 <Route element={<PrivateRoute />}>
+                  <Route
+                    path="/creategroup/:setId"
+                    element={<GroupCreation />}
+                  />
                   <Route path="/create" element={<Box />} />
                   <Route path="/home" element={<HomeLoggedIn />} />
+
                   <Route path="/editset">
                     <Route path=":setId" element={<EditSet />} />
                   </Route>
