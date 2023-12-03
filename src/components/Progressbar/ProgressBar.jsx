@@ -2,7 +2,7 @@ import React from "react";
 
 import ProgressBar from "@ramonak/react-progress-bar";
 
-const Loadingbar = () => {
+const LoadingBar = () => {
   const progressBarStyle = {
     boxShadow: "0 4px 80px rgba(0, 0, 0, 0.1)", // Add your box shadow style here
   };
@@ -20,4 +20,4 @@ const Loadingbar = () => {
     />
   );
 };
-export default Loadingbar;
+export default LoadingBar;
