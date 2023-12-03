@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FlipCards from "../FlipCards/FlipCards";
+import XrogressBar from "../Progressbar/ProgressBar";
 
 import {
   startLearnSession,
@@ -109,6 +110,7 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
+          <XrogressBar />
 
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
