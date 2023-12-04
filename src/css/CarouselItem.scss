@@ -1,17 +1,14 @@
 @import "Colors"; // Importiere die Variablen
 
 .cards {
-  padding: 0.3rem;
-
   .DiscoverCardsContent {
-
     .title {
-      white-space: nowrap; 
+      white-space: nowrap;
       font-size: 27px;
       overflow: hidden;
       text-overflow: ellipsis;
-    
-     
+      text-transform: uppercase;
+
       background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
         linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
         linear-gradient(#fdb25b 1.3px, transparent 1.3px),
@@ -20,13 +17,13 @@
       background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
         -1.3px -1.3px;
 
-      color:$WhiteColor;
+      color: $WhiteColor;
       font-weight: bolder;
       border-radius: 0.5rem;
       text-align: center;
       min-height: 5vh;
       transition: all 0.3s ease;
-      
+
       &:hover {
         background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
           linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
@@ -35,15 +32,17 @@
         background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
         background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
           -1.3px -1.3px;
-       
-          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
       }
-      
     }
-    
 
     color: $ColorBlack;
     background: $WhiteColor;
+    min-height: 20vh;
+    max-height: 20vh;
     border-radius: $border-radius;
     padding: 1rem 2rem;
     margin: 0rem 3rem;
