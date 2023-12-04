@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
       ? JSON.parse(cookies.userInfo)
       : null;
     setUser(userFromCookie);
+
     if (!userFromCookie) {
       setAuthorized(false);
       setLoading(false);
