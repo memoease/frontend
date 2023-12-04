@@ -6,7 +6,11 @@
   .DiscoverCardsContent {
 
     .title {
-      background-color: $ColorOrangen ;
+      background-color: #ED7E00;
+opacity: 1;
+background-image:  linear-gradient(#FDB25B 2.6px, transparent 2.6px), linear-gradient(90deg, #FDB25B 2.6px, transparent 2.6px), linear-gradient(#FDB25B 1.3px, transparent 1.3px), linear-gradient(90deg, #FDB25B 1.3px, #ED7E00 1.3px);
+background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
+background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px, -1.3px -1.3px;
       color: $WhiteColor;
       border-radius: 0.5rem;
       text-align: center;
