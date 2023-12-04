@@ -6,12 +6,11 @@ function FlipCards({ activeCard, index }) {
 
   useEffect(() => {
     setIsFlipped(false);
-  }, [index])
+  }, [index]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
-
 
   return (
     <div>
@@ -36,6 +35,7 @@ function FlipCards({ activeCard, index }) {
               justifyContent: "center",
               alignItems: "center",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
+              alignItems: "center",
             }}
           >
             {activeCard.question}
@@ -58,7 +58,6 @@ function FlipCards({ activeCard, index }) {
             }}
           >
             {activeCard.answer}
-
           </div>
         </div>
       </CardFlip>
