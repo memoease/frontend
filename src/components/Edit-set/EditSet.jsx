@@ -51,7 +51,6 @@ const EditSet = () => {
       } catch (error) {
         console.error(error);
         console.log("error fetching set data", error.message);
-
       }
     }
     fetchSetData(setId);
@@ -78,7 +77,9 @@ const EditSet = () => {
     if (index <= flashcards.flashcards.length - 1) {
       const newIndex = (index + 1) % flashcards.flashcards.length;
       setIndex(newIndex);
-      setActiveCard(flashcards?.flashcards[newIndex]);
+      setTimeout(() => {
+        setActiveCard(flashcards?.flashcards[newIndex]);
+      }, 200);
     }
   };
 
@@ -90,15 +91,17 @@ const EditSet = () => {
     }
   };
 
-
-
   if (!fetchDone) {
     return <h2>loading...</h2>;
   }
 
   return (
     <div className="EditSet_Container">
-      <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded}></SetTitle>
+      <SetTitle
+        title={flashcards.title}
+        setNewCardAdded={setNewCardAdded}
+        newCardAdded={newCardAdded}
+      ></SetTitle>
       <div className="EditSet_Content">
         <div className="div">
           <div className="edidtOverlap-group">
@@ -119,7 +122,12 @@ const EditSet = () => {
             </div>
           </div>
           <div className="setPractice">
-            <CardInfo setId={setId} flashcards={flashcards} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} />
+            <CardInfo
+              setId={setId}
+              flashcards={flashcards}
+              setNewCardAdded={setNewCardAdded}
+              newCardAdded={newCardAdded}
+            />
           </div>
         </div>
         <div className="FromEdit">

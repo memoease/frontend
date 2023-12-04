@@ -17,8 +17,8 @@ function FlipCards({ activeCard, index }) {
       <CardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"
-        flipSpeedBackToFront={0.5}
-        flipSpeedFrontToBack={0.5}
+        flipSpeedBackToFront={0.4}
+        flipSpeedFrontToBack={0.8}
       >
         <div>
           <div
@@ -36,6 +36,7 @@ function FlipCards({ activeCard, index }) {
               alignItems: "center",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
               alignItems: "center",
+              textAlign: "center",
             }}
           >
             {activeCard.question}
@@ -55,6 +56,7 @@ function FlipCards({ activeCard, index }) {
               alignItems: "center",
               margin: "0 auto",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
+              textAlign: "center",
             }}
           >
             {activeCard.answer}
