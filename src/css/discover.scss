@@ -10,7 +10,8 @@
   .DiscoverCarousel-container {
     background: $ColorLightBlue;
     padding: 2rem 1.5rem;
-    border-radius: 0rem;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     h2 {
       text-transform: $text-transform;
