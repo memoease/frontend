@@ -64,3 +64,40 @@
     }
   }
 }
+
+.add-cards-container {
+  color: $ColorBlack;
+  background: $WhiteColor;
+  min-height: 20vh;
+  max-height: 20vh;
+  border-radius: $border-radius;
+  padding: 1rem 2rem;
+  margin: 0rem 3rem;
+  transition: all 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dashPlus {
+    color: $ColorBlack;
+    background: $WhiteColor;
+    min-height: 20vh;
+    max-height: 20vh;
+    border-radius: $border-radius;
+    padding: 1rem 2rem;
+    margin: 0rem 3rem;
+    transition: all 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // &:hover {
+    //   box-shadow: 0px 0px 20px rgb(3, 3, 3);
+    // }
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+}

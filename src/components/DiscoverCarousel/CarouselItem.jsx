@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import { ImPlus } from "react-icons/im";
+import { NavLink, useNavigate } from "react-router-dom";
 // react component for creating beautiful carousel
 import CarouselData from "./CarouselData";
 const CarouselItem = ({ data, viewSet }) => {
@@ -40,12 +42,28 @@ const CarouselItem = ({ data, viewSet }) => {
 
   return (
     <div>
-      <Slider {...settings}>
-        {data?.map((item) => (
-          <CarouselData item={item} key={item._id} viewSet={viewSet} />
-        ))}
-      </Slider>
-    </div>
+      {data?.length === 0 ? (
+        <Slider {...settings}>
+          <div className="container">
+            <div className="cards">
+              <div className="add-cards-container">
+                <NavLink to="/create" className="dashPlus">
+                  <ImPlus className="plusLink" />
+                </NavLink>
+              </div>
+            </div>
+          </div>
+        </Slider>
+      ) : (
+        <Slider {...settings}>
+          {data?.map((item) => (
+            <CarouselData item={item} key={item._id} viewSet={viewSet} />
+          ))}
+        </Slider>
+      )
+      }
+
+    </div >
   );
 };
 
