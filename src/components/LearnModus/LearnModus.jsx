@@ -39,13 +39,23 @@ export const LearnModus = () => {
 
   const handleMoveToLearned = async () => {
     // Move the current card to "isLearned"
-    if (sessionData && currentCard) {
-      const cardIdToUpdate = currentCard._id;
-      const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
-      const updatedSession = await updateCardToLearned(cardIdToUpdate);
-      setCurrentCard(updatedSession.toLearn[index]);
-      setFlipped(!flipped);
-    }
+    try {
+      if (sessionData && currentCard) {
+        const cardIdToUpdate = currentCard._id;
+        const updatedSession = await updateCardToLearned(cardIdToUpdate);
+        if (updatedSession.toLearn.length - 1 >= index) {
+          setCurrentCard(updatedSession.toLearn[index]);
+          setFlipped(!flipped);
+        } else {
+          setIndex(0);
+          const newIndex = 0;
+          setCurrentCard(updatedSession.toLearn[newIndex]);
+          setFlipped(!flipped);
+        };
+      };
+    } catch (error) {
+      console.error("Error updating card to learned:", error);
+    };
   };
 
   const handleKeepInSession = () => {
@@ -69,7 +79,6 @@ export const LearnModus = () => {
   const advanceToNextCard = () => {
     // Find the index of the current card
     const currentIndex = sessionData.toLearn.indexOf(currentCard);
-
     // Increment the index and handle boundary conditions
     const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
     setIndex(nextIndex);
@@ -116,9 +125,8 @@ export const LearnModus = () => {
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
-                    sessionData.toLearn.length
-                  }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                }`
                 : ""}
             </div>
             <button

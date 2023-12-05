@@ -1,0 +1,29 @@
+.FromEdit {
+    position: relative;
+    // top: 150px;
+    width: 100%;
+    // padding: 1rem;
+
+    .inputCards {
+        display: flex;
+        padding: 0.5rem;
+        background-color: #eee;
+        border-radius: 4rem;
+        margin-bottom: 0.25rem;
+
+        p {
+            width: 550px;
+            padding: 1rem;
+            border: none;
+            outline: none;
+            background-color: #eee;
+            padding-left: 0.4rem;
+
+            &::placeholder {
+                font-size: 1rem;
+                color: rgb(71, 71, 71);
+                font-weight: 300;
+            }
+        }
+    }
+}

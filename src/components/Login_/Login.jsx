@@ -47,7 +47,6 @@ const Login = () => {
 
       // Call the loginUser function to authenticate user
       const userData = await loginUser(loginData);
-      console.log(userData);
 
       // Set user data in the application state
       setUser(userData);
@@ -78,7 +77,7 @@ const Login = () => {
         localStorage.removeItem("groupId");
       } else if (setIdFromStorage) {
         // If Set-ID is present, navigate to edit the corresponding set
-        navigate(`/editset/${setIdFromStorage}`);
+        navigate(`/readset/${setIdFromStorage}`);
 
         // Clear the Set-ID from Local Storage
         localStorage.removeItem("setId");

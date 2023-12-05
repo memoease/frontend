@@ -22,6 +22,7 @@ import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 import { CardProvider } from "../utilities/hooks/useCards.jsx";
 import Imprint from "./Imprint/Imprint";
 import PublicLearnSession from "./PublicLearnSession/PublicLearnSession";
+import ReadSet from "./ReadSet/ReadSet";
 import GroupCreation from "./CreateGroup/CreateGroup";
 
 function App() {
@@ -50,10 +51,9 @@ function App() {
                   />
                   <Route path="/create" element={<Box />} />
                   <Route path="/home" element={<HomeLoggedIn />} />
+                  <Route path="/editset/:setId" element={<EditSet />} />
+                  <Route path="/readset/:setId" element={<ReadSet />} />
 
-                  <Route path="/editset">
-                    <Route path=":setId" element={<EditSet />} />
-                  </Route>
                   <Route path="/flipcard" element={<FlipCardExample />} />
                   <Route path="/dashboard" element={<DashBoard_login />} />
                   <Route path="/session/:setId" element={<LearnModus />} />

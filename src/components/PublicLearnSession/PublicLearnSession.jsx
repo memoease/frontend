@@ -40,6 +40,8 @@ const PublicLearnSession = () => {
       const updatedIsLearned = [...isLearned, currentCard];
       setToLearn(updatedToLearn);
       setIsLearned(updatedIsLearned);
+      setFlipped(!flipped);
+
       advanceToNextCard();
     }
   };

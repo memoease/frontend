@@ -3,10 +3,19 @@ import { NavLink, useParams } from "react-router-dom";
 import DiscoverCarousel from "../DiscoverCarousel/DiscoverCarousel";
 import { useCards } from "../../utilities/hooks/useCards";
 import { useAuth } from "../../utilities/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const { publicCards } = useCards();
   const { authorized } = useAuth();
+
+  const viewPublicSet = (evt) => {
+    const setId = evt.currentTarget.id;
+    const path = authorized ? `/readset/${setId}` : `/publicsession/${setId}`;
+    navigate(path);
+  };
+
 
   const { groupId, setId } = useParams();
 
@@ -42,7 +51,7 @@ const HomePage = () => {
         </div>
       </div>
       {/*  discover content ------------- */}
-      <DiscoverCarousel data={publicCards} />
+      <DiscoverCarousel data={publicCards} viewSet={viewPublicSet} />
     </div>
   );
 };

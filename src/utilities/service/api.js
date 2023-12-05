@@ -26,7 +26,6 @@ export const confirmEmail = async (token) => {
 // Login
 export const loginUser = async (credentials) => {
   const response = await axiosInstance.post("user/login", credentials);
-  console.log(response.data);
   return response.data;
 };
 
@@ -87,6 +86,11 @@ export const deleteGroup = async (groupId) => {
 // Create new Flashcard-Set
 export const postNewFlashcardSet = async (setData) => {
   const response = await axiosInstance.post("sets", setData);
+  return response.data;
+};
+
+export const postNewSetFromPublicSet = async (setId) => {
+  const response = await axiosInstance.post(`sets/${setId}`);
   return response.data;
 };
 

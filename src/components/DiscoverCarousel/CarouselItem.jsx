@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 // react component for creating beautiful carousel
 import CarouselData from "./CarouselData";
-const CarouselItem = ({ data }) => {
+const CarouselItem = ({ data, viewSet }) => {
   const settings = {
     dots: true,
     infinite: data?.length > 3,
@@ -42,7 +42,7 @@ const CarouselItem = ({ data }) => {
     <div>
       <Slider {...settings}>
         {data?.map((item) => (
-          <CarouselData item={item} key={item._id} />
+          <CarouselData item={item} key={item._id} viewSet={viewSet} />
         ))}
       </Slider>
     </div>

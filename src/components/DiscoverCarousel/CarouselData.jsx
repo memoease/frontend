@@ -1,16 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../utilities/hooks/useAuth";
 
-const CarouselData = ({ item }) => {
-  const navigate = useNavigate();
-  const { authorized } = useAuth();
-
-  const viewSet = (evt) => {
-    const setId = evt.currentTarget.id;
-    const path = authorized ? `/editset/${setId}` : `/publicsession/${setId}`;
-    navigate(path);
-  };
+const CarouselData = ({ item, viewSet }) => {
 
   return (
     <div className="container">

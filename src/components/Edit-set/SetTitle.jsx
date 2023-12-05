@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useCards } from "../../utilities/hooks/useCards";
 import { updateSetInfoById } from "../../utilities/service/api";
 
-const SetTitle = ({ title, setNewCardAdded, newCardAdded }) => {
+const SetTitle = ({ title, setNewCardAdded, newCardAdded, editable }) => {
     const [edit, setEdit] = useState(false);
     const [newTitle, setNewTitle] = useState({ title: title });
     const { updateSetsByUser } = useCards();
@@ -37,26 +37,33 @@ const SetTitle = ({ title, setNewCardAdded, newCardAdded }) => {
     };
 
 
-
-    return (
-        <>
-            {!edit ?
-                <div className="set-title">
-                    <h2>{title}</h2>
-                    <button onClick={clickToEdit}>
-                        <SlPencil />
-                    </button>
-                </div>
-                :
-                <form className="set-title">
-                    <input type="text" value={newTitle.title} name="title" onChange={changeHandler} />
-                    <button onClick={saveNewTitle}>
-                        <SlCheck />
-                    </button>
-                </form>
-            }
-        </>
-    )
+    if (editable) {
+        return (
+            <>
+                {!edit ?
+                    <div className="set-title">
+                        <h2>{title}</h2>
+                        <button onClick={clickToEdit}>
+                            <SlPencil />
+                        </button>
+                    </div>
+                    :
+                    <form className="set-title">
+                        <input type="text" value={newTitle.title} name="title" onChange={changeHandler} />
+                        <button onClick={saveNewTitle}>
+                            <SlCheck />
+                        </button>
+                    </form>
+                }
+            </>
+        )
+    } else {
+        return (
+            <div className="set-title">
+                <h2>{title}</h2>
+            </div>
+        )
+    }
 };
 
 export default SetTitle;

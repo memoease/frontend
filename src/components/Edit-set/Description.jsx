@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { SlPencil } from "react-icons/sl";
 import { SlCheck } from "react-icons/sl";
+import { useNavigate } from "react-router-dom";
 import { useCards } from "../../utilities/hooks/useCards";
 
-import { updateSetInfoById } from "../../utilities/service/api";
+import { postNewSetFromPublicSet, updateSetInfoById } from "../../utilities/service/api";
 
-const Description = ({ description, setId, setNewCardAdded, newCardAdded }) => {
+const Description = ({ description, setId, setNewCardAdded, newCardAdded, editable }) => {
+    const navigate = useNavigate();
     const [edit, setEdit] = useState(false);
     const [newDescript, setNewDescript] = useState({
         description: description
@@ -37,31 +39,64 @@ const Description = ({ description, setId, setNewCardAdded, newCardAdded }) => {
         }
     };
 
-    return (
-        <>
-            {!edit ?
+
+    const copySetToDashboard = async () => {
+        try {
+            console.log("setIdtoCopy:", setId)
+            const response = await postNewSetFromPublicSet(setId);
+            const newSetId = response._id;
+            updateSetsByUser();
+            navigate(`/editset/${newSetId}`);
+        } catch (error) {
+            console.error("Error copying set to Dashboard:", error);
+        };
+    };
+
+
+    if (editable) {
+        return (
+            <>
+                {!edit ?
+                    <div className="set-description">
+                        <section>
+                            <h4>description:</h4>
+                            <p>{description}</p>
+                        </section>
+                        <button onClick={clickToEdit}>
+                            <SlPencil />
+                        </button>
+                    </div>
+                    :
+                    <div className="set-description">
+                        <form action="submit">
+                            <h4>description:</h4>
+                            <input type="text" value={newDescript.description} name="description" onChange={changeHandler} />
+                        </form>
+                        <button onClick={saveNewDescription}>
+                            <SlCheck />
+                        </button>
+                    </div>
+                }
+            </>
+        );
+    } else {
+        return (
+            <>
+
                 <div className="set-description">
                     <section>
                         <h4>description:</h4>
                         <p>{description}</p>
                     </section>
-                    <button onClick={clickToEdit}>
-                        <SlPencil />
-                    </button>
+
+                    <button onClick={copySetToDashboard}>Copy this set to your Dashboard</button>
                 </div>
-                :
-                <div className="set-description">
-                    <form action="submit">
-                        <h4>description:</h4>
-                        <input type="text" value={newDescript.description} name="description" onChange={changeHandler} />
-                    </form>
-                    <button onClick={saveNewDescription}>
-                        <SlCheck />
-                    </button>
-                </div>
-            }
-        </>
-    );
+
+
+            </>
+        );
+    }
+
 };
 
 export default Description;
