@@ -38,24 +38,14 @@ export const LearnModus = () => {
   }, [setId]); // Include setId in the dependency array so that the effect re-runs when it changes
 
   const handleMoveToLearned = async () => {
-    // Move the current card to "isLearned"
-    try {
-      if (sessionData && currentCard) {
-        const cardIdToUpdate = currentCard._id;
-        const updatedSession = await updateCardToLearned(cardIdToUpdate);
-        if (updatedSession.toLearn.length - 1 >= index) {
-          setCurrentCard(updatedSession.toLearn[index]);
-          setFlipped(!flipped);
-        } else {
-          setIndex(0);
-          const newIndex = 0;
-          setCurrentCard(updatedSession.toLearn[newIndex]);
-          setFlipped(!flipped);
-        };
-      };
-    } catch (error) {
-      console.error("Error updating card to learned:", error);
-    };
+    if (sessionData && currentCard) {
+      const cardIdToUpdate = currentCard._id;
+      const updatedSession = await updateCardToLearned(cardIdToUpdate);
+      setCurrentCard(updatedSession.toLearn[index]);
+      setFlipped(!flipped);
+
+      advanceToNextCard();
+    }
   };
 
   const handleKeepInSession = () => {
@@ -77,13 +67,16 @@ export const LearnModus = () => {
   };
 
   const advanceToNextCard = () => {
-    // Find the index of the current card
-    const currentIndex = sessionData.toLearn.indexOf(currentCard);
-    // Increment the index and handle boundary conditions
-    const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
-    setIndex(nextIndex);
-    setCurrentCard(sessionData.toLearn[nextIndex]);
     setFlipped(!flipped);
+    setTimeout(() => {
+      // Find the index of the current card
+      const currentIndex = sessionData.toLearn.indexOf(currentCard);
+
+      // Increment the index and handle boundary conditions
+      const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
+      setIndex(nextIndex);
+      setCurrentCard(sessionData.toLearn[nextIndex]);
+    }, 200);
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -122,16 +115,17 @@ export const LearnModus = () => {
           <LoadingBar />
 
           <div className="group">
-            <button className="ellipse" onClick={handleKeepInSession}></button>
+            <button className="ellipse" onClick={handleMoveToLearned}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
-                }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
+                    sessionData.toLearn.length
+                  }`
                 : ""}
             </div>
             <button
               className="ellipse-2"
-              onClick={handleMoveToLearned}
+              onClick={handleKeepInSession}
             ></button>
           </div>
           <button className="refresh-button" onClick={handleRefreshSession}>

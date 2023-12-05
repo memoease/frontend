@@ -38,23 +38,29 @@ const PublicLearnSession = () => {
         (card) => card._id !== currentCard._id
       );
       const updatedIsLearned = [...isLearned, currentCard];
-      setToLearn(updatedToLearn);
+
       setIsLearned(updatedIsLearned);
       setFlipped(!flipped);
 
       advanceToNextCard();
+      setToLearn(updatedToLearn);
     }
+    setTimeout(() => {}, 2000);
   };
 
   const advanceToNextCard = () => {
-    const nextIndex = (index + 1) % toLearn.length;
-    setIndex(nextIndex);
-    setCurrentCard(toLearn[nextIndex]);
     setFlipped(!flipped);
 
-    if (nextIndex === 5) {
-      setShowModal(true);
-    }
+    setTimeout(() => {
+      const nextIndex = (index + 1) % toLearn.length;
+
+      setIndex(nextIndex);
+      setCurrentCard(toLearn[nextIndex]);
+
+      if (nextIndex === 5) {
+        setShowModal(true);
+      }
+    }, 200);
   };
 
   const handleKeepInSession = () => {
