@@ -33,7 +33,6 @@ function FlipCards({ activeCard, index }) {
               backgroundColor: "#eeee",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
               alignItems: "center",
               textAlign: "center",
