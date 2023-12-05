@@ -41,11 +41,11 @@ const PublicLearnSession = () => {
 
       setIsLearned(updatedIsLearned);
       setFlipped(!flipped);
+      setToLearn(updatedToLearn);
 
       advanceToNextCard();
-      setToLearn(updatedToLearn);
     }
-    setTimeout(() => {}, 2000);
+    setTimeout(() => { }, 2000);
   };
 
   const advanceToNextCard = () => {
@@ -57,7 +57,7 @@ const PublicLearnSession = () => {
       setIndex(nextIndex);
       setCurrentCard(toLearn[nextIndex]);
 
-      if (nextIndex === 5) {
+      if (nextIndex === 5 || toLearn.length <= 1) {
         setShowModal(true);
       }
     }, 200);

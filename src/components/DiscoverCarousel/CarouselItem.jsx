@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { ImPlus } from "react-icons/im";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // react component for creating beautiful carousel
 import CarouselData from "./CarouselData";
 const CarouselItem = ({ data, viewSet }) => {
