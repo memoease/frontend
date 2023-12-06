@@ -17,7 +17,7 @@ const Contact = () => {
       <div className="wrpper-contact">
         <h1 className="text-center">Contact Us</h1>
         <button className="btn" onClick={handleContentNavClick}>
-          Click my
+          Click me
         </button>
         <div className={`content ${showContent ? "show" : ""}`}>
           <p className="titelWisch">
@@ -38,6 +38,13 @@ const Contact = () => {
             onClick={handleLinkClick}
           >
             Imprint
+          </NavLink>
+          <NavLink
+            to="/dsgvo"
+            className="linkToImprint"
+            onClick={handleLinkClick}
+          >
+            DSGVO
           </NavLink>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Dsgvo = () => {
   return (
-    <div>
+    <div className="dsgvo_container">
       <h1>Datenschutzerklärung</h1>
       <h2 id="m4158">Präambel</h2>
       <p>
