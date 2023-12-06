@@ -5,7 +5,8 @@ import { createGroup } from "../../utilities/service/api";
 import { useParams } from "react-router-dom";
 
 const GroupCreation = () => {
-  const { flashcardsetId } = useParams();
+  const { flashcardSetId } = useParams();
+  console.log("flashcardSetId:", typeof flashcardSetId);
 
   const [groupName, setGroupName] = useState("");
   const [groupMembers, setGroupMembers] = useState("");
@@ -16,12 +17,13 @@ const GroupCreation = () => {
   const handleCreateGroup = async (e) => {
     e.preventDefault();
 
-    // Einfache E-Mail-Validierung
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValidEmails = groupMembers
-      .split(",")
-      .map((email) => email.trim())
-      .every((email) => emailRegex.test(email));
+    // Allow empty email input or validate if not empty
+    const isValidEmails =
+      groupMembers.trim() === "" ||
+      groupMembers
+        .split(",")
+        .map((email) => email.trim())
+        .every((email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
 
     if (!isValidEmails) {
       setMessage("Invalid email format. Please check your emails.");
@@ -31,13 +33,17 @@ const GroupCreation = () => {
     try {
       const groupData = {
         name: groupName,
-        members: groupMembers.split(",").map((member) => member.trim()),
-        flashcardset: flashcardsetId,
+        members:
+          groupMembers.trim() === ""
+            ? []
+            : groupMembers.split(",").map((member) => member.trim()),
+        flashcardSet: flashcardSetId,
       };
 
-      const { newGroup, link } = await createGroup(groupData);
+      const { newGroup, link } = await createGroup(flashcardSetId, groupData);
 
       setGroupLink(link);
+      console.log(groupLink);
       setIsCopied(false);
       setMessage("Group created successfully! Share the link below.");
     } catch (error) {
@@ -70,8 +76,7 @@ const GroupCreation = () => {
         <div className="members">
           <label htmlFor="members">
             Group Members (comma-separated emails):
-            <input
-              type="text"
+            <textarea
               name="members"
               id="members"
               value={groupMembers}
@@ -82,17 +87,17 @@ const GroupCreation = () => {
         <div className="group_button">
           <button type="submit">Create Group</button>
         </div>
-        {groupLink && (
-          <>
-            <CopyToClipboard text={groupLink} onCopy={() => setIsCopied(true)}>
-              <button className="copy">
-                <FaCopy /> Copy Link
-              </button>
-            </CopyToClipboard>
-            {isCopied && <div className="message">Link Copied!</div>}
-          </>
-        )}
       </form>
+      {groupLink && (
+        <>
+          <CopyToClipboard text={groupLink} onCopy={() => setIsCopied(true)}>
+            <button className="copy">
+              <FaCopy /> Copy Link
+            </button>
+          </CopyToClipboard>
+          {isCopied && <div className="message">Link Copied!</div>}
+        </>
+      )}
 
       {message && <div className="message">{message}</div>}
     </div>

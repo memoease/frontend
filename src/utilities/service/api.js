@@ -54,8 +54,12 @@ export const deleteUserData = async (userId) => {
 };
 
 // Create Group
-export const createGroup = async (groupData) => {
-  const response = await axiosInstance.post("group", groupData);
+// Frontend API call
+export const createGroup = async (flashcardSetId, groupData) => {
+  const response = await axiosInstance.post(
+    `group/${flashcardSetId}`,
+    groupData
+  );
   return response.data;
 };
 

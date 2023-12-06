@@ -33,7 +33,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route element={<Navigation />}>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/:groupId?/:setId?" element={<HomePage />} />
+                {/* <Route path="/:groupId/:setId" element={<HomePage />} /> */}
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
@@ -46,7 +47,7 @@ function App() {
 
                 <Route element={<PrivateRoute />}>
                   <Route
-                    path="/creategroup/:setId"
+                    path="/creategroup/:flashcardSetId"
                     element={<GroupCreation />}
                   />
                   <Route path="/create" element={<Box />} />
