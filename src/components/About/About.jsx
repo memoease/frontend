@@ -2,9 +2,16 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <div>
-        <h1>Unleash the full potential of your brain with Memoease.</h1>
+    <div className="about_container">
+      <div className="title_image_container">
+        <div className="about_title_container">
+          <h1>Unleash the full potential <br /> of your brain with <span>Memoease</span>.</h1>
+        </div>
+        <div className="about_image_container">
+
+        </div>
+      </div>
+      <div className="about_text_container">
         <p>
           Your thinking organ is a creative supercomputer waiting to perform at
           its best.
@@ -36,7 +43,7 @@ const About = () => {
         </p>
         <p>Welcome to Memoease.</p>
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -39,15 +39,18 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
           name="question"
           value={entry.question}
           onChange={changeHandler}
+          maxLength="100"
+          placeholder="enter your text here"
           required
-          style={styleUnderline}
         />
         <textarea
           type="text"
           name="answer"
           value={entry.answer}
           onChange={changeHandler}
-          style={styleUnderline}
+          maxLength="300"
+          placeholder="enter your text here"
+          wrap="hard"
           required
         />
 

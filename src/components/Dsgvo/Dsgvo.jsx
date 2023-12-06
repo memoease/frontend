@@ -376,7 +376,7 @@ const Dsgvo = () => {
           <strong>
             Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):
           </strong>
-           Temporäre Cookies werden spätestens gelöscht, nachdem ein Nutzer ein
+          Temporäre Cookies werden spätestens gelöscht, nachdem ein Nutzer ein
           Online-Angebot verlassen und sein Endgerät (z. B. Browser oder mobile
           Applikation) geschlossen hat.
         </li>
