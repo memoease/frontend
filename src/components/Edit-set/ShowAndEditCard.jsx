@@ -52,8 +52,8 @@ export default function ShowAndEditCards({ question = "", answer = "", cardId, s
     return (
         <form>
             <div className="inputCards" >
-                <input type="text" name="question" value={newCard.question} disabled={disabled} required onChange={changeHandler} />
-                <input type="text" name="answer" value={newCard.answer} disabled={disabled} required onChange={changeHandler} />
+                <textarea type="text" name="question" value={newCard.question} disabled={disabled} required onChange={changeHandler} />
+                <textarea type="text" name="answer" value={newCard.answer} disabled={disabled} required onChange={changeHandler} />
                 {disabled ?
                     <button className="EditBtn" onClick={handleClick} >
                         Edit

@@ -167,13 +167,15 @@
         background-color: #eee;
         border-radius: 4rem;
 
-        input {
+        textarea {
           width: 550px;
           padding: 1rem;
           border: none;
           outline: none;
           background-color: #eee;
           padding-left: 0.4rem;
+          resize: vertical;
+
 
           &::placeholder {
             font-size: 1rem;

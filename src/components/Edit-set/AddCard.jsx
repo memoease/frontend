@@ -34,7 +34,7 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
   return (
     <form>
       <div className="inputCards">
-        <input
+        <textarea
           type="text"
           name="question"
           value={entry.question}
@@ -42,7 +42,7 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
           required
           style={styleUnderline}
         />
-        <input
+        <textarea
           type="text"
           name="answer"
           value={entry.answer}
