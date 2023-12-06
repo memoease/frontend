@@ -63,30 +63,35 @@ const Description = ({
         {!edit ? (
           <div className="set-description">
             <section>
-              <h4>description:</h4>
+              <h4 style={{ textAlign: "start" }}>Description:</h4>
+              <button
+                onClick={clickToEdit}
+                style={{
+                  backgroundColor: "#ff8800",
+                  width: "45px",
+                  margin: "0.5rem auto ",
+                }}
+              >
+                <SlPencil style={{ color: "white", fontSize: "16px" }} />
+              </button>
               <p>{description}</p>
             </section>
-            <button
-              onClick={clickToEdit}
-              style={{
-                backgroundColor: "#ff8800",
-                width: "45px",
-                margin: "0.5rem auto ",
-              }}
-            >
-              <SlPencil style={{ color: "white", fontSize: "16px" }} />
-            </button>
           </div>
         ) : (
           <div className="set-description">
             <form action="submit">
               <h4>description:</h4>
-              <input
+              <textarea
                 type="text"
                 value={newDescript.description}
                 name="description"
                 onChange={changeHandler}
-                style={{ borderRadius: "2rem", textAlign: "center" }}
+                style={{
+                  borderRadius: "0.5rem",
+                  textAlign: "center",
+                  width: "20vw",
+                  height: "2.9vw",
+                }}
               />
             </form>
             <button

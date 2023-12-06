@@ -8,7 +8,13 @@ import Description from "./Description";
 import ModalSetting from "../ModalSetting/ModalSetting";
 import { useCards } from "../../utilities/hooks/useCards";
 
-const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded, editable }) => {
+const CardInfo = ({
+  setId,
+  flashcards,
+  setNewCardAdded,
+  newCardAdded,
+  editable,
+}) => {
   const navigate = useNavigate();
   const [setAccess, setSetAccess] = useState(flashcards.isPublic);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -55,7 +61,6 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded, editable }
 
   if (editable) {
     return (
-
       <div className="cardEdit">
         <Description
           description={flashcards.description}
@@ -65,8 +70,11 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded, editable }
           editable={editable}
         />
         <section className="set-access">
-          <p>Who can see this set:</p>
-          <p>{setAccess ? "Everybody can see this set." : "Only you."}</p>
+          <p>
+            {setAccess
+              ? "Everybody can see this set."
+              : "No one can see it. Only you."}
+          </p>
           {setAccess ? (
             <button onClick={changeSetAccess}> Change to private</button>
           ) : (
@@ -102,10 +110,8 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded, editable }
           editable={editable}
         />
       </div>
-    )
+    );
   }
-
-
 };
 
 export default CardInfo;
