@@ -6,6 +6,7 @@
   margin: 0 auto;
 
   .set-title {
+    
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
@@ -30,25 +31,32 @@
   }
 
   .EditSet_Content {
+    
+    
+
     margin: 0 auto;
     width: 100%;
     height: 80vh;
     padding: 2em;
 
     .div {
+      
       width: 100%;
       margin: 0 auto;
       display: flex;
 
       .edidtOverlap-group {
+        
         cursor: pointer;
         width: 50%;
 
         .slidNumber {
+          
           padding: 0 2rem;
         }
 
         .editGroup {
+          
           margin: 2rem 0;
           text-align: center;
           display: flex;
@@ -100,31 +108,47 @@
       }
 
       .setPractice {
+        
         width: 50%;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        
+      
 
         .cardEdit {
-          width: 60%;
-          height: 300px;
-          background-color: $ColorLightBlue;
-          display: flex;
-          margin-bottom: 7rem;
-          margin-left: 8rem;
-          border-radius: 3.3rem;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          box-shadow: 0px 0px 5px #000000;
+          width: 400px;
+  height: 300px;
+  background-color: $ColorLightBlue;
+  display: flex;
+  margin-bottom: 7rem;
+  margin-left: 8rem;
+  border-radius: 3.3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px #000000;
+ 
+    button {
+      margin: 0.4rem auto;
+      width: 125px;
+      background: $highlightColor;
+      color: $WhitColor;
+
+    
+  }
+  
 
           .title {
-            width: 200px;
-            letter-spacing: 2px;
-            color: #ffff;
-            margin-bottom: 1rem;
-            font-size: 2.3rem;
-            text-shadow: 0px 0px 10px #0000;
+            
+            width: 100px;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.5s ease;
           }
 
           button {
@@ -140,7 +164,7 @@
 
             &:hover {
               // transform: scale(1.1) ;
-              background: #cacaca;
+              background:$ColorOrangen ;
             }
           }
         }
@@ -149,6 +173,7 @@
   }
 
   .FromEdit {
+  
     position: relative;
     // top: 150px;
     width: 100%;
