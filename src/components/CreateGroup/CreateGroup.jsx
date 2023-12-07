@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 const GroupCreation = () => {
   const { flashcardSetId } = useParams();
-  console.log("flashcardSetId:", typeof flashcardSetId);
 
   const [groupName, setGroupName] = useState("");
   const [groupMembers, setGroupMembers] = useState("");
@@ -43,61 +42,67 @@ const GroupCreation = () => {
       const { newGroup, link } = await createGroup(flashcardSetId, groupData);
 
       setGroupLink(link);
-      console.log(groupLink);
+
       setIsCopied(false);
-      setMessage("Group created successfully! Share the link below.");
+      setMessage("Group created successfully! Share the link.");
     } catch (error) {
-      console.error("Error creating group:", error.response.data);
+      console.error("Error creating group:", error.response);
       setMessage("Error creating group. Please try again.");
     }
   };
 
   return (
     <div className="group_container">
-      <h2 className="title">Share your Set with a Group</h2>
-      <p className="description">
+      <h1 className="title">Share your Set with a Group</h1>
+      <h3 className="description">
         {" "}
-        Create a group and share the link to your Set with your friends.
-      </p>
-      <form className="group_form" onSubmit={handleCreateGroup}>
-        <div className="group_name">
-          <label htmlFor="name">
-            Group Name:
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={groupName}
-              onChange={(e) => setGroupName(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div className="members">
-          <label htmlFor="members">
-            Group Members (comma-separated emails):
-            <textarea
-              name="members"
-              id="members"
-              value={groupMembers}
-              onChange={(e) => setGroupMembers(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="group_button">
-          <button type="submit">Create Group</button>
-        </div>
-      </form>
-      {groupLink && (
-        <>
-          <CopyToClipboard text={groupLink} onCopy={() => setIsCopied(true)}>
-            <button className="copy">
-              <FaCopy /> Copy Link
-            </button>
-          </CopyToClipboard>
-          {isCopied && <div className="message">Link Copied!</div>}
-        </>
-      )}
+        Share the link to your Set with selected friends.
+      </h3>
+      <div className="group-container">
+        <form className="group_form" onSubmit={handleCreateGroup}>
+          <div className="group_name">
+            <label htmlFor="name">
+              Group Name:
+              <input
+                type="text"
+                name="name"
+                id="name"
+                value={groupName}
+                onChange={(e) => setGroupName(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div className="members">
+            <label htmlFor="members">
+              Members (optional):
+              <textarea
+                name="members"
+                id="members"
+                placeholder="Enter emails separated by comma"
+                value={groupMembers}
+                onChange={(e) => setGroupMembers(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="group_button">
+            <button type="submit">Create Group</button>
+          </div>
+        </form>
+
+        {groupLink && (
+          <div className="link-field">
+            <label htmlFor="link"></label>
+            <input type="text" id="link" value={groupLink} readOnly />
+            <CopyToClipboard text={groupLink} onCopy={() => setIsCopied(true)}>
+              <button className="copy">
+                <FaCopy /> Copy Link
+              </button>
+            </CopyToClipboard>
+            {isCopied && <div className="message">Link Copied!</div>}
+          </div>
+        )}
+      </div>
 
       {message && <div className="message">{message}</div>}
     </div>

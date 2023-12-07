@@ -16,6 +16,7 @@
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $WhitColor;
     margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .description {
@@ -26,7 +27,7 @@
     margin-bottom: 20px;
   }
 
-  .group_form {
+  .group-container {
     width: $boxWidth;
     background: #c4d6e7;
     display: flex;
@@ -39,7 +40,8 @@
     box-shadow: $boxShadow;
 
     form {
-      width: 280px;
+      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+      max-width: 400px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
       display: flex;
       flex-direction: column;
 
@@ -48,18 +50,19 @@
         flex-direction: column;
         align-items: center;
         padding: 0.8rem 0;
-        gap: 10px 0;
         font-size: 1.1rem;
         color: #106899;
 
-        input {
-          width: 100%; // Anpassung
+        input,
+        textarea {
+          width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
           padding: 0.6rem 0;
           border-radius: 2rem;
           outline: none;
           border: none;
           background-color: white;
           padding-left: 1rem;
+          margin-top: 1rem;
         }
       }
 
@@ -67,7 +70,8 @@
         margin: 1rem;
 
         button {
-          width: 100%;
+          width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+          max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
           padding: 0.5rem 0;
           border-radius: 2rem;
           outline: none;
@@ -75,6 +79,7 @@
           background-color: $highlightColor;
           color: $WhitColor;
           transition: all 0.3s ease;
+          font-weight: bold;
 
           &:hover {
             background-color: $ColorOrangen;
@@ -90,19 +95,40 @@
     color: #106899;
   }
 
-  .copy_box {
-    margin-top: 20px;
-    padding: 10px;
+  .link-field {
     display: flex;
+    flex-direction: column; /* Änderung der Ausrichtung auf kleinere Bildschirmgrößen */
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid $ColorLightGrey;
+    border-radius: 2rem;
+
+    input {
+      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+      margin-top: 1rem;
+      border: none;
+      background: transparent;
+      color: #106899;
+    }
 
     button {
-      margin-left: auto;
+      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+      max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+      margin-top: 1rem;
       padding: 8px;
       cursor: pointer;
+      border-radius: 2rem;
+      color: #106899;
+      outline: none;
     }
+  }
+}
+
+/* Media Query für kleinere Bildschirme */
+@media screen and (max-width: 600px) {
+  .group-container form {
+    max-width: none; /* Auf kleinen Bildschirmen keine Maximierung der Breite */
   }
 }
