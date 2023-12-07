@@ -24,7 +24,6 @@ import Imprint from "./Imprint/Imprint";
 import PublicLearnSession from "./PublicLearnSession/PublicLearnSession";
 import ReadSet from "./ReadSet/ReadSet";
 import GroupCreation from "./CreateGroup/CreateGroup";
-import Description from "./Edit-set/Description";
 import Dsgvo from "./Dsgvo/Dsgvo";
 
 function App() {

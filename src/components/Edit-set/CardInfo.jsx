@@ -61,7 +61,7 @@ const CardInfo = ({
 
   if (editable) {
     return (
-      <div className="cardEdit">
+      <div className="cardEdit" style={{ backgroundColor: "red" }}>
         <Description
           description={flashcards.description}
           setId={setId}

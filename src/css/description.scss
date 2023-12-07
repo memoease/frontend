@@ -1,0 +1,20 @@
+.set-description {
+    margin-top: 0;
+  
+    section {
+    
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      
+  
+      button {
+        background: #ccc7bf;
+        width: 1000px;
+        height: auto;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+  

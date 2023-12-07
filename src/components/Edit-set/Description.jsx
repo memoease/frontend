@@ -63,19 +63,10 @@ const Description = ({
         {!edit ? (
           <div className="set-description">
             <section>
-              <h4 style={{ textAlign: "start" }}>Description:</h4>
-              <button
-                onClick={clickToEdit}
-                style={{
-                  backgroundColor: "#ff8800",
-                  width: "45px",
-                  margin: "0.5rem auto ",
-                }}
-              >
-                <SlPencil style={{ color: "white", fontSize: "16px" }} />
-              </button>
-              <p>{description}</p>
+              <h4>Description:</h4>
+              <button onClick={clickToEdit}>Edit</button>
             </section>
+            <p>{description}</p>
           </div>
         ) : (
           <div className="set-description">
