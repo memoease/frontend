@@ -68,15 +68,16 @@ export const LearnModus = () => {
 
   const advanceToNextCard = () => {
     setFlipped(!flipped);
-    setTimeout(() => {
-      // Find the index of the current card
-      const currentIndex = sessionData.toLearn.indexOf(currentCard);
 
-      // Increment the index and handle boundary conditions
-      const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
-      setIndex(nextIndex);
-      setCurrentCard(sessionData.toLearn[nextIndex]);
-    }, 200);
+    // Find the index of the current card
+    const currentIndex = sessionData.toLearn.indexOf(currentCard);
+
+    // Increment the index and handle boundary conditions
+    const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
+    setIndex(nextIndex);
+
+    setCurrentCard(sessionData.toLearn[nextIndex]);
+
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -112,20 +113,19 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
-          <LoadingBar />
+          {/* <LoadingBar /> */}
 
           <div className="group">
-            <button className="ellipse" onClick={handleMoveToLearned}></button>
+            <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
-                    sessionData.toLearn.length
-                  }`
+                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                }`
                 : ""}
             </div>
             <button
               className="ellipse-2"
-              onClick={handleKeepInSession}
+              onClick={handleMoveToLearned}
             ></button>
           </div>
           <button className="refresh-button" onClick={handleRefreshSession}>
