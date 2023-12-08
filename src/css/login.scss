@@ -27,7 +27,7 @@
     background: #c4d6e7;
     border-radius: 3rem;
     text-align: center;
-    box-shadow: $boxShadow;
+    box-shadow: $box-shadow;
 
     form {
       width: 290px;
@@ -74,10 +74,10 @@
           outline: none;
           color: $ColorBlack;
           transition: all 0.7s ease;
-          background:  $highlightColor;
+          background:  $highlight-color;
           text-decoration: none;
           &:hover {
-          background: $ColorOrangen;
+          background: $Color-orangen;
         }
         }
       }

@@ -27,7 +27,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 1rem;
-      box-shadow: $boxShadow;
+      box-shadow: $box-shadow;
       form .formUsername {
         label {
           color: $BlueColor;
@@ -53,9 +53,9 @@
             color: $WhitColor;
             margin-top: 1rem;
             cursor: pointer;
-            background: $highlightColor;
+            background: $highlight-color;
             &:hover {
-              background: $ColorOrangen;
+              background: $Color-orangen;
             }
           }
         }
@@ -97,9 +97,9 @@
           margin-top: 1rem;
           cursor: pointer;
           font-size: 1rem;
-          background: $highlightColor;
+          background: $highlight-color;
           &:hover {
-            background: $ColorOrangen;
+            background: $Color-orangen;
           }
         }
       }
@@ -123,7 +123,7 @@
       transition: all 0.8s ease;
       background: #cccc;
       &:hover {
-        background: $ColorOrangen;
+        background: $Color-orangen;
       }
     }
   }

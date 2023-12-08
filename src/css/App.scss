@@ -23,12 +23,12 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #c4d6e7;
+  background-color: $ColorLightBlue;
 }
 
 #root {
-  max-width: 1280px;
+  max-width: $maxWidth;
   margin: 0 auto;
   overflow: visible;
-  /*  hidden setzen ...... */
+  
 }

@@ -25,7 +25,7 @@
     margin: 1rem auto;
     border-radius: 3rem;
     text-align: center;
-    box-shadow: $boxShadow;
+    box-shadow: $box-shadow;
 
     form {
       width: 280px;
@@ -74,9 +74,9 @@
           transition: all 0.7s ease;
           background: white;
           margin-top: 1rem;
-          background: $highlightColor;
+          background: $highlight-color;
           &:hover {
-            background: $ColorOrangen;
+            background: $Color-orangen;
           }
         }
       }

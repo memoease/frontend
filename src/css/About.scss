@@ -15,12 +15,12 @@
 
 
             h1 {
-                font-size: 4rem;
+                font-size: $biggestTextSize;
                 line-height: 6rem;
                 color: $BlueColor;
 
                 span {
-                    color: $ColorOrangen
+                    color: $Color-orangen
                 }
             }
         }
@@ -30,7 +30,7 @@
             background-image: url(../assets/Neuron-Coding.jpg);
             background-size: cover;
             border-radius: $border-radius;
-            box-shadow: $boxShadow;
+            box-shadow: $box-shadow;
         }
     }
 

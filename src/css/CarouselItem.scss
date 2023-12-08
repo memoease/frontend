@@ -33,9 +33,7 @@
         background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
           -1.3px -1.3px;
 
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        box-shadow:$box-shadow;
       }
     }
 
@@ -49,7 +47,7 @@
     transition: all 0.8s ease;
 
     button {
-      border-radius: 1rem;
+      border-radius: $border-radius-button;
       padding: 0.2rem 0.6rem;
       border: none;
       font-size: 0.7rem;

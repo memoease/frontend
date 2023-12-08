@@ -27,7 +27,7 @@
       padding: 1rem;
       border-radius: 1rem;
       background-color: $ColorLightBlue;
-      box-shadow: $boxShadow;
+      box-shadow: $box-shadow;
       .group {
         display: flex;
         justify-content: center;
@@ -57,9 +57,9 @@
         color: #ffff;
         max-width: 100%;
         transition: all 0.8s ease;
-        background: $highlightColor;
+        background: $highlight-color;
         &:hover {
-          background: $ColorOrangen;
+          background: $Color-orangen;
         }
       }
     }
