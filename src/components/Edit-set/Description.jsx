@@ -64,7 +64,15 @@ const Description = ({
           <div className="set-description">
             <section>
               <h4>Description:</h4>
-              <button onClick={clickToEdit}>Edit</button>
+              <button
+                style={{
+                  width: "4vwpx",
+                  height: "24px",
+                }}
+                onClick={clickToEdit}
+              >
+                Edit
+              </button>
             </section>
             <p>{description}</p>
           </div>
@@ -80,8 +88,9 @@ const Description = ({
                 style={{
                   borderRadius: "0.5rem",
                   textAlign: "center",
-                  width: "20vw",
+                  width: "15vw",
                   height: "2.9vw",
+                  fontSize: "18px",
                 }}
               />
             </form>

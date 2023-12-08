@@ -61,7 +61,7 @@ const CardInfo = ({
 
   if (editable) {
     return (
-      <div className="cardEdit" style={{ backgroundColor: "red" }}>
+      <div className="cardEdit">
         <Description
           description={flashcards.description}
           setId={setId}
@@ -81,22 +81,23 @@ const CardInfo = ({
             <button onClick={changeSetAccess}> Change to public</button>
           )}
         </section>
-        <button onClick={handleDeleteConfirm}>Delete</button>
-        <ModalSetting
-          modalText="Are you sure to delete this set?"
-          confirmButtonText="Yes!"
-          cancelButtonText="No!"
-          showDeleteModal={showDeleteModal}
-          handleDeleteConfirms={handleDeleteConfirms}
-          handleDeleteCancels={handleDeleteCancels}
-        />
-        <>
+        <div className="delete-button">
+          <button onClick={handleDeleteConfirm}>Delete</button>
+          <ModalSetting
+            modalText="Are you sure to delete this set?"
+            confirmButtonText="Yes!"
+            cancelButtonText="No!"
+            showDeleteModal={showDeleteModal}
+            handleDeleteConfirms={handleDeleteConfirms}
+            handleDeleteCancels={handleDeleteCancels}
+          />
+
           {!flashcards.session || flashcards.session.toLearn?.length === 0 ? (
             <button onClick={toSession}>Learn this set</button>
           ) : (
             <button onClick={toSession}>Continue session</button>
           )}
-        </>
+        </div>
       </div>
     );
   } else {
