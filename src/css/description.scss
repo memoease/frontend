@@ -1,28 +1,26 @@
-.set-description {
-    margin-top: 0;
-  
-    section {
-    
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      gap: 3vw;
-      position: relative;
-     
 
-      h4 {
-        margin-left: 2vw;
-       
-        margin-top: 0.5vw;
-      }
-      
-      
-  
-      
-    }
-    p {
-      margin-bottom: 1vw;
-      margin-top: 1vw;
+.disriptionSet{
+.set-description {
+  margin-top: 0;
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 3vw;
+    position: relative;
+
+    h4 {
+      margin-left: 2vw;
+
+      margin-top: 0.5vw;
     }
   }
-  
+  p {
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+  }
+}
+}
+
+

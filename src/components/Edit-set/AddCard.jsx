@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
 import { useCards } from "../../utilities/hooks/useCards";
 import { postNewCardToSet } from "../../utilities/service/api";
 
@@ -9,9 +8,6 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
     question: "",
     answer: "",
   });
-  const styleUnderline = {
-    borderBottom: "2px solid black",
-  };
 
   const changeHandler = (evt) => {
     setEntry((prev) => ({

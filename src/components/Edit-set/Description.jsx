@@ -59,7 +59,7 @@ const Description = ({
 
   if (editable) {
     return (
-      <>
+      <div className="disriptionSet">
         {!edit ? (
           <div className="set-description">
             <section>
@@ -107,7 +107,7 @@ const Description = ({
             </button>
           </div>
         )}
-      </>
+      </div>
     );
   } else {
     return (
