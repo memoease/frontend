@@ -70,17 +70,21 @@ const CardInfo = ({
           editable={editable}
         />
         <section className="set-access">
-          <p>
-            {setAccess
-              ? "Everybody can see this set."
-              : "No one can see it. Only you."}
-          </p>
-          {setAccess ? (
-            <button onClick={changeSetAccess}> Change to private</button>
-          ) : (
-            <button onClick={changeSetAccess}> Change to public</button>
-          )}
+          {setAccess
+            ? "Everybody can see this set."
+            : "No one can see it. Only you."}
+
+          <div className="setButton">
+            {setAccess ? (
+              <button onClick={changeSetAccess}>Change to private</button>
+            ) : (
+              <button onClick={changeSetAccess}>Change to public</button>
+            )}
+
+            <button>Create a Group</button>
+          </div>
         </section>
+
         <div className="delete-button">
           <button onClick={handleDeleteConfirm}>Delete</button>
           <ModalSetting
