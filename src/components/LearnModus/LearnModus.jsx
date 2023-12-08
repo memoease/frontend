@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FlipCards from "../FlipCards/FlipCards";
 import LoadingBar from "../Progressbar/ProgressBar";
 
@@ -8,6 +8,7 @@ import {
   updateSessionCardToLearned,
   refreshLearnSession,
 } from "../../utilities/service/api";
+import { useSnackbar } from "@mui/base";
 
 export const LearnModus = () => {
   const [sessionData, setSessionData] = useState(null);
@@ -15,6 +16,7 @@ export const LearnModus = () => {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(true);
   const { setId } = useParams(); // Extracting setId from route params
+  const navigate = useNavigate();
 
   const allCardsLearned = sessionData?.toLearn.length === 0 && !currentCard;
 
@@ -94,6 +96,10 @@ export const LearnModus = () => {
     }
   };
 
+  const navigateToEdit = () => {
+    navigate(`/editset/${setId}`);
+  };
+
   if (allCardsLearned) {
     return (
       <div className="learn">
@@ -119,7 +125,7 @@ export const LearnModus = () => {
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${sessionData.toLearn.length
+                ? `${index + 1} / ${sessionData.toLearn.length
                 }`
                 : ""}
             </div>
@@ -130,6 +136,9 @@ export const LearnModus = () => {
           </div>
           <button className="refresh-button" onClick={handleRefreshSession}>
             Refresh Learnsession
+          </button>
+          <button className="refresh-button" onClick={navigateToEdit}>
+            Back to Edit Mode
           </button>
         </div>
       </div>

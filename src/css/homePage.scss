@@ -7,25 +7,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: $padding;
+    margin: 1rem 0rem;
     .Discriptcontent {
       width: 40%;
       .title_head {
         width: 100%;
-        font-size: 3.5rem;
+        font-size: $biggestTextSize;
         margin-bottom: 2rem;
         color: $BlueColor;
       }
       .startLinkCardTitel {
         text-decoration: none;
-        background:  $highlightColor;
+        background:  $highlight-color;
         border-radius: 20px;
         padding: 0.4rem;
         color: $WhitColor;
         transition: all 0.8s ease;
         &:hover {
-          background: $ColorOrangen;
+          background: $Color-orangen;
         }
       }
     }

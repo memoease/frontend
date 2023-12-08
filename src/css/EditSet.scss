@@ -121,7 +121,7 @@
           button {
             margin: 0.4rem auto;
             width: 125px;
-            background: $highlightColor;
+            background: $highlight-color;
             color: $WhitColor;
           }
           .set-access {
@@ -161,7 +161,7 @@
 
             &:hover {
               // transform: scale(1.1) ;
-              background: $ColorOrangen;
+              background: $Color-orangen;
             }
           }
         }
