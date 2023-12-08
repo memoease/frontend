@@ -102,8 +102,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid $ColorLightGrey;
-    border-radius: 2rem;
 
     input {
       width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
@@ -120,9 +118,32 @@
       padding: 8px;
       cursor: pointer;
       border-radius: 2rem;
-      color: #106899;
+      color: white;
+      transition: all 0.3s ease;
       outline: none;
+      border: transparent;
+      background-color: $highlightColor;
+      font-weight: bold;
+      &:hover {
+        background: $ColorOrangen;
+      }
     }
+  }
+  .back-button {
+    margin-top: 20px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 2rem;
+    color: $BlueColor;
+    outline: none;
+    background-color: $ColorGaru;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: transparent;
+  }
+
+  .back-button:hover {
+    background: $WhitGrauColor;
   }
 }
 
