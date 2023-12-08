@@ -124,10 +124,10 @@
       transition: all 0.3s ease;
       outline: none;
       border: transparent;
-      background-color: $highlightColor;
+      background-color: $highlight-color;
       font-weight: bold;
       &:hover {
-        background:   $highlight-color;
+        background: $highlight-color;
       }
     }
   }
