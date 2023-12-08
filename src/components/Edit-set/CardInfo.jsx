@@ -22,6 +22,9 @@ const CardInfo = ({
   const toSession = () => {
     navigate(`/session/${setId}`);
   };
+  const toGroup = () => {
+    navigate(`/group/${setId}`);
+  };
 
   const changeSetAccess = async () => {
     try {
@@ -81,7 +84,7 @@ const CardInfo = ({
               <button onClick={changeSetAccess}>Change to public</button>
             )}
 
-            <button>Create a Group</button>
+            <button onClick={toGroup}>Create a Group</button>
           </div>
         </section>
 

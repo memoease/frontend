@@ -48,7 +48,7 @@ function App() {
 
                 <Route element={<PrivateRoute />}>
                   <Route
-                    path="/creategroup/:flashcardSetId"
+                    path="/group/:flashcardSetId"
                     element={<GroupCreation />}
                   />
                   <Route path="/create" element={<Box />} />

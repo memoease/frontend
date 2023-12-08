@@ -65,7 +65,6 @@ const GroupCreation = () => {
           <div>
             {groupLink && (
               <div className="link-field">
-                <input type="text" id="link" value={groupLink} readOnly />
                 <CopyToClipboard
                   text={groupLink}
                   onCopy={() => setIsCopied(true)}
@@ -115,9 +114,9 @@ const GroupCreation = () => {
         )}
       </div>
       {message && <div className="message">{message}</div>}
-      <div>
+      <div className="back-box">
         <button className="back-button" onClick={() => navigate(-1)}>
-          Back to Previous Page
+          Back to Edit Set
         </button>
       </div>
     </div>

@@ -64,7 +64,7 @@ const Login = () => {
       if (setIdFromStorage && groupIdFromStorage) {
         // If both are present, navigate to edit set
 
-        navigate(`/editset/${setIdFromStorage}`);
+        navigate(`/readset/${setIdFromStorage}`);
 
         // Send data to Group
         await pushUserToGroup({

@@ -7,7 +7,7 @@
   justify-content: center;
   margin: 0 auto;
   height: 80vh;
-  width: 90%;
+  width: 100%;
   border-radius: 1rem;
 
   .title {
@@ -102,7 +102,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid $ColorLight-grey;
+    //border: 1px solid $ColorLight-grey;
     border-radius: 2rem;
 
     input {
@@ -127,18 +127,21 @@
       background-color: $highlight-color;
       font-weight: bold;
       &:hover {
-        background: $highlight-color;
+        background: $Color-orangen;
       }
     }
   }
+
   .back-button {
+    width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+    max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
     margin-top: 20px;
-    padding: 8px;
+    padding: 0.4rem 0.6rem;
     cursor: pointer;
     border-radius: 2rem;
-    color: $BlueColor;
+    color: white;
     outline: none;
-    background-color: $ColorGaru;
+    background-color: rgba(204, 204, 204, 0.8);
     font-weight: bold;
     transition: all 0.3s ease;
     border: transparent;
