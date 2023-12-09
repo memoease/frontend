@@ -100,9 +100,13 @@ const CardInfo = ({
           />
 
           {!flashcards.session || flashcards.session.toLearn?.length === 0 ? (
-            <button onClick={toSession}>Learn this set</button>
+            <button className="btn-continue" onClick={toSession}>
+              Learn this set
+            </button>
           ) : (
-            <button onClick={toSession}>Continue session</button>
+            <button className="btn-continue" onClick={toSession}>
+              Continue session
+            </button>
           )}
         </div>
       </div>

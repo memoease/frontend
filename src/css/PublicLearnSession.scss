@@ -16,7 +16,7 @@
     text-shadow: 0px 0px 10px #0000;
   }
 
-  .refresh-button {
+  .refresh-btn {
     cursor: pointer;
     border: none;
     outline: none;
@@ -25,7 +25,7 @@
     border-radius: 1rem;
     color: $WhitColor;
     transition: all 0.7s ease;
-    background:    $highlight-color;
+    background: $highlight-color;
 
     &:hover {
       background: $Color-orangen;

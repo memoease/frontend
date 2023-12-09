@@ -1,26 +1,25 @@
+.disriptionSet {
+  .set-description {
+    margin-top: 0;
 
-.disriptionSet{
-.set-description {
-  margin-top: 0;
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 3vw;
+      position: relative;
 
-  section {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 3vw;
-    position: relative;
-
-    h4 {
-      margin-left: 2vw;
-
-      margin-top: 0.5vw;
+      h4 {
+        margin-left: 4vw;
+        margin-top: 1.5vw;
+        color: $BlueColor;
+      }
+    }
+    p {
+      margin-bottom: 1vw;
+      margin-top: 1vw;
+      color: $BlueColor;
+      font-weight: bold;
     }
   }
-  p {
-    margin-bottom: 1vw;
-    margin-top: 1vw;
-  }
 }
-}
-
-

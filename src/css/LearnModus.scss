@@ -14,35 +14,65 @@
     color: $BlueColor;
     text-shadow: 0px 0px 10px #0000;
   }
+  .refresh-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    background: $BlueColor;
+    &:hover {
+      background: $primary-color;
+    }
+  }
   .refresh-button {
     cursor: pointer;
     border: none;
     outline: none;
-    margin-top: 2rem;
+    margin: 2rem;
     padding: 0.6rem 1rem;
     border-radius: 1rem;
-    color: $WhitColor;
-    transition: all 0.7s ease;
-     background:     $highlight-color;
-          &:hover {
-            background: $Color-orangen;
-          }
+    color: white;
+    transition: all 0.3s ease;
+    background: $BlueColor;
+    font-weight: bold;
+    &:hover {
+      background: $primary-color;
+    }
+  }
+  .navigate-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+    background: #cccc;
+    font-weight: bold;
+    &:hover {
+      background: $BlueColor;
+    }
   }
   .div {
     width: 100%;
     margin: 0 auto;
 
     .overlap-group {
-      .react-card-flip{
-      max-width: 50%;
-      min-width: 220px;
+      .react-card-flip {
+        max-width: 50%;
+        min-width: 220px;
         width: auto;
         height: auto;
         margin: 0 auto;
         padding: 10px;
         position: relative;
       }
-      
+
       .group {
         margin: 2rem 0;
         text-align: center;

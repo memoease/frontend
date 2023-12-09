@@ -63,11 +63,10 @@ const Description = ({
         {!edit ? (
           <div className="set-description">
             <section>
-              <h4>Description:</h4>
+              <h4>Description</h4>
               <button
                 style={{
                   width: "4vwpx",
-                  height: "24px",
                 }}
                 onClick={clickToEdit}
               >
@@ -79,7 +78,7 @@ const Description = ({
         ) : (
           <div className="set-description">
             <form action="submit">
-              <h4>description:</h4>
+              <h4>Description</h4>
               <textarea
                 type="text"
                 value={newDescript.description}
@@ -97,7 +96,7 @@ const Description = ({
             <button
               onClick={saveNewDescription}
               style={{
-                backgroundColor: "#ff8800",
+                backgroundColor: "#106899",
                 width: "50px",
                 margin: "0.5rem auto ",
                 color: "white",
@@ -114,7 +113,7 @@ const Description = ({
       <>
         <div className="set-description">
           <section>
-            <h4>description:</h4>
+            <h4>Description</h4>
             <p>{description}</p>
           </section>
 

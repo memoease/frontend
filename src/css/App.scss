@@ -24,7 +24,8 @@
 body {
   font-family: "Inter", sans-serif;
   background-color: $ColorLightBlue;
-  input {
+  input,
+  textarea {
     font-size: 1rem;
   }
 }

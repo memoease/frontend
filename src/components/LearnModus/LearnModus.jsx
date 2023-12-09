@@ -79,7 +79,6 @@ export const LearnModus = () => {
     setIndex(nextIndex);
 
     setCurrentCard(sessionData.toLearn[nextIndex]);
-
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -125,8 +124,7 @@ export const LearnModus = () => {
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${index + 1} / ${sessionData.toLearn.length
-                }`
+                ? `${index + 1} / ${sessionData.toLearn.length}`
                 : ""}
             </div>
             <button
@@ -134,11 +132,11 @@ export const LearnModus = () => {
               onClick={handleMoveToLearned}
             ></button>
           </div>
-          <button className="refresh-button" onClick={handleRefreshSession}>
+          <button className="refresh-btn" onClick={handleRefreshSession}>
             Refresh Learnsession
           </button>
-          <button className="refresh-button" onClick={navigateToEdit}>
-            Back to Edit Mode
+          <button className="navigate-button" onClick={navigateToEdit}>
+            Back to Edit Set
           </button>
         </div>
       </div>
