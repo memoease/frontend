@@ -13,7 +13,7 @@
     background: #C4D6E7;
     padding: 1rem 0;
     font-family: serif;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: $box-shadow;
 
     .title_dash {
       width: 50%;
@@ -51,10 +51,10 @@
         align-items: center;
         border-radius: 2rem;
         transition: all 0.5s ease;
-        box-shadow: 0px 0px 10px rgb(189, 189, 189);
+        box-shadow: $box-shadow;
 
         &:hover {
-          box-shadow: 0px 0px 20px rgb(3, 3, 3);
+          box-shadow: $box-shadow;
         }
 
         .plusLink {

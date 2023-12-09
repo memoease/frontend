@@ -78,7 +78,7 @@
             border-style: none;
             cursor: pointer;
             &:hover {
-              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+              box-shadow: $box-shadow;
             }
 
             &:active {
@@ -95,7 +95,7 @@
             border-style: none;
             cursor: pointer;
             &:hover {
-              box-shadow: 0px 2px 10px rgb(6, 6, 6);
+              box-shadow:$box-shadow;
             }
 
             &:active {
@@ -117,7 +117,7 @@
           padding: 1rem;
           border-radius: 1.3rem;
           text-align: center;
-          box-shadow: 0px 0px 5px #000000;
+          box-shadow: $box-shadow;
           button {
             margin: 0.4rem auto;
             background: $Blue-color;
