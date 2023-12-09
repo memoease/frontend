@@ -14,7 +14,10 @@ const Navigation = () => {
     <div className="navigation">
       <div className="navigationHead">
         <NavLink className="logo" to="/">
-          <h2 className="title">MemoEase</h2>
+          <h2 className="title">
+            <span>M</span>
+            emo<span>E</span>ase
+          </h2>
         </NavLink>
         <div className="menu" onClick={menuHandel}>
           <span></span>

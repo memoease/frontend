@@ -1,5 +1,4 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 //  Styling Login
 .signupFormContainer {
   height: 80vh;
@@ -72,22 +71,22 @@
           border-radius: 2rem;
           border: none;
           outline: none;
-          color: $ColorBlack;
-          transition: all 0.7s ease;
-          background:   $highlight-color;
+          color: white;
+          transition: all 0.3s ease;
+          background: $highlight-color;
           text-decoration: none;
+          font-weight: bold;
           &:hover {
-          background: $Color-orangen;
-        }
+            background: $Color-orangen;
+          }
         }
       }
     }
   }
   .message-container {
-  
     .message {
-  letter-spacing: 1px;
-  text-shadow: 10px 10px 20px rgb(0, 0, 0);
+      letter-spacing: 1px;
+      text-shadow: 10px 10px 20px rgb(0, 0, 0);
     }
   }
 }

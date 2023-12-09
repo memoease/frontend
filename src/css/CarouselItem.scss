@@ -4,11 +4,11 @@
   .DiscoverCardsContent {
     .title {
       white-space: nowrap;
-      font-size: 27px;
+      font-size: 25px;
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: uppercase;
-
+      padding-top: 8px;
       background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
         linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
         linear-gradient(#fdb25b 1.3px, transparent 1.3px),
@@ -33,7 +33,7 @@
         background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
           -1.3px -1.3px;
 
-        box-shadow:$box-shadow;
+        box-shadow: $box-shadow;
       }
     }
 

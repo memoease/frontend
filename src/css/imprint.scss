@@ -14,7 +14,7 @@
       padding: 1rem 0;
       letter-spacing: 1px;
       color: $BlueColor;
-      text-decoration: underline;
+      //text-decoration: underline;
     }
     .line {
       width: 100%;
@@ -52,19 +52,19 @@
     height: 100%;
     .imprint-wrapper {
       line-height: 25px;
-        .title{
-          font-size: 1.5rem;
-        }
+      .title {
+        font-size: 1.5rem;
+      }
       ul {
         display: flex;
         flex-direction: column;
         height: auto;
-    
+
         padding: 1rem 0;
         li {
           font-size: 0.8rem;
- 
-          a{
+
+          a {
             font-size: 0.6rem;
           }
         }

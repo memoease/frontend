@@ -1,5 +1,4 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 .HomePageContainer {
   width: 90%;
   margin: 0 auto;
@@ -19,11 +18,11 @@
       }
       .startLinkCardTitel {
         text-decoration: none;
-        background:       $highlight-color;
+        background: $highlight-color;
         border-radius: 20px;
         padding: 0.4rem;
         color: $WhitColor;
-        transition: all 0.8s ease;
+        transition: all 0.3s ease;
         &:hover {
           background: $Color-orangen;
         }
@@ -37,7 +36,7 @@
         height: 40vh;
         background-image: url(../assets/MemoBild.png);
         background-repeat: no-repeat;
-      background-size: contain;
+        background-size: contain;
         background-position: center;
       }
     }

@@ -7,7 +7,7 @@
   .title {
     color: $BlueColor;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhiteColor;
+    text-shadow: 0px 0px 0.3px $BlueColor;
     margin-bottom: 1rem;
     padding: 1rem 1.2rem;
   }
@@ -48,12 +48,13 @@
           button {
             border: transparent;
             padding: 0.5rem;
-            border-radius: 0.5rem;
-            transition: all 0.5s ease;
-            color: $WhitColor;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: bold;
             margin-top: 1rem;
             cursor: pointer;
-            background:     $highlight-color;
+            background: $highlight-color;
             &:hover {
               background: $Color-orangen;
             }
@@ -72,11 +73,11 @@
           position: relative;
           margin: 1rem 0;
           input {
-            width: 200px;
+            width: 220px;
             border-radius: 1rem;
             border: none;
             outline: none;
-            padding: 0.3rem 0.5rem;
+            padding: 0.4rem 0.5rem;
             cursor: pointer;
           }
           .pwdvisibilityPass {
@@ -91,13 +92,13 @@
         .submitBtn {
           border: transparent;
           padding: 0.5rem;
-          border-radius: 0.5rem;
-          transition: all 0.5s ease;
+          border-radius: 1rem;
+          transition: all 0.3s ease;
           color: $WhitColor;
           margin-top: 1rem;
           cursor: pointer;
-          font-size: 1rem;
-          background:     $highlight-color;
+          font-weight: bold;
+          background: $highlight-color;
           &:hover {
             background: $Color-orangen;
           }
@@ -109,13 +110,15 @@
   .message-container {
     text-align: center;
     font-size: 1.4rem;
-    text-shadow: 0px 0px 0.9px #000000;
+    //text-shadow: 0px 0px 0.9px #000000;
+    color: $BlueColor;
   }
   .modalBtnSetting {
     display: flex;
     margin-top: 1rem;
     button {
-      color: $WhitColor;
+      font-weight: bold;
+      color: white;
       border-radius: 1rem;
       border: none;
       outline: none;
@@ -123,7 +126,7 @@
       transition: all 0.8s ease;
       background: #cccc;
       &:hover {
-        background: $Color-orangen;
+        background: $BlueColor;
       }
     }
   }
@@ -133,9 +136,9 @@
     margin: 2rem;
     width: 100%;
     margin: 0 auto;
-     .title{
+    .title {
       font-size: 1rem;
-     }
+    }
     .formWrap {
       width: 100%;
       display: flex;

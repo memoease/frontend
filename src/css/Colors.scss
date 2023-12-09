@@ -1,45 +1,33 @@
-
 //---------------- Color ----
 
 $primary-color: #3498db;
 $ColorLight-grey: #e6eaec;
 $backgroundGreen: #387373;
-$Color-orangen:   #ff8800;
+$Color-orangen: #ff8800;
 $WhiteColor: #eee;
-$ColorLightBlue: #C4D6E7 ;
+$ColorLightBlue: #c4d6e7;
 $ColorGaru: #cccc;
-$BlueColor: #106899 ;
+$BlueColor: #106899;
 $ColorBlack: #000000;
 $BlackWhiteColor: #eee;
 $WhitColor: #fff;
-$colorPrimary: #4caf50; 
+$colorPrimary: #4caf50;
 $colorSecondary: #ff6f61;
 $colorBlackGrau: #4d4d4dcc;
-$WhitGrauColor: #9d9797;     
+$WhitGrauColor: #9d9797;
 $highlightColor: rgb(240, 157, 2);
- $highlight-color:orange;
+$highlight-color: orange;
 
-
-
-// --------------- Box-shadow 
+// --------------- Box-shadow
 
 $box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-$boxShadowButton:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-
-
-
+$boxShadowButton: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
 //--------- Text size ------------------------
 
-$biggestTextSize:3.5rem;
-
-
-
-
-
-
-
+$biggestTextSize: 3.5rem;
 
 // -----------
 $text-transform: capitalize;
@@ -48,18 +36,13 @@ $padding: 1rem;
 $paddingAll: 2rem;
 $overflow: auto;
 
-
 //-----------------------border-radius ------------------------
 $border-radius: 2rem;
 $border-radius-button: 2rem;
 
-
-
-
 //------------------- width and height sizes ------------------------
-$boxWidth:500px;
+$boxWidth: 500px;
 $boxHeight: 420px;
 $maxWidth: 1280px;
 
 //------------------ backgrounds ------------------------
-
