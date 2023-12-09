@@ -17,7 +17,7 @@
       background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
         -1.3px -1.3px;
 
-      color: $WhiteColor;
+      color: $White-color;
       font-weight: bolder;
       border-radius: 0.5rem;
       text-align: center;
@@ -37,8 +37,8 @@
       }
     }
 
-    color: $ColorBlack;
-    background: $WhiteColor;
+    color: $Color-black;
+    background: $White-color;
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius;
@@ -64,8 +64,8 @@
 }
 
 .add-cards-container {
-  color: $ColorBlack;
-  background: $WhiteColor;
+  color: $Color-black;
+  background: $White-color;
   min-height: 20vh;
   max-height: 20vh;
   border-radius: $border-radius;
@@ -77,8 +77,8 @@
   align-items: center;
 
   .dashPlus {
-    color: $ColorBlack;
-    background: $WhiteColor;
+    color: $Color-black;
+    background: $White-color;
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius;

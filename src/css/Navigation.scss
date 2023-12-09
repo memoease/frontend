@@ -13,7 +13,7 @@
     margin-top: 0.6rem;
     .title {
       font-size: 1.4rem;
-      color: $BlueColor;
+      color: $Blue-color;
       font-weight: bold;
       line-height: -1.5rem;
       span {
@@ -36,7 +36,7 @@
       width: 100%;
       height: 0.4rem;
       border-radius: 0.2rem;
-      background-color: $ColorBlack;
+      background-color: $Color-black;
     }
   }
   ul {
@@ -59,7 +59,7 @@
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: $BlueColor;
+    color: $Blue-color;
     &::after {
       content: "";
       width: 100%;
@@ -67,7 +67,7 @@
       position: absolute;
       bottom: -2px;
       left: 0;
-      background: $ColorBlack;
+      background: $Color-black;
       transform: scaleX(0); /* Linie ist anfangs unsichtbar */
       //   transform-origin: left;
       transition: transform 0.3s;
@@ -82,8 +82,8 @@
       cursor: pointer;
       margin: 0 1.5rem;
       text-align: center;
-      background: $BlueColor;
-      color: $WhitColor;
+      background: $Blue-color;
+      color: $Whit-color;
       border-radius: 1rem;
       font-size: 0.9rem;
       //font-weight: bold;
@@ -101,14 +101,14 @@
     .btnRegister {
       margin: 0 1.5rem;
       text-align: center;
-      background: $BlueColor;
-      color: $WhitColor;
+      background: $Blue-color;
+      color: $Whit-color;
       border-radius: 1rem;
       font-size: 0.9rem;
       //font-weight: bold;
       outline: none;
       border: none;
-      box-shadow: 0px 0px 0.8px $ColorBlack;
+      box-shadow: 0px 0px 0.8px $Color-black;
       padding: 0.3rem 1rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
@@ -124,7 +124,7 @@
 
 @media only screen and (max-width: 700px) {
   .navigationHead {
-    background-color: $BlackWhiteColor;
+    background-color: $Black-white-color;
     border-radius: 0;
     width: 100%;
     margin: 0 auto;

@@ -12,7 +12,7 @@
     text-align: center;
     color: #106899;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhitColor;
+    text-shadow: 0px 0px 0.3px $Whit-color;
   }
 
   .register-form {
@@ -85,15 +85,15 @@
     .messages-container {
       /* Neue Container-Klasse für Fehler- und Bestätigungsmeldungen */
       margin-top: 1rem;
-      color: $WhitColor; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
+      color: $Whit-color; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
       font-size: 1rem;
 
       .error-message {
-        color: $WhitColor;
+        color: $Whit-color;
       }
 
       .confirmation-message {
-        color: $WhitColor;
+        color: $Whit-color;
       }
     }
   }

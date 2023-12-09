@@ -14,14 +14,14 @@
         width: 100%;
         font-size: $biggestTextSize;
         margin-bottom: 2rem;
-        color: $BlueColor;
+        color: $Blue-color;
       }
       .startLinkCardTitel {
         text-decoration: none;
         background: $highlight-color;
         border-radius: 20px;
         padding: 0.4rem;
-        color: $WhitColor;
+        color: $Whit-color;
         transition: all 0.3s ease;
         &:hover {
           background: $Color-orangen;
