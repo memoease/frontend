@@ -7,7 +7,7 @@
     .inputCards {
         display: flex;
         padding: 0.5rem;
-        background-color: #eee;
+        background-color: $white-color;
         border-radius: $border-radius-3rem;
         margin-bottom: 0.25rem;
 
@@ -16,11 +16,11 @@
             padding: 1rem;
             border: none;
             outline: none;
-            background-color: #eee;
+            background-color: $white-color;
             padding-left: 0.4rem;
 
             &::placeholder {
-                font-size: 1rem;
+                font-size:$text-size-1rem;
                 color: rgb(71, 71, 71);
                 font-weight: 300;
             }

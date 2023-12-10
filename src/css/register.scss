@@ -10,15 +10,15 @@
   border-radius: $border-radius-1rem;
   .title {
     text-align: center;
-    color: #106899;
+    color: $blue-color;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $Whit-color;
+    text-shadow: 0px 0px 0.3px $white-color;
   }
 
   .register-form {
-    width: $boxWidth;
-    height: $boxHeight;
-    background: #c4d6e7;
+    width: $box-width;
+    height: $box-height;
+    background: $color-light-blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,8 +49,8 @@
         align-items: center;
         padding: 0.8rem 0;
         gap: 10px 0;
-        font-size: 1.1rem;
-        color: #106899;
+        font-size: $text-size-1rem;
+        color: $blue-color;
         input {
           width: 290px;
           padding: 0.6rem 0;
@@ -77,7 +77,7 @@
           margin-top: 1rem;
           background: $highlight-color;
           &:hover {
-            background: $Color-orangen;
+            background: $color-orangen;
           }
         }
       }
@@ -85,15 +85,15 @@
     .messages-container {
       /* Neue Container-Klasse für Fehler- und Bestätigungsmeldungen */
       margin-top: 1rem;
-      color: $Whit-color; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
-      font-size: 1rem;
+      color: $white-color; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
+      font-size: $text-size-1rem;
 
       .error-message {
-        color: $Whit-color;
+        color: $white-color;
       }
 
       .confirmation-message {
-        color: $Whit-color;
+        color: $white-color;
       }
     }
   }

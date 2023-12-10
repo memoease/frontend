@@ -14,7 +14,7 @@
   align-items: center;
 
   .delete-modal {
-    background: #fff;
+    background: $white-color;
     width: 500px;
     height: 200px;
     padding: 20px;
@@ -35,8 +35,8 @@
         margin: 1rem 1rem 0rem 1rem;
         border: none;
         border-radius: 0.5rem;
-        color: #ffff;
-        background: $Blue-color;
+        color: $white-color;
+        background: $blue-color;
         transition: all 0.3s ease;
         font-weight: bold;
         &:hover {

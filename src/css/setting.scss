@@ -5,9 +5,9 @@
   margin: 0 auto;
   border-radius: $border-radius-1rem;
   .title {
-    color: $Blue-color;
+    color: $blue-color;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $Blue-color;
+    text-shadow: 0px 0px 0.3px $blue-color;
     margin-bottom: 1rem;
     padding: 1rem 1.2rem;
   }
@@ -22,7 +22,7 @@
       width: 50%;
       height: 400px;
       margin: 0 1rem;
-      background-color:$Color-light-blue;;
+      background-color:$color-light-blue;;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -30,7 +30,7 @@
       box-shadow: $box-shadow;
       form .formUsername {
         label {
-          color: $Blue-color;
+          color: $blue-color;
           display: flex;
           flex-direction: column;
           margin: 1rem 0;
@@ -56,14 +56,14 @@
             cursor: pointer;
             background: $highlight-color;
             &:hover {
-              background: $Color-orangen;
+              background: $color-orangen;
             }
           }
         }
       }
       .formPassword {
         label {
-          color: $Blue-color;
+          color: $blue-color;
           display: flex;
           flex-direction: column;
           margin: 1rem 0;
@@ -94,13 +94,13 @@
           padding: 0.5rem;
           border-radius: $border-radius-1rem;
           transition: all 0.3s ease;
-          color: $Whit-color;
+          color: $white-color;
           margin-top: 1rem;
           cursor: pointer;
           font-weight: bold;
           background: $highlight-color;
           &:hover {
-            background: $Color-orangen;
+            background: $color-orangen;
           }
         }
       }
@@ -109,9 +109,9 @@
 
   .message-container {
     text-align: center;
-    font-size: 1.4rem;
-    //text-shadow: 0px 0px 0.9px #000000;
-    color: $Blue-color;
+    font-size: $text-size-1-5rem;
+    //text-shadow: 0px 0px 0.9px $color-black;
+    color: $blue-color;
   }
   .modalBtnSetting {
     display: flex;
@@ -124,9 +124,9 @@
       outline: none;
       padding: 0.4rem 0.6rem;
       transition: all 0.8s ease;
-      background: #cccc;
+      background: $color-garu;
       &:hover {
-        background: $Blue-color;
+        background: $blue-color;
       }
     }
   }
@@ -137,7 +137,7 @@
     width: 100%;
     margin: 0 auto;
     .title {
-      font-size: 1rem;
+      font-size: $text-size-1rem;
     }
     .formWrap {
       width: 100%;
@@ -154,7 +154,7 @@
         }
         .setting_btn {
           width: 120px;
-          font-size: 0.6rem;
+          font-size: $smallest-text-size;
         }
         .formPassword {
           .inputPassword {
@@ -164,14 +164,14 @@
           }
           .submitBtn {
             width: 120px;
-            font-size: 0.6rem;
+            font-size: $smallest-text-size;
           }
         }
       }
     }
     .message-container {
       margin-top: 3rem;
-      font-size: 0.8rem;
+      font-size: $text-size-1rem;
     }
     .modalBtnSetting {
       margin-bottom: 1rem;

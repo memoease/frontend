@@ -14,17 +14,17 @@
         width: 100%;
         font-size: $biggestTextSize;
         margin-bottom: 2rem;
-        color: $Blue-color;
+        color: $blue-color;
       }
       .startLinkCardTitel {
         text-decoration: none;
         background: $highlight-color;
         border-radius: $border-radius-2rem;
         padding: 0.4rem;
-        color: $Whit-color;
+        color: $white-color;
         transition: all 0.3s ease;
         &:hover {
-          background: $Color-orangen;
+          background: $color-orangen;
         }
       }
     }
@@ -53,7 +53,7 @@
       .Discriptcontent {
         width: 100%;
         .title_head {
-          font-size: 2rem;
+          font-size: $text-size-2rem;
         }
       }
       .getStartlink-content {

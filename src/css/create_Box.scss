@@ -5,7 +5,7 @@
   display: flex;
   border-radius: $border-radius-1rem;
   padding: 2rem 0;
-  color: $Blue-color;
+  color: $blue-color;
   flex-wrap: wrap;
   .content-wrapper {
     width: 60%;
@@ -18,7 +18,7 @@
       font-size: 2.4rem;
       letter-spacing: 2px;
       text-align: center;
-      color: $Blue-color;
+      color: $blue-color;
     }
     form {
       display: flex;
@@ -26,7 +26,7 @@
       margin: 1rem;
       padding: 1rem;
       border-radius: $border-radius-1rem;
-      background-color:$Color-light-blue;
+      background-color:$color-light-blue;
       box-shadow: $box-shadow;
       .group {
         display: flex;
@@ -54,13 +54,13 @@
         padding: 0.3rem 1.4rem;
         border-radius:$border-radius-1rem;
         border: none;
-        color: #ffff;
+        color: $white-color;
         max-width: 100%;
         transition: all 0.3s ease;
         background: $highlight-color;
         font-weight: bold;
         &:hover {
-          background: $Color-orangen;
+          background: $color-orangen;
         }
       }
     }
@@ -92,7 +92,7 @@
       width: 100%;
       margin: 1rem auto;
       .titleHead {
-        font-size: 1.5rem;
+        font-size: $text-size-1-5rem;
         font-weight: bold;
       }
       form {

@@ -11,8 +11,8 @@
   flex-direction: column;
 
   .titel_learn {
-    font-size: 3rem;
-    color: $Blue-color;
+    font-size: $biggestTextSize;
+    color: $blue-color;
     text-shadow: 0px 0px 10px #0000;
   }
 
@@ -23,12 +23,12 @@
     margin-top: 2rem;
     padding: 0.6rem 1rem;
     border-radius: $border-radius-1rem;
-    color: $Whit-color;
+    color: $white-color;
     transition: all 0.7s ease;
     background: $highlight-color;
 
     &:hover {
-      background: $Color-orangen;
+      background: $color-orangen;
     }
   }
 

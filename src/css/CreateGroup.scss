@@ -12,24 +12,24 @@
 
   .title {
     text-align: left;
-    color: #106899;
+    color: $blue-color;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $Whit-color;
+    text-shadow: 0px 0px 0.3px $white-color;
     margin-bottom: 10px;
     font-weight: bold;
   }
 
   .description {
     text-align: left;
-    color: #106899;
+    color: $blue-color;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $Whit-color;
+    text-shadow: 0px 0px 0.3px $white-color;
     margin-bottom: 20px;
   }
 
   .group-container {
-    width: $boxWidth;
-    background: #c4d6e7;
+    width: $box-width;
+    background: $color-light-blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,8 +50,8 @@
         flex-direction: column;
         align-items: center;
         padding: 0.8rem 0;
-        font-size: 1.1rem;
-        color: #106899;
+        font-size: $text-size-1rem;
+        color: $blue-color;
 
         input,
         textarea {
@@ -77,12 +77,12 @@
           outline: none;
           border: none;
           background-color: $highlight-color;
-          color: $Whit-color;
+          color: $white-color;
           transition: all 0.3s ease;
           font-weight: bold;
 
           &:hover {
-            background-color: $Color-orangen;
+            background-color: $color-orangen;
           }
         }
       }
@@ -92,7 +92,7 @@
   .message {
     margin-top: 20px;
     padding: 10px;
-    color: #106899;
+    color: $blue-color;
   }
 
   .link-field {
@@ -110,7 +110,7 @@
       margin-top: 1rem;
       border: none;
       background: transparent;
-      color: #106899;
+      color: $blue-color;
     }
 
     button {
@@ -127,7 +127,7 @@
       background-color: $highlight-color;
       font-weight: bold;
       &:hover {
-        background: $Color-orangen;
+        background: $color-orangen;
       }
     }
   }
@@ -148,7 +148,7 @@
   }
 
   .back-button:hover {
-    background: $White-grau-color
+    background: $color-garu;
 ;
   }
 }

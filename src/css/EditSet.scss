@@ -8,7 +8,7 @@
     .set-title {
       display: flex;
       justify-content: space-between;
-      border: 1px solid $Blue-color;
+      border: 1px solid $blue-color;
       padding: 1rem;
       border-radius: $border-radius-1rem;
 
@@ -16,7 +16,7 @@
         border: none;
         width: 3rem;
         border-radius: $border-radius-1rem;
-        background-color: #106899;
+        background-color: $blue-color;
         svg {
           fill: white;
           height: 1.5rem;
@@ -25,8 +25,8 @@
         }
       }
       h2 {
-        color: $Blue-color;
-        font-size: 2rem;
+        color: $blue-color;
+        font-size: $text-size-2rem;
         font-weight: 200;
         cursor: pointer;
       }
@@ -111,7 +111,7 @@
         .cardEdit {
           width: 550px;
           height: 304px;
-          background-color:$Color-light-blue;
+          background-color:$color-light-blue;
           margin-bottom: 7rem;
           margin-left: 2rem;
           padding: 1rem;
@@ -120,34 +120,34 @@
           box-shadow: $box-shadow;
           button {
             margin: 0.4rem auto;
-            background: $Blue-color;
+            background: $blue-color;
             color: white;
             font-weight: bold;
           }
           .set-access {
             margin: 1rem 0;
-            color: #106899;
+            color: $blue-color;
             .setButton {
               display: flex;
               justify-content: center;
             }
 
             .setPragrph {
-              font-size: 1.2rem;
+              font-size: $text-size-1rem;
             }
           }
           .delete-button {
             display: flex;
             flex-direction: row;
             button {
-              background-color: #cccc;
+              background-color: $color-garu;
             }
             .btn-continue {
               background-color: $highlight-color;
               color: white;
               font-weight: bold;
               &:hover {
-                background-color: $Color-orangen;
+                background-color: $color-orangen;
               }
             }
           }
@@ -199,7 +199,7 @@
       .inputCards {
         display: flex;
         padding: 0.5rem;
-        background-color: #eee;
+        background-color: $white-color;
         border-radius: $border-radius-3rem;
 
         textarea {
@@ -209,12 +209,12 @@
           padding: 1rem;
           border: none;
           outline: none;
-          background-color: #eee;
+          background-color: $white-color;
           padding-left: 0.4rem;
           resize: vertical;
 
           &::placeholder {
-            font-size: 0.75rem;
+            font-size: $text-size-1rem;
             color: rgb(71, 71, 71);
             font-weight: 100;
             font-style: italic;
@@ -227,7 +227,7 @@
         }
 
         .EditBtn {
-          background-color: $Blue-color;
+          background-color: $blue-color;
           padding: 0 0.5rem;
           width: 150px;
           height: 1.8rem;
@@ -235,7 +235,7 @@
           margin-bottom: 0.5rem;
           border: none;
           outline: none;
-          color: #ffff;
+          color: $white-color;
           border-radius:$border-radius-2rem;
           cursor: pointer;
         }
@@ -257,7 +257,7 @@
     .aditSetTitle {
       .set-title {
         h2 {
-          font-size: 1rem;
+          font-size: $text-size-1rem;
         }
         button {
           width: 2.8rem;

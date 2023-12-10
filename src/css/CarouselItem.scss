@@ -4,7 +4,7 @@
   .DiscoverCardsContent {
     .title {
       white-space: nowrap;
-      font-size: 25px;
+      font-size: $text-size-1-5rem;
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: uppercase;
@@ -17,7 +17,7 @@
       background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
         -1.3px -1.3px;
 
-      color: $White-color;
+      color: $white-color;
       font-weight: bolder;
       border-radius: 0.5rem;
       text-align: center;
@@ -37,8 +37,8 @@
       }
     }
 
-    color: $Color-black;
-    background: $White-color;
+    color: $color-black;
+    background: $white-color;
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
@@ -50,10 +50,10 @@
       border-radius: $border-radius-2rem;
       padding: 0.2rem 0.6rem;
       border: none;
-      font-size: 0.7rem;
-      background: #cccc;
+      font-size: $text-size-1rem;
+      background: $color-garu;
       margin: 1rem 0;
-      color: #000000;
+      color: $color-black;
     }
 
     .discropt-created {
@@ -64,8 +64,8 @@
 }
 
 .add-cards-container {
-  color: $Color-black;
-  background: $White-color;
+  color: $color-black;
+  background: $white-color;
   min-height: 20vh;
   max-height: 20vh;
   border-radius: $border-radius-2rem;
@@ -77,8 +77,8 @@
   align-items: center;
 
   .dashPlus {
-    color: $Color-black;
-    background: $White-color;
+    color: $color-black;
+    background: $white-color;
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
