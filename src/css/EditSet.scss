@@ -4,6 +4,7 @@
   width: 80%;
   height: 100%;
   margin: 0 auto;
+
   .aditSetTitle {
     .set-title {
       display: flex;
@@ -17,6 +18,7 @@
         width: 3rem;
         border-radius: $border-radius-1rem;
         background-color: $blue-color;
+
         svg {
           fill: white;
           height: 1.5rem;
@@ -24,6 +26,7 @@
           cursor: pointer;
         }
       }
+
       h2 {
         color: $blue-color;
         font-size: $text-size-2rem;
@@ -31,6 +34,7 @@
         cursor: pointer;
       }
     }
+
     input {
       padding-left: 0.5rem;
       border-radius: 0.5rem;
@@ -46,10 +50,12 @@
   .EditSet_Content {
     margin: 0 auto;
     padding: 2em;
+
     .devContainer {
       width: 100%;
       margin: 0 auto;
       display: flex;
+
       .edidtOverlap-group {
         cursor: pointer;
         width: 50%;
@@ -64,6 +70,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+
           .flipped-number {
             cursor: pointer;
             padding: 0 3rem;
@@ -77,6 +84,7 @@
             transition: all 0.6s ease;
             border-style: none;
             cursor: pointer;
+
             &:hover {
               box-shadow: $box-shadow;
             }
@@ -93,9 +101,11 @@
             line-height: 40px;
             transition: all 0.6s ease;
             border-style: none;
+            border-radius: $border-radius-circle;
             cursor: pointer;
+
             &:hover {
-              box-shadow:$box-shadow;
+              box-shadow: $box-shadow;
             }
 
             &:active {
@@ -108,25 +118,29 @@
       .setPractice {
         width: 50%;
         display: flex;
+
         .cardEdit {
           width: 550px;
           height: 304px;
-          background-color:$color-light-blue;
+          background-color: $color-light-blue;
           margin-bottom: 7rem;
           margin-left: 2rem;
           padding: 1rem;
           border-radius: $border-radius-1rem;
           text-align: center;
           box-shadow: $box-shadow;
+
           button {
             margin: 0.4rem auto;
             background: $blue-color;
             color: white;
             font-weight: bold;
           }
+
           .set-access {
             margin: 1rem 0;
             color: $blue-color;
+
             .setButton {
               display: flex;
               justify-content: center;
@@ -136,16 +150,20 @@
               font-size: $text-size-1rem;
             }
           }
+
           .delete-button {
             display: flex;
             flex-direction: row;
+
             button {
               background-color: $color-garu;
             }
+
             .btn-continue {
               background-color: $highlight-color;
               color: white;
               font-weight: bold;
+
               &:hover {
                 background-color: $color-orangen;
               }
@@ -189,6 +207,7 @@
     position: relative;
     width: 80%;
     margin: 0 auto;
+
     form {
       display: flex;
       margin: 10px;
@@ -236,7 +255,7 @@
           border: none;
           outline: none;
           color: $white-color;
-          border-radius:$border-radius-2rem;
+          border-radius: $border-radius-2rem;
           cursor: pointer;
         }
       }
@@ -254,15 +273,18 @@
 @media only screen and (max-width: 700px) {
   .EditSet_Container {
     padding-top: 2rem;
+
     .aditSetTitle {
       .set-title {
         h2 {
           font-size: $text-size-1rem;
         }
+
         button {
           width: 2.8rem;
         }
       }
+
       input {
         padding-left: 0.5rem;
         border-radius: 0.3rem;
@@ -277,14 +299,17 @@
       .devContainer {
         display: flex;
         flex-direction: column;
+
         .edidtOverlap-group {
           width: 50%;
           margin: 0 auto;
         }
+
         .setPractice {
           width: 50%;
           margin: 0 auto;
         }
+
         .setPractice {
           width: 100%;
           margin: 0 auto;
@@ -300,20 +325,24 @@
         }
       }
     }
+
     .FromEdit {
       width: 100%;
+
       form {
         .inputCards {
           width: 100%;
           display: flex;
           flex-direction: column;
           padding: 1.3rem;
+
           textarea {
             width: 100%;
             margin: 0.3rem auto;
             border-radius: $border-radius-1rem;
             border: 0.1px solid #000;
           }
+
           .EditBtn {
             width: 100%;
           }
