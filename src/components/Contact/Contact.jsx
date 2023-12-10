@@ -44,7 +44,7 @@ const Contact = () => {
               className="linkToImprint"
               onClick={handleLinkClick}
             >
-              DSGVO
+              Dsgvo
             </NavLink>
           </div>
         </div>
