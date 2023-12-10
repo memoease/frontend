@@ -1,0 +1,49 @@
+.FromEdit {
+  position: relative;
+  // top: 150px;
+  width: 100%;
+  padding: 1rem;
+
+  .inputCards {
+    display: flex;
+    padding: 0.5rem;
+    background-color: $white-color;
+    border-radius: $border-radius-3rem;
+    margin-bottom: 0.25rem;
+
+    p {
+      width: 550px;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      background-color: $white-color;
+    //   padding-left: 0.4rem;
+
+      &::placeholder {
+        font-size: $text-size-1rem;
+        color: rgb(71, 71, 71);
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .FromEdit {
+ 
+    .inputCards {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      p {
+        background-color: transparent;
+        margin: 1rem auto;
+        padding: 1rem;
+        width: 100%;
+        border: 0.1px solid #000;
+        border-radius: 1rem;
+        
+      }
+    }
+  }
+}

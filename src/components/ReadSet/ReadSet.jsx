@@ -94,36 +94,43 @@ const ReadSet = () => {
     }
 
     return (
-        <div className="EditSet_Container">
-            <SetTitle title={flashcards.title} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} editable={false}></SetTitle>
-            <div className="EditSet_Content">
-                <div className="div">
-                    <div className="edidtOverlap-group">
-                        <FlipCards
-                            activeCard={activeCard ? activeCard : ""}
-                            index={index}
-                        />
-                        <div className="editGroup">
-                            <button className="ellipseLeft" onClick={clickLeft}>
-                                <FiChevronLeft />
-                            </button>
-                            <div className="slidNumber">
-                                {index + 1}/{flashcards.flashcards.length}
-                            </div>
-                            <button className="ellipseRight" onClick={clickRight}>
-                                <FiChevronRight />
-                            </button>
-                        </div>
-                    </div>
-                    <div className="setPractice">
-                        <CardInfo setId={setId} flashcards={flashcards} setNewCardAdded={setNewCardAdded} newCardAdded={newCardAdded} editable={false} />
-                    </div>
-                </div>
-                <div className="FromEdit">
-                    {renderCards()}
-                </div>
+      <div className="EditSet_Container">
+        <SetTitle
+          title={flashcards.title}
+          setNewCardAdded={setNewCardAdded}
+          newCardAdded={newCardAdded}
+          editable={false}
+        ></SetTitle>
+        <div className="EditSet_Content">
+          <div className="edidtOverlap-group">
+            <FlipCards
+              activeCard={activeCard ? activeCard : ""}
+              index={index}
+            />
+            <div className="editGroup">
+              <button className="ellipseLeft" onClick={clickLeft}>
+                <FiChevronLeft />
+              </button>
+              <div className="slidNumber">
+                {index + 1}/{flashcards.flashcards.length}
+              </div>
+              <button className="ellipseRight" onClick={clickRight}>
+                <FiChevronRight />
+              </button>
             </div>
+          </div>
+          <div className="setPractice">
+            <CardInfo
+              setId={setId}
+              flashcards={flashcards}
+              setNewCardAdded={setNewCardAdded}
+              newCardAdded={newCardAdded}
+              editable={false}
+            />
+          </div>
+          <div className="FromEdit">{renderCards()}</div>
         </div>
+      </div>
     );
 
 };

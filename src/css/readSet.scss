@@ -1,29 +1,83 @@
-.FromEdit {
-    position: relative;
-    // top: 150px;
-    width: 100%;
-    // padding: 1rem;
-
-    .inputCards {
+.EditSet_Container {
+  .EditSet_Content {
+    .edidtOverlap-group {
+      .editGroup {
         display: flex;
-        padding: 0.5rem;
-        background-color: $white-color;
-        border-radius: $border-radius-3rem;
-        margin-bottom: 0.25rem;
-
-        p {
-            width: 550px;
-            padding: 1rem;
-            border: none;
-            outline: none;
-            background-color: $white-color;
-            padding-left: 0.4rem;
-
-            &::placeholder {
-                font-size:$text-size-1rem;
-                color: rgb(71, 71, 71);
-                font-weight: 300;
-            }
+        justify-content: center;
+        margin: 1rem 0;
+        .slidNumber {
+          padding: 0.5rem 2rem;
         }
+        .ellipseLeft {
+          border: none;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          transition: all 0.8s ease;
+          cursor: pointer;
+          &:hover {
+            box-shadow: $box-shadow;
+          }
+        }
+        .ellipseRight {
+          border: none;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          transition: all 0.8s ease;
+          cursor: pointer;
+          &:hover {
+            box-shadow: $box-shadow;
+          }
+        }
+      }
     }
+    .set-description {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem auto;
+      width: 90%;
+    
+      section {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+        h4 {
+          color: $blue-color;
+        }
+        p {
+          color: $blue-color;
+        }
+      }
+      button {
+        background-color: $blue-color;
+        color: $colorWhit;
+        border: none;
+        padding: 0.3rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.8s ease;
+        &:hover {
+          box-shadow: $box-shadow;
+        }
+      }
+    }
+ 
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .EditSet_Container {
+    .EditSet_Content {
+      .set-description {
+        display: flex;
+        flex-direction: column;
+          button {
+            margin: 2rem 0;
+          }
+      }
+    }
+  }
 }
