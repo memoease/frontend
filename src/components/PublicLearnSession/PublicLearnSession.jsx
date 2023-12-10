@@ -42,14 +42,11 @@ const PublicLearnSession = () => {
       const updatedIsLearned = [...isLearned, currentCard];
 
       setIsLearned(updatedIsLearned);
-      setFlipped(!flipped);
       setToLearn(updatedToLearn);
-      setCurrentCard(updatedToLearn[index]);
-      console.log("cardAmount movetolearned:", cardAmount);
-      console.log("index:", index);
-      console.log("updatedToLearn.length:", updatedToLearn.length);
-      console.log("minus index:", updatedToLearn.length - index);
-      console.log("cardamout minus 3:", cardAmount - 3);
+      setFlipped(!flipped);
+      setTimeout(() => {
+        setCurrentCard(updatedToLearn[index]);
+      }, 200);
       if ((updatedToLearn.length - index) <= (cardAmount - 3)) {
         setShowModal(true);
       };
@@ -57,17 +54,16 @@ const PublicLearnSession = () => {
   };
 
   const advanceToNextCard = () => {
-    setFlipped(!flipped);
 
     const nextIndex = (index + 1) % toLearn.length;
-
     setIndex(nextIndex);
-    const cardAmountUpdate = cardAmount + 1;
-    setCardAmount(cardAmountUpdate);
-    console.log("cardamount next card: ", cardAmountUpdate);
-    setCurrentCard(toLearn[nextIndex]);
 
-    if (nextIndex === 3 || toLearn.length <= 1 || (toLearn.length) <= cardAmountUpdate - 3) {
+    setFlipped(!flipped);
+    setTimeout(() => {
+      setCurrentCard(toLearn[nextIndex]);
+    }, 200);
+
+    if (nextIndex === 3 || toLearn.length <= 1 || (toLearn.length - nextIndex) <= cardAmount - 3) {
       setShowModal(true);
     }
   };
