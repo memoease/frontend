@@ -10,12 +10,12 @@
       justify-content: space-between;
       border: 1px solid $Blue-color;
       padding: 1rem;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
 
       button {
         border: none;
         width: 3rem;
-        border-radius: 1rem;
+        border-radius: $border-radius-1rem;
         background-color: #106899;
         svg {
           fill: white;
@@ -73,7 +73,7 @@
             width: 35px;
             height: 35px;
             line-height: 40px;
-            border-radius: 50%;
+            border-radius: $border-radius-circle;
             transition: all 0.6s ease;
             border-style: none;
             cursor: pointer;
@@ -89,7 +89,7 @@
           .ellipseRight {
             width: 35px;
             height: 35px;
-            border-radius: 50%;
+            border-radius: 5$border-radius-circle;
             line-height: 40px;
             transition: all 0.6s ease;
             border-style: none;
@@ -115,7 +115,7 @@
           margin-bottom: 7rem;
           margin-left: 2rem;
           padding: 1rem;
-          border-radius: 1.3rem;
+          border-radius: $border-radius-1rem;
           text-align: center;
           box-shadow: $box-shadow;
           button {
@@ -156,7 +156,7 @@
             width: 100px;
             display: block;
             padding: 0.5rem;
-            border-radius: 1rem;
+            border-radius: $border-radius-1rem;
             outline: none;
             border: none;
             cursor: pointer;
@@ -168,7 +168,7 @@
             width: 100px;
             display: block;
             padding: 0.5rem;
-            border-radius: 1rem;
+            border-radius: $border-radius-1rem;
             outline: none;
             border: none;
             cursor: pointer;
@@ -200,7 +200,7 @@
         display: flex;
         padding: 0.5rem;
         background-color: #eee;
-        border-radius: 4rem;
+        border-radius: $border-radius-3rem;
 
         textarea {
           width: 550px;
@@ -236,7 +236,7 @@
           border: none;
           outline: none;
           color: #ffff;
-          border-radius: 2rem;
+          border-radius:$border-radius-2rem;
           cursor: pointer;
         }
       }
@@ -311,7 +311,7 @@
           textarea {
             width: 100%;
             margin: 0.3rem auto;
-            border-radius: 1rem;
+            border-radius: $border-radius-1rem;
             border: 0.1px solid #000;
           }
           .EditBtn {

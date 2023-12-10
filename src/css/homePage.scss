@@ -19,7 +19,7 @@
       .startLinkCardTitel {
         text-decoration: none;
         background: $highlight-color;
-        border-radius: 20px;
+        border-radius: $border-radius-2rem;
         padding: 0.4rem;
         color: $Whit-color;
         transition: all 0.3s ease;

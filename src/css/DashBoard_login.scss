@@ -9,7 +9,7 @@
   .dashborad_add_Content {
     display: flex;
     margin-top: 2rem;
-    border-radius: 3.3rem;
+    border-radius: $border-radius-3rem;
     background: #C4D6E7;
     padding: 1rem 0;
     font-family: serif;
@@ -49,7 +49,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 2rem;
+        border-radius: $border-radius-circle;
         transition: all 0.5s ease;
         box-shadow: $box-shadow;
 
@@ -89,7 +89,7 @@
 
         .dashPlus {
           padding: 2rem;
-          border-radius: 1rem;
+          border-radius: $border-radius-1rem;
         }
 
       }

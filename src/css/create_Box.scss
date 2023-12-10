@@ -3,7 +3,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   padding: 2rem 0;
   color: $Blue-color;
   flex-wrap: wrap;
@@ -25,7 +25,7 @@
       flex-direction: column;
       margin: 1rem;
       padding: 1rem;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
       background-color:$Color-light-blue;
       box-shadow: $box-shadow;
       .group {
@@ -44,7 +44,7 @@
           padding: 1rem;
           border: none;
           outline: none;
-          border-radius: 1.5rem;
+          border-radius: $border-radius-1rem;
           cursor: pointer;
         }
       }
@@ -52,7 +52,7 @@
         cursor: pointer;
         margin: 1.5rem auto;
         padding: 0.3rem 1.4rem;
-        border-radius: 0.8rem;
+        border-radius:$border-radius-1rem;
         border: none;
         color: #ffff;
         max-width: 100%;

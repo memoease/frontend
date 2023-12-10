@@ -27,7 +27,7 @@
       height: 60vh;
       display: flex;
       padding-top: 2.5rem;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
       background-color:$Color-light-blue;
       li {
         cursor: pointer;

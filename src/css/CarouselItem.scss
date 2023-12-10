@@ -41,13 +41,13 @@
     background: $White-color;
     min-height: 20vh;
     max-height: 20vh;
-    border-radius: $border-radius;
+    border-radius: $border-radius-2rem;
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;
 
     button {
-      border-radius: $border-radius-button;
+      border-radius: $border-radius-2rem;
       padding: 0.2rem 0.6rem;
       border: none;
       font-size: 0.7rem;
@@ -68,7 +68,7 @@
   background: $White-color;
   min-height: 20vh;
   max-height: 20vh;
-  border-radius: $border-radius;
+  border-radius: $border-radius-2rem;
   padding: 1rem 2rem;
   margin: 0rem 3rem;
   transition: all 0.8s ease;
@@ -81,7 +81,7 @@
     background: $White-color;
     min-height: 20vh;
     max-height: 20vh;
-    border-radius: $border-radius;
+    border-radius: $border-radius-2rem;
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;

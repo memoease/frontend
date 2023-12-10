@@ -4,7 +4,7 @@
   max-width: 80%;
   height: 80vh;
   margin: 0 auto;
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   background-color:$Color-light-blue;
 
   .wrpper-contact {
@@ -25,7 +25,7 @@
       cursor: pointer;
       padding-bottom: 1.2rem;
       padding: 0.3rem 0.6rem;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
       border: none;
       outline: none;
       background: $Blue-color;

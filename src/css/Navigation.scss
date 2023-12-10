@@ -84,7 +84,7 @@
       text-align: center;
       background: $Blue-color;
       color: $Whit-color;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
       font-size: 0.9rem;
       //font-weight: bold;
       outline: none;
@@ -103,7 +103,7 @@
       text-align: center;
       background: $Blue-color;
       color: $Whit-color;
-      border-radius: 1rem;
+      border-radius: $border-radius-1rem;
       font-size: 0.9rem;
       //font-weight: bold;
       outline: none;

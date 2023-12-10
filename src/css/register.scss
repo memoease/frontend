@@ -7,7 +7,7 @@
   margin: 0 auto;
   height: 80vh;
   width: 90%;
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   .title {
     text-align: center;
     color: #106899;
@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem auto;
-    border-radius: 3rem;
+    border-radius: $border-radius-2rem;
     text-align: center;
     box-shadow: $box-shadow;
 
@@ -54,7 +54,7 @@
         input {
           width: 290px;
           padding: 0.6rem 0;
-          border-radius: 2rem;
+          border-radius: $border-radius-2rem;
           outline: none;
           border: none;
           background-color: white;
@@ -67,7 +67,7 @@
           width: 100px;
           padding: 0.5rem 0rem;
           margin-bottom: 1rem;
-          border-radius: 2rem;
+          border-radius: $border-radius-2rem;
           border: none;
           outline: none;
           color: white;

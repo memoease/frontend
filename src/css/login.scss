@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: column;
 
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   .title {
     color: $Blue-color;
     font-weight: normal;
@@ -24,7 +24,7 @@
     align-items: center;
     flex-direction: column;
     background: #c4d6e7;
-    border-radius: 3rem;
+    border-radius: $border-radius-2rem;
     text-align: center;
     box-shadow: $box-shadow;
 
@@ -58,7 +58,7 @@
         padding: 0.6rem;
         outline: none;
         border: none;
-        border-radius: 2rem;
+        border-radius: $border-radius-2rem;
         margin: 0.3rem 0;
         padding-left: 1rem;
       }
@@ -68,7 +68,7 @@
           cursor: pointer;
           width: 100px;
           padding: 0.5rem 1rem;
-          border-radius: 2rem;
+          border-radius: $border-radius-2rem;
           border: none;
           outline: none;
           color: white;
