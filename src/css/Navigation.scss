@@ -108,7 +108,7 @@
       //font-weight: bold;
       outline: none;
       border: none;
-      box-shadow: $box-shadow;
+      
       padding: 0.3rem 1rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
@@ -118,6 +118,7 @@
     }
     .btnRegister {
       margin-right: 0rem;
+      box-shadow: $box-shadow;
     }
   }
 }
