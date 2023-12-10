@@ -4,7 +4,7 @@
   width: 80%;
   height: 100%;
   margin: 0 auto;
-
+overflow: auto;
   .aditSetTitle {
     .set-title {
       display: flex;
@@ -121,7 +121,7 @@
 
         .cardEdit {
           width: 550px;
-          height: 304px;
+          height: auto;
           background-color: $color-light-blue;
           margin-bottom: 7rem;
           margin-left: 2rem;
