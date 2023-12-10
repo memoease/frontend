@@ -8,7 +8,7 @@
   margin: 0 auto;
   height: 80vh;
   width: 100%;
-  border-radius:$border-radius-1rem;
+  border-radius: $border-radius-1rem;
 
   .title {
     text-align: left;
@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     margin: 1rem auto;
-    border-radius:$border-radius-3rem;
+    border-radius: $border-radius-3rem;
     text-align: center;
     box-shadow: $box-shadow;
 
@@ -148,8 +148,7 @@
   }
 
   .back-button:hover {
-    background: $color-garu;
-;
+    background: $blue-color;
   }
 }
 
