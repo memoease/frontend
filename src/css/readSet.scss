@@ -3,7 +3,11 @@
     color: $blue-color;
   }
   .EditSet_Content {
+    
     .edidtOverlap-group {
+      margin: 0 auto;
+      max-width: 60%;
+     
       .editGroup {
         display: flex;
         justify-content: center;
