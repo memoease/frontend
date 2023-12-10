@@ -26,7 +26,7 @@ const PublicLearnSession = () => {
         setCurrentCard(allFlashcards[index]);
       } catch (error) {
         console.error("Error in LearnSession useEffect:", error.response.data);
-      }
+      };
     };
 
     startSession();
@@ -45,22 +45,19 @@ const PublicLearnSession = () => {
 
       advanceToNextCard();
     }
-    setTimeout(() => { }, 2000);
   };
 
   const advanceToNextCard = () => {
     setFlipped(!flipped);
 
-    setTimeout(() => {
-      const nextIndex = (index + 1) % toLearn.length;
+    const nextIndex = (index + 1) % toLearn.length;
 
-      setIndex(nextIndex);
-      setCurrentCard(toLearn[nextIndex]);
+    setIndex(nextIndex);
+    setCurrentCard(toLearn[nextIndex]);
 
-      if (nextIndex === 5 || toLearn.length <= 1) {
-        setShowModal(true);
-      }
-    }, 200);
+    if (nextIndex === 5 || toLearn.length <= 1) {
+      setShowModal(true);
+    }
   };
 
   const handleKeepInSession = () => {

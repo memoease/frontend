@@ -43,16 +43,36 @@ export const LearnModus = () => {
     if (sessionData && currentCard) {
       const cardIdToUpdate = currentCard._id;
       const updatedSession = await updateCardToLearned(cardIdToUpdate);
-      setCurrentCard(updatedSession.toLearn[index]);
-      setFlipped(!flipped);
-
-      advanceToNextCard();
-    }
+      if (index === updatedSession.toLearn.length) {
+        const newIndex = 0;
+        setIndex(newIndex);
+        setFlipped(!flipped);
+        setTimeout(() => {
+          setCurrentCard(updatedSession.toLearn[newIndex]);
+        }, 200);
+        console.log("curretncard: ", currentCard);
+      } else {
+        setFlipped(!flipped);
+        setTimeout(() => {
+          setCurrentCard(updatedSession.toLearn[index]);
+        }, 200);
+      };
+    };
   };
 
   const handleKeepInSession = () => {
     // Advance to the next card without updating the current card
-    advanceToNextCard();
+    setFlipped(!flipped);
+
+    // Find the index of the current card
+    const currentIndex = sessionData.toLearn.indexOf(currentCard);
+
+    // Increment the index and handle boundary conditions
+    const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
+    setIndex(nextIndex);
+    setTimeout(() => {
+      setCurrentCard(sessionData.toLearn[nextIndex]);
+    }, 200);
   };
 
   const handleRefreshSession = async () => {
@@ -64,21 +84,9 @@ export const LearnModus = () => {
       // Set the initial current card after refresh
       if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
         setCurrentCard(updatedSession.toLearn[0]);
+        setIndex(0);
       }
     }
-  };
-
-  const advanceToNextCard = () => {
-    setFlipped(!flipped);
-
-    // Find the index of the current card
-    const currentIndex = sessionData.toLearn.indexOf(currentCard);
-
-    // Increment the index and handle boundary conditions
-    const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
-    setIndex(nextIndex);
-
-    setCurrentCard(sessionData.toLearn[nextIndex]);
   };
 
   const updateCardToLearned = async (cardId) => {
