@@ -9,7 +9,7 @@ const HomeLoggedIn = () => {
   const navigate = useNavigate();
   const { authorized } = useAuth();
 
-  const { publicCards, privateCards } = useCards();
+  const { publicCardExcludeUser, privateCards } = useCards();
 
   const viewPublicSet = (evt) => {
     const setId = evt.currentTarget.id;
@@ -27,7 +27,7 @@ const HomeLoggedIn = () => {
       <h1 className="carousel_title">YOUR SETS</h1>
       <DiscoverCarousel data={privateCards} viewSet={viewPrivateSet} />
       <h1 className="carousel_title">DISCOVER</h1>
-      <DiscoverCarousel data={publicCards} viewSet={viewPublicSet} />
+      <DiscoverCarousel data={publicCardExcludeUser} viewSet={viewPublicSet} />
     </div>
   );
 };

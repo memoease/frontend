@@ -16,7 +16,7 @@ export function CardProvider({ children }) {
   const [publicCards, setPublicCards] = useState([]);
   const [privateCards, setPrivateCards] = useState([]);
   const [message, setMessage] = useState("");
-
+  const [publicCardExcludeUser, setPublicCardExcludeUser] = useState([]);
   const { authorized, loading } = useAuth();
 
   // Effect to load the public-cards from the API
@@ -51,10 +51,25 @@ export function CardProvider({ children }) {
 
         const { error: errorMessage } = error.response?.data || {};
         setMessage(`${errorMessage}. `);
-      }
+      };
     };
 
-    if (authorized) getPrivateSets();
+    const getPublicSetsExcludeUser = async () => {
+      try {
+        const response = await api.getRandomPubSetsExcludeUser();
+        setPublicCardExcludeUser(response);
+        console.log(publicCardExcludeUser);
+      } catch (error) {
+        const { error: errorMessage } = error.response?.data || {};
+        setMessage(`${errorMessage}. `);
+      };
+    };
+
+    if (authorized) {
+      getPrivateSets();
+      getPublicSetsExcludeUser();
+    };
+
   }, [loading]);
 
   const updateSetsByUser = async () => {
@@ -74,7 +89,7 @@ export function CardProvider({ children }) {
   // Provider of the CardsContext value for the child components
   return (
     <CardsContext.Provider
-      value={{ publicCards, privateCards, message, updateSetsByUser }}
+      value={{ publicCards, privateCards, message, updateSetsByUser, publicCardExcludeUser }}
     >
       {children}
     </CardsContext.Provider>

@@ -145,6 +145,11 @@ export const getRandomPubSets = async () => {
   return response.data;
 };
 
+export const getRandomPubSetsExcludeUser = async () => {
+  const response = await axiosInstance.get(`sets/public/random/nouser`);
+  return response.data;
+};
+
 // start Learnsession
 export const startLearnSession = async (setId) => {
   const response = await axiosInstance.post(`session/${setId}`);
