@@ -26,7 +26,7 @@ const PublicLearnSession = () => {
         setCurrentCard(allFlashcards[index]);
       } catch (error) {
         console.error("Error in LearnSession useEffect:", error.response.data);
-      };
+      }
     };
 
     startSession();
@@ -55,7 +55,7 @@ const PublicLearnSession = () => {
     setIndex(nextIndex);
     setCurrentCard(toLearn[nextIndex]);
 
-    if (nextIndex === 5 || toLearn.length <= 1) {
+    if (nextIndex === 3 || toLearn.length <= 1) {
       setShowModal(true);
     }
   };

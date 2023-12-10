@@ -26,7 +26,7 @@ const Navigation = () => {
         </div>
         <ul className={menuOpen ? "open" : ""}>
           <li>
-            <NavLink className="navList" to="/home">
+            <NavLink className="navList" to="/">
               Home
             </NavLink>
           </li>
