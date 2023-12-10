@@ -56,8 +56,8 @@ export const LearnModus = () => {
         setTimeout(() => {
           setCurrentCard(updatedSession.toLearn[index]);
         }, 200);
-      };
-    };
+      }
+    }
   };
 
   const handleKeepInSession = () => {
@@ -130,7 +130,7 @@ export const LearnModus = () => {
 
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
-            <div className="flipped-number">
+            <div className="flipped-num">
               {sessionData
                 ? `${index + 1} / ${sessionData.toLearn.length}`
                 : ""}
