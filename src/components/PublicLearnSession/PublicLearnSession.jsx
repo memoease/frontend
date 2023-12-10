@@ -12,6 +12,7 @@ const PublicLearnSession = () => {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [cardAmount, setCardAmount] = useState(null)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +21,8 @@ const PublicLearnSession = () => {
         const session = await getPublicSetById(setId);
 
         const allFlashcards = session.flashcards;
-
+        setCardAmount(allFlashcards.length);
+        console.log("cardAmount use effect:", cardAmount);
         setToLearn(allFlashcards);
         setIsLearned([]);
         setCurrentCard(allFlashcards[index]);
@@ -42,9 +44,16 @@ const PublicLearnSession = () => {
       setIsLearned(updatedIsLearned);
       setFlipped(!flipped);
       setToLearn(updatedToLearn);
-
-      advanceToNextCard();
-    }
+      setCurrentCard(updatedToLearn[index]);
+      console.log("cardAmount movetolearned:", cardAmount);
+      console.log("index:", index);
+      console.log("updatedToLearn.length:", updatedToLearn.length);
+      console.log("minus index:", updatedToLearn.length - index);
+      console.log("cardamout minus 3:", cardAmount - 3);
+      if ((updatedToLearn.length - index) <= (cardAmount - 3)) {
+        setShowModal(true);
+      };
+    };
   };
 
   const advanceToNextCard = () => {
@@ -53,9 +62,12 @@ const PublicLearnSession = () => {
     const nextIndex = (index + 1) % toLearn.length;
 
     setIndex(nextIndex);
+    const cardAmountUpdate = cardAmount + 1;
+    setCardAmount(cardAmountUpdate);
+    console.log("cardamount next card: ", cardAmountUpdate);
     setCurrentCard(toLearn[nextIndex]);
 
-    if (nextIndex === 3 || toLearn.length <= 1) {
+    if (nextIndex === 3 || toLearn.length <= 1 || (toLearn.length) <= cardAmountUpdate - 3) {
       setShowModal(true);
     }
   };
@@ -87,7 +99,7 @@ const PublicLearnSession = () => {
               ></button>
               <div className="flipped-number">
                 {toLearn
-                  ? `${toLearn.indexOf(currentCard) + 1} / ${toLearn.length}`
+                  ? `${index + 1} / ${toLearn.length}`
                   : ""}
               </div>
               <button
