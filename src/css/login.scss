@@ -17,7 +17,7 @@
     text-shadow: 0px 0px 0.3px $white-color;
   }
   .loginForm {
-    max-width: $box-width;
+    width: $box-width;
     height: $box-height;
     margin: 1rem auto;
     display: flex;
@@ -28,8 +28,6 @@
     border-radius: $border-radius-2rem;
     text-align: center;
     box-shadow: $box-shadow;
-    padding: 2rem;
-    
 
     form {
       width: 290px;
@@ -45,6 +43,7 @@
         .inputPassword {
           display: flex;
           position: relative;
+
           .pwdvisibilityPass {
             background: transparent;
             position: absolute;
