@@ -3,19 +3,20 @@
     color: $blue-color;
   }
   .EditSet_Content {
-    
     .edidtOverlap-group {
       margin: 0 auto;
       max-width: 60%;
-     
+
       .editGroup {
         display: flex;
         justify-content: center;
         margin: 1rem 0;
         .slidNumber {
+          cursor: pointer;
           padding: 0.5rem 2rem;
         }
         .ellipseLeft {
+          cursor: pointer;
           border: none;
           width: 35px;
           height: 35px;
@@ -27,6 +28,7 @@
           }
         }
         .ellipseRight {
+          cursor: pointer;
           border: none;
           width: 35px;
           height: 35px;
@@ -53,9 +55,11 @@
         gap: 3vw;
         h4 {
           color: $blue-color;
+          cursor: pointer;
         }
         p {
           color: $blue-color;
+          cursor: pointer;
         }
       }
       button {
@@ -66,6 +70,7 @@
         border-radius: 1rem;
         cursor: pointer;
         transition: all 0.8s ease;
+        cursor: pointer;
         &:hover {
           box-shadow: $box-shadow;
         }
