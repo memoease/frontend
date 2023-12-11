@@ -37,7 +37,7 @@
         box-shadow: $box-shadow;
       }
     }
-
+  
     color: $color-black;
     background: $white-color;
     min-height: 20vh;
@@ -58,6 +58,14 @@
     }
 
     .discropt-created {
+      
+      
+        overflow: hidden;
+      
+      
+      
+
+     
       opacity: 0.7;
       font-weight: 900;
     }
