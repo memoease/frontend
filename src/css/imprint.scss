@@ -47,7 +47,7 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $breakpoint) {
   .ImprintContent {
     height: 100%;
     .imprint-wrapper {

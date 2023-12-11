@@ -270,7 +270,7 @@ overflow: auto;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: $breakpoint) {
   .EditSet_Container {
     padding-top: 2rem;
 

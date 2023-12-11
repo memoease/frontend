@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: $breakpoint) {
   .dashBorad_content {
     margin-top: 1.5rem;
 
