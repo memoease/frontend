@@ -47,6 +47,7 @@
         .setting_btn {
           button {
             min-width: 90%;
+            font-size: 15px;
          margin: 0 auto;
             border: transparent;
             padding: 0.5rem;
@@ -159,6 +160,7 @@
         .setting_btn {
           min-width: 90%;
           font-size: 12px;
+          margin: 0 auto;
         }
         .formPassword {
           .inputPassword {
@@ -168,7 +170,8 @@
           }
           .submitBtn {
             min-width: 90%;
-            font-size: 12px;
+            font-size: 15px;
+            margin: 0 auto;
             
           }
         }
