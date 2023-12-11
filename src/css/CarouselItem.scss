@@ -40,12 +40,13 @@
 
     color: $color-black;
     background: $white-color;
-    min-height: 15vh;
+    min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;
+    
 
     button {
       border-radius: $border-radius-2rem;
