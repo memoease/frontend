@@ -58,6 +58,7 @@ export function CardProvider({ children }) {
       try {
         const response = await api.getRandomPubSetsExcludeUser();
         setPublicCardExcludeUser(response);
+        console.log(response);
       } catch (error) {
         const { error: errorMessage } = error.response?.data || {};
         setMessage(`${errorMessage}. `);

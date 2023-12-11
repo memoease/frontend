@@ -93,7 +93,7 @@ export const LearnModus = () => {
     } catch (error) {
       console.error("Error refreshing session:", error);
 
-    }
+    };
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -133,20 +133,18 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
-          {/* <LoadingBar
+          <LoadingBar
             completed={
               sessionData
-                ? sessionData.isLearned.length / sessionData.isLearned.length +
-                  sessionData.toLearn.length
+                ? sessionData.isLearned.length
                 : 0
             }
             maxCompleted={
               sessionData
-                ? (sessionData.toLearn.length + sessionData.isLearned.length) /
-                  (index + 1)
+                ? (sessionData.toLearn.length + sessionData.isLearned.length)
                 : 0
             }
-          /> */}
+          />
 
           {/* <LoadingBar /> */}
 
