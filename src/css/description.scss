@@ -1,5 +1,6 @@
 .disriptionSet {
   width: 100%;
+
   .set-description {
     display: flex;
     flex-direction: column;
@@ -15,14 +16,14 @@
         margin-left: 4vw;
         margin-top: 1.5vw;
         color: $blue-color;
-       
+
       }
     }
+
     p {
       width: 400px;
       padding: 0.5rem;
       overflow-x: auto;
-      font-weight: bold;
       border-radius: 1rem;
       background-color: #fff;
       font-size: 0.9rem;
@@ -34,6 +35,7 @@
         font-size: 1rem;
 
       }
+
       .textareaDescript {
         border-radius: 0.5rem;
         text-align: center;
@@ -47,13 +49,14 @@
     }
   }
 }
+
 @media only screen and (max-width: $breakpoint) {
-  .disriptionSet{
-      .set-description {
-        p{
-          width: 300px;
-          height: auto;
-        }
+  .disriptionSet {
+    .set-description {
+      p {
+        width: 300px;
+        height: auto;
       }
+    }
   }
 }

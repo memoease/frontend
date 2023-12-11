@@ -40,8 +40,10 @@
     box-shadow: $box-shadow;
 
     form {
-      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
-      max-width: 400px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+      width: 100%;
+      /* Vollständige Breite auf kleineren Bildschirmen */
+      max-width: 400px;
+      /* Begrenzen Sie die Breite auf größeren Bildschirmen */
       display: flex;
       flex-direction: column;
 
@@ -55,7 +57,11 @@
 
         input,
         textarea {
-          width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+          width: 100%;
+          resize: vertical;
+          /* Vollständige Breite auf kleineren Bildschirmen */
+          max-width: 487px;
+          max-height: 500px;
           padding: 0.6rem 0;
           border-radius: $border-radius-2rem;
           outline: none;
@@ -70,8 +76,10 @@
         margin: 1rem;
 
         button {
-          width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
-          max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+          width: 100%;
+          /* Vollständige Breite auf kleineren Bildschirmen */
+          max-width: 150px;
+          /* Begrenzen Sie die Breite auf größeren Bildschirmen */
           padding: 0.5rem 0;
           border-radius: $border-radius-2rem;
           outline: none;
@@ -97,7 +105,8 @@
 
   .link-field {
     display: flex;
-    flex-direction: column; /* Änderung der Ausrichtung auf kleinere Bildschirmgrößen */
+    flex-direction: column;
+    /* Änderung der Ausrichtung auf kleinere Bildschirmgrößen */
     align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -106,7 +115,8 @@
     border-radius: $border-radius-2rem;
 
     input {
-      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
+      width: 100%;
+      /* Vollständige Breite auf kleineren Bildschirmen */
       margin-top: 1rem;
       border: none;
       background: transparent;
@@ -114,8 +124,10 @@
     }
 
     button {
-      width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
-      max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+      width: 100%;
+      /* Vollständige Breite auf kleineren Bildschirmen */
+      max-width: 150px;
+      /* Begrenzen Sie die Breite auf größeren Bildschirmen */
       margin-top: 1rem;
       padding: 8px;
       cursor: pointer;
@@ -126,15 +138,18 @@
       border: transparent;
       background-color: $highlight-color;
       font-weight: bold;
-    &:hover {
-          background:$color-orangen;
-        }
+
+      &:hover {
+        background: $color-orangen;
+      }
     }
   }
 
   .back-button {
-    width: 100%; /* Vollständige Breite auf kleineren Bildschirmen */
-    max-width: 150px; /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+    width: 100%;
+    /* Vollständige Breite auf kleineren Bildschirmen */
+    max-width: 150px;
+    /* Begrenzen Sie die Breite auf größeren Bildschirmen */
     margin-top: 20px;
     padding: 0.4rem 0.6rem;
     cursor: pointer;
@@ -155,6 +170,7 @@
 /* Media Query für kleinere Bildschirme */
 @media screen and (max-width: $breakpoint) {
   .group-container form {
-    max-width: none; /* Auf kleinen Bildschirmen keine Maximierung der Breite */
+    max-width: none;
+    /* Auf kleinen Bildschirmen keine Maximierung der Breite */
   }
 }
