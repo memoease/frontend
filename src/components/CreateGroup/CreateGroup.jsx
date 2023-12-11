@@ -60,7 +60,7 @@ const GroupCreation = () => {
         Share the link to your Set with selected friends.
       </h3>
 
-      <div className="group-container">
+      <div className="group-content">
         {groupCreated ? (
           <div>
             {groupLink && (
@@ -76,7 +76,6 @@ const GroupCreation = () => {
                 {isCopied && <div className="message">Link Copied!</div>}
               </div>
             )}
-            <div></div>
           </div>
         ) : (
           <div>

@@ -9,20 +9,19 @@
   margin-bottom: 3rem;
 
   .logo {
-    padding-left: 1rem;
+    padding-left: 0rem;
     text-decoration: none;
     width: 20%;
     margin-top: 0.6rem;
-
     .title {
       font-size: $text-size-1-5rem;
       color: $blue-color;
       font-weight: bold;
       font-size: 1.5rem;
       line-height: -1.5rem;
-
       span {
         color: $color-orangen;
+   
       }
     }
   }
