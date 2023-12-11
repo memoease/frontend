@@ -1,4 +1,5 @@
 @import "Colors"; // Importiere die Variablen
+
 .navigationHead {
   width: 90%;
   margin: auto;
@@ -6,17 +7,20 @@
   justify-content: space-between;
   text-transform: capitalize;
   margin-bottom: 3rem;
+
   .logo {
     padding-left: 1rem;
     text-decoration: none;
     width: 20%;
     margin-top: 0.6rem;
+
     .title {
       font-size: $text-size-1-5rem;
       color: $blue-color;
       font-weight: bold;
       font-size: 1.5rem;
       line-height: -1.5rem;
+
       span {
         color: $color-orangen;
       }
@@ -40,15 +44,18 @@
       background-color: $color-black;
     }
   }
+
   ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 80%;
+
     li {
       list-style-type: none;
       margin: 1rem;
     }
+
     &.open {
       li {
         display: block;
@@ -61,6 +68,7 @@
     display: inline-block;
     text-decoration: none;
     color: $blue-color;
+
     &::after {
       content: "";
       width: 100%;
@@ -69,12 +77,15 @@
       bottom: -2px;
       left: 0;
       background: $color-black;
-      transform: scaleX(0); /* Linie ist anfangs unsichtbar */
+      transform: scaleX(0);
+      /* Linie ist anfangs unsichtbar */
       //   transform-origin: left;
       transition: transform 0.3s;
     }
+
     &:hover::after {
-      transform: scaleX(1); /* Linie wird sichtbar bei Hover */
+      transform: scaleX(1);
+      /* Linie wird sichtbar bei Hover */
     }
   }
 
@@ -86,16 +97,17 @@
       background: $blue-color;
       color: $white-color;
       border-radius: $border-radius-1rem;
-      font-size:$text-size-1rem;
+      font-size: $text-size-1rem;
       //font-weight: bold;
       outline: none;
       border: none;
       padding: 0.3rem 1.4rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
+
       &:hover {
         background-color: $primary-color;
-        box-shadow:$box-shadow;
+        box-shadow: $box-shadow;
       }
     }
 
@@ -109,34 +121,45 @@
       //font-weight: bold;
       outline: none;
       border: none;
-      
+
       padding: 0.3rem 1rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
+
       &:hover {
         background: $primary-color;
       }
     }
+
     .btnRegister {
       margin-right: 0rem;
-     
+
     }
+  }
+}
+
+.navigation {
+  h2 {
+    color: $blue-color ;
+    text-align: center;
   }
 }
 
 @media only screen and (max-width: $breakpoint) {
   .navigationHead {
-    background-color:$white-color ;
+    background-color: $white-color ;
     border-radius: 0;
     width: 100%;
     margin: 0 auto;
     padding-top: 1rem;
     text-align: center;
     flex-direction: column;
+
     .logo {
       display: flex;
+
       .title {
-        font-size:$smallest-text-size;
+        font-size: $smallest-text-size;
         font-weight: bold;
         font-size: 1.3rem;
       }
@@ -145,6 +168,7 @@
     .menu {
       display: flex;
     }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -166,6 +190,7 @@
       gap: 1rem 0;
       width: 100%;
       margin: 1rem 0;
+
       .btnLoginin,
       .btnRegister {
         font-size: 0.8rem;
