@@ -8,7 +8,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: uppercase;
-      padding-top: 8px;
+      //padding-top: 8px;
       background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
         linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
         linear-gradient(#fdb25b 1.3px, transparent 1.3px),
@@ -46,7 +46,6 @@
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;
-    
 
     button {
       border-radius: $border-radius-2rem;
@@ -82,7 +81,7 @@
   .dashPlus {
     color: $color-black;
     background: $white-color;
-    
+
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
