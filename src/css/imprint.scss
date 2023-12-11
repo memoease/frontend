@@ -4,6 +4,7 @@
   width: 90%;
   height: 80vh;
   margin: 0 auto;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
   .imprint-wrapper {
     line-height: 40px;
@@ -28,6 +29,7 @@
       padding-top: 2.5rem;
       border-radius: $border-radius-1rem;
       background-color:$color-light-blue;
+
       li {
         cursor: pointer;
         width: 80%;
@@ -35,6 +37,8 @@
         opacity: 0.9;
         transition: all 0.8s ease;
         font-size:$text-size-1rem;
+
+
         a {
           padding-left: 0.4rem;
         }
