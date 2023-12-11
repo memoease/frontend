@@ -31,7 +31,7 @@ export const loginUser = async (credentials) => {
 
 // Validate Token
 export const validateToken = async () => {
-  const response = await axiosInstance.get("user/validateToken");
+  const response = await axiosInstance.get("user/authenticate");
   return response.data;
 };
 

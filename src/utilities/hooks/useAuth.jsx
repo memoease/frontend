@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { logoutUser } from "../../utilities/service/api.js";
+import { logoutUser, validateToken } from "../../utilities/service/api.js";
 
 // Create React-Context for Authentification
 const AuthContext = createContext({});
@@ -20,18 +20,21 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     setLoading(true);
     // Initialize the user from the userCookie
-    const userFromCookie = cookies.userInfo
-      ? JSON.parse(cookies.userInfo)
-      : null;
-    setUser(userFromCookie);
+    // const userFromCookie = cookies.userInfo
+    //   ? JSON.parse(cookies.userInfo)
+    //   : null;
+    // setUser(userFromCookie);
 
-    if (!userFromCookie) {
-      setAuthorized(false);
+    validateToken().then((res) => {
+      if (!res.auth) {
+        setAuthorized(false);
+      } else {
+        setAuthorized(true);
+        setUser(res.user);
+      }
+    }).finally(() => {
       setLoading(false);
-    } else {
-      setAuthorized(true);
-      setLoading(false);
-    }
+    })
   }, []);
 
   // Function to log out the user
