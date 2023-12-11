@@ -128,10 +128,16 @@ export const LearnModus = () => {
           />
           {/* <LoadingBar
             completed={
-              sessionData ? ((index + 1) * 100) / sessionData.toLearn.length : 0
+              sessionData
+                ? sessionData.isLearned.length / sessionData.isLearned.length +
+                  sessionData.toLearn.length
+                : 0
             }
             maxCompleted={
-              sessionData ? (sessionData.toLearn.length * 100) / (index + 1) : 0
+              sessionData
+                ? (sessionData.toLearn.length + sessionData.isLearned.length) /
+                  (index + 1)
+                : 0
             }
           /> */}
 
