@@ -43,7 +43,6 @@ const Register = () => {
         password,
       });
 
-      console.log("Full Response:", response);
       setFormData(initialState);
       setConfirmationMessage(
         `Welcome ${name}! Please check your email ${email} for confirmation`
