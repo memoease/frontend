@@ -66,7 +66,7 @@ const Description = ({
               <h4>Description</h4>
               <button
                 style={{
-                  width: "4vwpx",
+                  width: "50px",
                 }}
                 onClick={clickToEdit}
               >
@@ -84,13 +84,7 @@ const Description = ({
                 value={newDescript.description}
                 name="description"
                 onChange={changeHandler}
-                style={{
-                  borderRadius: "0.5rem",
-                  textAlign: "center",
-                  width: "15vw",
-                  height: "2.9vw",
-                  fontSize: "18px",
-                }}
+                className="textareaDescript"
               />
             </form>
             <button

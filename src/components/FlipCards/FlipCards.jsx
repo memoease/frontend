@@ -29,7 +29,7 @@ function FlipCards({ activeCard, index }) {
               width: "100%",
               borderRadius: "10px",
               padding: "10",
-              height: "300px",
+              height: "325px",
               backgroundColor: "#eeee",
               display: "flex",
               justifyContent: "center",
@@ -48,7 +48,7 @@ function FlipCards({ activeCard, index }) {
             style={{
               borderRadius: "10px",
               width: "100%",
-              height: "300px",
+              height: "325px",
               backgroundColor: "#cccc",
               display: "flex",
               justifyContent: "center",

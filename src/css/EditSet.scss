@@ -120,7 +120,7 @@ overflow: auto;
         display: flex;
 
         .cardEdit {
-          width: 550px;
+          width: 100%;
           height: auto;
           background-color: $color-light-blue;
           margin-bottom: 7rem;
@@ -213,7 +213,7 @@ overflow: auto;
       margin: 10px;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
+ 
 
       .inputCards {
         display: flex;
@@ -222,13 +222,13 @@ overflow: auto;
         border-radius: $border-radius-3rem;
 
         textarea {
-          width: 550px;
-          min-height: 60px;
-          max-height: 170px;
+        width:100%;
+          // min-height: 60px;
+          // max-height: 170px;
           padding: 1rem;
           border: none;
           outline: none;
-          background-color: $white-color;
+          background-color:transparent;
           padding-left: 0.4rem;
           resize: vertical;
 
@@ -270,7 +270,7 @@ overflow: auto;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 750px) {
   .EditSet_Container {
     padding-top: 2rem;
 
@@ -318,6 +318,7 @@ overflow: auto;
 
           .cardEdit {
             width: 400px;
+            height: auto;
             padding: 2rem;
 
             margin: 1rem;
