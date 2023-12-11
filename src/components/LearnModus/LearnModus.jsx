@@ -32,7 +32,7 @@ export const LearnModus = () => {
           setCurrentCard(session.toLearn[index]);
         }
       } catch (error) {
-        console.error("Error in LearnSession useEffect:", error.response.data);
+        console.error("Error in LearnSession useEffect:", error);
       }
     };
 
@@ -50,7 +50,6 @@ export const LearnModus = () => {
         setTimeout(() => {
           setCurrentCard(updatedSession.toLearn[newIndex]);
         }, 200);
-        console.log("curretncard: ", currentCard);
       } else {
         setFlipped(!flipped);
         setTimeout(() => {
@@ -77,15 +76,23 @@ export const LearnModus = () => {
 
   const handleRefreshSession = async () => {
     // Refresh the Learn Session
-    if (sessionData && sessionData._id) {
-      const updatedSession = await refreshLearnSession(sessionData._id);
-      setSessionData(updatedSession);
+    try {
+      if (sessionData && sessionData._id) {
+        const updatedSession = await refreshLearnSession(sessionData._id);
+        updatedSession.toLearn.sort(() => Math.random() - 0.5);
+        console.log("updated session: ", updatedSession);
 
-      // Set the initial current card after refresh
-      if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
-        setCurrentCard(updatedSession.toLearn[0]);
-        setIndex(0);
+        setSessionData(updatedSession);
+
+        // Set the initial current card after refresh
+        if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
+          setCurrentCard(updatedSession.toLearn[0]);
+          setIndex(0);
+        }
       }
+    } catch (error) {
+      console.error("Error refreshing session:", error);
+
     }
   };
 
