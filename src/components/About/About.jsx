@@ -4,12 +4,12 @@ const About = () => {
   return (
     <div className="about_container">
       <div className="title_image_container">
-        <div className="about_title_container">
-          <h1>Unleash the full potential <br /> of your brain with <span>Memoease</span>.</h1>
+        <div className="titelMemeo">
+          Unleash the full potential <br /> of your brain with
+          <br />
+          <span>Memoease</span>.
         </div>
-        <div className="about_image_container">
-
-        </div>
+        <div className="about_image_container"> </div>
       </div>
       <div className="about_text_container">
         <p>
@@ -43,7 +43,7 @@ const About = () => {
         </p>
         <p>Welcome to Memoease.</p>
       </div>
-    </div >
+    </div>
   );
 };
 
