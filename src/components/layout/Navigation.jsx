@@ -25,11 +25,18 @@ const Navigation = () => {
           <span></span>
         </div>
         <ul className={menuOpen ? "open" : ""}>
-          <li>
+
+          {authorized ?
+            <li>
+              <NavLink className="navList" to="/home">
+                Home
+              </NavLink>
+            </li>
+            :
             <NavLink className="navList" to="/">
               Home
             </NavLink>
-          </li>
+          }
 
           {!authorized ? (
             <li>
