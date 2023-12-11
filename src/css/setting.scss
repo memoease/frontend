@@ -46,6 +46,8 @@
         }
         .setting_btn {
           button {
+            min-width: 90%;
+         margin: 0 auto;
             border: transparent;
             padding: 0.5rem;
             border-radius: $border-radius-1rem;
@@ -90,6 +92,9 @@
           }
         }
         .submitBtn {
+          margin: 0 auto;
+          min-width: 90%;
+          font-size: 15px;
           border: transparent;
           padding: 0.5rem;
           border-radius: $border-radius-1rem;
@@ -152,8 +157,8 @@
           }
         }
         .setting_btn {
-          width: 120px;
-          font-size: $smallest-text-size;
+          min-width: 90%;
+          font-size: 12px;
         }
         .formPassword {
           .inputPassword {
@@ -162,8 +167,9 @@
             }
           }
           .submitBtn {
-            width: 120px;
-            font-size: $smallest-text-size;
+            min-width: 90%;
+            font-size: 12px;
+            
           }
         }
       }
