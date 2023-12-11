@@ -56,8 +56,8 @@ export const LearnModus = () => {
         setTimeout(() => {
           setCurrentCard(updatedSession.toLearn[index]);
         }, 200);
-      };
-    };
+      }
+    }
   };
 
   const handleKeepInSession = () => {
@@ -126,6 +126,21 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
+          {/* <LoadingBar
+            completed={
+              sessionData
+                ? sessionData.isLearned.length / sessionData.isLearned.length +
+                  sessionData.toLearn.length
+                : 0
+            }
+            maxCompleted={
+              sessionData
+                ? (sessionData.toLearn.length + sessionData.isLearned.length) /
+                  (index + 1)
+                : 0
+            }
+          /> */}
+
           {/* <LoadingBar /> */}
 
           <div className="group">

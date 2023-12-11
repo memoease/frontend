@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { publicCards } = useCards();
+  const { publicCards, publicCardExcludeUser } = useCards();
   const { authorized } = useAuth();
 
   const viewPublicSet = (evt) => {
@@ -51,7 +51,7 @@ const HomePage = () => {
         </div>
       </div>
       {/*  discover content ------------- */}
-      <DiscoverCarousel data={publicCards} viewSet={viewPublicSet} />
+      <DiscoverCarousel data={authorized ? publicCardExcludeUser : publicCards} viewSet={viewPublicSet} />
     </div>
   );
 };

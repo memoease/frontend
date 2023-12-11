@@ -1,6 +1,13 @@
 .EditSet_Container {
+  h2 {
+    color: $blue-color;
+  }
   .EditSet_Content {
+    
     .edidtOverlap-group {
+      margin: 0 auto;
+      max-width: 60%;
+     
       .editGroup {
         display: flex;
         justify-content: center;
@@ -38,7 +45,7 @@
       justify-content: space-between;
       margin: 2rem auto;
       width: 90%;
-    
+
       section {
         cursor: pointer;
         display: flex;
@@ -64,7 +71,6 @@
         }
       }
     }
- 
   }
 }
 
@@ -74,9 +80,9 @@
       .set-description {
         display: flex;
         flex-direction: column;
-          button {
-            margin: 2rem 0;
-          }
+        button {
+          margin: 2rem 0;
+        }
       }
     }
   }

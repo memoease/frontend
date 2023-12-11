@@ -21,7 +21,8 @@
       font-weight: bolder;
       border-radius: 0.5rem;
       text-align: center;
-      min-height: 5vh;
+      min-height: 3vh;
+      max-height: 5vh;
       transition: all 0.3s ease;
 
       &:hover {
@@ -45,6 +46,7 @@
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;
+    
 
     button {
       border-radius: $border-radius-2rem;
@@ -66,6 +68,7 @@
 .add-cards-container {
   color: $color-black;
   background: $white-color;
+  width: auto;
   min-height: 20vh;
   max-height: 20vh;
   border-radius: $border-radius-2rem;
@@ -79,6 +82,7 @@
   .dashPlus {
     color: $color-black;
     background: $white-color;
+    
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
