@@ -3,9 +3,9 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   padding: 2rem 0;
-  color: $BlueColor;
+  color: $blue-color;
   flex-wrap: wrap;
   .content-wrapper {
     width: 60%;
@@ -18,16 +18,16 @@
       font-size: 2.4rem;
       letter-spacing: 2px;
       text-align: center;
-      color: $BlueColor;
+      color: $blue-color;
     }
     form {
       display: flex;
       flex-direction: column;
       margin: 1rem;
       padding: 1rem;
-      border-radius: 1rem;
-      background-color: $ColorLightBlue;
-      box-shadow: $boxShadow;
+      border-radius: $border-radius-1rem;
+      background-color:$color-light-blue;
+      box-shadow: $box-shadow;
       .group {
         display: flex;
         justify-content: center;
@@ -44,22 +44,23 @@
           padding: 1rem;
           border: none;
           outline: none;
-          border-radius: 0.3rem;
+          border-radius: $border-radius-1rem;
           cursor: pointer;
         }
       }
       .save {
         cursor: pointer;
         margin: 1.5rem auto;
-        padding: 0.3rem;
-        border-radius: 0.4rem;
+        padding: 0.3rem 1.4rem;
+        border-radius:$border-radius-1rem;
         border: none;
-        color: #ffff;
+        color: $white-color;
         max-width: 100%;
-        transition: all 0.8s ease;
-        background: $highlightColor;
+        transition: all 0.3s ease;
+        background: $highlight-color;
+        font-weight: bold;
         &:hover {
-          background: $ColorOrangen;
+          background:$color-orangen;
         }
       }
     }
@@ -73,9 +74,7 @@
       position: relative;
       left: 400px;
       opacity: 0;
-      transition:
-        left 1s ease-in-out,
-        opacity 0.5s ease-in-out;
+      transition: left 1s ease-in-out, opacity 0.5s ease-in-out;
     }
     .active {
       left: 10rem !important;
@@ -83,7 +82,7 @@
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: $breakpoint) {
   .box {
     width: 80%;
     margin-top: 1rem;
@@ -92,16 +91,14 @@
     .content-wrapper {
       width: 100%;
       margin: 1rem auto;
-          .titleHead {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
-          form{
-            width: 100%;
-            margin: 0 auto;
-          }
-        
-    
+      .titleHead {
+        font-size: $text-size-1-5rem;
+        font-weight: bold;
+      }
+      form {
+        width: 100%;
+        margin: 0 auto;
+      }
     }
     .image-container {
       width: 100%;

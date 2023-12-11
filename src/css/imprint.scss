@@ -10,11 +10,11 @@
     padding-top: 1rem;
     .title {
       cursor: pointer;
-      font-size: 2.2rem;
+      font-size: $text-size-2rem;
       padding: 1rem 0;
       letter-spacing: 1px;
-      color: $BlueColor;
-      text-decoration: underline;
+      color: $blue-color;
+      //text-decoration: underline;
     }
     .line {
       width: 100%;
@@ -22,20 +22,20 @@
       background-color: #000;
     }
     ul {
-      font-size: 1rem;
+      font-size: $text-size-1rem;
       margin-top: 2rem;
       height: 60vh;
       display: flex;
       padding-top: 2.5rem;
-      border-radius: 1rem;
-      background-color: $ColorLightBlue;
+      border-radius: $border-radius-1rem;
+      background-color:$color-light-blue;
       li {
         cursor: pointer;
         width: 80%;
         margin: 0 auto;
         opacity: 0.9;
         transition: all 0.8s ease;
-        font-size: 0.9rem;
+        font-size:$text-size-1rem;
         a {
           padding-left: 0.4rem;
         }
@@ -47,25 +47,25 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $breakpoint) {
   .ImprintContent {
     height: 100%;
     .imprint-wrapper {
       line-height: 25px;
-        .title{
-          font-size: 1.5rem;
-        }
+      .title {
+        font-size: $text-size-1-5rem;
+      }
       ul {
         display: flex;
         flex-direction: column;
         height: auto;
-    
+
         padding: 1rem 0;
         li {
-          font-size: 0.8rem;
- 
-          a{
-            font-size: 0.6rem;
+          font-size: $text-size-1rem;
+
+          a {
+            font-size: $smallest-text-size;
           }
         }
       }

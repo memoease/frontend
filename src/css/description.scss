@@ -1,0 +1,59 @@
+.disriptionSet {
+  width: 100%;
+  .set-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+
+      h4 {
+        margin-left: 4vw;
+        margin-top: 1.5vw;
+        color: $blue-color;
+       
+      }
+    }
+    p {
+      width: 400px;
+      padding: 0.5rem;
+      overflow-x: auto;
+      font-weight: bold;
+      border-radius: 1rem;
+      background-color: #fff;
+      font-size: 0.9rem;
+      font-weight: 400px;
+    }
+
+    form {
+      h4 {
+        font-size: 1rem;
+
+      }
+      .textareaDescript {
+        border-radius: 0.5rem;
+        text-align: center;
+        max-width: 100%;
+        height: auto;
+        font-size: 1rem;
+        border: none;
+        padding: 0.3rem;
+        margin: 0.3rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint) {
+  .disriptionSet{
+      .set-description {
+        p{
+          width: 300px;
+          height: auto;
+        }
+      }
+  }
+}

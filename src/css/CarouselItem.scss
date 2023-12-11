@@ -1,46 +1,106 @@
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 
 .cards {
-  padding: 0.3rem;
-
   .DiscoverCardsContent {
-
     .title {
-      background-color: $ColorOrangen ;
-      color: $WhiteColor;
+      white-space: nowrap;
+      font-size: $text-size-1-5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      //padding-top: 8px;
+      background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
+        linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
+        linear-gradient(#fdb25b 1.3px, transparent 1.3px),
+        linear-gradient(90deg, #fdb25b 1.3px, #ed7e00 1.3px);
+      background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
+      background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
+        -1.3px -1.3px;
+
+      color: $white-color;
+      font-weight: bolder;
       border-radius: 0.5rem;
       text-align: center;
-      min-height: 5vh;
-      transition: all 0.8s ease;
+      min-height: 3vh;
+      max-height: 5vh;
+      transition: all 0.3s ease;
 
       &:hover {
-        background: #e97d01;
-        box-shadow: 0px 0px 2px #000000;
+        background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
+          linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
+          linear-gradient(#fdb25b 1.3px, transparent 1.3px),
+          linear-gradient(90deg, #fdb25b 1.3px, #ed7e00 1.3px);
+        background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
+        background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
+          -1.3px -1.3px;
+
+        box-shadow: $box-shadow;
       }
     }
-
-    color: $ColorBlack;
-    background: $WhiteColor;
-    border-radius: $border-radius;
+  
+    color: $color-black;
+    background: $white-color;
+    min-height: 20vh;
+    max-height: 20vh;
+    border-radius: $border-radius-2rem;
     padding: 1rem 2rem;
     margin: 0rem 3rem;
     transition: all 0.8s ease;
 
     button {
-      border-radius: 1rem;
+      border-radius: $border-radius-2rem;
       padding: 0.2rem 0.6rem;
       border: none;
-      font-size: 0.7rem;
-      background: #cccc;
+      font-size: $text-size-1rem;
+      background: $color-garu;
       margin: 1rem 0;
-      color: #000000;
+      color: $color-black;
     }
 
     .discropt-created {
+     
+        overflow: hidden;
       opacity: 0.7;
       font-weight: 900;
-
     }
+  }
+}
 
+.add-cards-container {
+  color: $color-black;
+  background: $white-color;
+  width: auto;
+  min-height: 20vh;
+  max-height: 20vh;
+  border-radius: $border-radius-2rem;
+  padding: 1rem 2rem;
+  margin: 0rem 3rem;
+  transition: all 0.8s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dashPlus {
+    color: $color-black;
+    background: $white-color;
+
+    min-height: 20vh;
+    max-height: 20vh;
+    border-radius: $border-radius-2rem;
+    padding: 1rem 2rem;
+    margin: 0rem 3rem;
+    transition: all 0.8s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // &:hover {
+    //   box-shadow: 0px 0px 20px rgb(3, 3, 3);
+    // }
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
   }
 }

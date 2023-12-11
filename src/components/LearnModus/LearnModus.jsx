@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FlipCards from "../FlipCards/FlipCards";
+import LoadingBar from "../Progressbar/ProgressBar";
 
 import {
   startLearnSession,
   updateSessionCardToLearned,
   refreshLearnSession,
 } from "../../utilities/service/api";
+import { useSnackbar } from "@mui/base";
 
 export const LearnModus = () => {
   const [sessionData, setSessionData] = useState(null);
@@ -14,6 +16,7 @@ export const LearnModus = () => {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(true);
   const { setId } = useParams(); // Extracting setId from route params
+  const navigate = useNavigate();
 
   const allCardsLearned = sessionData?.toLearn.length === 0 && !currentCard;
 
@@ -29,7 +32,7 @@ export const LearnModus = () => {
           setCurrentCard(session.toLearn[index]);
         }
       } catch (error) {
-        console.error("Error in LearnSession useEffect:", error.response.data);
+        console.error("Error in LearnSession useEffect:", error);
       }
     };
 
@@ -37,43 +40,59 @@ export const LearnModus = () => {
   }, [setId]); // Include setId in the dependency array so that the effect re-runs when it changes
 
   const handleMoveToLearned = async () => {
-    // Move the current card to "isLearned"
     if (sessionData && currentCard) {
       const cardIdToUpdate = currentCard._id;
-      const sessionId = sessionData._id; // Stellen Sie sicher, dass sessionId definiert ist
       const updatedSession = await updateCardToLearned(cardIdToUpdate);
-      setCurrentCard(updatedSession.toLearn[index]);
-      setFlipped(!flipped);
+      if (index === updatedSession.toLearn.length) {
+        const newIndex = 0;
+        setIndex(newIndex);
+        setFlipped(!flipped);
+        setTimeout(() => {
+          setCurrentCard(updatedSession.toLearn[newIndex]);
+        }, 200);
+      } else {
+        setFlipped(!flipped);
+        setTimeout(() => {
+          setCurrentCard(updatedSession.toLearn[index]);
+        }, 200);
+      }
     }
   };
 
   const handleKeepInSession = () => {
     // Advance to the next card without updating the current card
-    advanceToNextCard();
-  };
+    setFlipped(!flipped);
 
-  const handleRefreshSession = async () => {
-    // Refresh the Learn Session
-    if (sessionData && sessionData._id) {
-      const updatedSession = await refreshLearnSession(sessionData._id);
-      setSessionData(updatedSession);
-
-      // Set the initial current card after refresh
-      if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
-        setCurrentCard(updatedSession.toLearn[0]);
-      }
-    }
-  };
-
-  const advanceToNextCard = () => {
     // Find the index of the current card
     const currentIndex = sessionData.toLearn.indexOf(currentCard);
 
     // Increment the index and handle boundary conditions
     const nextIndex = (currentIndex + 1) % sessionData.toLearn.length;
     setIndex(nextIndex);
-    setCurrentCard(sessionData.toLearn[nextIndex]);
-    setFlipped(!flipped);
+    setTimeout(() => {
+      setCurrentCard(sessionData.toLearn[nextIndex]);
+    }, 200);
+  };
+
+  const handleRefreshSession = async () => {
+    // Refresh the Learn Session
+    try {
+      if (sessionData && sessionData._id) {
+        const updatedSession = await refreshLearnSession(sessionData._id);
+        updatedSession.toLearn.sort(() => Math.random() - 0.5);
+
+        setSessionData(updatedSession);
+
+        // Set the initial current card after refresh
+        if (updatedSession.toLearn && updatedSession.toLearn.length > 0) {
+          setCurrentCard(updatedSession.toLearn[0]);
+          setIndex(0);
+        }
+      }
+    } catch (error) {
+      console.error("Error refreshing session:", error);
+
+    };
   };
 
   const updateCardToLearned = async (cardId) => {
@@ -88,6 +107,10 @@ export const LearnModus = () => {
     } catch (error) {
       console.error("Error updating card to learned:", error);
     }
+  };
+
+  const navigateToEdit = () => {
+    navigate(`/editset/${setId}`);
   };
 
   if (allCardsLearned) {
@@ -109,14 +132,26 @@ export const LearnModus = () => {
             activeCard={sessionData ? currentCard : []}
             index={flipped}
           />
+          <LoadingBar
+            completed={
+              sessionData
+                ? sessionData.isLearned.length
+                : 0
+            }
+            maxCompleted={
+              sessionData
+                ? (sessionData.toLearn.length + sessionData.isLearned.length)
+                : 0
+            }
+          />
+
+          {/* <LoadingBar /> */}
 
           <div className="group">
             <button className="ellipse" onClick={handleKeepInSession}></button>
             <div className="flipped-number">
               {sessionData
-                ? `${sessionData.toLearn.indexOf(currentCard) + 1} / ${
-                    sessionData.toLearn.length
-                  }`
+                ? `${index + 1} / ${sessionData.toLearn.length}`
                 : ""}
             </div>
             <button
@@ -124,8 +159,11 @@ export const LearnModus = () => {
               onClick={handleMoveToLearned}
             ></button>
           </div>
-          <button className="refresh-button" onClick={handleRefreshSession}>
+          <button className="refresh-btn" onClick={handleRefreshSession}>
             Refresh Learnsession
+          </button>
+          <button className="navigate-button" onClick={navigateToEdit}>
+            Back to Edit Set
           </button>
         </div>
       </div>

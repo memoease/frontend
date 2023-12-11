@@ -1,7 +1,7 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 //  Styling Login
 .signupFormContainer {
+  overflow: auto;
   height: 80vh;
   width: 90%;
   margin: 0 auto;
@@ -10,24 +10,24 @@
   align-items: center;
   flex-direction: column;
 
-  border-radius: 1rem;
+  border-radius: $border-radius-1rem;
   .title {
-    color: $BlueColor;
+    color: $blue-color;
     font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhitColor;
+    text-shadow: 0px 0px 0.3px $white-color;
   }
   .loginForm {
-    width: 500px;
-    height: 420px;
+    width: $box-width;
+    height: $box-height;
     margin: 1rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #c4d6e7;
-    border-radius: 3rem;
+    background: $color-light-blue;
+    border-radius: $border-radius-2rem;
     text-align: center;
-    box-shadow: $boxShadow;
+    box-shadow: $box-shadow;
 
     form {
       width: 290px;
@@ -37,8 +37,8 @@
         display: flex;
         flex-direction: column;
         padding: 1rem 0;
-        font-size: 1.1rem;
-        color: $BlueColor;
+        font-size: $text-size-1rem;
+        color: $blue-color;
         width: 290px;
         .inputPassword {
           display: flex;
@@ -59,7 +59,7 @@
         padding: 0.6rem;
         outline: none;
         border: none;
-        border-radius: 2rem;
+        border-radius: $border-radius-2rem;
         margin: 0.3rem 0;
         padding-left: 1rem;
       }
@@ -69,29 +69,29 @@
           cursor: pointer;
           width: 100px;
           padding: 0.5rem 1rem;
-          border-radius: 2rem;
+          border-radius: $border-radius-2rem;
           border: none;
           outline: none;
-          color: $ColorBlack;
-          transition: all 0.7s ease;
-          background:  $highlightColor;
+          color: white;
+          transition: all 0.3s ease;
+          background: $highlight-color;
           text-decoration: none;
+          font-weight: bold;
           &:hover {
-          background: $ColorOrangen;
-        }
+            background: $color-orangen;
+          }
         }
       }
     }
   }
   .message-container {
-  
     .message {
-  letter-spacing: 1px;
-  text-shadow: 10px 10px 20px rgb(0, 0, 0);
+      letter-spacing: 1px;
+      color: $blue-color;
     }
   }
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $breakpoint) {
   .signupFormContainer {
     margin-top: 3rem;
     .loginForm {

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import AddCard from "./AddCard";
-import ShowAndEditCards from "./ShowAndEditCard";
-import SetTitle from "./SetTitle";
-import CardInfo from "./CardInfo";
+import ShowCards from "./ShowCards";
+import SetTitle from "../Edit-set/SetTitle";
+import CardInfo from "../Edit-set/CardInfo";
 import FlipCards from "../FlipCards/FlipCards";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import { getSetBySetId } from "../../utilities/service/api";
+import LoadingBar from "../Progressbar/ProgressBar";
 
-const EditSet = () => {
+const ReadSet = () => {
   const { setId } = useParams();
   const [flashcards, setFlashcards] = useState({});
   const [newCardAdded, setNewCardAdded] = useState(true);
@@ -31,8 +31,8 @@ const EditSet = () => {
       } catch (error) {
         console.error(error);
         console.log("error fetching set data", error.message);
-      };
-    };
+      }
+    }
     fetchSetData(setId);
   }, []);
 
@@ -51,9 +51,8 @@ const EditSet = () => {
       } catch (error) {
         console.error(error);
         console.log("error fetching set data", error.message);
-
-      };
-    };
+      }
+    }
     fetchSetData(setId);
   }, [newCardAdded]);
 
@@ -61,13 +60,10 @@ const EditSet = () => {
     const cards = flashcards.flashcards;
     const entries = cards?.map((card) => {
       return (
-        <ShowAndEditCards
+        <ShowCards
           question={card.question}
           answer={card.answer}
           key={card._id}
-          setNewCardAdded={setNewCardAdded}
-          newCardAdded={newCardAdded}
-          cardId={card._id}
         />
       );
     });
@@ -78,9 +74,7 @@ const EditSet = () => {
     if (index <= flashcards.flashcards.length - 1) {
       const newIndex = (index + 1) % flashcards.flashcards.length;
       setIndex(newIndex);
-      setTimeout(() => {
-        setActiveCard(flashcards?.flashcards[newIndex]);
-      }, 200);
+      setActiveCard(flashcards?.flashcards[newIndex]);
     }
   };
 
@@ -89,12 +83,12 @@ const EditSet = () => {
       const newIndex = (index - 1) % flashcards.flashcards.length;
       setIndex(newIndex);
       setActiveCard(flashcards?.flashcards[newIndex]);
-    };
+    }
   };
 
   if (!fetchDone) {
     return <h2>loading...</h2>;
-  };
+  }
 
   return (
     <div className="EditSet_Container">
@@ -102,48 +96,41 @@ const EditSet = () => {
         title={flashcards.title}
         setNewCardAdded={setNewCardAdded}
         newCardAdded={newCardAdded}
-        editable={true}
+        editable={false}
       ></SetTitle>
       <div className="EditSet_Content">
-        <div className="devContainer">
-          <div className="edidtOverlap-group">
-            <FlipCards
-              activeCard={activeCard ? activeCard : ""}
-              index={index}
-            />
-            <div className="editGroup">
-              <button className="ellipseLeft" onClick={clickLeft}>
-                <FiChevronLeft />
-              </button>
-              <div className="slidNumber">
-                {index + 1}/{flashcards.flashcards.length}
-              </div>
-              <button className="ellipseRight" onClick={clickRight}>
-                <FiChevronRight />
-              </button>
+        <div className="edidtOverlap-group">
+          <FlipCards activeCard={activeCard ? activeCard : ""} index={index} />
+          <LoadingBar
+            completed={((index + 1) * 100) / flashcards.flashcards.length}
+            maxCompleted={(flashcards.flashcards.length * 100) / (index + 1)}
+          />
+
+          <div className="editGroup">
+            <button className="ellipseLeft" onClick={clickLeft}>
+              <FiChevronLeft />
+            </button>
+            <div className="slidNumber">
+              {index + 1}/{flashcards.flashcards.length}
             </div>
-          </div>
-          <div className="setPractice">
-            <CardInfo
-              setId={setId}
-              flashcards={flashcards}
-              setNewCardAdded={setNewCardAdded}
-              newCardAdded={newCardAdded}
-              editable={true}
-            />
+            <button className="ellipseRight" onClick={clickRight}>
+              <FiChevronRight />
+            </button>
           </div>
         </div>
-        <div className="FromEdit">
-          {renderCards()}
-          <AddCard
+        <div className="setPractice">
+          <CardInfo
             setId={setId}
+            flashcards={flashcards}
             setNewCardAdded={setNewCardAdded}
             newCardAdded={newCardAdded}
+            editable={false}
           />
         </div>
+        <div className="FromEdit">{renderCards()}</div>
       </div>
     </div>
   );
 };
 
-export default EditSet;
+export default ReadSet;

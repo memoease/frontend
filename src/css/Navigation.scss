@@ -12,9 +12,14 @@
     width: 20%;
     margin-top: 0.6rem;
     .title {
-      font-size: 1.4rem;
-      color: $BlueColor;
-      font-weight: 200;
+      font-size: $text-size-1-5rem;
+      color: $blue-color;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: -1.5rem;
+      span {
+        color: $color-orangen;
+      }
     }
   }
 
@@ -32,7 +37,7 @@
       width: 100%;
       height: 0.4rem;
       border-radius: 0.2rem;
-      background-color: $ColorBlack;
+      background-color: $color-black;
     }
   }
   ul {
@@ -55,7 +60,7 @@
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: $BlueColor;
+    color: $blue-color;
     &::after {
       content: "";
       width: 100%;
@@ -63,7 +68,7 @@
       position: absolute;
       bottom: -2px;
       left: 0;
-      background: $ColorBlack;
+      background: $color-black;
       transform: scaleX(0); /* Linie ist anfangs unsichtbar */
       //   transform-origin: left;
       transition: transform 0.3s;
@@ -78,47 +83,50 @@
       cursor: pointer;
       margin: 0 1.5rem;
       text-align: center;
-      background: $BlueColor;
-      color: $WhitColor;
-      border-radius: 1rem;
-      font-size: 0.8rem;
+      background: $blue-color;
+      color: $white-color;
+      border-radius: $border-radius-1rem;
+      font-size:$text-size-1rem;
+      //font-weight: bold;
       outline: none;
       border: none;
       padding: 0.3rem 1.4rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
       &:hover {
-        background-color: $primaryColor;
-        box-shadow: $boxShadowButton;
+        background-color: $primary-color;
+        box-shadow:$box-shadow;
       }
     }
 
     .btnRegister {
       margin: 0 1.5rem;
       text-align: center;
-      background: $BlueColor;
-      color: $WhitColor;
-      border-radius: 1rem;
-      font-size: 0.8rem;
+      background: $blue-color;
+      color: $white-color;
+      border-radius: $border-radius-1rem;
+      font-size: $text-size-1rem;
+      //font-weight: bold;
       outline: none;
       border: none;
-      box-shadow: 0px 0px 0.8px $ColorBlack;
+      
       padding: 0.3rem 1rem;
       text-decoration: none;
       transition: all 0.5s ease-in;
       &:hover {
-        background: $primaryColor;
+        background: $primary-color;
       }
     }
     .btnRegister {
       margin-right: 0rem;
+     
     }
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $breakpoint) {
   .navigationHead {
-    background-color: $BlackWhiteColor;
+    background-color:$white-color ;
     border-radius: 0;
     width: 100%;
     margin: 0 auto;
@@ -128,14 +136,14 @@
     .logo {
       display: flex;
       .title {
-        font-size: 1.2rem;
+        font-size:$smallest-text-size;
         font-weight: bold;
+        font-size: 1.3rem;
       }
     }
 
     .menu {
       display: flex;
-     
     }
     ul {
       display: flex;

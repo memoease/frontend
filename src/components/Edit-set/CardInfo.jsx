@@ -8,13 +8,22 @@ import Description from "./Description";
 import ModalSetting from "../ModalSetting/ModalSetting";
 import { useCards } from "../../utilities/hooks/useCards";
 
-const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
+const CardInfo = ({
+  setId,
+  flashcards,
+  setNewCardAdded,
+  newCardAdded,
+  editable,
+}) => {
   const navigate = useNavigate();
   const [setAccess, setSetAccess] = useState(flashcards.isPublic);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const { updateSetsByUser } = useCards();
   const toSession = () => {
     navigate(`/session/${setId}`);
+  };
+  const toGroup = () => {
+    navigate(`/group/${setId}`);
   };
 
   const changeSetAccess = async () => {
@@ -53,41 +62,68 @@ const CardInfo = ({ setId, flashcards, setNewCardAdded, newCardAdded }) => {
     setShowDeleteModal(false);
   };
 
-  return (
-    <div className="cardEdit">
-      <Description
-        description={flashcards.description}
-        setId={setId}
-        setNewCardAdded={setNewCardAdded}
-        newCardAdded={newCardAdded}
-      />
-      <section className="set-access">
-        <p>Who can see this set:</p>
-        <p>{setAccess ? "Everybody can see this set." : "Only you."}</p>
-        {setAccess ? (
-          <button onClick={changeSetAccess}> Change to private</button>
-        ) : (
-          <button onClick={changeSetAccess}> Change to public</button>
-        )}
-      </section>
-      <button onClick={handleDeleteConfirm}>Delete</button>
-      <ModalSetting
-        modalText="Are you sure to delete this set?"
-        confirmButtonText="Yes!"
-        cancelButtonText="No!"
-        showDeleteModal={showDeleteModal}
-        handleDeleteConfirms={handleDeleteConfirms}
-        handleDeleteCancels={handleDeleteCancels}
-      />
-      <>
-        {!flashcards.session || flashcards.session.toLearn?.length === 0 ? (
-          <button onClick={toSession}>Learn this set</button>
-        ) : (
-          <button onClick={toSession}>Continue session</button>
-        )}
-      </>
-    </div>
-  );
+  if (editable) {
+    return (
+      <div className="cardEdit">
+        <Description
+          description={flashcards.description}
+          setId={setId}
+          setNewCardAdded={setNewCardAdded}
+          newCardAdded={newCardAdded}
+          editable={editable}
+        />
+        <section className="set-access">
+          {setAccess
+            ? "Everybody can see this set."
+            : "No one can see it. Only you."}
+
+          <div className="setButton">
+            {setAccess ? (
+              <button onClick={changeSetAccess}>Change to private</button>
+            ) : (
+              <button onClick={changeSetAccess}>Change to public</button>
+            )}
+
+            <button onClick={toGroup}>Create a Group</button>
+          </div>
+        </section>
+
+        <div className="delete-button">
+          <button onClick={handleDeleteConfirm}>Delete</button>
+          <ModalSetting
+            modalText="Are you sure to delete this set?"
+            confirmButtonText="Yes!"
+            cancelButtonText="No!"
+            showDeleteModal={showDeleteModal}
+            handleDeleteConfirms={handleDeleteConfirms}
+            handleDeleteCancels={handleDeleteCancels}
+          />
+
+          {!flashcards.session || flashcards.session.toLearn?.length === 0 ? (
+            <button className="btn-continue" onClick={toSession}>
+              Learn this set
+            </button>
+          ) : (
+            <button className="btn-continue" onClick={toSession}>
+              Continue session
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="cardEdit">
+        <Description
+          description={flashcards.description}
+          setId={setId}
+          setNewCardAdded={setNewCardAdded}
+          newCardAdded={newCardAdded}
+          editable={editable}
+        />
+      </div>
+    );
+  }
 };
 
 export default CardInfo;

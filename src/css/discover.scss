@@ -5,25 +5,26 @@
 .discover-content {
   h1 {
     text-align: center;
-    color: $BlueColor;
+    color: $blue-color;
   }
   .DiscoverCarousel-container {
-    background: $ColorLightBlue;
+    background:$color-light-blue;
     padding: 2rem 1.5rem;
-    border-radius: 0rem;
+    border-radius: 50px;
+    box-shadow:$box-shadow;
 
     h2 {
-      text-transform: $text-transform;
+      text-transform: capitalize;
     }
     > div {
     .slick-slider.slick-initialized {
       .slick-arrow.slick-next::before{
-        color: #106899;
-        font-size: 35px;
+        color: $blue-color;
+        font-size: $text-size-2rem;
       }
       .slick-arrow.slick-prev::before{
-        color: #106899;
-        font-size: 35px;
+        color: $blue-color;
+        font-size: $text-size-2rem;
       }
       .slick-prev, .slick-next{
         width: 50px;

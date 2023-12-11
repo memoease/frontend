@@ -12,6 +12,7 @@ const PublicLearnSession = () => {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [cardAmount, setCardAmount] = useState(null)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const PublicLearnSession = () => {
         const session = await getPublicSetById(setId);
 
         const allFlashcards = session.flashcards;
-
+        setCardAmount(allFlashcards.length);
         setToLearn(allFlashcards);
         setIsLearned([]);
         setCurrentCard(allFlashcards[index]);
@@ -38,19 +39,30 @@ const PublicLearnSession = () => {
         (card) => card._id !== currentCard._id
       );
       const updatedIsLearned = [...isLearned, currentCard];
-      setToLearn(updatedToLearn);
+
       setIsLearned(updatedIsLearned);
-      advanceToNextCard();
-    }
+      setToLearn(updatedToLearn);
+      setFlipped(!flipped);
+      setTimeout(() => {
+        setCurrentCard(updatedToLearn[index]);
+      }, 200);
+      if ((updatedToLearn.length - index) <= (cardAmount - 3)) {
+        setShowModal(true);
+      };
+    };
   };
 
   const advanceToNextCard = () => {
+
     const nextIndex = (index + 1) % toLearn.length;
     setIndex(nextIndex);
-    setCurrentCard(toLearn[nextIndex]);
-    setFlipped(true);
 
-    if (nextIndex === 5) {
+    setFlipped(!flipped);
+    setTimeout(() => {
+      setCurrentCard(toLearn[nextIndex]);
+    }, 200);
+
+    if (nextIndex === 3 || toLearn.length <= 1 || (toLearn.length - nextIndex) <= cardAmount - 3) {
       setShowModal(true);
     }
   };
@@ -82,7 +94,7 @@ const PublicLearnSession = () => {
               ></button>
               <div className="flipped-number">
                 {toLearn
-                  ? `${toLearn.indexOf(currentCard) + 1} / ${toLearn.length}`
+                  ? `${index + 1} / ${toLearn.length}`
                   : ""}
               </div>
               <button

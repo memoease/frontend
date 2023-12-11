@@ -1,5 +1,4 @@
-
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 .HomePageContainer {
   width: 90%;
   margin: 0 auto;
@@ -8,24 +7,24 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem 0rem;
     .Discriptcontent {
       width: 40%;
       .title_head {
         width: 100%;
-        font-size: 3.5rem;
+        font-size: $biggestTextSize;
         margin-bottom: 2rem;
-        color: $BlueColor;
+        color: $blue-color;
       }
       .startLinkCardTitel {
         text-decoration: none;
-        background:  $highlightColor;
-        border-radius: 20px;
+        background: $highlight-color;
+        border-radius: $border-radius-2rem;
         padding: 0.4rem;
-        color: $WhitColor;
-        transition: all 0.8s ease;
+        color: $white-color;
+        transition: all 0.3s ease;
         &:hover {
-          background: $ColorOrangen;
+          background: $color-orangen;
         }
       }
     }
@@ -37,14 +36,14 @@
         height: 40vh;
         background-image: url(../assets/MemoBild.png);
         background-repeat: no-repeat;
-      background-size: contain;
+        background-size: contain;
         background-position: center;
       }
     }
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: $breakpoint) {
   .HomePageContainer {
     width: 100%;
     .homePage_repper {
@@ -54,7 +53,7 @@
       .Discriptcontent {
         width: 100%;
         .title_head {
-          font-size: 2rem;
+          font-size: $text-size-2rem;
         }
       }
       .getStartlink-content {

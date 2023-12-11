@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
 import { useCards } from "../../utilities/hooks/useCards";
 import { postNewCardToSet } from "../../utilities/service/api";
 
@@ -9,9 +8,6 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
     question: "",
     answer: "",
   });
-  const styleUnderline = {
-    borderBottom: "2px solid black",
-  };
 
   const changeHandler = (evt) => {
     setEntry((prev) => ({
@@ -34,20 +30,23 @@ export default function AddCard({ setId, setNewCardAdded, newCardAdded }) {
   return (
     <form>
       <div className="inputCards">
-        <input
+        <textarea
           type="text"
           name="question"
           value={entry.question}
           onChange={changeHandler}
+          maxLength="100"
+          placeholder="enter your text here"
           required
-          style={styleUnderline}
         />
-        <input
+        <textarea
           type="text"
           name="answer"
           value={entry.answer}
           onChange={changeHandler}
-          style={styleUnderline}
+          maxLength="300"
+          placeholder="enter your text here"
+          wrap="hard"
           required
         />
 

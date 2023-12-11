@@ -5,11 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 import CarouselItem from "./CarouselItem";
 
-const DiscoverCarousel = ({ data }) => {
+const DiscoverCarousel = ({ data, viewSet }) => {
   return (
     <div className="discover-content">
       <div className="DiscoverCarousel-container">
-        <CarouselItem data={data} />
+        <CarouselItem data={data} viewSet={viewSet} />
       </div>
     </div>
   );

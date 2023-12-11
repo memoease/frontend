@@ -14,7 +14,10 @@ const Navigation = () => {
     <div className="navigation">
       <div className="navigationHead">
         <NavLink className="logo" to="/">
-          <h2 className="title">MemoEase</h2>
+          <h2 className="title">
+            <span>M</span>
+            emo<span>E</span>ase
+          </h2>
         </NavLink>
         <div className="menu" onClick={menuHandel}>
           <span></span>
@@ -22,11 +25,18 @@ const Navigation = () => {
           <span></span>
         </div>
         <ul className={menuOpen ? "open" : ""}>
-          <li>
-            <NavLink className="navList" to="/home">
+
+          {authorized ?
+            <li>
+              <NavLink className="navList" to="/home">
+                Home
+              </NavLink>
+            </li>
+            :
+            <NavLink className="navList" to="/">
               Home
             </NavLink>
-          </li>
+          }
 
           {!authorized ? (
             <li>

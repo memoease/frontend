@@ -1,9 +1,9 @@
 @import "Colors"; // Importiere die Variablen
-.modalBtn {
-  background-color: red;
-}
+
+
 .modal-overlay {
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,15 +14,15 @@
   align-items: center;
 
   .delete-modal {
-    background: #fff;
+    background: $white-color;
     width: 500px;
     height: 200px;
     padding: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: $border-radius-1rem;
+    box-shadow: $box-shadow;
     text-align: center;
     .btn {
       display: flex;
@@ -31,21 +31,22 @@
 
       cursor: pointer;
       button {
-        padding: 0.5rem;
-        margin: 0 1rem;
+        padding: 0.5rem 1rem;
+        margin: 1rem 1rem 0rem 1rem;
         border: none;
         border-radius: 0.5rem;
-        color: #ffff;
-        background: $BlueColor;
-        transition: all 0.8s ease;
+        color: $white-color;
+        background: $blue-color;
+        transition: all 0.3s ease;
+        font-weight: bold;
         &:hover {
-          background: $primaryColor;
+          background: $primary-color;
         }
       }
     }
   }
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width:$breakpoint) {
   .modal-overlay {
     .delete-modal {
       width: 300px;

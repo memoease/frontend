@@ -22,6 +22,9 @@ import { AuthProvider } from "../utilities/hooks/useAuth.jsx";
 import { CardProvider } from "../utilities/hooks/useCards.jsx";
 import Imprint from "./Imprint/Imprint";
 import PublicLearnSession from "./PublicLearnSession/PublicLearnSession";
+import ReadSet from "./ReadSet/ReadSet";
+import GroupCreation from "./CreateGroup/CreateGroup";
+import Dsgvo from "./Dsgvo/Dsgvo";
 
 function App() {
   return (
@@ -31,23 +34,28 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route element={<Navigation />}>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/:groupId?/:setId?" element={<HomePage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/imprint" element={<Imprint />} />
+                <Route path="/dsgvo" element={<Dsgvo />} />
                 <Route
                   path="/publicsession/:setId"
                   element={<PublicLearnSession />}
                 />
 
                 <Route element={<PrivateRoute />}>
+                  <Route
+                    path="/group/:flashcardSetId"
+                    element={<GroupCreation />}
+                  />
                   <Route path="/create" element={<Box />} />
                   <Route path="/home" element={<HomeLoggedIn />} />
-                  <Route path="/editset">
-                    <Route path=":setId" element={<EditSet />} />
-                  </Route>
+                  <Route path="/editset/:setId" element={<EditSet />} />
+                  <Route path="/readset/:setId" element={<ReadSet />} />
+
                   <Route path="/flipcard" element={<FlipCardExample />} />
                   <Route path="/dashboard" element={<DashBoard_login />} />
                   <Route path="/session/:setId" element={<LearnModus />} />

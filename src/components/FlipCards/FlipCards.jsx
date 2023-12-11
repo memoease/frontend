@@ -6,20 +6,19 @@ function FlipCards({ activeCard, index }) {
 
   useEffect(() => {
     setIsFlipped(false);
-  }, [index])
+  }, [index]);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
-
 
   return (
     <div>
       <CardFlip
         isFlipped={isFlipped}
         flipDirection="horizontal"
-        flipSpeedBackToFront={0.5}
-        flipSpeedFrontToBack={0.5}
+        flipSpeedBackToFront={0.4}
+        flipSpeedFrontToBack={0.8}
       >
         <div>
           <div
@@ -30,12 +29,13 @@ function FlipCards({ activeCard, index }) {
               width: "100%",
               borderRadius: "10px",
               padding: "10",
-              height: "300px",
+              height: "325px",
               backgroundColor: "#eeee",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
+              alignItems: "center",
+              textAlign: "center",
             }}
           >
             {activeCard.question}
@@ -48,17 +48,17 @@ function FlipCards({ activeCard, index }) {
             style={{
               borderRadius: "10px",
               width: "100%",
-              height: "300px",
+              height: "325px",
               backgroundColor: "#cccc",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               margin: "0 auto",
               boxShadow: "0px 2px 8px rgba(0, 0, 0, 20)",
+              textAlign: "center",
             }}
           >
             {activeCard.answer}
-
           </div>
         </div>
       </CardFlip>

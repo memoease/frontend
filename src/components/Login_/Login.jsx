@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../../utilities/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../utilities/service/api.js";
+import { loginUser, pushUserToGroup } from "../../utilities/service/api.js";
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 const Login = () => {
@@ -47,7 +47,6 @@ const Login = () => {
 
       // Call the loginUser function to authenticate user
       const userData = await loginUser(loginData);
-      console.log(userData);
 
       // Set user data in the application state
       setUser(userData);
@@ -58,12 +57,30 @@ const Login = () => {
       // End loading state
       setLoading(false);
 
-      // Check if the Set-ID is present in the Session Storage
+      // Check if Set-ID and Group-ID are present in the Local Storage
       const setIdFromStorage = localStorage.getItem("setId");
+      const groupIdFromStorage = localStorage.getItem("groupId");
 
-      if (setIdFromStorage) {
+      if (setIdFromStorage && groupIdFromStorage) {
+        // If both are present, navigate to edit set
+
+        navigate(`/readset/${setIdFromStorage}`);
+
+        // Send data to Group
+        await pushUserToGroup({
+          groupId: groupIdFromStorage,
+          userId: userData.id,
+        });
+
+        // Clear the Set-ID and Group-ID from Local Storage
+        localStorage.removeItem("setId");
+        localStorage.removeItem("groupId");
+      } else if (setIdFromStorage) {
         // If Set-ID is present, navigate to edit the corresponding set
-        navigate(`/editset/${setIdFromStorage}`);
+        navigate(`/readset/${setIdFromStorage}`);
+
+        // Clear the Set-ID from Local Storage
+        localStorage.removeItem("setId");
       } else {
         // Otherwise, navigate to the default route (e.g., "/home")
         navigate("/home");

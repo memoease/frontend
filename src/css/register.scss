@@ -1,5 +1,6 @@
 @import "Colors"; // Importiere die Variablen
 //   Styling des register --------------------
+
 .register_container {
   display: flex;
   justify-content: center;
@@ -7,98 +8,99 @@
   margin: 0 auto;
   height: 80vh;
   width: 90%;
-  border-radius: 1rem;
-  .title {
-    text-align: center;
-    color: #106899;
-    font-weight: normal;
-    text-shadow: 0px 0px 0.3px $WhitColor;
-  }
+  .customRegisterContainer {
+    border-radius: $border-radius-1rem;
+    .title {
+      text-align: center;
+      color: $blue-color;
+      font-weight: normal;
+      text-shadow: 0px 0px 0.3px $white-color;
+    }
 
-  .register-form {
-    width: $boxWidth;
-    height: $boxHeight;
-    background: #c4d6e7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-    border-radius: 3rem;
-    text-align: center;
-    box-shadow: $boxShadow;
-
-    form {
-      width: 280px;
+    .register-form {
+      width: $box-width;
+      height: $box-height;
+      background: $color-light-blue;
       display: flex;
-      flex-direction: column;
-      .inputPassword_Confrim {
-        display: flex;
-        position: relative;
-        .pwdvisibilityPass {
-          position: absolute;
-          background: transparent;
-          top: 0.7rem;
-          right: 1rem;
-          border: none;
-          outline: none;
-        }
-      }
-      label {
+      justify-content: center;
+      align-items: center;
+      margin: 1rem auto;
+      border-radius: $border-radius-2rem;
+      text-align: center;
+      box-shadow: $box-shadow;
+
+      form {
+        width: 280px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 0.8rem 0;
-        gap: 10px 0;
-        font-size: 1.1rem;
-        color: #106899;
-        input {
-          width: 290px;
-          padding: 0.6rem 0;
-          border-radius: 2rem;
-          outline: none;
-          border: none;
-          background-color: white;
-          padding-left: 1rem;
+        .inputPassword_Confrim {
+          display: flex;
+          position: relative;
+          .pwdvisibilityPass {
+            position: absolute;
+            background: transparent;
+            top: 0.7rem;
+            right: 1rem;
+            border: none;
+            outline: none;
+          }
         }
-      }
-      .RegisterBtn {
-        button {
-          cursor: pointer;
-          width: 100px;
-          padding: 0.5rem 0rem;
-          margin-bottom: 1rem;
-          border-radius: 2rem;
-          border: none;
-          outline: none;
-          color: $ColorBlack;
-          transition: all 0.7s ease;
-          background: white;
-          margin-top: 1rem;
-          background: $highlightColor;
-          &:hover {
-            background: $ColorOrangen;
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0.8rem 0;
+          gap: 10px 0;
+          font-size: $text-size-1rem;
+          color: $blue-color;
+          input {
+            width: 290px;
+            padding: 0.6rem 0;
+            border-radius: $border-radius-2rem;
+            outline: none;
+            border: none;
+            background-color: white;
+            padding-left: 1rem;
+          }
+        }
+        .RegisterBtn {
+          button {
+            cursor: pointer;
+            width: 100px;
+            padding: 0.5rem 0rem;
+            margin-bottom: 1rem;
+            border-radius: $border-radius-2rem;
+            border: none;
+            outline: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            background: white;
+            margin-top: 1rem;
+            background: $highlight-color;
+            &:hover {
+              background: $color-orangen;
+            }
           }
         }
       }
+    
     }
-    .messages-container {
-      /* Neue Container-Klasse für Fehler- und Bestätigungsmeldungen */
-      margin-top: 1rem;
-      color: $WhitColor; /* Ändern Sie dies entsprechend Ihrer Farbwahl */
-      font-size: 1rem;
-
-      .error-message {
-        color: $WhitColor;
+      .messages-container {
+        margin-top: 1rem;
+        color: $white-color;
+        font-size: $text-size-1rem;
+        .error-message {
+          color: $blue-color;
+        }
+        .confirmation-message {
+          color: $white-color;
+        }
       }
-
-      .confirmation-message {
-        color: $WhitColor;
-      }
-    }
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: $breakpoint) {
   .register_container {
     margin-top: 3rem;
     height: 100%;

@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
       ? JSON.parse(cookies.userInfo)
       : null;
     setUser(userFromCookie);
+
     if (!userFromCookie) {
       setAuthorized(false);
       setLoading(false);
@@ -37,9 +38,9 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     setLoading(true);
     try {
+      setAuthorized(false);
       await logoutUser();
       setUser(null);
-      setAuthorized(false);
     } catch (error) {
       console.error("Logout error:", error);
     }

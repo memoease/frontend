@@ -17,7 +17,7 @@ const Contact = () => {
       <div className="wrpper-contact">
         <h1 className="text-center">Contact Us</h1>
         <button className="btn" onClick={handleContentNavClick}>
-          Click my
+          Click me
         </button>
         <div className={`content ${showContent ? "show" : ""}`}>
           <p className="titelWisch">
@@ -27,18 +27,26 @@ const Contact = () => {
             learning. Feel free to drop us a line; we can't wait to engage with
             your insights and ideas.
           </p>
+          <div className="contact-links">
+            <a className="email" href="mailto:memoease.team@gmail.com">
+              E-Mail: memoease.team@gmail.com
+            </a>
 
-          <a className="email" href="mailto:memoease.team@gmail.com">
-            E-Mail: memoease.team@gmail.com
-          </a>
-
-          <NavLink
-            to="/imprint"
-            className="linkToImprint"
-            onClick={handleLinkClick}
-          >
-            Imprint
-          </NavLink>
+            <NavLink
+              to="/imprint"
+              className="linkToImprint"
+              onClick={handleLinkClick}
+            >
+              Imprint
+            </NavLink>
+            <NavLink
+              to="/dsgvo"
+              className="linkToImprint"
+              onClick={handleLinkClick}
+            >
+              Dsgvo
+            </NavLink>
+          </div>
         </div>
       </div>
     </div>

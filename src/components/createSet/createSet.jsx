@@ -45,8 +45,6 @@ export const Box = () => {
       // Call the API to create the flashcard set
       const newSet = await postNewFlashcardSet(setData);
 
-      console.log("New flashcard set created:", newSet);
-
       // Redirect the user to the "edit set" page
       navigate(`/editset/${newSet._id}`);
     } catch (error) {
