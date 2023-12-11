@@ -80,7 +80,6 @@ export const LearnModus = () => {
       if (sessionData && sessionData._id) {
         const updatedSession = await refreshLearnSession(sessionData._id);
         updatedSession.toLearn.sort(() => Math.random() - 0.5);
-        console.log("updated session: ", updatedSession);
 
         setSessionData(updatedSession);
 

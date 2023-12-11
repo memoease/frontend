@@ -47,7 +47,6 @@ const Description = ({
 
   const copySetToDashboard = async () => {
     try {
-      console.log("setIdtoCopy:", setId);
       const response = await postNewSetFromPublicSet(setId);
       const newSetId = response._id;
       updateSetsByUser();

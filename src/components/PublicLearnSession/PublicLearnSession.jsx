@@ -22,7 +22,6 @@ const PublicLearnSession = () => {
 
         const allFlashcards = session.flashcards;
         setCardAmount(allFlashcards.length);
-        console.log("cardAmount use effect:", cardAmount);
         setToLearn(allFlashcards);
         setIsLearned([]);
         setCurrentCard(allFlashcards[index]);
