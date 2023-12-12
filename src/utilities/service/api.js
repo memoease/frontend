@@ -37,7 +37,7 @@ export const validateToken = async () => {
 
 // Logout
 export const logoutUser = async () => {
-  const response = await axiosInstance.get("user/logout");
+  const response = await axiosInstance.get("user/logout", { credentials: "include" });
   return response.data;
 };
 
