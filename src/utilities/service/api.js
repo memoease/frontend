@@ -37,7 +37,7 @@ export const validateToken = async () => {
 
 // Logout
 export const logoutUser = async () => {
-  const response = await axiosInstance.get("user/logout", { credentials: "same-origin" });
+  const response = await axiosInstance.get("user/logout");
   return response.data;
 };
 
