@@ -1,4 +1,4 @@
-@import "Colors";
+
 
 .group_container {
   display: flex;
@@ -9,13 +9,12 @@
   height: 80vh;
   width: 100%;
   border-radius: $border-radius-1rem;
-
   .title {
     text-align: left;
     color: $blue-color;
     font-weight: normal;
     text-shadow: 0px 0px 0.3px $white-color;
-    margin-bottom: 10px;
+    margin-bottom: 1.3rem;
     font-weight: bold;
   }
 
@@ -26,24 +25,12 @@
     text-shadow: 0px 0px 0.3px $white-color;
     margin-bottom: 20px;
   }
+  .group-content {
+    background-color: $color-light-blue;
+    border-radius: 2rem;
 
-  .group-container {
-    width: $box-width;
-    background: $color-light-blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
-    border-radius: $border-radius-3rem;
-    text-align: center;
-    box-shadow: $box-shadow;
-
-    form {
-      width: 100%;
-      /* Vollständige Breite auf kleineren Bildschirmen */
-      max-width: 400px;
-      /* Begrenzen Sie die Breite auf größeren Bildschirmen */
+    .group_form {
+      width: 550px;
       display: flex;
       flex-direction: column;
 
@@ -59,8 +46,7 @@
         textarea {
           width: 100%;
           resize: vertical;
-          /* Vollständige Breite auf kleineren Bildschirmen */
-          max-width: 487px;
+          max-width: 400px;
           max-height: 500px;
           padding: 0.6rem 0;
           border-radius: $border-radius-2rem;
@@ -74,16 +60,15 @@
 
       .group_button {
         margin: 1rem;
-
+        width: 74%;
+        margin: 0 auto;
         button {
           width: 100%;
-          /* Vollständige Breite auf kleineren Bildschirmen */
-          max-width: 150px;
-          /* Begrenzen Sie die Breite auf größeren Bildschirmen */
           padding: 0.5rem 0;
           border-radius: $border-radius-2rem;
           outline: none;
           border: none;
+          margin: 1rem 0;
           background-color: $highlight-color;
           color: $white-color;
           transition: all 0.3s ease;
@@ -96,81 +81,101 @@
       }
     }
   }
+}
 
-  .message {
-    margin-top: 20px;
-    padding: 10px;
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  color: $blue-color;
+}
+
+.link-field {
+  display: flex;
+  flex-direction: column;
+  /* Änderung der Ausrichtung auf kleinere Bildschirmgrößen */
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  //border: 1px solid $ColorLight-grey;
+  border-radius: $border-radius-2rem;
+
+  input {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+    background: transparent;
     color: $blue-color;
   }
 
-  .link-field {
-    display: flex;
-    flex-direction: column;
-    /* Änderung der Ausrichtung auf kleinere Bildschirmgrößen */
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    //border: 1px solid $ColorLight-grey;
-    border-radius: $border-radius-2rem;
-
-    input {
-      width: 100%;
-      /* Vollständige Breite auf kleineren Bildschirmen */
-      margin-top: 1rem;
-      border: none;
-      background: transparent;
-      color: $blue-color;
-    }
-
-    button {
-      width: 100%;
-      /* Vollständige Breite auf kleineren Bildschirmen */
-      max-width: 150px;
-      /* Begrenzen Sie die Breite auf größeren Bildschirmen */
-      margin-top: 1rem;
-      padding: 8px;
-      cursor: pointer;
-      border-radius: $border-radius-2rem;
-      color: white;
-      transition: all 0.3s ease;
-      outline: none;
-      border: transparent;
-      background-color: $highlight-color;
-      font-weight: bold;
-
-      &:hover {
-        background: $color-orangen;
-      }
-    }
-  }
-
-  .back-button {
+  button {
+    cursor: pointer;
     width: 100%;
-    /* Vollständige Breite auf kleineren Bildschirmen */
     max-width: 150px;
-    /* Begrenzen Sie die Breite auf größeren Bildschirmen */
-    margin-top: 20px;
-    padding: 0.4rem 0.6rem;
+    margin-top: 1rem;
+    padding: 8px;
     cursor: pointer;
     border-radius: $border-radius-2rem;
     color: white;
-    outline: none;
-    background-color: rgba(204, 204, 204, 0.8);
-    font-weight: bold;
     transition: all 0.3s ease;
+    outline: none;
     border: transparent;
-  }
+    background-color: $highlight-color;
+    font-weight: bold;
 
-  .back-button:hover {
-    background: $blue-color;
+    &:hover {
+      background: $color-orangen;
+    }
   }
+}
+
+.back-button {
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  margin-top: 20px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  border-radius: $border-radius-2rem;
+  color: white;
+  outline: none;
+  background-color: rgba(204, 204, 204, 0.8);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: transparent;
+}
+
+.back-button:hover {
+  background: $blue-color;
 }
 
 /* Media Query für kleinere Bildschirme */
 @media screen and (max-width: $breakpoint) {
-  .group-container form {
-    max-width: none;
-    /* Auf kleinen Bildschirmen keine Maximierung der Breite */
+ .group_container  {
+    width: 80%;
+    margin: 0 auto;
+    .title {
+      font-size: 1.2rem;
+      text-align: center;
+      color: $blue-color;
+      font-weight: bold;
+    }
+    .description {
+      font-size: 1rem;
+    }
+      .group-content{
+        padding: 1rem;
+        .group_form{
+          width: 100%;
+          .members{
+            ::placeholder{
+              font-size: 0.8rem;
+      
+            }
+          }
+        }
+      }
+
   }
 }

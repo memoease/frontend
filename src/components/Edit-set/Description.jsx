@@ -65,7 +65,7 @@ const Description = ({
               <h4>Description</h4>
               <button
                 style={{
-                  width: "50px",
+                  width: "80px",
                 }}
                 onClick={clickToEdit}
               >

@@ -232,30 +232,30 @@ const Dsgvo = () => {
         Im Rahmen unserer Verarbeitung von personenbezogenen Daten kommt es vor,
         dass die Daten an andere Stellen, Unternehmen, rechtlich selbstständige
         Organisationseinheiten oder Personen übermittelt oder sie ihnen
-        gegenüber offengelegt werden. Zu den Empfängern dieser Daten können
-        z. B. mit IT-Aufgaben beauftragte Dienstleister oder Anbieter von
-        Diensten und Inhalten, die in eine Webseite eingebunden werden, gehören.
-        In solchen Fällen beachten wir die gesetzlichen Vorgaben und schließen
-        insbesondere entsprechende Verträge bzw. Vereinbarungen, die dem Schutz
-        Ihrer Daten dienen, mit den Empfängern Ihrer Daten ab.
+        gegenüber offengelegt werden. Zu den Empfängern dieser Daten können z.B.
+        mit IT-Aufgaben beauftragte Dienstleister oder Anbieter von Diensten und
+        Inhalten, die in eine Webseite eingebunden werden, gehören. In solchen
+        Fällen beachten wir die gesetzlichen Vorgaben und schließen insbesondere
+        entsprechende Verträge bzw. Vereinbarungen, die dem Schutz Ihrer Daten
+        dienen, mit den Empfängern Ihrer Daten ab.
       </p>
       <h2 id="m12">Löschung von Daten</h2>
       <p>
         Die von uns verarbeiteten Daten werden nach Maßgabe der gesetzlichen
         Vorgaben gelöscht, sobald deren zur Verarbeitung erlaubten
         Einwilligungen widerrufen werden oder sonstige Erlaubnisse entfallen
-        (z. B. wenn der Zweck der Verarbeitung dieser Daten entfallen ist oder
+        (z.B. wenn der Zweck der Verarbeitung dieser Daten entfallen ist oder
         sie für den Zweck nicht erforderlich sind). Sofern die Daten nicht
         gelöscht werden, weil sie für andere und gesetzlich zulässige Zwecke
         erforderlich sind, wird deren Verarbeitung auf diese Zwecke beschränkt.
-        D. h., die Daten werden gesperrt und nicht für andere Zwecke
-        verarbeitet. Das gilt z. B. für Daten, die aus handels- oder
-        steuerrechtlichen Gründen aufbewahrt werden müssen oder deren
-        Speicherung zur Geltendmachung, Ausübung oder Verteidigung von
-        Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen
-        oder juristischen Person erforderlich ist. Unsere Datenschutzhinweise
-        können ferner weitere Angaben zu der Aufbewahrung und Löschung von Daten
-        beinhalten, die für die jeweiligen Verarbeitungen vorrangig gelten.
+        D.h., die Daten werden gesperrt und nicht für andere Zwecke verarbeitet.
+        Das gilt z.B. für Daten, die aus handels- oder steuerrechtlichen Gründen
+        aufbewahrt werden müssen oder deren Speicherung zur Geltendmachung,
+        Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der
+        Rechte einer anderen natürlichen oder juristischen Person erforderlich
+        ist. Unsere Datenschutzhinweise können ferner weitere Angaben zu der
+        Aufbewahrung und Löschung von Daten beinhalten, die für die jeweiligen
+        Verarbeitungen vorrangig gelten.
       </p>
       <h2 id="m10">Rechte der betroffenen Personen</h2>
       <p>
@@ -326,10 +326,10 @@ const Dsgvo = () => {
       <p>
         Cookies sind kleine Textdateien, bzw. sonstige Speichervermerke, die
         Informationen auf Endgeräten speichern und Informationen aus den
-        Endgeräten auslesen. Z. B. um den Login-Status in einem Nutzerkonto,
+        Endgeräten auslesen. Z.B. um den Login-Status in einem Nutzerkonto,
         einen Warenkorbinhalt in einem E-Shop, die aufgerufenen Inhalte oder
         verwendete Funktionen eines Onlineangebotes speichern. Cookies können
-        ferner zu unterschiedlichen Zwecken eingesetzt werden, z. B. zu Zwecken
+        ferner zu unterschiedlichen Zwecken eingesetzt werden, z.B. zu Zwecken
         der Funktionsfähigkeit, Sicherheit und Komfort von Onlineangeboten sowie
         der Erstellung von Analysen der Besucherströme.{" "}
       </p>
@@ -358,7 +358,7 @@ const Dsgvo = () => {
         hängt davon ab, ob wir Nutzer um eine Einwilligung bitten. Falls die
         Nutzer einwilligen, ist die Rechtsgrundlage der Verarbeitung Ihrer Daten
         die erklärte Einwilligung. Andernfalls werden die mithilfe von Cookies
-        verarbeiteten Daten auf Grundlage unserer berechtigten Interessen (z. B.
+        verarbeiteten Daten auf Grundlage unserer berechtigten Interessen (z.B.
         an einem betriebswirtschaftlichen Betrieb unseres Onlineangebotes und
         Verbesserung seiner Nutzbarkeit) verarbeitet oder, wenn dies im Rahmen
         der Erfüllung unserer vertraglichen Pflichten erfolgt, wenn der Einsatz
@@ -368,7 +368,7 @@ const Dsgvo = () => {
         von unseren Einwilligungs- und Verarbeitungsprozessen auf.
       </p>
       <p>
-        <strong>Speicherdauer: </strong>Im Hinblick auf die Speicherdauer werden
+        <strong>Speicherdauer:</strong>Im Hinblick auf die Speicherdauer werden
         die folgenden Arten von Cookies unterschieden:
       </p>
       <ul>
@@ -377,7 +377,7 @@ const Dsgvo = () => {
             Temporäre Cookies (auch: Session- oder Sitzungs-Cookies):
           </strong>
           Temporäre Cookies werden spätestens gelöscht, nachdem ein Nutzer ein
-          Online-Angebot verlassen und sein Endgerät (z. B. Browser oder mobile
+          Online-Angebot verlassen und sein Endgerät (z.B. Browser oder mobile
           Applikation) geschlossen hat.
         </li>
         <li>
@@ -386,9 +386,9 @@ const Dsgvo = () => {
           beispielsweise der Login-Status gespeichert oder bevorzugte Inhalte
           direkt angezeigt werden, wenn der Nutzer eine Website erneut besucht.
           Ebenso können die mit Hilfe von Cookies erhobenen Daten der Nutzer zur
-          Reichweitenmessung verwendet werden. Sofern wir Nutzern keine
+          Reichweitenmessung verwendet werden. Sofern wir Nutzernkeine
           expliziten Angaben zur Art und Speicherdauer von Cookies mitteilen
-          (z. B. im Rahmen der Einholung der Einwilligung), sollten Nutzer davon
+          (z.B. im Rahmen der Einholung der Einwilligung), sollten Nutzer davon
           ausgehen, dass Cookies permanent sind und die Speicherdauer bis zu
           zwei Jahre betragen kann.
         </li>
@@ -429,14 +429,14 @@ const Dsgvo = () => {
       </p>
       <ul className="m-elements">
         <li>
-          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B.
-          besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
-          Kommunikations- und Verfahrensdaten (z. .B. IP-Adressen, Zeitangaben,
+          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
+          Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
+          Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitangaben,
           Identifikationsnummern, Einwilligungsstatus).
         </li>
         <li>
-          <strong>Betroffene Personen:</strong> Nutzer (z. .B.
-          Webseitenbesucher, Nutzer von Onlinediensten).
+          <strong>Betroffene Personen:</strong> Nutzer (z.B. Webseitenbesucher,
+          Nutzer von Onlinediensten).
         </li>
         <li>
           <strong>Zwecke der Verarbeitung:</strong> Bereitstellung unseres
@@ -477,8 +477,8 @@ const Dsgvo = () => {
           erfolgreichen Abruf, Browsertyp nebst Version, das Betriebssystem des
           Nutzers, Referrer URL (die zuvor besuchte Seite) und im Regelfall
           IP-Adressen und der anfragende Provider gehören. Die Serverlogfiles
-          können zum einen zu Zwecken der Sicherheit eingesetzt werden, z. B.,
-          um eine Überlastung der Server zu vermeiden (insbesondere im Fall von
+          können zum einen zu Zwecken der Sicherheit eingesetzt werden, z.B., um
+          eine Überlastung der Server zu vermeiden (insbesondere im Fall von
           missbräuchlichen Angriffen, sogenannten DDoS-Attacken) und zum
           anderen, um die Auslastung der Server und ihre Stabilität
           sicherzustellen;{" "}
@@ -515,19 +515,19 @@ const Dsgvo = () => {
       </p>
       <p>
         Die Nutzer können über Vorgänge, die für deren Nutzerkonto relevant
-        sind, wie z. B. technische Änderungen, per E-Mail informiert werden.
+        sind, wie z.B. technische Änderungen, per E-Mail informiert werden.
       </p>
       <ul className="m-elements">
         <li>
-          <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z. B. Namen,
-          Adressen); Kontaktdaten (z. B. E-Mail, Telefonnummern); Inhaltsdaten
-          (z. B. Eingaben in Onlineformularen); Meta-, Kommunikations- und
-          Verfahrensdaten (z. .B. IP-Adressen, Zeitangaben,
+          <strong>Verarbeitete Datenarten:</strong> Bestandsdaten (z.B. Namen,
+          Adressen); Kontaktdaten (z.B. E-Mail, Telefonnummern); Inhaltsdaten
+          (z.B. Eingaben in Onlineformularen); Meta-, Kommunikations- und
+          Verfahrensdaten (z.B. IP-Adressen, Zeitangaben,
           Identifikationsnummern, Einwilligungsstatus).
         </li>
         <li>
-          <strong>Betroffene Personen:</strong> Nutzer (z. .B.
-          Webseitenbesucher, Nutzer von Onlinediensten).
+          <strong>Betroffene Personen:</strong> Nutzer (z.B. Webseitenbesucher,
+          Nutzer von Onlinediensten).
         </li>
         <li>
           <strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher
@@ -591,14 +591,14 @@ const Dsgvo = () => {
       </p>
       <ul className="m-elements">
         <li>
-          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B.
-          besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
-          Kommunikations- und Verfahrensdaten (z. .B. IP-Adressen, Zeitangaben,
+          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
+          Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
+          Kommunikations- und Verfahrensdaten (z.B. IP-Adressen, Zeitangaben,
           Identifikationsnummern, Einwilligungsstatus).
         </li>
         <li>
-          <strong>Betroffene Personen:</strong> Nutzer (z. .B.
-          Webseitenbesucher, Nutzer von Onlinediensten).
+          <strong>Betroffene Personen:</strong> Nutzer (z..B. Webseitenbesucher,
+          Nutzer von Onlinediensten).
         </li>
         <li>
           <strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher
@@ -641,18 +641,18 @@ const Dsgvo = () => {
       </ul>
       <h2 id="m182">Kontakt- und Anfragenverwaltung</h2>
       <p>
-        Bei der Kontaktaufnahme mit uns (z. B. per Post, Kontaktformular,
-        E-Mail, Telefon oder via soziale Medien) sowie im Rahmen bestehender
-        Nutzer- und Geschäftsbeziehungen werden die Angaben der anfragenden
-        Personen verarbeitet soweit dies zur Beantwortung der Kontaktanfragen
-        und etwaiger angefragter Maßnahmen erforderlich ist.
+        Bei der Kontaktaufnahme mit uns (z.B. per Post, Kontaktformular, E-Mail,
+        Telefon oder via soziale Medien) sowie im Rahmen bestehender Nutzer- und
+        Geschäftsbeziehungen werden die Angaben der anfragenden Personen
+        verarbeitet soweit dies zur Beantwortung der Kontaktanfragen und
+        etwaiger angefragter Maßnahmen erforderlich ist.
       </p>
       <ul className="m-elements">
         <li>
-          <strong>Verarbeitete Datenarten:</strong> Kontaktdaten (z. B. E-Mail,
-          Telefonnummern); Inhaltsdaten (z. B. Eingaben in Onlineformularen);
-          Nutzungsdaten (z. B. besuchte Webseiten, Interesse an Inhalten,
-          Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z. .B.
+          <strong>Verarbeitete Datenarten:</strong> Kontaktdaten (z.B. E-Mail,
+          Telefonnummern); Inhaltsdaten (z.B. Eingaben in Onlineformularen);
+          Nutzungsdaten (z.B. besuchte Webseiten, Interesse an Inhalten,
+          Zugriffszeiten); Meta-, Kommunikations- und Verfahrensdaten (z..B.
           IP-Adressen, Zeitangaben, Identifikationsnummern,
           Einwilligungsstatus).
         </li>
@@ -717,14 +717,14 @@ const Dsgvo = () => {
       </p>
       <ul className="m-elements">
         <li>
-          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z. B.
-          besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
-          Kommunikations- und Verfahrensdaten (z. .B. IP-Adressen, Zeitangaben,
+          <strong>Verarbeitete Datenarten:</strong> Nutzungsdaten (z.B. besuchte
+          Webseiten, Interesse an Inhalten, Zugriffszeiten); Meta-,
+          Kommunikations- und Verfahrensdaten (z..B. IP-Adressen, Zeitangaben,
           Identifikationsnummern, Einwilligungsstatus).
         </li>
         <li>
-          <strong>Betroffene Personen:</strong> Nutzer (z. .B.
-          Webseitenbesucher, Nutzer von Onlinediensten).
+          <strong>Betroffene Personen:</strong> Nutzer (z..B. Webseitenbesucher,
+          Nutzer von Onlinediensten).
         </li>
         <li>
           <strong>Zwecke der Verarbeitung:</strong> Bereitstellung unseres
@@ -732,7 +732,7 @@ const Dsgvo = () => {
         </li>
         <li className="">
           <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6 Abs.
-          1 S. 1 lit. f) DSGVO).
+          1 S. 1 lit. f) DSGVO.
         </li>
       </ul>
       <p>
@@ -756,7 +756,7 @@ const Dsgvo = () => {
           notwendig sind. Diese Daten können auf einem Server des Anbieters der
           Schriftarten in den USA verarbeitet werden - Beim Besuch unseres
           Onlineangebotes senden die Browser der Nutzer ihre Browser
-          HTTP-Anfragen an die Google Fonts Web API (d. h. eine
+          HTTP-Anfragen an die Google Fonts Web API (d.h. eine
           Softwareschnittstelle für den Abruf der Schriftarten). Die Google
           Fonts Web API stellt den Nutzern die Cascading Style Sheets (CSS) von
           Google Fonts und danach die in der CCS angegebenen Schriftarten zur
@@ -765,7 +765,7 @@ const Dsgvo = () => {
           angeforderte URL auf dem Google-Server und (3) die HTTP-Header,
           einschließlich des User-Agents, der die Browser- und
           Betriebssystemversionen der Websitebesucher beschreibt, sowie die
-          Verweis-URL (d. h. die Webseite, auf der die Google-Schriftart
+          Verweis-URL (d.h. die Webseite, auf der die Google-Schriftart
           angezeigt werden soll). IP-Adressen werden weder auf Google-Servern
           protokolliert noch gespeichert und sie werden nicht analysiert. Die
           Google Fonts Web API protokolliert Details der HTTP-Anfragen
@@ -790,7 +790,7 @@ const Dsgvo = () => {
           Gordon House, Barrow Street, Dublin 4, Irland;{" "}
           <span className="">
             <strong>Rechtsgrundlagen:</strong> Berechtigte Interessen (Art. 6
-            Abs. 1 S. 1 lit. f) DSGVO);{" "}
+            Abs. 1 S. 1 lit. f) DSGVO
           </span>
           <strong>Website:</strong>{" "}
           <a href="https://fonts.google.com/" target="_blank">
@@ -800,9 +800,9 @@ const Dsgvo = () => {
           <a href="https://policies.google.com/privacy" target="_blank">
             https://policies.google.com/privacy
           </a>
-          ; <strong>Grundlage Drittlandübermittlung:</strong>{" "}
-          <span className=""> EU-US Data Privacy Framework (DPF)</span>.{" "}
-          <strong>Weitere Informationen:</strong>{" "}
+          ; <strong>Grundlage Drittlandübermittlung:</strong>
+          <span className=""> EU-US Data Privacy Framework (DPF)</span>.
+          <strong>Weitere Informationen:</strong>
           <a
             href="https://developers.google.com/fonts/faq/privacy?hl=de"
             target="_blank"
@@ -818,7 +818,7 @@ const Dsgvo = () => {
         Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung
         an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen
         dies erforderlich machen. Wir informieren Sie, sobald durch die
-        Änderungen eine Mitwirkungshandlung Ihrerseits (z. B. Einwilligung) oder
+        Änderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder
         eine sonstige individuelle Benachrichtigung erforderlich wird.
       </p>
       <p>

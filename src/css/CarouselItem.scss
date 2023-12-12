@@ -8,13 +8,19 @@
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: uppercase;
-      //padding-top: 8px;
       background-image: linear-gradient(#fdb25b 2.6px, transparent 2.6px),
         linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
         linear-gradient(#fdb25b 1.3px, transparent 1.3px),
         linear-gradient(90deg, #fdb25b 1.3px, #ed7e00 1.3px);
-      background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
-      background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
+      background-size:
+        65px 65px,
+        65px 65px,
+        13px 13px,
+        13px 13px;
+      background-position:
+        -2.6px -2.6px,
+        -2.6px -2.6px,
+        -1.3px -1.3px,
         -1.3px -1.3px;
 
       color: $white-color;
@@ -30,14 +36,21 @@
           linear-gradient(90deg, #fdb25b 2.6px, transparent 2.6px),
           linear-gradient(#fdb25b 1.3px, transparent 1.3px),
           linear-gradient(90deg, #fdb25b 1.3px, #ed7e00 1.3px);
-        background-size: 65px 65px, 65px 65px, 13px 13px, 13px 13px;
-        background-position: -2.6px -2.6px, -2.6px -2.6px, -1.3px -1.3px,
+        background-size:
+          65px 65px,
+          65px 65px,
+          13px 13px,
+          13px 13px;
+        background-position:
+          -2.6px -2.6px,
+          -2.6px -2.6px,
+          -1.3px -1.3px,
           -1.3px -1.3px;
 
         box-shadow: $box-shadow;
       }
     }
-  
+
     color: $color-black;
     background: $white-color;
     min-height: 20vh;
@@ -55,11 +68,11 @@
       background: $color-garu;
       margin: 1rem 0;
       color: $color-black;
+          cursor: pointer;
     }
 
     .discropt-created {
-     
-        overflow: hidden;
+      overflow: hidden;
       opacity: 0.7;
       font-weight: 900;
     }
@@ -83,7 +96,7 @@
   .dashPlus {
     color: $color-black;
     background: $white-color;
-
+    cursor: pointer;
     min-height: 20vh;
     max-height: 20vh;
     border-radius: $border-radius-2rem;
@@ -93,11 +106,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    // &:hover {
-    //   box-shadow: 0px 0px 20px rgb(3, 3, 3);
-    // }
-
     svg {
       height: 2rem;
       width: 2rem;

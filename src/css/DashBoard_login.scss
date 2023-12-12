@@ -1,27 +1,27 @@
-@import 'Colors'; // Importiere die Variablen
+@import "Colors"; // Importiere die Variablen
 
 .dashBorad_content {
   width: 90%;
   margin: 0 auto;
 
-  .dashCarousel {}
-
   .dashborad_add_Content {
     display: flex;
     margin-top: 2rem;
     border-radius: $border-radius-3rem;
-    background:$color-light-blue;
+    background: $color-light-blue;
     padding: 1rem 0;
     font-family: serif;
     box-shadow: $box-shadow;
 
     .title_dash {
+      cursor: pointer;
       width: 50%;
       padding: 1rem;
-      color: $blue-color ;
+      color: $blue-color;
 
       // font-size: $fontSizeTitle;
       .titleToAdd {
+        cursor: pointer;
         width: 90%;
         padding-left: 3rem;
         margin: auto;
@@ -34,7 +34,6 @@
     }
 
     .dashboardAdd {
-
       width: 50%;
       display: flex;
       align-items: center;
@@ -42,8 +41,8 @@
       flex-wrap: wrap;
 
       .dashPlus {
-        background-color:$white-color;
-       
+        cursor: pointer;
+        background-color: $white-color;
         width: 200px;
         height: 200px;
         display: flex;
@@ -91,7 +90,6 @@
           padding: 2rem;
           border-radius: $border-radius-1rem;
         }
-
       }
     }
   }

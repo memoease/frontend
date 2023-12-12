@@ -9,31 +9,28 @@
     section {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-
       h4 {
         margin-left: 4vw;
-        margin-top: 1.5vw;
+        margin-top: 0.8rem;
         color: $blue-color;
-
+        cursor: pointer;
       }
     }
 
     p {
       width: 400px;
+      margin: 0 auto;
       padding: 0.5rem;
       overflow-x: auto;
       border-radius: 1rem;
       background-color: #fff;
       font-size: 0.9rem;
-      font-weight: 400px;
+      cursor: pointer;
     }
 
     form {
       h4 {
         font-size: 1rem;
-
       }
 
       .textareaDescript {
@@ -53,6 +50,9 @@
 @media only screen and (max-width: $breakpoint) {
   .disriptionSet {
     .set-description {
+      section {
+        padding: 1rem;
+      }
       p {
         width: 300px;
         height: auto;

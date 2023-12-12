@@ -4,7 +4,7 @@
   width: 80%;
   height: 100%;
   margin: 0 auto;
-overflow: auto;
+  overflow: auto;
   .aditSetTitle {
     .set-title {
       display: flex;
@@ -43,7 +43,7 @@ overflow: auto;
       width: 80%;
       padding: 0.5rem 0;
       padding-left: 1rem;
-      cursor: pointer;
+  
     }
   }
 
@@ -57,7 +57,6 @@ overflow: auto;
       display: flex;
 
       .edidtOverlap-group {
-        cursor: pointer;
         width: 50%;
 
         .slidNumber {
@@ -70,9 +69,7 @@ overflow: auto;
           display: flex;
           justify-content: center;
           align-items: center;
-
           .flipped-number {
-            cursor: pointer;
             padding: 0 3rem;
           }
 
@@ -83,8 +80,6 @@ overflow: auto;
             border-radius: $border-radius-circle;
             transition: all 0.6s ease;
             border-style: none;
-            cursor: pointer;
-
             &:hover {
               box-shadow: $box-shadow;
             }
@@ -102,8 +97,6 @@ overflow: auto;
             transition: all 0.6s ease;
             border-style: none;
             border-radius: $border-radius-circle;
-            cursor: pointer;
-
             &:hover {
               box-shadow: $box-shadow;
             }
@@ -213,25 +206,23 @@ overflow: auto;
       margin: 10px;
       justify-content: center;
       align-items: center;
- 
 
       .inputCards {
         display: flex;
         padding: 0.5rem;
+        cursor: pointer;
         background-color: $white-color;
         border-radius: $border-radius-3rem;
 
         textarea {
-        width:100%;
-          // min-height: 60px;
-          // max-height: 170px;
+          cursor: pointer;
+          width: 100%;
           padding: 1rem;
           border: none;
           outline: none;
-          background-color:transparent;
+          background-color: transparent;
           padding-left: 0.4rem;
           resize: vertical;
-
           &::placeholder {
             font-size: $text-size-1rem;
             color: rgb(71, 71, 71);
@@ -246,6 +237,7 @@ overflow: auto;
         }
 
         .EditBtn {
+          cursor: pointer;
           background-color: $blue-color;
           padding: 0 0.5rem;
           width: 150px;
@@ -267,6 +259,7 @@ overflow: auto;
     width: 350px;
     position: relative;
     top: 30px;
+    cursor: pointer;
   }
 }
 
