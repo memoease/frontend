@@ -25,17 +25,19 @@ export const AuthProvider = ({ children }) => {
     //   : null;
     // setUser(userFromCookie);
 
-    validateToken().then((res) => {
-      if (!res.auth) {
-        setAuthorized(false);
-        setUser(null)
-      } else {
-        setAuthorized(true);
-        setUser(res.user);
-      }
-    }).finally(() => {
-      setLoading(false);
-    })
+    validateToken()
+      .then((res) => {
+        if (!res.auth) {
+          setAuthorized(false);
+          setUser(null);
+        } else {
+          setAuthorized(true);
+          setUser(res.user);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   // Function to log out the user
