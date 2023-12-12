@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }) => {
     validateToken().then((res) => {
       if (!res.auth) {
         setAuthorized(false);
+        setUser(null)
       } else {
         setAuthorized(true);
         setUser(res.user);
