@@ -3,7 +3,7 @@ import { useAuth } from "../../utilities/hooks/useAuth";
 import { postNewFlashcardSet } from "../../utilities/service/api";
 import { useNavigate } from "react-router-dom";
 
-import EditPicture from "../../assets/Edit.png";
+import EditPicture from "../../assets/Edit.PNG";
 
 export const Box = () => {
   const [isActive, setIsActive] = useState(false);
