@@ -1,9 +1,55 @@
-# MEMOEASE
+# Flashcard Application
 
-### Simin
-#### Task User Model
-`UserModel` wurde erstellt. Es verfügt über eine Referenz zum `Group` Model. 
-Die Datenbankkommunikation für das `UserModel` und das `GroupModel` wurde bereits in der `user.model.js` definiert, um sie später an die Controller übergeben zu können.
+Welcome to our Flashcard Application GitHub repository! This project is a collaborative effort to create a web-based flashcard application using JavaScript, React.js, Node.js, and MongoDB. Users can register, create their own flashcard sets, and optionally share them publicly on the website to collaborate with others.
 
-#### Group Model
-Das `Group` Model wurde erstellt, um das Erstellen von Gruppen zu ermöglichen. In diesen Gruppen können Sets mit bestimmten Gruppenmitgliedern geteilt werden. Bei der Erstellung einer Gruppe kann die User-Eigenschaft "Admin" auf "true" gesetzt werden.
+## Features
+
+- User Registration: Users can register and create an account.
+- Flashcard Sets: Create and manage personalized flashcard sets.
+- Public Sharing: Optionally share flashcard sets publicly on the website.
+- Collaboration: Collaborate with others by sharing flashcard sets.
+
+## Technologies
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- JWT
+- Nodemailer for email functionality
+- React.js
+  
+### Installation
+
+1. **Clone the repository:**
+
+  ```bash
+  git clone https://github.com/your-username/flashcard-app.git
+  cd flashcard-app
+  ```
+
+2. **Backend dependencies:**
+
+  ```bash
+  cd backend
+  npm install
+  ```
+ 3. **Frontend dependencies:**
+
+  ```bash
+  cd frontend
+  npm install  
+  ```
+### Configuration
+use the .env.sample file.
+
+--> Start frontend application and backend server with:
+
+  ```bash
+  cd frontend
+  npm run dev  
+  ```
+  ```bash
+  cd backend
+  npm run dev
+  ```
