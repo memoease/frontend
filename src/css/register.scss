@@ -84,19 +84,18 @@
           }
         }
       }
-    
     }
-      .messages-container {
-        margin-top: 1rem;
-        color: $white-color;
-        font-size: $text-size-1rem;
-        .error-message {
-          color: $blue-color;
-        }
-        .confirmation-message {
-          color: $blue-color;
-        }
+    .messages-container {
+      margin-top: 1rem;
+      color: $blue-color;
+      font-size: $text-size-1rem;
+      .error-message {
+        color: $blue-color;
       }
+      .confirmation-message {
+        color: $blue-color;
+      }
+    }
   }
 }
 
