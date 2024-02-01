@@ -6,7 +6,6 @@
     display: flex;
     width: 100%;
     .titelMemeo {
-      cursor: pointer;
       width: 50%;
       padding: 1rem;
       font-size: 3.7rem;
@@ -17,7 +16,6 @@
       }
     }
     .about_image_container {
-      cursor: pointer;
       width: 50%;
       height: 50vh;
       background-image: url(../assets/Neuron-Coding.jpg);
@@ -36,7 +34,6 @@
     p {
       line-height: 30px;
       color: $blue-color;
-      cursor: pointer;
     }
   }
 }
