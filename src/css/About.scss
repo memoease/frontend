@@ -1,23 +1,7 @@
 .about_container {
   width: 80%;
-  margin:0px auto;
+  margin: 0 auto;
   padding-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-
-
-  .about_image_container {
-    cursor: pointer;
-    width: 50%;
-    height: 80vh;
-    background-image: url(../assets/Neuron-Coding.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-  }
   .title_image_container {
     display: flex;
     width: 100%;
@@ -31,12 +15,17 @@
         color: $color-orangen;
       }
     }
-    .text{
-      font-size: 20px;
-      margin-top: 20px;
-      text-align: left;
+    .about_image_container {
+      width: 50%;
+      height: 50vh;
+      background-image: url(../assets/Neuron-Coding.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
     }
-    
   }
   .about_text_container {
     width: 80%;
@@ -48,7 +37,6 @@
     }
   }
 }
-
 @media only screen and (max-width: $breakpoint) {
   .about_container {
     .title_image_container {
