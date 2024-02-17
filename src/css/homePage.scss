@@ -16,7 +16,7 @@
         font-size: $biggestTextSize;
         margin-bottom: 2rem;
         color: $blue-color;
-        cursor: pointer;
+
       }
       .startLinkCardTitel {
         cursor: pointer;
@@ -37,7 +37,6 @@
       .contentImage {
         width: 100%;
         height: 40vh;
-        cursor: pointer;
         background-image: url(../assets/MemoBild.png);
         background-repeat: no-repeat;
         background-size: contain;
